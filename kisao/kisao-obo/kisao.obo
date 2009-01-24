@@ -20,6 +20,13 @@ name: non-spatial tau-leaping method
 is_a: KISAO:0000042 ! Non-spatial Gillespie-like methods
 
 [Term]
+id: KISAO:0000003
+name: weigthed SSA
+def: "The weighted Stochastic Simulation Algorithm manipulates the probabilities measure of biochemical systems by sampling, in order to increase the fraction of simulation runs exhibiting rare events.   \nKuwahara H, Mura I. (2008) An efficient and exact stochastic simulation method to analyze rare events in\nbiochemical systems.\nJ Chem Phys. 129(16):165101." [NLN:24JAN2009]
+is_a: KISAO:0000034 ! optimized direct method
+
+
+[Term]
 id: KISAO:0000015
 name: Gillespie's first reaction method
 def: "Stochastic simulation algorithm using the next-reaction density function, giving the probaility that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm calculates a tentative reaction time for each reaction and then select the smallest.\nGillespie DT. A General Method for Numerically Simulating the Stochastic Time Evolution of Coupled Chemical Reactions. Journal of Computational Physics, Volume 2 , pages 403-434 (1976)." [nln:09OCT2007]
