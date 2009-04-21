@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <rdf:RDF
-    xmlns="http://www.biomodels.net/kisao/KISAO#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns="http://www.biomodels.net/kisao/KISAO#"
     xmlns:oboInOwl="http://www.bioontologies.org/2006/02/obo#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:obo="http://www.biomodels.net/kisao//obo#"
@@ -12,12 +12,10 @@
     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://www.biomodels.net/kisao/kisao.owl">
+    xml:base="http://www.biomodels.net/kisao/KISAO#">
   <owl:Ontology rdf:about="">
     <oboInOwl:hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >2008-07-14T13:11:00</oboInOwl:hasDate>
-    <oboInOwl:hasDefaultNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.biomodels.net/kisao/KISAO#</oboInOwl:hasDefaultNamespace>
   </owl:Ontology>
   <owl:Class rdf:ID="KISAO_0000058">
     <oboInOwl:hasExactSynonym>
@@ -27,28 +25,28 @@
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000056"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000041"/>
+      <owl:Class rdf:ID="KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="KISAO_0000023"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000016"/>
+      <owl:Class rdf:ID="KISAO_0000041"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="KISAO_0000056"/>
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Method that simulates biochemical networks on particle level. It consideres both, changes in time and space by ''exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm'' which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.
+Van Zon JS, Ten Wolde PR. Green's-function reaction dynamics: A particle-based approach for simulating biochemical networks in time and space. Journal of Chemical Physics, Volume 123 (23) (2005).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:10.1063/1.2137716</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Method that simulates biochemical networks on particle level. It consideres both, changes in time and space by ''exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm'' which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.
-Van Zon JS, Ten Wolde PR. Green's-function reaction dynamics: A particle-based approach for simulating biochemical networks in time and space. Journal of Chemical Physics, Volume 123 (23) (2005).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -64,13 +62,13 @@ Van Zon JS, Ten Wolde PR. Green's-function reaction dynamics: A particle-based a
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >SSA</rdfs:label>
+        >DM</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >DM</rdfs:label>
+        >SSA</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -80,15 +78,15 @@ Van Zon JS, Ten Wolde PR. Green's-function reaction dynamics: A particle-based a
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Stochastic simulation algorithm using the next-reaction density function, giving the probaility that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm directly and separately calculate the identity of the reaction and the time it will fire.
+Gillespie DT. Exact stochastic simulation of coupled chemical reactions. Journal of Physical Chemistry, Vol. 81, No. 25. (1977), pp. 2340-2361.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref rdf:nodeID="A0">
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:10OCT2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Stochastic simulation algorithm using the next-reaction density function, giving the probaility that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm directly and separately calculate the identity of the reaction and the time it will fire.
-Gillespie DT. Exact stochastic simulation of coupled chemical reactions. Journal of Physical Chemistry, Vol. 81, No. 25. (1977), pp. 2340-2361.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -102,14 +100,14 @@ Gillespie DT. Exact stochastic simulation of coupled chemical reactions. Journal
   <owl:Class rdf:about="#KISAO_0000056">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Methods based on the Smoluchowski equation, as published in: Smoluchowski M. Mathematical theory of the kinetics of the coagulation of colloidal solutions. Z. Phys. Chem, Vol. 92, No. 129. (1917).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:29OCT2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Methods based on the Smoluchowski equation, as published in: Smoluchowski M. Mathematical theory of the kinetics of the coagulation of colloidal solutions. Z. Phys. Chem, Vol. 92, No. 129. (1917).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -124,24 +122,24 @@ Gillespie DT. Exact stochastic simulation of coupled chemical reactions. Journal
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >This definition is dodgy, as is the name of the term. That will do for the moment, until we redesign the whole stochastic branch, based on algorithm details.</rdfs:comment>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000041"/>
+      <owl:Class rdf:about="#KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000036"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:about="#KISAO_0000041"/>
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Stochastic simulation algorithm using the an approach alike the one described in Gillespie's papers of 1976 and 1977.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref rdf:nodeID="A1">
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >NLN:08072008</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Stochastic simulation algorithm using the an approach alike the one described in Gillespie's papers of 1976 and 1977.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -158,15 +156,15 @@ Gillespie DT. Exact stochastic simulation of coupled chemical reactions. Journal
 Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).
 Dormand J, Prince P. A family of embedded Runge-Kutta formulae. Journal of Computational and Applied Mathematics, Volume 6, pages 19-26 (1980).</rdfs:label>
         <oboInOwl:hasDbXref>
-          <oboInOwl:DbXref>
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >PMID:14990450</rdfs:label>
-          </oboInOwl:DbXref>
-        </oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>
           <oboInOwl:DbXref rdf:nodeID="A2">
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:12NOV2007</rdfs:label>
+          </oboInOwl:DbXref>
+        </oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>
+          <oboInOwl:DbXref>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >PMID:14990450</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
       </oboInOwl:Definition>
@@ -209,28 +207,28 @@ Gillespie DT. A General Method for Numerically Simulating the Stochastic Time Ev
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The CVODE is a package written in C that solves initial value problems for ODEs. It is capable for stiff and non-stiff systems and uses two different linear multi-step methods, namely the Adam-Moulton method and the Backward differentiation formula (BNF).
+Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Physics, Vol. 10 (2), pages 138-143 (1996).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref rdf:nodeID="A3">
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:30OCT2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >The CVODE is a package written in C that solves initial value problems for ODEs. It is capable for stiff and non-stiff systems and uses two different linear multi-step methods, namely the Adam-Moulton method and the Backward differentiation formula (BNF).
-Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Physics, Vol. 10 (2), pages 138-143 (1996).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000041"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000035"/>
+      <owl:Class rdf:ID="KISAO_0000018"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000026"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000018"/>
+      <owl:Class rdf:ID="KISAO_0000035"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KISAO_0000041"/>
     </rdfs:subClassOf>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >code value ordinary differential equation solver</rdfs:label>
@@ -239,10 +237,10 @@ Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Phys
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000083">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000039"/>
+      <owl:Class rdf:ID="KISAO_0000002"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000002"/>
+      <owl:Class rdf:ID="KISAO_0000039"/>
     </rdfs:subClassOf>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >implicit tau-leaping method</rdfs:label>
@@ -280,9 +278,9 @@ Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Phys
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >LSODPK, written jointly with Peter N Brown, is a set of FORTRAN subroutines for solving the initial value problem for stiff and nonstiff systems of ordinary differential equations. In solving stiff systems, LSODPK uses a corrector iteration composed of Newton iteration and one of four preconditoned Krylov subspace iteration methods. The user must select the desired Krylov method and supply a pair of routine to evaluate, preprocess, and solve the (left and/or right) preconditioner matrices. Aside from preconditioning, the implementation is matrix-free, meaning that explicit storage of the Jacobian (or related) matrix is not required. The method is experimental because the scope of problems for which it is effective is not well-known, and users are forewarned that LSODPK may or may not be competitive with traditional methods on a given problem. LSODPK also includes an option for a user-supplied linear system solver to be used without Krylov iteration [http://www.nea.fr/abs/html/uscd1231.html].</rdfs:label>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -298,13 +296,13 @@ Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Phys
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Runge-Kutta method</rdfs:label>
+        >RK4</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >RK4</rdfs:label>
+        >Runge-Kutta method</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -321,9 +319,9 @@ Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kut
   <owl:Class rdf:about="#KISAO_0000039">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Approximate acceleration procedure of the Stochastic Simulation Algorithm [KISAO:0000029] that divides the time into subintervals and "leap" from one to another, firing all the reaction events in each sub-interval.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -333,21 +331,21 @@ Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kut
     >tau-leaping method</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000028">
-    <rdfs:subClassOf rdf:resource="#KISAO_0000042"/>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000001"/>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000042"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Attempt to overcome the problem of stiff systems by developing an ''approximate theory that allows one to stochastically advance the system in time by simulating the firings of only the slow reaction events''.
+Cao Y, Gillespie DT, Petzold LR. The slow-scale stochastic simulation algorithm. Journal of Chemical Physics, Vol. 122, No. 1. (1 January 2005).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >pubmed:15638651</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Attempt to overcome the problem of stiff systems by developing an ''approximate theory that allows one to stochastically advance the system in time by simulating the firings of only the slow reaction events''.
-Cao Y, Gillespie DT, Petzold LR. The slow-scale stochastic simulation algorithm. Journal of Chemical Physics, Vol. 122, No. 1. (1 January 2005).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <oboInOwl:hasExactSynonym>
@@ -362,27 +360,27 @@ Cao Y, Gillespie DT, Petzold LR. The slow-scale stochastic simulation algorithm.
   <owl:Class rdf:ID="KISAO_0000057">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >In the Brownian diffusion Smoluchowski method,  "each molecule is treated as a point-like particle that diffuses freely in three-dimensional space. When a pair of reactive molecules collide, such as an enzyme and its substrate, a reaction occurs and the simulated reactants are replaced by products. [..] Analytic solutions are presented for some simulation parameters while others are calculated using look-up tables." Supported chemical processes include molecular diffusion, treatment of surfaces, zeroth-order-, unimolecular-, and bimolecular reactions.
+Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial resolution and single molecule detail. Phys Biol, volume 1 (3-4), pages 137-151 (December 2004).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >PMID:16204833</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >In the Brownian diffusion Smoluchowski method,  "each molecule is treated as a point-like particle that diffuses freely in three-dimensional space. When a pair of reactive molecules collide, such as an enzyme and its substrate, a reaction occurs and the simulated reactants are replaced by products. [..] Analytic solutions are presented for some simulation parameters while others are calculated using look-up tables." Supported chemical processes include molecular diffusion, treatment of surfaces, zeroth-order-, unimolecular-, and bimolecular reactions.
-Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial resolution and single molecule detail. Phys Biol, volume 1 (3-4), pages 137-151 (December 2004).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000056"/>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000037"/>
+      <owl:Class rdf:about="#KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000023"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:ID="KISAO_0000037"/>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000056"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >brownian diffusion Smoluchovski method</rdfs:label>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -397,13 +395,13 @@ Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial res
         >Partial differential equations are used to describe variations in concentrations over both, space and time.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000023"/>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000018"/>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KISAO_0000023"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >partial differential equation method</rdfs:label>
   </owl:Class>
@@ -432,35 +430,35 @@ Seager M, Balsdon S. LSODIS - A sparse implicit ODE solver. 10th World Congress 
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >explicit tau-leaping method with estimated-mid point technique</rdfs:label>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="KISAO_0000079"/>
+      <owl:Class rdf:about="#KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:ID="KISAO_0000079"/>
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section VI.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref rdf:nodeID="A4">
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:10.1063/1.1378322</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section VI.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000086">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >pub:14990450</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -471,13 +469,13 @@ Seager M, Balsdon S. LSODIS - A sparse implicit ODE solver. 10th World Congress 
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >RKF45</rdfs:label>
+        >Fehlberg method</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Fehlberg method</rdfs:label>
+        >RKF45</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -493,10 +491,10 @@ Gillespie DT. Approximate accelerated stochastic simulation of chemically reacti
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:about="#KISAO_0000001"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000001"/>
+      <owl:Class rdf:about="#KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >k-alpha leaping method</rdfs:label>
@@ -515,15 +513,15 @@ Gillespie DT. Approximate accelerated stochastic simulation of chemically reacti
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sub-volume stochastic reaction-diffusion method that using Green's function to link the bulk diffusion coefficient D in Fick's differential law to the corresponding transition rate probability for diffusion of a particle between finite volume elements. This generalized stochastic algorithm enables to numerically calculate the time evolution of a spatially inhomogeneous mixture of reaction-diffusion species in a finite volume. The time step is stochastic and is generated by a probability distribution determined by the intrinsic reaction kinetics and diffusion dynamics.
+Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion processes. J Comput Phys, Vol. 127 (1), pages 196-207 (1996).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:10.1006/jcph.1996.0168</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Sub-volume stochastic reaction-diffusion method that using Green's function to link the bulk diffusion coefficient D in Fick's differential law to the corresponding transition rate probability for diffusion of a particle between finite volume elements. This generalized stochastic algorithm enables to numerically calculate the time evolution of a spatially inhomogeneous mixture of reaction-diffusion species in a finite volume. The time step is stochastic and is generated by a probability distribution determined by the intrinsic reaction kinetics and diffusion dynamics.
-Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion processes. J Comput Phys, Vol. 127 (1), pages 196-207 (1996).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -532,9 +530,9 @@ Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion pro
     >algorithm using continuous variables</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Algorithm that allows to change the values of a system's variables by continuous (non-integral) amounts.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -549,17 +547,17 @@ Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion pro
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The weighted Stochastic Simulation Algorithm manipulates the probabilities measure of biochemical systems by sampling, in order to increase the fraction of simulation runs exhibiting rare events.   
+Kuwahara H, Mura I. (2008) An efficient and exact stochastic simulation method to analyze rare events in
+biochemical systems.
+J Chem Phys. 129(16):165101.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >NLN:24JAN2009</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >The weighted Stochastic Simulation Algorithm manipulates the probabilities measure of biochemical systems by sampling, in order to increase the fraction of simulation runs exhibiting rare events.   
-Kuwahara H, Mura I. (2008) An efficient and exact stochastic simulation method to analyze rare events in
-biochemical systems.
-J Chem Phys. 129(16):165101.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -570,15 +568,15 @@ J Chem Phys. 129(16):165101.</rdfs:label>
     <rdfs:subClassOf rdf:resource="#KISAO_0000083"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Modification of the original tau-selection strategy [KISAO:0000040], designed for explicit tau-leaping, is modified to apply to implicit tau-leaping, allowing for longer steps when the system is stiff. Further, an adaptive strategy is proposed that identifies stiffness and automatically chooses between the explicit and the (new) implicit tau-selection methods to achieve better efficiency.
+Cao Y, Gillespie DT, Petzold LR. Adaptive explicit-implicit tau-leaping method with automatic tau selection. The Journal of Chemical Physics, Vol. 126 (22) (2007).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:10.1063/1.2745299</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Modification of the original tau-selection strategy [KISAO:0000040], designed for explicit tau-leaping, is modified to apply to implicit tau-leaping, allowing for longer steps when the system is stiff. Further, an adaptive strategy is proposed that identifies stiffness and automatically chooses between the explicit and the (new) implicit tau-selection methods to achieve better efficiency.
-Cao Y, Gillespie DT, Petzold LR. Adaptive explicit-implicit tau-leaping method with automatic tau selection. The Journal of Chemical Physics, Vol. 126 (22) (2007).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -586,13 +584,13 @@ Cao Y, Gillespie DT, Petzold LR. Adaptive explicit-implicit tau-leaping method w
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Kaps-Rentrop method</rdfs:label>
+        >generalized fourth order runge-kutta method</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >generalized fourth order runge-kutta method</rdfs:label>
+        >Kaps-Rentrop method</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -601,17 +599,17 @@ Cao Y, Gillespie DT, Petzold LR. Adaptive explicit-implicit tau-leaping method w
     >The Rosenbrock method is for example used in E-Cell.</rdfs:comment>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition, pages 742-746 (1992).
-AND
-Rosenbrock HH. Some general implicit processes for the numerical solution of differential equations. The Computer Journal, pages 329-330 (1963).</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A2"/>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:0.1093/comjnl/5.4.329</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:nodeID="A2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition, pages 742-746 (1992).
+AND
+Rosenbrock HH. Some general implicit processes for the numerical solution of differential equations. The Computer Journal, pages 329-330 (1963).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -623,9 +621,9 @@ Rosenbrock HH. Some general implicit processes for the numerical solution of dif
     >optimized direct method</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Algorithm aimed to speed-up Gillespie's direct method.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -637,32 +635,32 @@ Rosenbrock HH. Some general implicit processes for the numerical solution of dif
     >sorting direct method</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >In order to overcome the problem of high complexity of the Stochastic Simulation Algorithm [KISAO:0000029] when simulating large systems, the sorting direct method ''maintains a loosely sorted order of the reactions as the simulation executes''.
-McCollum J M, Peterson G D, Cox C D, Simpson M L, Samatova N F. The sorting direct method for stochastic simulation of biochemical systems with varying reaction execution behavior. Computational Biology and Chemistry, Volume 30 (1), pages 39-49 (2006).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >doi:10.1016/j.compbiolchem.2005.10.007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >In order to overcome the problem of high complexity of the Stochastic Simulation Algorithm [KISAO:0000029] when simulating large systems, the sorting direct method ''maintains a loosely sorted order of the reactions as the simulation executes''.
+McCollum J M, Peterson G D, Cox C D, Simpson M L, Samatova N F. The sorting direct method for stochastic simulation of biochemical systems with varying reaction execution behavior. Computational Biology and Chemistry, Volume 30 (1), pages 39-49 (2006).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf rdf:resource="#KISAO_0000034"/>
   </owl:Class>
   <owl:Class rdf:about="#KISAO_0000096">
-    <rdfs:subClassOf rdf:resource="#KISAO_0000042"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000025"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000042"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gillespie-like algorithm that produces exact realisation of the vector of entity amounts at each time by choosing rigorously time and reaction at each iteration.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >NLN:14JUL2008</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Gillespie-like algorithm that produces exact realisation of the vector of entity amounts at each time by choosing rigorously time and reaction at each iteration.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -699,10 +697,10 @@ McCollum J M, Peterson G D, Cox C D, Simpson M L, Samatova N F. The sorting dire
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A0"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >As with the first reaction method [KISAO:0000015], a putative reaction time is calculated for each reaction, and the reaction with the shortest reaction time will be realized. However, the unused calculated reaction times are not wasted. The set of reactions is organized in a priority queue to allow for the efficient search for the fastest reaction. In addition, by using a so-called dependency graph only those reaction times are recalculated in each step, that are dependent on the reaction, which has been realized.
 Gibson MA, Bruck J. Efficient Exact Stochastic Simulation of Chemical Systems with Many Species and Many Channels. Journal of Physical Chemistry A, Vol. 104, pages 1876-1889 (2000).</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A0"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -718,15 +716,15 @@ Gibson MA, Bruck J. Efficient Exact Stochastic Simulation of Chemical Systems wi
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
         <oboInOwl:hasDbXref>
-          <oboInOwl:DbXref rdf:nodeID="A5">
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >doi:1218052.1218054</rdfs:label>
-          </oboInOwl:DbXref>
-        </oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:16NOV2007</rdfs:label>
+          </oboInOwl:DbXref>
+        </oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>
+          <oboInOwl:DbXref rdf:nodeID="A5">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >doi:1218052.1218054</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -755,15 +753,15 @@ Radhakrishnan K, Hindmarsh AC. Description and Use of LSODE, the Livermore Solve
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >LSODAR, written jointly with L. R. Petzold, is a variant of LSODA with a rootfinding capability added. Thus it solves problems dy/dt = f with dense or banded Jacobian and automatic method selection, and at the same time, it finds the roots of any of a set of given functions of the form g(t,y). This is often useful for finding stop conditions, or for finding points at which a switch is to be made in the function f. The LSODAR source is commented extensively to facilitate modification. Both a single-precision version and a double-precision version are available. [http://www.nea.fr/abs/html/uscd1228.html].
-Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:27OCT2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >LSODAR, written jointly with L. R. Petzold, is a variant of LSODA with a rootfinding capability added. Thus it solves problems dy/dt = f with dense or banded Jacobian and automatic method selection, and at the same time, it finds the roots of any of a set of given functions of the form g(t,y). This is often useful for finding stop conditions, or for finding points at which a switch is to be made in the function f. The LSODAR source is commented extensively to facilitate modification. Both a single-precision version and a double-precision version are available. [http://www.nea.fr/abs/html/uscd1228.html].
+Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -771,22 +769,22 @@ Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equ
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >poisson tau-leaping</rdfs:label>
+        >explicit tau-leaping</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >explicit tau-leaping</rdfs:label>
+        >poisson tau-leaping</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >explicit tau-leaping method with basic preleap check</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A4"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section V.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A4"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -807,10 +805,10 @@ Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equ
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A5"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >LSODI solves systems given in linearly implicit form, including differential-algebraic systems.
 Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differnetial equation solvers. SIGNUM Newsletter, Volume 15 (4), pages 10-11 (1980).</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A5"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -826,16 +824,16 @@ Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differnetial equat
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000037"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000036"/>
+      <owl:Class rdf:about="#KISAO_0000016"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000026"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:about="#KISAO_0000036"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KISAO_0000037"/>
     </rdfs:subClassOf>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
@@ -856,9 +854,9 @@ Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular
     >algorithm using fixed timesteps</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Algorithm that uses timesteps of constant length to update the state of a system during the whole simulation.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf>
@@ -874,7 +872,7 @@ Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >well-stirred</rdfs:label>
+        >parallel Code Value ODE solver</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
@@ -886,21 +884,21 @@ Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >parallel Code Value ODE solver</rdfs:label>
+        >well-stirred</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Byrne GD, Hindmarsh AC. PVODE, an ODE Solver for Parallel Computers. International Journal of High Performance Computing Applications, Vol. 13 (4), pages 354-365 (1999).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >DOI:&lt;new dbxref&gt;</rdfs:label>
             <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >10.1177/109434209901300405</rdfs:comment>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >DOI:&lt;new dbxref&gt;</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Byrne GD, Hindmarsh AC. PVODE, an ODE Solver for Parallel Computers. International Journal of High Performance Computing Applications, Vol. 13 (4), pages 354-365 (1999).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -914,14 +912,14 @@ Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular
     >kinetic simulation algorithm</rdfs:label>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Algorithm used to instantiate a simulation from a mathematical model, where the variable values evolve over time.</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:260508</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Algorithm used to instantiate a simulation from a mathematical model, where the variable values evolve over time.</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
   </owl:Class>
@@ -932,31 +930,31 @@ Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular
         >GMP</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000025"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000025"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Combination of the multiparticle method for diffusion (Chopard et al. , 1994) and the kinetic Monte Carlo Method [KISAO:0000029].
-Rodriguez VJ, Kaandorp JA, Dobrzynski M, Blom JG. Spatial stochastic modelling of the phosphoenolpyruvate-dependent phosphotransferase (PTS) pathway in Escherichia coli. Bioinformatics, Vol. 22 (15), pages 1895-1901 (2006).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >pubmed:16731694</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Combination of the multiparticle method for diffusion (Chopard et al. , 1994) and the kinetic Monte Carlo Method [KISAO:0000029].
+Rodriguez VJ, Kaandorp JA, Dobrzynski M, Blom JG. Spatial stochastic modelling of the phosphoenolpyruvate-dependent phosphotransferase (PTS) pathway in Escherichia coli. Bioinformatics, Vol. 22 (15), pages 1895-1901 (2006).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >particle-based spatial stochastic method</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000030">
-    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000018"/>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000026"/>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000018"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -965,10 +963,10 @@ Rodriguez VJ, Kaandorp JA, Dobrzynski M, Blom JG. Spatial stochastic modelling o
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A0"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >The Euler method is an explicit one-step method for the numerical integration of ODES with a given initial value. The calculation of the next integration step at time t+1 is based on the state of the system at time point t.
 Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition (1992).</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A0"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -977,8 +975,8 @@ Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge
   <owl:Class rdf:about="#KISAO_0000095">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >sub-volume stochastic reaction-diffusion algorithm</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000025"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000025"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -992,20 +990,19 @@ Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000026"/>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000036"/>
-    </rdfs:subClassOf>
-    <oboInOwl:hasExactSynonym>
-      <oboInOwl:Synonym>
+    <oboInOwl:hasDefinition>
+      <oboInOwl:Definition>
+        <oboInOwl:hasDbXref>
+          <oboInOwl:DbXref>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >doi:10.1016/0021-9991(75)90060-1</rdfs:label>
+          </oboInOwl:DbXref>
+        </oboInOwl:hasDbXref>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >n-fold way</rdfs:label>
-      </oboInOwl:Synonym>
-    </oboInOwl:hasExactSynonym>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Bortz-Kalos-Liebowitz method</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000041"/>
-    </rdfs:subClassOf>
+        >The Bortz-Kalos-Liebowitz (or: kinetic Monte-Carlo-) method is a stochastic method for the simulation of time evolution of processes using (pseudo-)random numbers.
+Bortz AB, Kalos MH, Lebowitz JL. A new algorithm for Monte Carlo simulation of Ising spin systems. Journal of Computational Physics, Vol. 17 (1), pages 10-18 (1975).</rdfs:label>
+      </oboInOwl:Definition>
+    </oboInOwl:hasDefinition>
     <oboInOwl:hasNarrowSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1013,7 +1010,12 @@ Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge
       </oboInOwl:Synonym>
     </oboInOwl:hasNarrowSynonym>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#KISAO_0000016"/>
+      <owl:Class rdf:about="#KISAO_0000036"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bortz-Kalos-Liebowitz method</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KISAO_0000041"/>
     </rdfs:subClassOf>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
@@ -1033,19 +1035,15 @@ Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge
         >kinetic monte carlo method</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
-    <oboInOwl:hasDefinition>
-      <oboInOwl:Definition>
+    <oboInOwl:hasExactSynonym>
+      <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >The Bortz-Kalos-Liebowitz (or: kinetic Monte-Carlo-) method is a stochastic method for the simulation of time evolution of processes using (pseudo-)random numbers.
-Bortz AB, Kalos MH, Lebowitz JL. A new algorithm for Monte Carlo simulation of Ising spin systems. Journal of Computational Physics, Vol. 17 (1), pages 10-18 (1975).</rdfs:label>
-        <oboInOwl:hasDbXref>
-          <oboInOwl:DbXref>
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >doi:10.1016/0021-9991(75)90060-1</rdfs:label>
-          </oboInOwl:DbXref>
-        </oboInOwl:hasDbXref>
-      </oboInOwl:Definition>
-    </oboInOwl:hasDefinition>
+        >n-fold way</rdfs:label>
+      </oboInOwl:Synonym>
+    </oboInOwl:hasExactSynonym>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KISAO_0000016"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000022">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1067,13 +1065,13 @@ Elf J, Ehrenberg M. Spontaneous separation of bi-stable biochemical systems into
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >NSM</rdfs:label>
+        >Elf algorithm</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
     <oboInOwl:hasExactSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Elf algorithm</rdfs:label>
+        >NSM</rdfs:label>
       </oboInOwl:Synonym>
     </oboInOwl:hasExactSynonym>
   </owl:Class>
@@ -1081,15 +1079,15 @@ Elf J, Ehrenberg M. Spontaneous separation of bi-stable biochemical systems into
     <rdfs:subClassOf rdf:resource="#KISAO_0000083"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Contrary to the (explicit) tau-leaping [KISAO:0000040], the implicit tau-leaping allows for much larger time-steps when simulating stiff systems.
+Rathinam M, Petzold L R, Cao Y, Gillespie D T. Stiffness in stochastic chemically reacting systems: The implicit tau-leaping method. The Journal of Chemical Physics, Volume 119 (24), pages 12784-12794 (2003).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:12OCT2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Contrary to the (explicit) tau-leaping [KISAO:0000040], the implicit tau-leaping allows for much larger time-steps when simulating stiff systems.
-Rathinam M, Petzold L R, Cao Y, Gillespie D T. Stiffness in stochastic chemically reacting systems: The implicit tau-leaping method. The Journal of Chemical Physics, Volume 119 (24), pages 12784-12794 (2003).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1140,9 +1138,9 @@ Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equ
   <owl:Class rdf:about="#KISAO_0000016">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Algorithm that allows to change the values of a system's variables by discrete (integral) amounts.</rdfs:label>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:subClassOf rdf:resource="#KISAO_0000000"/>
@@ -1165,12 +1163,12 @@ Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equ
   <owl:Class rdf:ID="KISAO_0000021">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >StochSim nearest-neighbour algorithm</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000016"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#KISAO_0000036"/>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000016"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >The nearest-neighbor algorithm is for example used in Stochsim 1.2 and more recent versions.</rdfs:comment>
     <oboInOwl:hasDefinition>
@@ -1201,9 +1199,9 @@ Le Novere N, Shimizu TS. STOCHSIM: modelling of stochastic biomolecular processe
 Tatiana , Burrage K. Binomial tau-leap spatial stochastic simulation algorithm for applications in chemical kinetics. The Journal of Chemical Physics, Vol. 127 (10) (2007).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000039"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000002"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000039"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >binomial tau-leap spatial stochastic simulation algorithm</rdfs:label>
   </owl:Class>
@@ -1211,9 +1209,9 @@ Tatiana , Burrage K. Binomial tau-leap spatial stochastic simulation algorithm f
     <rdfs:subClassOf rdf:resource="#KISAO_0000000"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
-        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Algorithm that simulates the temporal evolution of a system using probabilistic rules, that from a precise initial state may provide different ending state.</rdfs:label>
+        <oboInOwl:hasDbXref rdf:nodeID="A1"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1245,10 +1243,10 @@ Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poiss
   <owl:Class rdf:about="#KISAO_0000094">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Livermore solver</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000041"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000026"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000018"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000026"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000041"/>
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1261,9 +1259,9 @@ Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poiss
   <owl:Class rdf:about="#KISAO_0000064">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Runge-Kutta based method</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000026"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
     <oboInOwl:hasRelatedSynonym>
       <oboInOwl:Synonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1295,103 +1293,103 @@ Cao Y, Petzold L. Trapezoidal tau-leaping formula for the stochastic simulation 
   <owl:Class rdf:ID="KISAO_0000031">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The Euler backward method is an implicit one-step method for the numerical integration of ODES with a given initial value. The next state of a system is calculated by solving an equation that considers both, the current state of the system and the later one.
+Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:label>
         <oboInOwl:hasDbXref>
           <oboInOwl:DbXref>
             <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >dk:02NOV2007</rdfs:label>
           </oboInOwl:DbXref>
         </oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >The Euler backward method is an implicit one-step method for the numerical integration of ODES with a given initial value. The next state of a system is calculated by solving an equation that considers both, the current state of the system and the later one.
-Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:label>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000026"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000018"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000026"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Euler backward method</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="KISAO_0000068">
     <oboInOwl:hasDefinition>
       <oboInOwl:Definition>
+        <oboInOwl:hasDbXref rdf:nodeID="A3"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >A cellular automaton is a discrete model of a regular grid of cells with a finite number of dimensions. Each cell has a finite number of defined states. The automaton changes its state in a discrete manner, meaning that the state of a cell at time t is determined by a function of the states of its neighbors at time t - 1. These neighbors are a selection of cells relative to the specified cell. Famous examples for deterministic cellular automata are Conway's game of life or Wolfram's elementary cellular automata.
 Burks, Arthur W (Editor). Essays on Cellular Automata. University of Illinois Press (1970).</rdfs:label>
-        <oboInOwl:hasDbXref rdf:nodeID="A3"/>
       </oboInOwl:Definition>
     </oboInOwl:hasDefinition>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >deterministic cellular automata update algorithm</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
-    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
     <rdfs:subClassOf rdf:resource="#KISAO_0000016"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000023"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000035"/>
+    <rdfs:subClassOf rdf:resource="#KISAO_0000037"/>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="part_of"/>
   <owl:ObjectProperty rdf:about="http://www.biomodels.net/kisao//KISAO#part_of"/>
   <owl:ObjectProperty rdf:about="http://www.bioontologies.org/2006/02/obo#ObsoleteProperty"/>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasRelatedSynonym">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasOBONamespace">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasIdMapping">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefinition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDbXref">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasIdSpace">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasSynonym">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#inSubset">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefaultRelationshipIdPrefix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasNarrowSynonym">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#savedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefaultNamespace">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#replacedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasAlternativeId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasBroadSynonym">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#consider">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasVersion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasExactSynonym">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
-  <owl:AnnotationProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasSynonymType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:AnnotationProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasIdMapping">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#consider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasExactSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasAlternativeId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasRelatedSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDbXref">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#inSubset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasOBONamespace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefaultNamespace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#replacedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasSynonymType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasNarrowSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasIdSpace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefaultRelationshipIdPrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#savedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasBroadSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.bioontologies.org/2006/02/obo#hasDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.4, Build 533)  http://protege.stanford.edu -->
