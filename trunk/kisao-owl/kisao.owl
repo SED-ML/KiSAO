@@ -123,8 +123,8 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000114">
         <rdfs:label>step size fraction</rdfs:label>
+        <rdfs:comment>The step size fraction is a floating-point number specifying the step size, as a fraction of the total time range for the simulation. The &#39;step size fraction&#39; is only enabled for ODE-based deterministic simulators. If you are using a simulator with a fixed step-size, the simulator will use your step size as the fixed step size for the entire time interval. If you are using a simulator with an adaptive step-size, the simulator will use this step size for the initial time-step; it will change the step size for time steps after the initial time step, depending on the error control parameters. For fixed step-size simulators, if you specify a step size fraction that is too large, the simulator may exceed its error threshold, in which case the simulation will halt with an exception (and it will suggest that you re-run the simulation with a large minimum number of time steps). If you are using a stochastic Tau-Leap simulator, the step-size fraction specifies the maximum the ratio of the reaction time scale to the &#39;&#39;leap&#39;&#39; time scale. (If the &#39;&#39;leap&#39;&#39; time scale gets too small, the simulator will revert to stepping with the Gibson-Bruck algorithm) [Dizzy Userguide].</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>The step size fraction is a floating-point number specifying the step size, as a fraction of the total time range for the simulation. The &#39;step size fraction&#39; is only enabled for ODE-based deterministic simulators. If you are using a simulator with a fixed step-size, the simulator will use your step size as the fixed step size for the entire time interval. If you are using a simulator with an adaptive step-size, the simulator will use this step size for the initial time-step; it will change the step size for time steps after the initial time step, depending on the error control parameters. For fixed step-size simulators, if you specify a step size fraction that is too large, the simulator may exceed its error threshold, in which case the simulation will halt with an exception (and it will suggest that you re-run the simulation with a large minimum number of time steps). If you are using a stochastic Tau-Leap simulator, the step-size fraction specifies the maximum the ratio of the reaction time scale to the &quot;leap&quot; time scale. (If the &quot;leap&quot; time scale gets too small, the simulator will revert to stepping with the Gibson-Bruck algorithm) [Dizzy Userguide].</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000244"/>
         <rdfs:range rdf:resource="&xsd;double"/>
         <rdfs:domain>
@@ -142,6 +142,8 @@
     <DatatypeProperty rdf:about="&kisao;KISAO_0000201">
         <rdfs:label>kinetic simulation algorithm parameter</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
+        <rdfs:comment>Parameter that can be used in the simulation experiment settings.</rdfs:comment>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000000"/>
     </DatatypeProperty>
     
@@ -154,7 +156,8 @@
         <rdfs:comment>This parameter is a double value specifying the lower limit for particle numbers. Species with a particle number below this value are considered as having a low particle number. The &#39;particle number lower limit&#39; cannot be higher than the &#39;particle number upper limit&#39;. The default value is 800 [COPASI Userguide].</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <propertyDisjointWith rdf:resource="&kisao;KISAO_0000204"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000251"/>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000231"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
     
@@ -166,7 +169,8 @@
         <rdfs:label>particle number upper limit</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:comment>This parameter is a double value specifying the upper limit for particle numbers. Species with a particle number above this value are considered as having a high particle number. The &#39;particle number upper limit&#39; cannot be lower than the &#39;particle number lower limit&#39;. The default value is 1000 [COPASI Userguide].</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000251"/>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000231"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
     
@@ -248,7 +252,7 @@
         <rdfs:comment>This parameter is a positive integer value specifying the maximal order the non-stiff Adams integration method shall attempt before switching to the stiff BDF method. The default and maximal order is 12 [COPASI Userguide].</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000088"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000250"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000243"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
     <Axiom>
@@ -268,7 +272,7 @@
         <rdfs:comment>This parameter is a positive integer value specifying the maximal order the stiff BDF integration method shall attempt before switching to smaller internal step sizes. The default and maximal order is 5 [COPASI Userguide].</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000088"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000250"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000243"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
     <Axiom>
@@ -296,13 +300,20 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000228">
         <rdfs:label>tau-leaping epsilon</rdfs:label>
-        <rdfs:comment>The leap condition is chosen such that the expected change in the propensity function aj(x) is bounded by εa0 where ε is an error control parameter between 0 and 1. This parameter is the basic error control mechanism for the Tau-Leaping algorithm. As ε decreases the leaps become shorter and the simulation is more accurate.</rdfs:comment>
+        <rdfs:comment>The leap condition is chosen such that the expected change in the propensity function aj(x) is bounded by Epsilon * a0 where Epsilon is an error control parameter between 0 and 1. This parameter is the basic error control mechanism for the Tau-Leaping algorithm. As Epsilon decreases the leaps become shorter and the simulation is more accurate.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:seeAlso>urn:miriam:doi:10.1063/1.1378322</rdfs:seeAlso>
         <oboInOwl:Synonym>tolerance</oboInOwl:Synonym>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000039"/>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000242"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
+    <Axiom>
+        <annotatedTarget>urn:miriam:doi:10.1063/1.1378322</annotatedTarget>
+        <rdfs:comment>Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section V.</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000228"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
     
 
 
@@ -311,7 +322,7 @@
     <DatatypeProperty rdf:about="&kisao;KISAO_0000230">
         <rdfs:label>minimum reactions per leap</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>The tau-leaping driver adaptively switches to the SSA Direct Method when the number of reactions in a single tau‐leaping leap step is less than the threshold. By default, this value is 10 [StochKit Userguide]. </rdfs:comment>
+        <rdfs:comment>The tau-leaping driver adaptively switches to the SSA Direct Method when the number of reactions in a single tau-leaping leap step is less than the threshold. By default, this value is 10 [StochKit Userguide].</rdfs:comment>
         <oboInOwl:Synonym>threshold</oboInOwl:Synonym>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000039"/>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000243"/>
@@ -324,6 +335,8 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000242">
         <rdfs:label>error control parameter</rdfs:label>
+        <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
+        <rdfs:comment>Parameter controlling method accuracy.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000201"/>
     </DatatypeProperty>
@@ -334,7 +347,9 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000243">
         <rdfs:label>method switching control parameter</rdfs:label>
+        <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Parameters describing threshold conditions for algorithms that switch between diffenet methods.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000201"/>
     </DatatypeProperty>
     
@@ -344,7 +359,9 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000244">
         <rdfs:label>granularity control parameter</rdfs:label>
+        <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Parameter controlling granularity.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000201"/>
     </DatatypeProperty>
     
@@ -368,39 +385,18 @@
     <DatatypeProperty rdf:about="&kisao;KISAO_0000249">
         <rdfs:label>critical firing threshold</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>The Nonnegative Poisson tau-leaping algorithm is based on the fact that negative populations typically arise from multiple firings of reactions that are only a few firings away from consuming all the molecules of one of their reactants. To focus on those reaction channels, the modified tau-leaping algorithm introduces a second control parameter nc, a positive integer that is usually set somewhere between 5 and 20. Any reaction channel with a positive propensity function that is currently within nc firings of exhausting one of its reactants is then classified as a critical reaction. The modified algorithm chooses τ in such a way that no more than one firing of all the critical reactions can occur during the leap.</rdfs:comment>
+        <rdfs:comment>The Nonnegative Poisson tau-leaping algorithm is based on the fact that negative populations typically arise from multiple firings of reactions that are only a few firings away from consuming all the molecules of one of their reactants. To focus on those reaction channels, the modified tau-leaping algorithm introduces a second control parameter nc, a positive integer that is usually set somewhere between 5 and 20. Any reaction channel with a positive propensity function that is currently within nc firings of exhausting one of its reactants is then classified as a critical reaction. The modified algorithm chooses tau in such a way that no more than one firing of all the critical reactions can occur during the leap.</rdfs:comment>
         <oboInOwl:Synonym>nonnegative tau-leaping second control parameter</oboInOwl:Synonym>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000084"/>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
     <Axiom>
-        <annotatedTarget>nonnegative tau-leaping second control parameter</annotatedTarget>
         <oboInOwl:SynonymType>EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>nonnegative tau-leaping second control parameter</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000249"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000250 -->
-
-    <DatatypeProperty rdf:about="&kisao;KISAO_0000250">
-        <rdfs:label>maximum order parameter</rdfs:label>
-        <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000243"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000251 -->
-
-    <DatatypeProperty rdf:about="&kisao;KISAO_0000251">
-        <rdfs:label>particle number limit</rdfs:label>
-        <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:domain rdf:resource="&kisao;KISAO_0000231"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
-    </DatatypeProperty>
     
 
 
@@ -409,6 +405,7 @@
     <DatatypeProperty rdf:about="&kisao;KISAO_0000252">
         <rdfs:label>partitioning control parameter</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <oboInOwl:CreatedBy>Parameter describing partitioning of the system.</oboInOwl:CreatedBy>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000201"/>
     </DatatypeProperty>
     
@@ -418,8 +415,8 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000253">
         <rdfs:label>coarse-graining factor</rdfs:label>
-        <rdfs:comment>The time in each Monte-Carlo iteration is updated with the time increments τ = f /(a1 + a2 + ... + aM). Here 1/(a1 + a2 + ... + aM) is the averaged microscopic increment of the SSA and f is is a coarse-graining factor, controling the speed-up.</rdfs:comment>
         <rdfs:seeAlso>urn:miriam:pubmed:15638577</rdfs:seeAlso>
+        <rdfs:comment>The time in each Monte-Carlo iteration is updated with the time increments tau=f/(a1+a2+...+aM). Here 1/(a1+a2+...+aM) is the averaged microscopic increment of the SSA and f is a coarse-graining factor, controlling the speed-up.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000074"/>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000244"/>
@@ -438,8 +435,8 @@
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000254">
         <rdfs:label>Brownian diffusion Smoluchowski method accuracy</rdfs:label>
-        <rdfs:comment>Accuracy code, from 0 to 10. The accuracy statement sets which neighboring boxes are checked for potential bi-molecular reactions. Consider the reaction A + B → C and suppose that A and B are within a binding radius of each other. This reaction will always be performed if A and B are in the same virtual box. If accuracy is set to at least 3, then it will also occur if A and B are in nearest-neighbor virtual boxes. If it is at least 7, then the reaction will happen if they are in nearest-neighbor boxes that are separated by periodic boundary conditions. And if it is 9 or 10, then all edge and corner boxes are checked for reactions, which means that no potential reactions are overlooked. Overall, increasing accuracy numbers lead to improved quantitative bimolecular reaction rates, along with substantially slower simulations. If qualitative simulations are wanted, then lower accuracy values are likely to be preferable. [Smoldyn userguide]</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Accuracy code, from 0 to 10. The accuracy statement sets which neighboring boxes are checked for potential bi-molecular reactions. Consider the reaction A + B -&gt; C and suppose that A and B are within a binding radius of each other. This reaction will always be performed if A and B are in the same virtual box. If accuracy is set to at least 3, then it will also occur if A and B are in nearest-neighbor virtual boxes. If it is at least 7, then the reaction will happen if they are in nearest-neighbor boxes that are separated by periodic boundary conditions. And if it is 9 or 10, then all edge and corner boxes are checked for reactions, which means that no potential reactions are overlooked. Overall, increasing accuracy numbers lead to improved quantitative bimolecular reaction rates, along with substantially slower simulations. If qualitative simulations are wanted, then lower accuracy values are likely to be preferable [Smoldyn userguide].</rdfs:comment>
         <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
         <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000242"/>
         <rdfs:range rdf:resource="&xsd;int"/>
@@ -450,10 +447,11 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000255 -->
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000255">
-        <rdfs:label>molecules per box</rdfs:label>
-        <rdfs:comment>Target molecules per virtual box. Sets the box sizes so that the average number of molecules per box, at simulation initiation, is close to the requested number. Good numbers tend to be between 3 and 6, although more or fewer may be appropriate, depending on how the number of molecules in the simulation is likely to change over time (the default box size is computed for an average of 4 molecules per box). [Smoldyn userguide]</rdfs:comment>
+        <rdfs:label>Brownian diffusion molecules per virtual box</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000259"/>
+        <rdfs:comment>Target molecules per virtual box. Sets the box sizes so that the average number of molecules per box, at simulation initiation, is close to the requested number. Good numbers tend to be between 3 and 6, although more or fewer may be appropriate, depending on how the number of molecules in the simulation is likely to change over time (the default box size is computed for an average of 4 molecules per box) [Smoldyn userguide].</rdfs:comment>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
     
@@ -462,10 +460,11 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000256 -->
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000256">
-        <rdfs:label>box size</rdfs:label>
+        <rdfs:label>Brownian diffusion virtual box size</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>Target size of virtual boxes. The box size statement requests the length of one side of a box, which should be in the same units that are used for the boundary statements. [Smoldyn userguide]</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000259"/>
+        <rdfs:comment>Target size of virtual boxes. The box size statement requests the length of one side of a box, which should be in the same units that are used for the boundary statements [Smoldyn userguide].</rdfs:comment>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;float"/>
     </DatatypeProperty>
     
@@ -474,10 +473,11 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000257 -->
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000257">
-        <rdfs:label>surface-bound epsilon</rdfs:label>
+        <rdfs:label>Brownian diffusion surface-bound epsilon</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>Molecules that are bound to a surface are given locations that are extremely close to that surface. However, this position does not need to be exactly at the surface, and in fact it usually cannot be exactly at the surface due to round-off error. The tolerance for how far a surface-bound molecule is allowed to be away from the surface can be set with the epsilon statement.[Smoldyn userguide]</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000260"/>
+        <rdfs:comment>Molecules that are bound to a surface are given locations that are extremely close to that surface. However, this position does not need to be exactly at the surface, and in fact it usually cannot be exactly at the surface due to round-off error. The tolerance for how far a surface-bound molecule is allowed to be away from the surface can be set with the epsilon statement [Smoldyn userguide].</rdfs:comment>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;float"/>
     </DatatypeProperty>
     
@@ -486,33 +486,12 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000258 -->
 
     <DatatypeProperty rdf:about="&kisao;KISAO_0000258">
-        <rdfs:label>neighbor distance</rdfs:label>
+        <rdfs:label>Brownian diffusion neighbour distance</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>When a surface-bound molecule diffuses off of one surface panel, it can sometimes diffuse onto the neighboring surface tile. It does so only if the neighboring panel is declared to be a neighbor, as described above in the surfaces section, and also the neighbor is within a distance that is set with the neighbor_dist statement. As a default, this distance is set to 3 times the longest surface-bound molecule rms step length. [Smoldyn userguide]</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000260"/>
+        <rdfs:comment>When a surface-bound molecule diffuses off of one surface panel, it can sometimes diffuse onto the neighbouring surface tile. It does so only if the neighbouring panel is declared to be a neighbour and also the neighbour is within a distance that is set with the neighbour distance statement. As a default, this distance is set to 3 times the longest surface-bound molecule rms step length [Smoldyn userguide].</rdfs:comment>
+        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
+        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
         <rdfs:range rdf:resource="&xsd;float"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000259 -->
-
-    <DatatypeProperty rdf:about="&kisao;KISAO_0000259">
-        <rdfs:label>Brownian diffusion Smoluchowski method virtual box parameter</rdfs:label>
-        <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000260 -->
-
-    <DatatypeProperty rdf:about="&kisao;KISAO_0000260">
-        <rdfs:label>Brownian diffusion Smoluchowski method surface-bound parameter</rdfs:label>
-        <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:domain rdf:resource="&kisao;KISAO_0000057"/>
-        <rdfs:subPropertyOf rdf:resource="&kisao;KISAO_0000252"/>
     </DatatypeProperty>
     
 
@@ -595,8 +574,8 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:pubmed:19045316</annotatedTarget>
         <rdfs:comment>Kuwahara H, Mura I. (2008) An efficient and exact stochastic simulation method to analyze rare events in biochemical systems. J Chem Phys. 129(16):165101.</rdfs:comment>
+        <annotatedTarget>urn:miriam:pubmed:19045316</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000003"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -611,12 +590,12 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:seeAlso>urn:miriam:doi:10.1016/0021-9991(76)90041-3</rdfs:seeAlso>
         <oboInOwl:CreationDate>09OCT2007</oboInOwl:CreationDate>
-        <rdfs:comment>Stochastic simulation algorithm using the next-reaction density function, giving the probaility that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm calculates a tentative reaction time for each reaction and then select the smallest.</rdfs:comment>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
+        <rdfs:comment>Stochastic simulation algorithm using the next-reaction density function, giving the probability that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm calculates a tentative reaction time for each reaction and then select the smallest.</rdfs:comment>
     </Class>
     <Axiom>
-        <rdfs:comment>Gillespie DT. A General Method for Numerically Simulating the Stochastic Time Evolution of Coupled Chemical Reactions. Journal of Computational Physics, Volume 2 , pages 403-434 (1976).</rdfs:comment>
         <annotatedTarget>urn:miriam:doi:10.1016/0021-9991(76)90041-3</annotatedTarget>
+        <rdfs:comment>Gillespie DT. A General Method for Numerically Simulating the Stochastic Time Evolution of Coupled Chemical Reactions. Journal of Computational Physics, Volume 2 , pages 403-434 (1976).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000015"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -660,16 +639,6 @@
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Class>
-                <complementOf>
-                    <Restriction>
-                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
-                    </Restriction>
-                </complementOf>
-            </Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
@@ -681,23 +650,33 @@
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
             </Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>The agent-based simulation method instantiates each molecule as an individual software object. The interactions between those objects are determined by interaction probabilities according to experimental data. The probability is depended on the state the molecule is in at that specific time (Molecules have multiple-state.). Additionally, &#39;&#39;pseudo-molecules&#39;&#39; are introduced to the system in order to simulate unimolecular reactions. For simulation, continuous time is broken down into disrete, independent &#39;&#39;slices&#39;&#39;. During each time slice one molecule is selected randomly, a second molecule or pseudo-molecule is selected afterwards (leading to either a unimolecular or a bimolecular reaction). The reaction will only take place if a produced random number exceeds the reaction probability calculated beforehand. In that case, the system is updated after that reaction.</rdfs:comment>
+        <rdfs:subClassOf>
+            <Class>
+                <complementOf>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                    </Restriction>
+                </complementOf>
+            </Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>The agent-based simulation method instantiates each molecule as an individual software object. The interactions between those objects are determined by interaction probabilities according to experimental data. The probability is depended on the state the molecule is in at that specific time (molecules have multiple-state). Additionally, &#39;&#39;pseudo-molecules&#39;&#39; are introduced to the system in order to simulate unimolecular reactions. For simulation, continuous time is broken down into disrete, independent &#39;&#39;slices&#39;&#39;. During each time slice one molecule is selected randomly, a second molecule or pseudo-molecule is selected afterwards (leading to either a unimolecular or a bimolecular reaction). The reaction will only take place if a produced random number exceeds the reaction probability calculated beforehand. In that case, the system is updated after that reaction.</rdfs:comment>
         <rdfs:seeAlso>urn:miriam:pubmed:9628844</rdfs:seeAlso>
         <oboInOwl:Comment>The agent-based simulation method is, for example, used in StochSim.</oboInOwl:Comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <oboInOwl:Synonym>Morton-Firth</oboInOwl:Synonym>
     </Class>
     <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>Morton-Firth</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000017"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
         <rdfs:comment>Morton-Firth, C.J, Bray, D. Predicting temporal fluctuations in an intracellular signalling pathway. Journal of Theoretical Biology, volume 192, pages 117-128 (1998).</rdfs:comment>
         <annotatedTarget>urn:miriam:pubmed:9628844</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000017"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>Morton-Firth</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000017"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     
 
@@ -745,6 +724,12 @@
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -754,12 +739,6 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
-            </Restriction>
-        </rdfs:subClassOf>
         <oboInOwl:Synonym rdf:datatype="&xsd;string">code value ordinary differential equation solver</oboInOwl:Synonym>
         <oboInOwl:CreationDate>30OCT2007</oboInOwl:CreationDate>
         <rdfs:comment>The CVODE is a package written in C that solves initial value problems for ODEs. It is capable for stiff and non-stiff systems and uses two different linear multi-step methods, namely the Adam-Moulton method and the Backward differentiation formula (BNF).</rdfs:comment>
@@ -768,16 +747,16 @@
         <rdfs:seeAlso>citeulike:1832863</rdfs:seeAlso>
     </Class>
     <Axiom>
-        <rdfs:comment>Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Physics, Vol. 10 (2), pages 138-143 (1996).</rdfs:comment>
-        <annotatedTarget>citeulike:1832863</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000019"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget rdf:datatype="&xsd;string">code value ordinary differential equation solver</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000019"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <rdfs:comment>Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Physics, Vol. 10 (2), pages 138-143 (1996).</rdfs:comment>
+        <annotatedTarget>citeulike:1832863</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000019"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -793,8 +772,8 @@
         <rdfs:seeAlso>urn:miriam:doi:10.1177/109434209901300405</rdfs:seeAlso>
     </Class>
     <Axiom>
-        <rdfs:comment>Byrne GD, Hindmarsh AC. PVODE, an ODE Solver for Parallel Computers. International Journal of High Performance Computing Applications, Vol. 13 (4), pages 354-365 (1999).</rdfs:comment>
         <annotatedTarget>urn:miriam:doi:10.1177/109434209901300405</annotatedTarget>
+        <rdfs:comment>Byrne GD, Hindmarsh AC. PVODE, an ODE Solver for Parallel Computers. International Journal of High Performance Computing Applications, Vol. 13 (4), pages 354-365 (1999).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000020"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -844,6 +823,12 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>NSM</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000022"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
         <annotatedTarget>urn:miriam:doi:10.1049/sb:20045021</annotatedTarget>
         <rdfs:comment>Elf J, Ehrenberg M. Spontaneous separation of bi-stable biochemical systems into spatial domains of opposite phases. Systems Biology, IEE Proceedings, volume 1 (2), pages 230-236 (2004).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000022"/>
@@ -852,12 +837,6 @@
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>Elf algorithm</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000022"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>NSM</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000022"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -897,13 +876,13 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -940,7 +919,7 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -952,7 +931,7 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
             </Restriction>
         </rdfs:subClassOf>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -1027,6 +1006,12 @@
         <rdfs:label rdf:datatype="&xsd;string">slow-scale stochastic simulation algorithm</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000241"/>
         <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000237"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -1036,21 +1021,15 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000237"/>
-            </Restriction>
-        </rdfs:subClassOf>
         <rdfs:seeAlso>urn:miriam:pubmed:15638651</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>Attempt to overcome the problem of stiff systems by developing an &quot;approximate theory that allows one to stochastically advance the system in time by simulating the firings of only the slow reaction events&quot;.</rdfs:comment>
+        <rdfs:comment>Attempt to overcome the problem of stiff systems by developing an &#39;&#39;approximate theory that allows one to stochastically advance the system in time by simulating the firings of only the slow reaction events&#39;&#39;.</rdfs:comment>
         <oboInOwl:Synonym>ssSSA</oboInOwl:Synonym>
         <oboInOwl:Synonym>slow-scale stochastic SSA</oboInOwl:Synonym>
     </Class>
     <Axiom>
-        <rdfs:comment>Cao Y, Gillespie DT, Petzold LR. The slow-scale stochastic simulation algorithm. Journal of Chemical Physics, Vol. 122, No. 1. (1 January 2005).</rdfs:comment>
         <annotatedTarget>urn:miriam:pubmed:15638651</annotatedTarget>
+        <rdfs:comment>Cao Y, Gillespie DT, Petzold LR. The slow-scale stochastic simulation algorithm. Journal of Chemical Physics, Vol. 122, No. 1. (1 January 2005).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000028"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1101,6 +1080,12 @@
     </Class>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>DM</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000029"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>SSA</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000029"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
@@ -1108,12 +1093,6 @@
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">RELATED</oboInOwl:SynonymType>
         <annotatedTarget>stochastic simulation algorithm</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000029"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>DM</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000029"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -1145,16 +1124,16 @@
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
     </Class>
     <Axiom>
-        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition (1992).</rdfs:comment>
-        <annotatedTarget>urn:miriam:isbn:052143064X</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000030"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>Euler method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000030"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:isbn:052143064X</annotatedTarget>
+        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition (1992).</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000030"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -1177,8 +1156,8 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     <Axiom>
-        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:comment>
         <annotatedTarget>urn:miriam:isbn:052143064X</annotatedTarget>
+        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000031"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1217,8 +1196,8 @@
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <annotatedTarget>urn:miriam:isbn:0-471-91046-5 </annotatedTarget>
         <rdfs:comment>Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kutta and General Linear Methods (1987). </rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:0-471-91046-5 </annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000032"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1247,20 +1226,20 @@
         <rdfs:comment>Some general implicit processes are given for the solution of simultaneous first-order differential equations. These processes, which use successive substitution, are implicit analogues of the (explicit) Runge-Kutta processes. They require the solution in each time step of one or more set of simultaneous linear equations, usually of a special and simple form. Processes of any required order can be devised, and they can be made to have a wide margin of stability when applied to a linear problem.</rdfs:comment>
     </Class>
     <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>Kaps-Rentrop method</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000033"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
         <annotatedTarget>urn:miriam:doi:10.1093/comjnl/5.4.329</annotatedTarget>
         <rdfs:comment>Rosenbrock HH. Some general implicit processes for the numerical solution of differential equations. The Computer Journal, pages 329-330 (1963).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000033"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition, pages 742-746 (1992).</rdfs:comment>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>Kaps-Rentrop method</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000033"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
         <annotatedTarget>urn:miriam:isbn:052143064X</annotatedTarget>
+        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes. Cambridge University Press, New York, 2nd edition, pages 742-746 (1992).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000033"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1279,12 +1258,6 @@
         <rdfs:label rdf:datatype="&xsd;string">optimized direct method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000241"/>
         <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -1293,6 +1266,12 @@
                     </Restriction>
                 </complementOf>
             </Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
+            </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
         <rdfs:comment>Algorithm aimed to speed-up Gillespie&#39;s direct method.</rdfs:comment>
@@ -1381,7 +1360,7 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000034"/>
         <rdfs:seeAlso>urn:miriam:doi:10.1016/j.compbiolchem.2005.10.007</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>In order to overcome the problem of high complexity of the Stochastic Simulation Algorithm [KISAO:0000029] when simulating large systems, the sorting direct method &quot;maintains a loosely sorted order of the reactions as the simulation executes.</rdfs:comment>
+        <rdfs:comment>In order to overcome the problem of high complexity of the Stochastic Simulation Algorithm [KISAO:0000029] when simulating large systems, the sorting direct method maintains a loosely sorted order of the reactions as the simulation executes.</rdfs:comment>
     </Class>
     <Axiom>
         <rdfs:comment>McCollum J M, Peterson G D, Cox C D, Simpson M L, Samatova N F. The sorting direct method for stochastic simulation of biochemical systems with varying reaction execution behavior. Computational Biology and Chemistry, Volume 30 (1), pages 39-49 (2006).</rdfs:comment>
@@ -1403,18 +1382,25 @@
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000237"/>
             </Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Approximate acceleration procedure of the Stochastic Simulation Algorithm [KISAO:0000029] that divides the time into subintervals and &quot;leaps&quot; from one to another, firing all the reaction events in each subinterval.</rdfs:comment>
+        <rdfs:seeAlso>urn:miriam:doi:10.1063/1.1378322</rdfs:seeAlso>
+        <rdfs:comment>Approximate acceleration procedure of the Stochastic Simulation Algorithm [KISAO:0000029] that divides the time into subintervals and &#39;&#39;leaps&#39;&#39; from one to another, firing all the reaction events in each subinterval.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
         <oboInOwl:CreationDate>08072008</oboInOwl:CreationDate>
     </Class>
+    <Axiom>
+        <rdfs:comment>Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section V.</rdfs:comment>
+        <annotatedTarget>urn:miriam:doi:10.1063/1.1378322</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000039"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
     
 
 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000040 -->
 
     <Class rdf:about="&kisao;KISAO_0000040">
-        <rdfs:label rdf:datatype="&xsd;dateTimeStamp">Poisson tau-leaping method</rdfs:label>
+        <rdfs:label>Poisson tau-leaping method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000039"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -1426,8 +1412,15 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <oboInOwl:Synonym>explicit tau-leaping</oboInOwl:Synonym>
         <rdfs:seeAlso>urn:miriam:doi:10.1063/1.1378322</rdfs:seeAlso>
+        <rdfs:comment>Explicit tau-leaping method with basic preleap check.</rdfs:comment>
         <oboInOwl:Synonym>poisson tau-leaping</oboInOwl:Synonym>
     </Class>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget rdf:datatype="&xsd;string">explicit tau-leaping method with basic preleap check</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000040"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>explicit tau-leaping</annotatedTarget>
@@ -1439,12 +1432,6 @@
         <rdfs:comment>Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section V.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000040"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget rdf:datatype="&xsd;string">explicit tau-leaping method with basic preleap check</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000040"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
@@ -1508,10 +1495,10 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000044 -->
 
     <Class rdf:about="&kisao;KISAO_0000044">
-        <rdfs:label rdf:datatype="&xsd;string">Gillespie based method for stiff systems</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Gillespie based method for stiff systems.</rdfs:comment>
     </Class>
     
 
@@ -1544,8 +1531,8 @@
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
     </Class>
     <Axiom>
-        <rdfs:comment>Rathinam M, Petzold L R, Cao Y, Gillespie D T. Stiffness in stochastic chemically reacting systems: The implicit tau-leaping method. The Journal of Chemical Physics, Volume 119 (24), pages 12784-12794 (2003).</rdfs:comment>
         <annotatedTarget>urn:miriam:doi:10.1063/1.1627296</annotatedTarget>
+        <rdfs:comment>Rathinam M, Petzold L R, Cao Y, Gillespie D T. Stiffness in stochastic chemically reacting systems: The implicit tau-leaping method. The Journal of Chemical Physics, Volume 119 (24), pages 12784-12794 (2003).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000045"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1580,8 +1567,8 @@
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
     </Class>
     <Axiom>
-        <rdfs:comment>Cao Y, Petzold L. Trapezoidal tau-leaping formula for the stochastic simulation of biochemical systems. Foundations of Systems Biology in Engineering (FOSBE), pages 149-152 (2005).</rdfs:comment>
         <annotatedTarget>citeulike:1755561</annotatedTarget>
+        <rdfs:comment>Cao Y, Petzold L. Trapezoidal tau-leaping formula for the stochastic simulation of biochemical systems. Foundations of Systems Biology in Engineering (FOSBE), pages 149-152 (2005).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000046"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1594,6 +1581,12 @@
         <rdfs:label rdf:datatype="&xsd;string">adaptive explicit-implicit tau-leaping method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000039"/>
         <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000239"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -1602,12 +1595,6 @@
                     </Restriction>
                 </complementOf>
             </Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000239"/>
-            </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
@@ -1654,8 +1641,20 @@
         <oboInOwl:Synonym>kinetic monte carlo method</oboInOwl:Synonym>
     </Class>
     <Axiom>
+        <rdfs:comment>Bortz AB, Kalos MH, Lebowitz JL. A new algorithm for Monte Carlo simulation of Ising spin systems. Journal of Computational Physics, Vol. 17 (1), pages 10-18 (1975).</rdfs:comment>
+        <annotatedTarget>urn:miriam:doi:10.1016/0021-9991(75)90060-1</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
+    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>kinetic monte carlo method</annotatedTarget>
+        <annotatedTarget>BKL</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>n-fold way</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -1673,27 +1672,15 @@
     </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>n-fold way</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>BKL</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>KMC</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <annotatedTarget>urn:miriam:doi:10.1016/0021-9991(75)90060-1</annotatedTarget>
-        <rdfs:comment>Bortz AB, Kalos MH, Lebowitz JL. A new algorithm for Monte Carlo simulation of Ising spin systems. Journal of Computational Physics, Vol. 17 (1), pages 10-18 (1975).</rdfs:comment>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>kinetic monte carlo method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000051"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     
 
@@ -1732,12 +1719,6 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -1747,14 +1728,20 @@
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <oboInOwl:Comment>Used for instance in Smoldyn.</oboInOwl:Comment>
         <rdfs:seeAlso>urn:miriam:pubmed:16204833</rdfs:seeAlso>
-        <rdfs:comment>In the Brownian diffusion Smoluchowski method,  &#39;&#39;each molecule is treated as a point-like particle that diffuses freely in three-dimensional space. When a pair of reactive molecules collide, such as an enzyme and its substrate, a reaction occurs and the simulated reactants are replaced by products. [..] Analytic solutions are presented for some simulation parameters while others are calculated using look-up tables.&#39;&#39; Supported chemical processes include molecular diffusion, treatment of surfaces, zeroth-order-, unimolecular-, and bimolecular reactions.</rdfs:comment>
+        <rdfs:comment>In the Brownian diffusion Smoluchowski method, &#39;&#39;each molecule is treated as a point-like particle that diffuses freely in three-dimensional space. When a pair of reactive molecules collide, such as an enzyme and its substrate, a reaction occurs and the simulated reactants are replaced by products. [..] Analytic solutions are presented for some simulation parameters while others are calculated using look-up tables&#39;&#39;. Supported chemical processes include molecular diffusion, treatment of surfaces, zeroth-order-, unimolecular-, and bimolecular reactions.</rdfs:comment>
     </Class>
     <Axiom>
-        <rdfs:comment>Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial resolution and single molecule detail. Phys Biol, volume 1 (3-4), pages 137-151 (December 2004).</rdfs:comment>
         <annotatedTarget>urn:miriam:pubmed:16204833</annotatedTarget>
+        <rdfs:comment>Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial resolution and single molecule detail. Phys Biol, volume 1 (3-4), pages 137-151 (December 2004).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000057"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1769,13 +1756,13 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1785,8 +1772,8 @@
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:Synonym rdf:datatype="&xsd;string">Green&#39;s function reaction dynamics</oboInOwl:Synonym>
-        <rdfs:comment>Method that simulates biochemical networks on particle level. It consideres both, changes in time and space by &#39;&#39;exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorith&#39;&#39; which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.</rdfs:comment>
         <rdfs:seeAlso>urn:miriam:doi:10.1063/1.2137716</rdfs:seeAlso>
+        <rdfs:comment>Method that simulates biochemical networks on particle level. It considers both, changes in time and space by &#39;&#39;exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm&#39;&#39; which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     <Axiom>
@@ -1816,12 +1803,6 @@
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -1831,6 +1812,12 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
         <oboInOwl:Synonym>modified Euler method</oboInOwl:Synonym>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
@@ -1839,16 +1826,16 @@
         <oboInOwl:CreationDate>12NOV2007</oboInOwl:CreationDate>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:isbn:0-471-91046-5</annotatedTarget>
-        <rdfs:comment>Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kutta and General Linear Methods (1987).</rdfs:comment>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000064"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">RELATED</oboInOwl:SynonymType>
         <annotatedTarget>modified Euler method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000064"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:isbn:0-471-91046-5</annotatedTarget>
+        <rdfs:comment>Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kutta and General Linear Methods (1987).</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000064"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -1871,8 +1858,8 @@
         <rdfs:comment>A cellular automaton is a discrete model of a regular grid of cells with a finite number of dimensions. Each cell has a finite number of defined states. The automaton changes its state in a discrete manner, meaning that the state of a cell at time t is determined by a function of the states of its neighbors at time t - 1. These neighbors are a selection of cells relative to the specified cell. Famous examples for deterministic cellular automata are Conway&#39;s game of life or Wolfram&#39;s elementary cellular automata.</rdfs:comment>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:isbn:978-0252000232</annotatedTarget>
         <rdfs:comment>Burks, Arthur W (Editor). Essays on Cellular Automata. University of Illinois Press (1970).</rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:978-0252000232</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000068"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1894,14 +1881,8 @@
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1223.html</rdfs:seeAlso>
     </Class>
     <Axiom>
-        <annotatedTarget>citeulike:1774586</annotatedTarget>
-        <rdfs:comment>Radhakrishnan K, Hindmarsh AC. Description and Use of LSODE, the Livermore Solver for Ordinary Differential Equations. Lawrence Livermore National Laboratory Report, Vol. UCRL-ID-113855 (1993).</rdfs:comment>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000071"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
-        <rdfs:comment>Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differential equation solvers. SIGNUM Newsletter, Volume 15 (4), pages 10-11 (1980).</rdfs:comment>
         <annotatedTarget>urn:miriam:doi:10.1145/1218052.1218054</annotatedTarget>
+        <rdfs:comment>Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differential equation solvers. SIGNUM Newsletter, Volume 15 (4), pages 10-11 (1980).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000071"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1910,6 +1891,12 @@
         <annotatedTarget rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000071"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <rdfs:comment>Radhakrishnan K, Hindmarsh AC. Description and Use of LSODE, the Livermore Solver for Ordinary Differential Equations. Lawrence Livermore National Laboratory Report, Vol. UCRL-ID-113855 (1993).</rdfs:comment>
+        <annotatedTarget>citeulike:1774586</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000071"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -1927,8 +1914,8 @@
         <rdfs:comment>Coarse grained modified version of the next subvolume method [KISAO:0000022] that allows the user to consider both diffusion and reaction events in relatively long simulation time spans as compared with the original method and other commonly used fully stochastic computational methods.</rdfs:comment>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:doi:10.1063/1.2771548</annotatedTarget>
         <rdfs:comment>Marquez-Lago T., Burrage K. Binomial tau-leap spatial stochastic simulation algorithm for applications in chemical kinetics. The Journal of Chemical Physics, Vol. 127 (10) (2007).</rdfs:comment>
+        <annotatedTarget>urn:miriam:doi:10.1063/1.2771548</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000074"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -1953,6 +1940,12 @@
         <rdfs:seeAlso>urn:miriam:pubmed:16731694</rdfs:seeAlso>
     </Class>
     <Axiom>
+        <annotatedTarget rdf:datatype="&xsd;string">particle-based spatial stochastic method</annotatedTarget>
+        <oboInOwl:SynonymType>EXACT</oboInOwl:SynonymType>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000075"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
         <rdfs:seeAlso>Chopard B., et al.Multiparticle lattice gas automata for reaction diffusion systems. Int. J. Mod. Phys. C 1994;5:47-63.</rdfs:seeAlso>
         <annotatedTarget>Combination of the multiparticle method for diffusion (Chopard et al. , 1994) and the kinetic Monte Carlo Method [KISAO:0000029].</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000075"/>
@@ -1970,12 +1963,6 @@
         <annotatedSource rdf:resource="&kisao;KISAO_0000075"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
-    <Axiom>
-        <annotatedTarget rdf:datatype="&xsd;string">particle-based spatial stochastic method</annotatedTarget>
-        <oboInOwl:SynonymType>EXACT</oboInOwl:SynonymType>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000075"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
     
 
 
@@ -1990,16 +1977,16 @@
         <rdfs:comment>Sub-volume stochastic reaction-diffusion method that using Green&#39;s function to link the bulk diffusion coefficient D in Fick&#39;s differential law to the corresponding transition rate probability for diffusion of a particle between finite volume elements. This generalized stochastic algorithm enables to numerically calculate the time evolution of a spatially inhomogeneous mixture of reaction-diffusion species in a finite volume. The time step is stochastic and is generated by a probability distribution determined by the intrinsic reaction kinetics and diffusion dynamics.</rdfs:comment>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:doi:10.1006/jcph.1996.0168</annotatedTarget>
-        <rdfs:comment>Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion processes. J Comput Phys, Vol. 127 (1), pages 196-207 (1996).</rdfs:comment>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000076"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>reaction-diffusion stochastic simulation algorithm</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000076"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:doi:10.1006/jcph.1996.0168</annotatedTarget>
+        <rdfs:comment>Stundzia AB, Lumsden CJ. Stochastic simulation of coupled reaction-diffusion processes. J Comput Phys, Vol. 127 (1), pages 196-207 (1996).</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000076"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2021,6 +2008,7 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <rdfs:comment>Explicit tau-leaping method.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     
@@ -2039,11 +2027,11 @@
         </rdfs:subClassOf>
         <rdfs:seeAlso>urn:miriam:doi:10.1063/1.1378322</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:comment>Estimated-Midpoint tau-Leap Method: For the selected leaping time tau which satisfies the Leap Condition, compute the expected state change  lambda&#39; = tau sumj( aj(x)vj ) during  [t, t + tau). Then, with x&#39; =x + [lambda&#39;/2], generate for each j = 1,...,M a sample value kj of the Poisson random variable P(aj(x&#39;), tau). Compute the actual state change, lambda = sumj( kjvj ), and effect the leap by replacing t by t + tau and x by x + lambda.</rdfs:comment>
+        <rdfs:comment>Estimated-Midpoint tau-Leap Method: For the selected leaping time tau which satisfies the Leap Condition, compute the expected state change lambda&#39; = tau sumj( aj(x)vj ) during [t, t + tau). Then, with x&#39; =x + [lambda&#39;/2], generate for each j = 1,...,M a sample value kj of the Poisson random variable P(aj(x&#39;), tau). Compute the actual state change, lambda = sumj( kjvj ), and effect the leap by replacing t by t + tau and x by x + lambda.</rdfs:comment>
     </Class>
     <Axiom>
-        <rdfs:comment>Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section VI.</rdfs:comment>
         <annotatedTarget>urn:miriam:doi:10.1063/1.1378322</annotatedTarget>
+        <rdfs:comment>Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section VI.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000081"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2092,6 +2080,7 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Implicit tau-leaping method.</rdfs:comment>
     </Class>
     
 
@@ -2113,8 +2102,8 @@
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:doi:10.1063/1.1992473</annotatedTarget>
         <rdfs:comment>Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poisson tau-leaping. Journal of Chemical Physics, Vol. 123, 4104 (2005).</rdfs:comment>
+        <annotatedTarget>urn:miriam:doi:10.1063/1.1992473</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000084"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2126,8 +2115,8 @@
     <Class rdf:about="&kisao;KISAO_0000086">
         <rdfs:label rdf:datatype="&xsd;string">Runge-Kutta-Fehlberg based method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000064"/>
-        <rdfs:comment>The method was developed by the German mathematician Erwin Fehlberg and is based on the class of Runge–Kutta methods. The Runge–Kutta–Fehlberg method uses an O(h4) method together with an O(h5) method that uses all of the points of the O(h4) method, and hence is often referred to as an RKF45 method. Similar schemes with different orders have since been developed. By performing one extra calculation that would be required for an RK5 method, the error in the solution can be estimated and controlled and an appropriate step size can be determined automatically, making this method efficient for ordinary problems of automated numerical integration of ordinary differential equations.</rdfs:comment>
         <oboInOwl:Synonym>Fehlberg method</oboInOwl:Synonym>
+        <rdfs:comment>The method was developed by the German mathematician Erwin Fehlberg and is based on the class of Runge-Kutta methods. The Runge-Kutta-Fehlberg method uses an O(h4) method together with an O(h5) method that uses all of the points of the O(h4) method, and hence is often referred to as an RKF45 method. Similar schemes with different orders have since been developed. By performing one extra calculation that would be required for an RK5 method, the error in the solution can be estimated and controlled and an appropriate step size can be determined automatically, making this method efficient for ordinary problems of automated numerical integration of ordinary differential equations.</rdfs:comment>
         <rdfs:seeAlso>urn:miriam:pubmed:14990450</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:seeAlso>urn:miriam:doi:10.1007/BF02241732
@@ -2136,27 +2125,27 @@
         <oboInOwl:Comment>As used in E-Cell.</oboInOwl:Comment>
     </Class>
     <Axiom>
-        <annotatedTarget>urn:miriam:pubmed:14990450</annotatedTarget>
-        <rdfs:comment>Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:comment>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>Fehlberg method</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:doi:10.1007/BF02241732
+</annotatedTarget>
+        <rdfs:comment>Erwin Fehlberg (1970). Klassische Runge-Kutta-Formeln vierter und niedrigerer Ordnung mit Schrittweiten-Kontrolle und ihre Anwendung auf Wärmeleitungsprobleme, Computing (Arch. Elektron. Rechnen), vol. 6, pp. 61–71.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment>Erwin Fehlberg (1970). Klassische Runge-Kutta-Formeln vierter und niedrigerer Ordnung mit Schrittweiten-Kontrolle und ihre Anwendung auf Wärmeleitungsprobleme, Computing (Arch. Elektron. Rechnen), vol. 6, pp. 61–71.</rdfs:comment>
-        <annotatedTarget>urn:miriam:doi:10.1007/BF02241732
-</annotatedTarget>
+        <rdfs:comment>Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:comment>
+        <annotatedTarget>urn:miriam:pubmed:14990450</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>RKF45</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>Fehlberg method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -2178,20 +2167,20 @@
         <rdfs:comment>Dormand-Prince is an explicit method for the numerical integration of ODES with a given initial value.</rdfs:comment>
     </Class>
     <Axiom>
-        <rdfs:comment>Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:comment>
-        <annotatedTarget>urn:miriam:pubmed:14990450</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000087"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>DP45</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000087"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <annotatedTarget>urn:miriam:doi:10.1016/0771-050X(80)90013-3</annotatedTarget>
         <rdfs:comment>Dormand J, Prince P. A family of embedded Runge-Kutta formulae. Journal of Computational and Applied Mathematics, Volume 6, pages 19-26 (1980).</rdfs:comment>
+        <annotatedTarget>urn:miriam:doi:10.1016/0771-050X(80)90013-3</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000087"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:pubmed:14990450</annotatedTarget>
+        <rdfs:comment>Takahashi K, Kaizu K, Hu B, Tomita M. A multi-algorithm, multi-timescale method for cell simulation. Bioinformatics volume 20(4), pages 538-46 (2004).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000087"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2204,29 +2193,29 @@
         <rdfs:label>LSODA</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000094"/>
         <oboInOwl:Synonym rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations with automatic method switching</oboInOwl:Synonym>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
         <rdfs:comment>LSODA was written by Linda R Petzold and Alan C Hindmarsh. It solves systems dy/dt = f with a dense or banded Jacobian when the problem is stiff, but it automatically selects between non-stiff (Adams) and stiff (BDF) methods. It uses the non-stiff method initially, and dynamically monitors data in order to decide which method to use.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:seeAlso>urn:miriam:doi:10.1137/0904010</rdfs:seeAlso>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <oboInOwl:CreationDate>30OCT2007</oboInOwl:CreationDate>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1227.html</rdfs:seeAlso>
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
     </Class>
     <Axiom>
-        <rdfs:comment>Petzold LR. Automatic Selection of Methods for Solving Stiff and Nonstiff Systems of Ordinary Differential Equations. SIAM Journal on Scientific and Statistical Computing, Vol. 4 (1), pages 136-148 (1983).</rdfs:comment>
-        <annotatedTarget>urn:miriam:doi:10.1137/0904010</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000088"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
-        <rdfs:comment>Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:comment>
         <annotatedTarget>http://www.nea.fr/abs/html/uscd1227.html</annotatedTarget>
+        <rdfs:comment>Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000088"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
+        <annotatedTarget>urn:miriam:doi:10.1137/0904010</annotatedTarget>
+        <rdfs:comment>Petzold LR. Automatic Selection of Methods for Solving Stiff and Nonstiff Systems of Ordinary Differential Equations. SIAM Journal on Scientific and Statistical Computing, Vol. 4 (1), pages 136-148 (1983).</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000088"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
+    <Axiom>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000088"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2237,8 +2226,8 @@
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <rdfs:seeAlso>COPASI Userguide</rdfs:seeAlso>
         <annotatedTarget>LSODA was written by Linda R Petzold and Alan C Hindmarsh. It solves systems dy/dt = f with a dense or banded Jacobian when the problem is stiff, but it automatically selects between non-stiff (Adams) and stiff (BDF) methods. It uses the non-stiff method initially, and dynamically monitors data in order to decide which method to use.</annotatedTarget>
+        <rdfs:seeAlso>COPASI Userguide</rdfs:seeAlso>
         <annotatedSource rdf:resource="&kisao;KISAO_0000088"/>
         <annotatedProperty rdf:resource="&rdfs;comment"/>
     </Axiom>
@@ -2256,20 +2245,20 @@
         <oboInOwl:CreationDate>27OCT2007</oboInOwl:CreationDate>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1228.html</rdfs:seeAlso>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <oboInOwl:Synonym>Livermore solver for ordinary differential equations with automatic method switching and root finding</oboInOwl:Synonym>
     </Class>
     <Axiom>
-        <rdfs:comment>Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:comment>
-        <annotatedTarget>http://www.nea.fr/abs/html/uscd1228.html</annotatedTarget>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000089"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>Livermore solver for ordinary differential equations with automatic method switching and root finding</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000089"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;string">ordinary differential equation solver for stiff or non-stiff systems with root finding</annotatedTarget>
@@ -2278,10 +2267,10 @@
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>Livermore solver for ordinary differential equations with automatic method switching and root finding</annotatedTarget>
+        <annotatedTarget>http://www.nea.fr/abs/html/uscd1228.html</annotatedTarget>
+        <rdfs:comment>Petzold LR, Hindmarsh, AC. LSODAR: Livermore solver of ordinary differential equations with automatic method switching and root finding, Computing and Mathematics Research Division, 1-316 Lawerence Livermore National Laboratory (1987).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000089"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2295,12 +2284,12 @@
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1224.html</rdfs:seeAlso>
         <rdfs:seeAlso>urn:miriam:doi:10.1145/1218052.1218054</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <rdfs:comment>LSODI solves systems given in linearly implicit form, including differential-algebraic systems.</rdfs:comment>
     </Class>
     <Axiom>
-        <rdfs:isDefinedBy>Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differnetial equation solvers. SIGNUM Newsletter, Volume 15 (4), pages 10-11 (1980).</rdfs:isDefinedBy>
-        <annotatedTarget>urn:miriam:doi:10.1145/1218052.1218054</annotatedTarget>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000090"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2311,8 +2300,8 @@
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <rdfs:isDefinedBy>Hindmarsh AC. LSODE and LSODI, two new initial value ordinary differnetial equation solvers. SIGNUM Newsletter, Volume 15 (4), pages 10-11 (1980).</rdfs:isDefinedBy>
+        <annotatedTarget>urn:miriam:doi:10.1145/1218052.1218054</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000090"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2327,17 +2316,11 @@
         <oboInOwl:Synonym rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations, implicit sparse version</oboInOwl:Synonym>
         <oboInOwl:CreationDate>30OCT2007</oboInOwl:CreationDate>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1225.html</rdfs:seeAlso>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <oboInOwl:CreatedBy>dk</oboInOwl:CreatedBy>
         <rdfs:comment>LSODIS is a set of general-purpose FORTRAN routines solver for the initial value problem for ordinary differential equation systems. It is suitable for both stiff and nonstiff systems. LSODIS treat systems in the linearly implicit form A(t,y) dy/dt = g(t,y), A = a square matrix, i.e. with the derivative dy/dt implicit, but linearly so.</rdfs:comment>
     </Class>
-    <Axiom>
-        <annotatedTarget>http://www.nea.fr/abs/html/uscd1225.html</annotatedTarget>
-        <rdfs:comment>Seager M, Balsdon S. LSODIS - A sparse implicit ODE solver. 10th World Congress on System Simulation and Scientific Computation, pages 437-439 (1983).</rdfs:comment>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000091"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations, implicit sparse version</annotatedTarget>
@@ -2345,8 +2328,14 @@
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000091"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>http://www.nea.fr/abs/html/uscd1225.html</annotatedTarget>
+        <rdfs:comment>Seager M, Balsdon S. LSODIS - A sparse implicit ODE solver. 10th World Congress on System Simulation and Scientific Computation, pages 437-439 (1983).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000091"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2358,25 +2347,26 @@
     <Class rdf:about="&kisao;KISAO_0000093">
         <rdfs:label>LSODPK</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000094"/>
+        <oboInOwl:Synonym rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations for stiff and nonstiff systems with Krylov corrector iteration</oboInOwl:Synonym>
         <oboInOwl:Synonym rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations for stiff and nonstiff systems with krylov corrector iteration</oboInOwl:Synonym>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1231.html</rdfs:seeAlso>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <rdfs:comment>LSODPK, written jointly with Peter N Brown, is a set of FORTRAN subroutines for solving the initial value problem for stiff and nonstiff systems of ordinary differential equations. In solving stiff systems, LSODPK uses a corrector iteration composed of Newton iteration and one of four preconditoned Krylov subspace iteration methods. The user must select the desired Krylov method and supply a pair of routine to evaluate, preprocess, and solve the (left and/or right) preconditioner matrices. Aside from preconditioning, the implementation is matrix-free, meaning that explicit storage of the Jacobian (or related) matrix is not required. The method is experimental because the scope of problems for which it is effective is not well-known, and users are forewarned that LSODPK may or may not be competitive with traditional methods on a given problem. LSODPK also includes an option for a user-supplied linear system solver to be used without Krylov iteration.</rdfs:comment>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
         <oboInOwl:CreationDate>08072008</oboInOwl:CreationDate>
     </Class>
-    <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000093"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget rdf:datatype="&xsd;string">Livermore solver for ordinary differential equations for stiff and nonstiff systems with krylov corrector iteration</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000093"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000093"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2386,6 +2376,16 @@
     <Class rdf:about="&kisao;KISAO_0000094">
         <rdfs:label rdf:datatype="&xsd;string">Livermore solver</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <Class>
+                <complementOf>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                    </Restriction>
+                </complementOf>
+            </Class>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
@@ -2403,16 +2403,6 @@
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
             </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Class>
-                <complementOf>
-                    <Restriction>
-                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
-                    </Restriction>
-                </complementOf>
-            </Class>
         </rdfs:subClassOf>
         <oboInOwl:CreationDate>08072008</oboInOwl:CreationDate>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
@@ -2475,6 +2465,8 @@
     <Class rdf:about="&kisao;KISAO_0000097">
         <rdfs:label>kinetic simulation algorithm characteristic</rdfs:label>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
+        <rdfs:comment>Simulation algorithm property, which can for example describe the model, such as the type of variables (discrete or continuous), and information on the treatment of spatial descriptions, or can be a numerical characteristic, such as the system&#39;s behavior (deterministic or stochastic) as well as the progression mechanism (fixed or adaptive time steps).</rdfs:comment>
+        <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
     </Class>
     
 
@@ -2484,7 +2476,7 @@
     <Class rdf:about="&kisao;KISAO_0000098">
         <rdfs:label>type of variables</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
-        <rdfs:comment>Type of variables used for the simulation</rdfs:comment>
+        <rdfs:comment>Type of variables used for the simulation.</rdfs:comment>
     </Class>
     
 
@@ -2494,6 +2486,7 @@
     <Class rdf:about="&kisao;KISAO_0000099">
         <rdfs:label>system behaviour</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
+        <rdfs:comment>Characteristic describind the rules, algorithm uses to simulate the temporal evolution of a system: if it may provide different or always the same ending state from a precise initial one.</rdfs:comment>
     </Class>
     
 
@@ -2503,7 +2496,7 @@
     <Class rdf:about="&kisao;KISAO_0000100">
         <rdfs:label>type of progression timesteps</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
-        <rdfs:comment>Type of time steps used by the algorithm</rdfs:comment>
+        <rdfs:comment>Type of time steps used by the algorithm.</rdfs:comment>
     </Class>
     
 
@@ -2526,7 +2519,7 @@
     <Class rdf:about="&kisao;KISAO_0000103">
         <rdfs:label>deterministic system behaviour</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000099"/>
-        <oboInOwl:CreationDate>0807208</oboInOwl:CreationDate>
+        <oboInOwl:CreationDate>08072008</oboInOwl:CreationDate>
         <rdfs:comment>Algorithm that simulates the temporal evolution of a system using determined descriptions, that from a precise initial state always provide the same ending state.</rdfs:comment>
         <oboInOwl:CreatedBy>NLN</oboInOwl:CreatedBy>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
@@ -2606,14 +2599,8 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000000"/>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000246"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000088"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000246"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000027"/>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2624,8 +2611,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
+                <onProperty rdf:resource="&kisao;KISAO_0000246"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000088"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000246"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000027"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>The hybrid method combines the stochastic &#39;Gibson-Bruck&#39;s next reaction method&#39; with different algorithms for the numerical integration of ODEs. The biochemical network is dynamically partitioned into a deterministic and a stochastic subnet depending on the current particle numbers in the system. The user can define limits for when a particle number should be considered low or high. The stochastic subnet contains reactions involving low numbered species as substrate or product. All the other reactions form the deterministic subnet. The two subnets are then simulated in parallel using the stochastic and deterministic solver, respectively. The reaction probabilities in the stochastic subnet are approximated as constant between two stochastic reaction events.</rdfs:comment>
@@ -2634,8 +2627,8 @@
         <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
     </Class>
     <Axiom>
-        <rdfs:comment>Pahle,J. (2002) Eine Hybridmethode zur Simulation biochemischer Prozess (in German). Diploma thesis Universita Karlsruhe (TH), Germany.</rdfs:comment>
         <annotatedTarget>urn:miriam:pubmed:17032683</annotatedTarget>
+        <rdfs:comment>Pahle,J. (2002) Eine Hybridmethode zur Simulation biochemischer Prozess (in German). Diploma thesis Universita Karlsruhe (TH), Germany.</rdfs:comment>
         <rdfs:comment>COPASI--a COmplex PAthway SImulator. Hoops S, Sahle S, Gauges R, Lee C, Pahle J, Simus N, Singhal M, Xu L, Mendes P, Kummer U. Bioinformatics. 2006 Dec 15;22(24):3067-74. Epub 2006 Oct 10.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000231"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
@@ -2648,22 +2641,22 @@
     <Class rdf:about="&kisao;KISAO_0000232">
         <rdfs:label>LSOIBT</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000094"/>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
+        <rdfs:comment>LSOIBT is a set of general-purpose FORTRAN routines solver for the initial value problem for ordinary differential equation systems. It is suitable for both stiff and nonstiff systems. LSOIBT treat systems in the linearly implicit form A(t,y) dy/dt = g(t,y), A = a square matrix, i.e. with the derivative dy/dt implicit, but linearly so. It allows A to be singular, in which case the system is a differential-algebraic equation (DAE) system. In that case, the user must be very careful to supply a well-posed problem with consistent initial conditions. LSOIBT, written jointly with C. S. Kenney, solves linearly implicit systems in which the matrices involved are all assumed to be block-tridiagonal. Linear systems are solved by the LU method. The LSOIBT source is commented extensively to facilitate modification. Both a single-precision version and a double-precision version are available.</rdfs:comment>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1226.html</rdfs:seeAlso>
-        <rdfs:comment>LSOIBT is a set of general-purpose FORTRAN routines solver for the initial value problem for ordinary differential equation systems. It is suitable for both stiff and nonstiff systems. LSOIBT treat systems in the linearly implicit form A(t,y) dy/dt = g(t,y), A = a square matrix, i.e. with the derivative dy/dt implicit, but linearly so. It allows A to be singular, in which case the system is a differential-algebraic equation (DAE) system.  In that case, the user must be very careful to supply a well-posed problem with consistent initial conditions. LSOIBT, written jointly with C. S. Kenney, solves linearly implicit systems in which the matrices involved are all assumed to be block-tridiagonal.  Linear systems are solved by the LU method. The LSOIBT source is commented extensively to facilitate modification. Both a single-precision version and a double-precision version are available.</rdfs:comment>
         <oboInOwl:Synonym>Livermore solver for ordinary differential equations given in implicit form, with block-tridiagonal Jacobian treatment</oboInOwl:Synonym>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
     </Class>
-    <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000232"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>Livermore solver for ordinary differential equations given in implicit form, with block-tridiagonal Jacobian treatment</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000232"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000232"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2673,22 +2666,22 @@
     <Class rdf:about="&kisao;KISAO_0000233">
         <rdfs:label>LSODES</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000094"/>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
         <rdfs:comment>LSODES, written jointly with A. H. Sherman, solves systems dy/dt = f and in the stiff case treats the Jacobian matrix in general sparse form. It determines the sparsity structure on its own, or optionally accepts this information from the user. It then uses parts of the Yale Sparse Matrix Package (YSMP) to solve the linear systems that arise, by a sparse (direct) LU factorization/backsolve method. The LSODES source is commented extensively to facilitate modification. Both a single-precision version and a double-precision version are available.</rdfs:comment>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
         <oboInOwl:Synonym>Livermore solver for ordinary differential equations with general sparse Jacobian matrix</oboInOwl:Synonym>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1229.html</rdfs:seeAlso>
     </Class>
+    <Axiom>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000233"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>Livermore solver for ordinary differential equations with general sparse Jacobian matrix</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000233"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000233"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2699,21 +2692,21 @@
         <rdfs:label>LSODKR</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000094"/>
         <rdfs:seeAlso>http://www.nea.fr/abs/html/uscd1230.html</rdfs:seeAlso>
-        <rdfs:comment>LSODKR is a new initial value ODE solver for stiff and nonstiff systems. It is a variant of the LSODPK and LSODE solvers, intended mainly for large stiff systems. The main differences between LSODKR and LSODE are the following: a) for stiff systems, LSODKR uses a corrector iteration composed of  Newton iteration and one of four preconditioned Krylov subspace iteration methods. The user must supply routines for the preconditioning operations, b) within the corrector iteration, LSODKR does automatic switching between functional (fixpoint) iteration and modified Newton iteration, c) LSODKR includes the ability to find roots of given functions of the solution during the integration.</rdfs:comment>
-        <rdfs:seeAlso>citeulike:2644528</rdfs:seeAlso>
         <oboInOwl:Synonym>Livermore solver for ordinary differential equations, with preconditioned Krylov iteration methods for the Newton correction linear systems, and with root finding.</oboInOwl:Synonym>
+        <rdfs:comment>LSODKR is a new initial value ODE solver for stiff and nonstiff systems. It is a variant of the LSODPK and LSODE solvers, intended mainly for large stiff systems. The main differences between LSODKR and LSODE are the following: a) for stiff systems, LSODKR uses a corrector iteration composed of Newton iteration and one of four preconditioned Krylov subspace iteration methods. The user must supply routines for the preconditioning operations, b) within the corrector iteration, LSODKR does automatic switching between functional (fixpoint) iteration and modified Newton iteration, c) LSODKR includes the ability to find roots of given functions of the solution during the integration.</rdfs:comment>
+        <rdfs:seeAlso>urn:miriam:isbn:978-0444866073</rdfs:seeAlso>
     </Class>
+    <Axiom>
+        <annotatedTarget>urn:miriam:isbn:978-0444866073</annotatedTarget>
+        <rdfs:comment>A. C. Hindmarsh, ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000234"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>Livermore solver for ordinary differential equations, with preconditioned Krylov iteration methods for the Newton correction linear systems, and with root finding.</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000234"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <annotatedTarget>citeulike:2644528</annotatedTarget>
-        <rdfs:comment>A. C. Hindmarsh, &quot;ODEPACK, A Systematized Collection of ODE Solvers,&quot; in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983 (vol. 1 of IMACS Transactions on Scientific Computation), pp. 55-64.</rdfs:comment>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000234"/>
-        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
     
 
@@ -2723,6 +2716,7 @@
     <Class rdf:about="&kisao;KISAO_0000235">
         <rdfs:label>solution type</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
+        <rdfs:comment>Characteristic describing if the solution produced by the method is exact or approximate.</rdfs:comment>
     </Class>
     
 
@@ -2732,6 +2726,7 @@
     <Class rdf:about="&kisao;KISAO_0000236">
         <rdfs:label>exact solution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000235"/>
+        <rdfs:comment>Algorithms providing exact solution.</rdfs:comment>
     </Class>
     
 
@@ -2751,6 +2746,7 @@
     <Class rdf:about="&kisao;KISAO_0000238">
         <rdfs:label>implicit or explicit method type</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
+        <rdfs:comment>Characteristic, describing if the method finds a solution by solving an equation involving only the current state of the system (explicit) or both the current and the later one (implicit). </rdfs:comment>
     </Class>
     
 
@@ -2760,7 +2756,7 @@
     <Class rdf:about="&kisao;KISAO_0000239">
         <rdfs:label>explicit method type</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000238"/>
-        <rdfs:comment>Explicit methods calculate the state of a system at a later time from the state of the system at the current time. Mathematically, if Y(t) is the current system state and Y(t + Δt) is the state at the later time (Δt is a small time step), then, for an explicit method Y(t+Δt) = F(Y(t)), to find Y(t + Δt).</rdfs:comment>
+        <rdfs:comment>Explicit methods calculate the state of a system at a later time from the state of the system at the current time. Mathematically, if Y(t) is the current system state and Y((t+delta t) is the state at the later time (delta t is a small time step), then, for an explicit method Y(t+delta t) = F(Y(t)), to find Y(t+delta t).</rdfs:comment>
     </Class>
     
 
@@ -2770,7 +2766,7 @@
     <Class rdf:about="&kisao;KISAO_0000240">
         <rdfs:label>implicit method type</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000238"/>
-        <rdfs:comment>Implicit methods find a solution by solving an equation involving both the current state of the system and the later one. Mathematically, if Y(t) is the current system state and Y(t + Δt) is the state at the later time (Δt is a small time step), then, for an implicit method one solves an equation G(Y(t), Y(t+Δ t))=0, to find Y(t + Δt).</rdfs:comment>
+        <rdfs:comment>Implicit methods find a solution by solving an equation involving both the current state of the system and the later one. Mathematically, if Y(t) is the current system state and Y((t+delta t) is the state at the later time (delta t is a small time step), then, for an implicit method one solves an equation G(Y(t), Y(t+delta t))=0, to find Y(t+delta t).</rdfs:comment>
     </Class>
     
 
@@ -2783,13 +2779,13 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2817,6 +2813,12 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -2830,20 +2832,14 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
-            </Restriction>
-        </rdfs:subClassOf>
         <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
         <oboInOwl:Namespace>KISAO</oboInOwl:Namespace>
         <rdfs:comment>The Euler method, named after Leonhard Euler, is a first-order numerical procedure for solving ordinary differential equations (ODEs) with a given initial value.</rdfs:comment>
         <rdfs:seeAlso>urn:miriam:isbn:052143064X</rdfs:seeAlso>
     </Class>
     <Axiom>
-        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:comment>
         <annotatedTarget>urn:miriam:isbn:052143064X</annotatedTarget>
+        <rdfs:comment>Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000261"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -2890,7 +2886,7 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2902,14 +2898,14 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000108"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:Synonym>tessellation structures</oboInOwl:Synonym>
+        <rdfs:comment>Cellular automata are mathematical idealizations of physical systems in which space and time are discrete, and physical quantities take on a finite set of discrete values. A cellular automaton consists of a regular uniform lattice (or &#39;&#39;array&#39;&#39;), usually infinite in extent, with a discrete variable at each site (&#39;&#39;cell&#39;&#39;). A cellular automaton evolves in discrete time steps, with the value of the variable at one site being affected by the values of variables at sites in its &#39;&#39;neighborhood&#39;&#39; on the previous time step. The neighborhood of a site is typically taken to be the site itself and all immediately adjacent sites. The variables at each site are updated simultaneously (&#39;&#39;synchronously&#39;&#39;), based on the values of the variables in their neighborhood at the preceding time step, and according to a definite set of &#39;&#39;local rules&#39;&#39;.</rdfs:comment>
         <oboInOwl:CreatedBy>AZ</oboInOwl:CreatedBy>
         <oboInOwl:Synonym>CA</oboInOwl:Synonym>
         <oboInOwl:Synonym>iterative arrays</oboInOwl:Synonym>
-        <rdfs:comment>Cellular automata are mathematical idealizations of physical systems in which space and time are discrete, and physical quantities take on a finite set of discrete values. A cellular automaton consists of a regular uniform lattice (or &#39;&#39;array&#39;&#39;), usually infinite in extent, with a discrete variable at each site (&#39;&#39;cell&#39;&#39;). A cellular automaton evolves in discrete time steps, with the value of the variable at one site being affected by the values of variables at sites in its &#39;&#39;neighborhood&#39;&#39; on the previous time step. The neighborhood of a site is typically taken to be the site itself and all immediately adjacent sites. The variables at each site are updated simultaneously (&#39;&#39;synchronously&#39;&#39;), based on the values of the variables in their neighborhood at the preceding time step, and according to a definite set of &#39;&#39;local rules.&#39;&#39;</rdfs:comment>
         <oboInOwl:Synonym>tessellation automata</oboInOwl:Synonym>
         <oboInOwl:Synonym>cellular spaces</oboInOwl:Synonym>
         <oboInOwl:Synonym>cellular automata</oboInOwl:Synonym>
@@ -2921,7 +2917,19 @@
     </Class>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>tessellation structures</annotatedTarget>
+        <annotatedTarget>cellular structures</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>tessellation automata</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>CA</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -2939,19 +2947,19 @@
     </Axiom>
     <Axiom>
         <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>cellular automata</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
+        <annotatedTarget>tessellation structures</annotatedTarget>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
+        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
+    </Axiom>
+    <Axiom>
+        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
         <annotatedTarget>iterative arrays</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>CA</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>cellular structures</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
         <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
@@ -2960,18 +2968,6 @@
         <annotatedTarget>doi:10.1103/RevModPhys.55.601</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>cellular automata</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
-    </Axiom>
-    <Axiom>
-        <oboInOwl:SynonymType rdf:datatype="&xsd;string">EXACT</oboInOwl:SynonymType>
-        <annotatedTarget>tessellation automata</annotatedTarget>
-        <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
-        <annotatedProperty rdf:resource="&oboInOwl;Synonym"/>
     </Axiom>
     <rdf:Description>
         <rdfs:isDefinedBy>Bortz AB, Kalos MH, Lebowitz JL. A new algorithm for Monte Carlo simulation of Ising spin systems. Journal of Computational Physics, Vol. 17 (1), pages 10-18 (1975)</rdfs:isDefinedBy>
