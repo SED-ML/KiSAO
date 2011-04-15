@@ -1,5 +1,5 @@
 format-version: 1.4
-date: 12:04:2011 11:25
+date: 15:04:2011 13:03
 saved-by: zhutchok
 auto-generated-by: The OWL API (version 3.2.2.1502)
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
@@ -49,7 +49,7 @@ name: step size fraction
 namespace: KISAO
 def: "The step size fraction is a floating-point number specifying the step size, as a fraction of the total time range for the simulation. The 'step size fraction' is only enabled for ODE-based deterministic simulators. If you are using a simulator with a fixed step-size, the simulator will use your step size as the fixed step size for the entire time interval. If you are using a simulator with an adaptive step-size, the simulator will use this step size for the initial time-step; it will change the step size for time steps after the initial time step, depending on the error control parameters. For fixed step-size simulators, if you specify a step size fraction that is too large, the simulator may exceed its error threshold, in which case the simulation will halt with an exception (and it will suggest that you re-run the simulation with a large minimum number of time steps). If you are using a stochastic Tau-Leap simulator, the step-size fraction specifies the maximum the ratio of the reaction time scale to the ''leap'' time scale. (If the ''leap'' time scale gets too small, the simulator will revert to stepping with the Gibson-Bruck algorithm) [Dizzy Userguide]." [:]
 domain: KISAO:0000000^KISAO:0000245(KISAO:0000103)
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000244
 is_metadata_tag: false
 
@@ -68,7 +68,7 @@ name: particle number lower limit
 namespace: KISAO
 def: "This parameter is a double value specifying the lower limit for particle numbers. Species with a particle number below this value are considered as having a low particle number. The 'particle number lower limit' cannot be higher than the 'particle number upper limit'. The default value is 800 [COPASI Userguide]." [:]
 domain: KISAO:0000231
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -78,7 +78,7 @@ name: particle number upper limit
 namespace: KISAO
 def: "This parameter is a double value specifying the upper limit for particle numbers. Species with a particle number above this value are considered as having a high particle number. The 'particle number upper limit' cannot be lower than the 'particle number lower limit'. The default value is 1000 [COPASI Userguide]." [:]
 domain: KISAO:0000231
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -88,7 +88,7 @@ name: partitioning interval
 namespace: KISAO
 def: "This positive integer value specifies after how many steps the internal partitioning of the system should be recalculated. The default is 1, i.e. after every step the partitioning of the system is checked [COPASI Userguide]." [:]
 domain: KISAO:0000000^KISAO:0000246(KISAO:0000000)
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -98,7 +98,7 @@ name: relative tolerance
 namespace: KISAO
 def: "This parameter is a numeric value specifying the desired relative tolerance the user wants to achieve. A smaller value means that the trajectory is calculated more accurate. The default value is 1.0 * 10^-6. Please note that best achievable relative tolerance is approximately 2.22 * 10^-16 [COPASI Userguide]. " [:]
 domain: KISAO:0000000
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000242
 is_metadata_tag: false
 
@@ -108,7 +108,7 @@ name: absolute tolerance
 namespace: KISAO
 def: "This parameter is a positive numeric value specifying the desired absolute tolerance the user wants to achieve. Please note that for species the absolute tolerance is applied to the concentration value. The default value is 1.0 * 10^-12 [COPASI Userguide]." [:]
 domain: KISAO:0000000
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000242
 is_metadata_tag: false
 
@@ -118,7 +118,7 @@ name: Runge-Kutta step size (hybrid)
 namespace: KISAO
 def: "This positive double value is the step size of the Runge-Kutta solver for the integration of the deterministic part of the system. The default value is 0.001 [COPASI Userguide]." [:]
 domain: KISAO:0000064
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000244
 is_metadata_tag: false
 
@@ -128,7 +128,7 @@ name: integrate reduced model
 namespace: KISAO
 def: "This parameter is a boolean value to determine whether the integration shall be performed using the mass conservation laws, i.e., reducing the number of system variables or to use the complete model. A value of 1 (the default) instructs COPASI to make use of the mass conservation laws, whereas a value of 0 instructs COPASI to determine all variables through ODEs [COPASI Userguide]." [:]
 domain: KISAO:0000000
-range: http://www.w3.org/2001/XMLSchema#boolean
+range: xsd:boolean
 is_a: KISAO:0000243
 is_metadata_tag: false
 
@@ -139,7 +139,7 @@ namespace: KISAO
 def: "This parameter is a positive integer value specifying the maximal order the non-stiff Adams integration method shall attempt before switching to the stiff BDF method. The default and maximal order is 12 [COPASI Userguide]." [:]
 synonym: "Adams max order" NARROW []
 domain: KISAO:0000088
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000243
 is_metadata_tag: false
 
@@ -150,7 +150,7 @@ namespace: KISAO
 def: "This parameter is a positive integer value specifying the maximal order the stiff BDF integration method shall attempt before switching to smaller internal step sizes. The default and maximal order is 5 [COPASI Userguide]." [:]
 synonym: "BDF max order" NARROW []
 domain: KISAO:0000088
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000243
 is_metadata_tag: false
 
@@ -160,7 +160,7 @@ name: number of history bins
 namespace: KISAO
 def: "The 'number of history bins' is only enabled for models that contain delayed or multistep reactions for specifying the granularity with which the delayed reaction solver should retain the history of species values, for species that participate in delayed reactions. The default value is 400. The minimum value is 10. If you are having trouble with mass conservation in an ODE simulation of a model with a delayed reaction, try increasing this parameter [Dizzy Userguide]. " [:]
 domain: KISAO:0000000
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000244
 is_metadata_tag: false
 
@@ -169,9 +169,9 @@ id: KISAO:0000228
 name: tau-leaping epsilon
 namespace: KISAO
 def: "The leap condition is chosen such that the expected change in the propensity function aj(x) is bounded by Epsilon * a0 where Epsilon is an error control parameter between 0 and 1. This parameter is the basic error control mechanism for the Tau-Leaping algorithm. As Epsilon decreases the leaps become shorter and the simulation is more accurate." [urn:miriam:doi:10.1063/1.1378322 "Gillespie DT. Approximate accelerated stochastic simulation of chemically reacting systems. The Journal of Chemical Physics, Vol. 115 (4), pages 1716-1733 (2001). Section V."]
-synonym: "tolerance"  []
+synonym: "tolerance" RELATED []
 domain: KISAO:0000039
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000242
 is_metadata_tag: false
 
@@ -180,9 +180,9 @@ id: KISAO:0000230
 name: minimum reactions per leap
 namespace: KISAO
 def: "The tau-leaping driver adaptively switches to the SSA Direct Method when the number of reactions in a single tau-leaping leap step is less than the threshold. By default, this value is 10 [StochKit Userguide]." [:]
-synonym: "threshold"  []
+synonym: "threshold" RELATED []
 domain: KISAO:0000039
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000243
 is_metadata_tag: false
 
@@ -222,7 +222,7 @@ name: tau-leaping delta
 namespace: KISAO
 def: "Tau-leaping delta specifies how close two symmetric transition rates must be before we classify them as in partial-equilibrium. Only applies to the implicit tau routine." [:]
 domain: KISAO:0000045
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -233,7 +233,7 @@ namespace: KISAO
 def: "The Nonnegative Poisson tau-leaping algorithm is based on the fact that negative populations typically arise from multiple firings of reactions that are only a few firings away from consuming all the molecules of one of their reactants. To focus on those reaction channels, the modified tau-leaping algorithm introduces a second control parameter nc, a positive integer that is usually set somewhere between 5 and 20. Any reaction channel with a positive propensity function that is currently within nc firings of exhausting one of its reactants is then classified as a critical reaction. The modified algorithm chooses tau in such a way that no more than one firing of all the critical reactions can occur during the leap." [:]
 synonym: "nonnegative tau-leaping second control parameter" EXACT []
 domain: KISAO:0000084
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -252,7 +252,7 @@ name: coarse-graining factor
 namespace: KISAO
 def: "The time in each Monte-Carlo iteration is updated with the time increments tau=f/(a1+a2+...+aM). Here 1/(a1+a2+...+aM) is the averaged microscopic increment of the SSA and f is a coarse-graining factor, controlling the speed-up." [urn:miriam:pubmed:15638577 "Chatterjee A, Vlachos DG, Katsoulakis MA. Binomial distribution based τ-leap accelerated stochastic simulation. J Chem Phys. 2005;122(2):024112."]
 domain: KISAO:0000074
-range: http://www.w3.org/2001/XMLSchema#double
+range: xsd:decimal
 is_a: KISAO:0000244
 is_metadata_tag: false
 
@@ -262,7 +262,7 @@ name: Brownian diffusion Smoluchowski method accuracy
 namespace: KISAO
 def: "Accuracy code, from 0 to 10. The accuracy statement sets which neighboring boxes are checked for potential bi-molecular reactions. Consider the reaction A + B -> C and suppose that A and B are within a binding radius of each other. This reaction will always be performed if A and B are in the same virtual box. If accuracy is set to at least 3, then it will also occur if A and B are in nearest-neighbor virtual boxes. If it is at least 7, then the reaction will happen if they are in nearest-neighbor boxes that are separated by periodic boundary conditions. And if it is 9 or 10, then all edge and corner boxes are checked for reactions, which means that no potential reactions are overlooked. Overall, increasing accuracy numbers lead to improved quantitative bimolecular reaction rates, along with substantially slower simulations. If qualitative simulations are wanted, then lower accuracy values are likely to be preferable [Smoldyn userguide]." [:]
 domain: KISAO:0000057
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000242
 is_metadata_tag: false
 
@@ -272,7 +272,7 @@ name: Brownian diffusion molecules per virtual box
 namespace: KISAO
 def: "Target molecules per virtual box. Sets the box sizes so that the average number of molecules per box, at simulation initiation, is close to the requested number. Good numbers tend to be between 3 and 6, although more or fewer may be appropriate, depending on how the number of molecules in the simulation is likely to change over time (the default box size is computed for an average of 4 molecules per box) [Smoldyn userguide]." [:]
 domain: KISAO:0000057
-range: http://www.w3.org/2001/XMLSchema#int
+range: xsd:integer
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -282,7 +282,7 @@ name: Brownian diffusion virtual box size
 namespace: KISAO
 def: "Target size of virtual boxes. The box size statement requests the length of one side of a box, which should be in the same units that are used for the boundary statements [Smoldyn userguide]." [:]
 domain: KISAO:0000057
-range: http://www.w3.org/2001/XMLSchema#float
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -292,7 +292,7 @@ name: Brownian diffusion surface-bound epsilon
 namespace: KISAO
 def: "Molecules that are bound to a surface are given locations that are extremely close to that surface. However, this position does not need to be exactly at the surface, and in fact it usually cannot be exactly at the surface due to round-off error. The tolerance for how far a surface-bound molecule is allowed to be away from the surface can be set with the epsilon statement [Smoldyn userguide]." [:]
 domain: KISAO:0000057
-range: http://www.w3.org/2001/XMLSchema#float
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -302,7 +302,7 @@ name: Brownian diffusion neighbour distance
 namespace: KISAO
 def: "When a surface-bound molecule diffuses off of one surface panel, it can sometimes diffuse onto the neighbouring surface tile. It does so only if the neighbouring panel is declared to be a neighbour and also the neighbour is within a distance that is set with the neighbour distance statement. As a default, this distance is set to 3 times the longest surface-bound molecule rms step length [Smoldyn userguide]." [:]
 domain: KISAO:0000057
-range: http://www.w3.org/2001/XMLSchema#float
+range: xsd:decimal
 is_a: KISAO:0000252
 is_metadata_tag: false
 
@@ -368,9 +368,9 @@ synonym: "Morton-Firth" EXACT []
 is_a: KISAO:0000000
 relationship: KISAO:0000245 KISAO:0000108
 
-relationship: KISAO:0000245 KISAO:0000104
-
 relationship: KISAO:0000247 KISAO:0000102
+
+relationship: KISAO:0000245 KISAO:0000104
 
 relationship: KISAO:0000245 KISAO:0000105
 
@@ -722,9 +722,9 @@ namespace: KISAO
 def: "In the Brownian diffusion Smoluchowski method, ''each molecule is treated as a point-like particle that diffuses freely in three-dimensional space. When a pair of reactive molecules collide, such as an enzyme and its substrate, a reaction occurs and the simulated reactants are replaced by products. [..] Analytic solutions are presented for some simulation parameters while others are calculated using look-up tables''. Supported chemical processes include molecular diffusion, treatment of surfaces, zeroth-order-, unimolecular-, and bimolecular reactions." [urn:miriam:pubmed:16204833 "Andrews SS, Bray D. Stochastic simulation of chemical reactions with spatial resolution and single molecule detail. Phys Biol, volume 1 (3-4), pages 137-151 (December 2004)."]
 comment: Used for instance in Smoldyn.
 is_a: KISAO:0000056
-relationship: KISAO:0000245 KISAO:0000108
-
 relationship: KISAO:0000245 KISAO:0000102
+
+relationship: KISAO:0000245 KISAO:0000108
 
 relationship: KISAO:0000245 KISAO:0000105
 
@@ -848,7 +848,7 @@ id: KISAO:0000084
 name: nonnegative Poisson tau-leaping method
 namespace: KISAO
 def: "The explicit tau-leaping procedure attempts to speed up the stochastic simulation of a chemically reacting system by approximating the number of firings of each reaction channel during a chosen time increment Tau as a Poisson random variable. Since the Poisson random variable can have arbitrarily large sample values, there is always the possibility that this procedure will cause one or more reaction channels to fire so many times during Tau that the population of some reactant species will be driven negative. Two recent papers have shown how that unacceptable occurrence can be avoided by replacing the Poisson random variables with binomial random variables, whose values are naturally bounded. This paper describes a modified Poisson tau-leaping procedure that also avoids negative populations, but is easier to implement than the binomial procedure. The new Poisson procedure also introduces a second control parameter, whose value essentially dials the procedure from the original Poisson tau-leaping at one extreme to the exact stochastic simulation algorithm at the other; therefore, the modified Poisson procedure will generally be more accurate than the original Poisson procedure." [urn:miriam:doi:10.1063/1.1992473 "Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poisson tau-leaping. Journal of Chemical Physics, Vol. 123, 4104 (2005)."]
-synonym: "modified poisson tau-leaping"  []
+synonym: "modified poisson tau-leaping" RELATED []
 is_a: KISAO:0000039
 relationship: KISAO:0000245 KISAO:0000239
 
@@ -919,7 +919,7 @@ name: LSODPK
 namespace: KISAO
 def: "LSODPK, written jointly with Peter N Brown, is a set of FORTRAN subroutines for solving the initial value problem for stiff and nonstiff systems of ordinary differential equations. In solving stiff systems, LSODPK uses a corrector iteration composed of Newton iteration and one of four preconditoned Krylov subspace iteration methods. The user must select the desired Krylov method and supply a pair of routine to evaluate, preprocess, and solve the (left and/or right) preconditioner matrices. Aside from preconditioning, the implementation is matrix-free, meaning that explicit storage of the Jacobian (or related) matrix is not required. The method is experimental because the scope of problems for which it is effective is not well-known, and users are forewarned that LSODPK may or may not be competitive with traditional methods on a given problem. LSODPK also includes an option for a user-supplied linear system solver to be used without Krylov iteration." [, http://www.nea.fr/abs/html/uscd1231.html ""]
 synonym: "Livermore solver for ordinary differential equations for stiff and nonstiff systems with krylov corrector iteration" EXACT []
-synonym: "Livermore solver for ordinary differential equations for stiff and nonstiff systems with Krylov corrector iteration"  []
+synonym: "Livermore solver for ordinary differential equations for stiff and nonstiff systems with Krylov corrector iteration" RELATED []
 is_a: KISAO:0000094
 creation_date: 2008-07-08T00:00:00Z
 created_by: NLN
@@ -972,18 +972,21 @@ created_by: AZ
 [Term]
 id: KISAO:0000098
 name: type of variables
+namespace: KISAO
 def: "Type of variables used for the simulation." [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000099
 name: system behaviour
+namespace: KISAO
 def: "Characteristic describind the rules, algorithm uses to simulate the temporal evolution of a system: if it may provide different or always the same ending state from a precise initial one." [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000100
 name: type of progression timesteps
+namespace: KISAO
 def: "Type of time steps used by the algorithm." [:]
 is_a: KISAO:0000097
 
@@ -1054,7 +1057,7 @@ created_by: NLN
 id: KISAO:0000231
 name: Pahle hybrid method
 namespace: KISAO
-def: "The hybrid method combines the stochastic 'Gibson-Bruck's next reaction method' with different algorithms for the numerical integration of ODEs. The biochemical network is dynamically partitioned into a deterministic and a stochastic subnet depending on the current particle numbers in the system. The user can define limits for when a particle number should be considered low or high. The stochastic subnet contains reactions involving low numbered species as substrate or product. All the other reactions form the deterministic subnet. The two subnets are then simulated in parallel using the stochastic and deterministic solver, respectively. The reaction probabilities in the stochastic subnet are approximated as constant between two stochastic reaction events." [urn:miriam:pubmed:17032683 "COPASI--a COmplex PAthway SImulator. Hoops S, Sahle S, Gauges R, Lee C, Pahle J, Simus N, Singhal M, Xu L, Mendes P, Kummer U. Bioinformatics. 2006 Dec 15;22(24):3067-74. Epub 2006 Oct 10., Pahle,J. (2002) Eine Hybridmethode zur Simulation biochemischer Prozess (in German). Diploma thesis Universita Karlsruhe (TH), Germany."]
+def: "The hybrid method combines the stochastic 'Gibson-Bruck's next reaction method' with different algorithms for the numerical integration of ODEs. The biochemical network is dynamically partitioned into a deterministic and a stochastic subnet depending on the current particle numbers in the system. The user can define limits for when a particle number should be considered low or high. The stochastic subnet contains reactions involving low numbered species as substrate or product. All the other reactions form the deterministic subnet. The two subnets are then simulated in parallel using the stochastic and deterministic solver, respectively. The reaction probabilities in the stochastic subnet are approximated as constant between two stochastic reaction events." [urn:miriam:pubmed:17032683 "Pahle,J. (2002) Eine Hybridmethode zur Simulation biochemischer Prozess (in German). Diploma thesis Universita Karlsruhe (TH), Germany., COPASI--a COmplex PAthway SImulator. Hoops S, Sahle S, Gauges R, Lee C, Pahle J, Simus N, Singhal M, Xu L, Mendes P, Kummer U. Bioinformatics. 2006 Dec 15;22(24):3067-74. Epub 2006 Oct 10."]
 is_a: KISAO:0000000
 relationship: KISAO:0000245 KISAO:0000103
 
@@ -1090,36 +1093,42 @@ is_a: KISAO:0000094
 [Term]
 id: KISAO:0000235
 name: solution type
+namespace: KISAO
 def: "Characteristic describing if the solution produced by the method is exact or approximate." [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000236
 name: exact solution
+namespace: KISAO
 def: "Algorithms providing exact solution." [:]
 is_a: KISAO:0000235
 
 [Term]
 id: KISAO:0000237
 name: approximate solution
+namespace: KISAO
 def: "Approximation algorithms are algorithms used to find approximate solutions to optimization problems. Approximation algorithms are often associated with NP-hard problems; since it is unlikely that there can ever be efficient polynomial time exact algorithms solving NP-hard problems, one settles for polynomial time sub-optimal solutions. Unlike heuristics, which usually only find reasonably good solutions reasonably fast, one wants provable solution quality and provable run time bounds. Ideally, the approximation is optimal up to a small constant factor (for instance within 5% of the optimal solution). Approximation algorithms are increasingly being used for problems where exact polynomial-time algorithms are known but are too expensive due to the input size." [:]
 is_a: KISAO:0000235
 
 [Term]
 id: KISAO:0000238
 name: implicit or explicit method type
+namespace: KISAO
 def: "Characteristic, describing if the method finds a solution by solving an equation involving only the current state of the system (explicit) or both the current and the later one (implicit). " [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000239
 name: explicit method type
+namespace: KISAO
 def: "Explicit methods calculate the state of a system at a later time from the state of the system at the current time. Mathematically, if Y(t) is the current system state and Y((t+delta t) is the state at the later time (delta t is a small time step), then, for an explicit method Y(t+delta t) = F(Y(t)), to find Y(t+delta t)." [:]
 is_a: KISAO:0000238
 
 [Term]
 id: KISAO:0000240
 name: implicit method type
+namespace: KISAO
 def: "Implicit methods find a solution by solving an equation involving both the current state of the system and the later one. Mathematically, if Y(t) is the current system state and Y((t+delta t) is the state at the later time (delta t is a small time step), then, for an implicit method one solves an equation G(Y(t), Y(t+delta t))=0, to find Y(t+delta t)." [:]
 is_a: KISAO:0000238
 
