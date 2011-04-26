@@ -1,5 +1,5 @@
 format-version: 1.4
-date: 26:04:2011 15:04
+date: 26:04:2011 15:35
 saved-by: zhutchok
 auto-generated-by: The OWL API (version 3.2.2.1502)
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
@@ -35,6 +35,7 @@ is_metadata_tag: false
 id: KISAO:0000247
 name: lacksProperty
 namespace: KISAO
+def: "lacksProperty is an alias for not hasProperty. It should not be used in OWL version of KiSAO. It's used in OBO version of KiSAO, as it is not possible to represent negation in OBO." [:]
 domain: KISAO:0000000
 range: KISAO:0000097
 is_metadata_tag: false
@@ -988,7 +989,7 @@ name: Gillespie-like exact stochastic simulation method
 namespace: KISAO
 def: "Gillespie-like algorithm that produces exact realisation of the vector of entity amounts at each time by choosing rigorously time and reaction at each iteration." [:]
 is_obsolete: true
-replaced_by: KISAO:0000241^KISAO:0000245(KISAO:0000104)^KISAO:0000245(KISAO:0000236)
+replaced_by: KISAO:0000241^KISAO:0000245(KISAO:0000236)^KISAO:0000245(KISAO:0000104)
 created_by: NLN
 creation_date: 2008-07-14T00:00:00Z
 
