@@ -1,5 +1,5 @@
 format-version: 1.4
-date: 27:04:2011 16:49
+date: 03:05:2011 16:37
 saved-by: zhutchok
 auto-generated-by: The OWL API (version 3.2.2.1502)
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
@@ -80,6 +80,8 @@ id: KISAO:0000000
 name: kinetic simulation algorithm
 namespace: KISAO
 def: "Algorithm used to instantiate a simulation from a mathematical model, where the variable values evolve over time." [:]
+disjoint_from: KISAO:0000097
+disjoint_from: KISAO:0000201
 creation_date: 2008-05-26T00:00:00Z
 created_by: dk
 
@@ -140,9 +142,9 @@ disjoint_from: KISAO:0000064
 disjoint_from: KISAO:0000231
 relationship: KISAO:0000245 KISAO:0000108
 
-relationship: KISAO:0000245 KISAO:0000104
-
 relationship: KISAO:0000247 KISAO:0000102
+
+relationship: KISAO:0000245 KISAO:0000104
 
 relationship: KISAO:0000245 KISAO:0000105
 
@@ -670,10 +672,10 @@ namespace: KISAO
 def: "The explicit tau-leaping procedure attempts to speed up the stochastic simulation of a chemically reacting system by approximating the number of firings of each reaction channel during a chosen time increment Tau as a Poisson random variable. Since the Poisson random variable can have arbitrarily large sample values, there is always the possibility that this procedure will cause one or more reaction channels to fire so many times during Tau that the population of some reactant species will be driven negative. Two recent papers have shown how that unacceptable occurrence can be avoided by replacing the Poisson random variables with binomial random variables, whose values are naturally bounded. This paper describes a modified Poisson tau-leaping procedure that also avoids negative populations, but is easier to implement than the binomial procedure. The new Poisson procedure also introduces a second control parameter, whose value essentially dials the procedure from the original Poisson tau-leaping at one extreme to the exact stochastic simulation algorithm at the other; therefore, the modified Poisson procedure will generally be more accurate than the original Poisson procedure." [urn:miriam:doi:10.1063/1.1992473 "Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poisson tau-leaping. Journal of Chemical Physics, Vol. 123, 4104 (2005)."]
 synonym: "modified poisson tau-leaping" RELATED []
 is_a: KISAO:0000039
+relationship: KISAO:0000245 KISAO:0000239
+
 relationship: KISAO:0000259 KISAO:0000249
 cardinality: 1
-
-relationship: KISAO:0000245 KISAO:0000239
 
 
 [Term]
@@ -796,6 +798,8 @@ id: KISAO:0000097
 name: kinetic simulation algorithm characteristic
 namespace: KISAO
 def: "Simulation algorithm property, which can for example describe the model, such as the type of variables (discrete or continuous), and information on the treatment of spatial descriptions, or can be a numerical characteristic, such as the system's behavior (deterministic or stochastic) as well as the progression mechanism (fixed or adaptive time steps)." [:]
+disjoint_from: KISAO:0000000
+disjoint_from: KISAO:0000201
 created_by: AZ
 
 [Term]
@@ -905,6 +909,8 @@ id: KISAO:0000201
 name: kinetic simulation algorithm parameter
 namespace: KISAO
 def: "Parameter that can be used in the simulation experiment settings." [:]
+disjoint_from: KISAO:0000000
+disjoint_from: KISAO:0000097
 relationship: KISAO:0000250 KISAO:0000000
 
 created_by: AZ
@@ -1397,9 +1403,9 @@ disjoint_from: KISAO:0000019
 disjoint_from: KISAO:0000017
 disjoint_from: KISAO:0000064
 disjoint_from: KISAO:0000231
-relationship: KISAO:0000245 KISAO:0000102
-
 relationship: KISAO:0000245 KISAO:0000108
+
+relationship: KISAO:0000245 KISAO:0000102
 
 relationship: KISAO:0000245 KISAO:0000105
 
