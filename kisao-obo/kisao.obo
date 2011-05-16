@@ -1,5 +1,5 @@
 format-version: 1.4
-date: 03:05:2011 16:37
+date: 16:05:2011 10:02
 saved-by: zhutchok
 auto-generated-by: The OWL API (version 3.2.2.1502)
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
@@ -672,10 +672,10 @@ namespace: KISAO
 def: "The explicit tau-leaping procedure attempts to speed up the stochastic simulation of a chemically reacting system by approximating the number of firings of each reaction channel during a chosen time increment Tau as a Poisson random variable. Since the Poisson random variable can have arbitrarily large sample values, there is always the possibility that this procedure will cause one or more reaction channels to fire so many times during Tau that the population of some reactant species will be driven negative. Two recent papers have shown how that unacceptable occurrence can be avoided by replacing the Poisson random variables with binomial random variables, whose values are naturally bounded. This paper describes a modified Poisson tau-leaping procedure that also avoids negative populations, but is easier to implement than the binomial procedure. The new Poisson procedure also introduces a second control parameter, whose value essentially dials the procedure from the original Poisson tau-leaping at one extreme to the exact stochastic simulation algorithm at the other; therefore, the modified Poisson procedure will generally be more accurate than the original Poisson procedure." [urn:miriam:doi:10.1063/1.1992473 "Cao Y, Gillespie DT, Petzold LR. Avoiding negative populations in explicit Poisson tau-leaping. Journal of Chemical Physics, Vol. 123, 4104 (2005)."]
 synonym: "modified poisson tau-leaping" RELATED []
 is_a: KISAO:0000039
-relationship: KISAO:0000245 KISAO:0000239
-
 relationship: KISAO:0000259 KISAO:0000249
 cardinality: 1
+
+relationship: KISAO:0000245 KISAO:0000239
 
 
 [Term]
@@ -804,21 +804,21 @@ created_by: AZ
 
 [Term]
 id: KISAO:0000098
-name: type of variables
+name: type of variable
 namespace: KISAO
 def: "Type of variables used for the simulation." [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000099
-name: system behaviour
+name: type of system behaviour
 namespace: KISAO
 def: "Characteristic describind the rules, algorithm uses to simulate the temporal evolution of a system: if it may provide different or always the same ending state from a precise initial one." [:]
 is_a: KISAO:0000097
 
 [Term]
 id: KISAO:0000100
-name: type of progression timesteps
+name: type of progression time step
 namespace: KISAO
 def: "Type of time steps used by the algorithm." [:]
 is_a: KISAO:0000097
@@ -854,7 +854,7 @@ created_by: NLN
 
 [Term]
 id: KISAO:0000105
-name: discrete variables
+name: discrete variable
 namespace: KISAO
 def: "Algorithm that allows to change the values of a system's variables by discrete (integral) amounts." [:]
 is_a: KISAO:0000098
@@ -864,7 +864,7 @@ created_by: NLN
 
 [Term]
 id: KISAO:0000106
-name: continuous variables
+name: continuous variable
 namespace: KISAO
 def: "Algorithm that allows to change the values of a system's variables by continuous (non-integral) amounts." [:]
 is_a: KISAO:0000098
@@ -874,7 +874,7 @@ created_by: NLN
 
 [Term]
 id: KISAO:0000107
-name: progression with adaptive timesteps
+name: progression with adaptive time step
 namespace: KISAO
 def: "Algorithm that does not use fixed timesteps to update the state of a system during the whole simulation, but on the contrary adapts the length of the timesteps to the local situation." [:]
 is_a: KISAO:0000100
@@ -884,7 +884,7 @@ created_by: NLN
 
 [Term]
 id: KISAO:0000108
-name: progression with fixed timesteps
+name: progression with fixed time step
 namespace: KISAO
 def: "Algorithm that uses timesteps of constant length to update the state of a system during the whole simulation." [:]
 is_a: KISAO:0000100
@@ -1083,10 +1083,10 @@ disjoint_from: KISAO:0000064
 relationship: KISAO:0000259 KISAO:0000203
 cardinality: 1
 
+relationship: KISAO:0000245 KISAO:0000103
+
 relationship: KISAO:0000259 KISAO:0000204
 cardinality: 1
-
-relationship: KISAO:0000245 KISAO:0000103
 
 relationship: KISAO:0000245 KISAO:0000104
 
@@ -1119,7 +1119,7 @@ is_a: KISAO:0000094
 
 [Term]
 id: KISAO:0000235
-name: solution type
+name: type of solution
 namespace: KISAO
 def: "Characteristic describing if the solution produced by the method is exact or approximate." [:]
 is_a: KISAO:0000097
@@ -1142,7 +1142,7 @@ disjoint_from: KISAO:0000236
 
 [Term]
 id: KISAO:0000238
-name: implicit or explicit method type
+name: type of method
 namespace: KISAO
 def: "Characteristic, describing if the method finds a solution by solving an equation involving only the current state of the system (explicit) or both the current and the later one (implicit). " [:]
 is_a: KISAO:0000097
@@ -1403,9 +1403,9 @@ disjoint_from: KISAO:0000019
 disjoint_from: KISAO:0000017
 disjoint_from: KISAO:0000064
 disjoint_from: KISAO:0000231
-relationship: KISAO:0000245 KISAO:0000108
-
 relationship: KISAO:0000245 KISAO:0000102
+
+relationship: KISAO:0000245 KISAO:0000108
 
 relationship: KISAO:0000245 KISAO:0000105
 
