@@ -37,6 +37,7 @@
             <fileset file="${artifacts}/${bin.jar}"/>
             <fileset file="${artifacts}/${src.jar}"/>
             <fileset file="build.xml"/>
+            <fileset file="README.txt"/>
         </copy>
         <zip destfile="${artifacts}/${zip.zip}">
             <fileset dir="${distdir}"/>
