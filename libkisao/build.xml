@@ -47,7 +47,7 @@
 
     <target name="build" depends="clean" description="Compiles this project">
         <mkdir dir="${out}"/>
-        <javac srcdir="${src}" destdir="${out}">
+        <javac srcdir="${src}" destdir="${out}" compiler="javac1.5">
             <classpath>
                 <pathelement location="${out}"/>
                 <pathelement location="${lib}/HermiT/org.semanticweb.HermiT.jar"/>

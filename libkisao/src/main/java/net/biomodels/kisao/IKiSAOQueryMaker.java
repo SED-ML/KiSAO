@@ -449,6 +449,14 @@ public interface IKiSAOQueryMaker {
     String getURNByIRI(IRI iri);
 
     /**
+     * Returns id (kisao:XXXXXXX) by KiSAO IRI.
+     *
+     * @param iri KiSAO IRI.
+     * @return string, representing id (kisao:XXXXXXX)
+     */
+    String getIdByIRI(IRI iri);
+
+    /**
      * Checks whether the algorithm with the specified IRI is a hybrid one.
      *
      * @param iri KiSAO IRI.
