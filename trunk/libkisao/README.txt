@@ -12,7 +12,13 @@ libKiSAO uses the following libraries in unmodified form:
    http://www.hermit-reasoner.com
    released under the GNU Lesser General Public License
 
-This version is a 1.0rc1 release candidate.
+This version is a 1.0.1rc1 release candidate.
+
+libKiSAO 1.0.1rc1
+- compatible with java 1.5
+
+libKiSAO 1.0rc1
+- compatible with java 1.6
 
 The archive is organised as follows:
 

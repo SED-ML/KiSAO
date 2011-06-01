@@ -267,8 +267,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     public boolean isA(OWLClassExpression descendant, OWLClassExpression ancestor) {
         if (descendant == null || ancestor == null) return false;
-        if (descendant.equals(ancestor)) return true;
-        return reasoner.isEntailed(dataFactory.getOWLSubClassOfAxiom(descendant, ancestor));
+        return descendant.equals(ancestor) ||
+                reasoner.isEntailed(dataFactory.getOWLSubClassOfAxiom(descendant, ancestor));
     }
 
     public boolean hasCharacteristic(IRI algorithmIRI, boolean positive, final IRI... characteristicIRI) {
@@ -458,6 +458,15 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     public String getURNByIRI(IRI iri) {
         String id = iri.getFragment();
         return String.format("%s%s", KISAO_URN, id);
+    }
+
+    public String getIdByIRI(IRI iri) {
+        if (iri == null) return null;
+        String fragment = iri.getFragment();
+        if (fragment == null || !pattern.matcher(fragment).find()) {
+            return null;
+        }
+        return fragment.replace("_", ":");
     }
 
     public OWLReasoner getReasoner() {
