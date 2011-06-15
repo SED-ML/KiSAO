@@ -100,9 +100,19 @@ public class Main {
                         "" : " not");
 
         System.out.println("\n");
-        //Check which parameters has every deterministic algorithm
+        // Check which parameters has every deterministic algorithm
         for (IRI parameterIRI : kisaoQuery.getParametersByCharacteristic(true, KiSAOIRI.DETERMINISTIC_SYSTEM_BEHAVIOUR_CHARACTERISTIC_IRI)) {
             System.out.printf("every deterministic algorithm uses parameter %s\n",
+                    kisaoQuery.getName(parameterIRI));
+        }
+
+        System.out.println("\n");
+        // Check which parameters has algorithm, which is implicit, uses adaptive time-steps and is Runge-Kutta based?
+        IRI rkIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000064");
+        IRI implicitIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");
+        for (IRI parameterIRI : kisaoQuery.getParametersByAncestorAndCharacteristic(rkIri, true,
+                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI, implicitIri)) {
+            System.out.printf("every implicit Runge-Kutta based algorithm with adaptive time-steps uses parameter %s\n",
                     kisaoQuery.getName(parameterIRI));
         }
     }
