@@ -196,6 +196,17 @@ public interface IKiSAOQueryMaker {
     Set<IRI> getCharacteristics(IRI algorithmIri, boolean positive);
 
     /**
+     * Given the class expression, describing potential algorithm,
+     * returns a collection of IRIs of characteristics, it possess.
+     *
+     * @param algorithm    OWLClassExpression describing algorithm.
+     * @param positive     false, if negated characteristics should be looked at,
+     *                     for example 'KMC' not ('has characteristic' 'spatial description').
+     * @return set of IRIs of the algorithm characteristics.
+     */
+    Set<IRI> getCharacteristics(OWLClassExpression algorithm, boolean positive);
+
+    /**
      * Given KiSAO IRIs of simulation algorithm characteristics,
      * returns a collection of IRIs of simulation algorithms, which have them.
      *
@@ -265,6 +276,28 @@ public interface IKiSAOQueryMaker {
      * @return set of parameter KiSAO IRIs.
      */
     Set<IRI> getParametersByCharacteristic(boolean positive, IRI... characteristicIRI);
+
+    /**
+     * Returns a set of parameters that are used by the algorithm, which have specified characteristic(s)
+     * and is descendant of the specified algorithm.
+     *
+     * @param ancestor          ancestor algorithm KiSAO IRI.
+     * @param characteristicIRI characteristic KiSAO IRIs.
+     * @param positive          false, if negated characteristics should be looked at.
+     * @return set of parameter KiSAO IRIs.
+     */
+    Set<IRI> getParametersByAncestorAndCharacteristic(IRI ancestor, boolean positive, IRI... characteristicIRI);
+
+    /**
+     * Returns a set of parameters that are used by the algorithm, which have specified characteristic(s)
+     * and is descendant of the specified algorithm.
+     *
+     * @param ancestor          OWLClassExpression describing ancestor algorithm.
+     * @param characteristicIRI characteristic KiSAO IRIs.
+     * @param positive          false, if negated characteristics should be looked at.
+     * @return set of parameter KiSAO IRIs.
+     */
+    Set<IRI> getParametersByAncestorAndCharacteristic(OWLClassExpression ancestor, boolean positive, IRI... characteristicIRI);
 
     /**
      * Checks if the algorithm with the specified KiSAO IRI 'has parameter' with the specified IRIs.

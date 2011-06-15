@@ -240,15 +240,20 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return getSubBranchLeaves(KINETIC_SIMULATION_ALGORITHM_PARAMETER_IRI);
     }
 
-    public Set<IRI> getCharacteristics(IRI algorithmIri, final boolean positive) {
-        return getPropertyValues(algorithmIri,
+    public Set<IRI> getCharacteristics(IRI algorithmIri, boolean positive) {
+        return getCharacteristics(dataFactory.getOWLClass(algorithmIri), positive);
+    }
+
+    public Set<IRI> getCharacteristics(OWLClassExpression algorithm, final boolean positive) {
+        return getPropertyValues(algorithm,
                 positive ? new PropertyValueByAlgorithmVisitor(HAS_CHARACTERISTIC_IRI) :
                         new NegativePropertyValueByAlgorithmVisitor(HAS_CHARACTERISTIC_IRI));
     }
 
     public Set<IRI> getAlgorithmsByCharacteristic(final boolean positive, IRI... characteristicIri) {
         final Set<IRI> algorithms = new HashSet<IRI>();
-        OWLClassExpression query = getClassExpressionByCharacteristics(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_IRI,
+        OWLClassExpression query = getClassExpressionByCharacteristics(
+                dataFactory.getOWLClass(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_IRI),
                 positive, characteristicIri);
         for (OWLClass expression : reasoner.getSubClasses(query, false).getFlattened()) {
             if (!expression.isOWLNothing()) {
@@ -273,7 +278,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     public boolean hasCharacteristic(IRI algorithmIRI, boolean positive, final IRI... characteristicIRI) {
         OWLClass algorithm = dataFactory.getOWLClass(algorithmIRI);
-        OWLClassExpression query = getClassExpressionByCharacteristics(algorithmIRI, positive, characteristicIRI);
+        OWLClassExpression query = getClassExpressionByCharacteristics(
+                dataFactory.getOWLClass(algorithmIRI), positive, characteristicIRI);
         return reasoner.isEntailed(dataFactory.getOWLEquivalentClassesAxiom(query, algorithm));
     }
 
@@ -321,7 +327,9 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     }
 
     public Set<IRI> getHybridOf(IRI iri) {
-        return isHybrid(iri) ? getPropertyValues(iri, new PropertyValueByAlgorithmVisitor(IS_HYBRID_OF_IRI)) : null;
+        return isHybrid(iri) ?
+                getPropertyValues(dataFactory.getOWLClass(iri), new PropertyValueByAlgorithmVisitor(IS_HYBRID_OF_IRI))
+                : null;
     }
 
     public Set<IRI> getParameters(IRI algorithmIri) {
@@ -347,7 +355,15 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     }
 
     public Set<IRI> getParametersByCharacteristic(boolean positive, IRI... characteristicIRI) {
-        OWLClassExpression algorithm = getClassExpressionByCharacteristics(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_IRI,
+        return getParametersByAncestorAndCharacteristic(KINETIC_SIMULATION_ALGORITHM_IRI, positive, characteristicIRI);
+    }
+
+    public Set<IRI> getParametersByAncestorAndCharacteristic(IRI ancestor, boolean positive, IRI... characteristicIRI) {
+        return getParametersByAncestorAndCharacteristic(dataFactory.getOWLClass(ancestor), positive, characteristicIRI);
+    }
+
+    public Set<IRI> getParametersByAncestorAndCharacteristic(OWLClassExpression ancestor, boolean positive, IRI... characteristicIRI) {
+        OWLClassExpression algorithm = getClassExpressionByCharacteristics(ancestor,
                 positive, characteristicIRI);
         return getParameters(algorithm);
     }
@@ -373,7 +389,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     public boolean hasParameter(boolean positive, IRI[] characteristicIRIs, IRI... parameterIRI) {
         assert characteristicIRIs != null;
-        OWLClassExpression algorithm = getClassExpressionByCharacteristics(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_IRI,
+        OWLClassExpression algorithm = getClassExpressionByCharacteristics(
+                dataFactory.getOWLClass(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_IRI),
                 positive, characteristicIRIs);
         return hasParameter(algorithm, parameterIRI);
     }
@@ -479,9 +496,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     /* ------------------- private methods ------------------------ */
 
-    private OWLClassExpression getClassExpressionByCharacteristics(IRI parent, boolean positive, IRI... characteristicIRI) {
+    private OWLClassExpression getClassExpressionByCharacteristics(OWLClassExpression algorithm, boolean positive, IRI... characteristicIRI) {
         OWLObjectProperty hasCharacteristic = dataFactory.getOWLObjectProperty(HAS_CHARACTERISTIC_IRI);
-        OWLClassExpression algorithm = dataFactory.getOWLClass(parent);
         for (IRI characteristic : characteristicIRI) {
             OWLObjectSomeValuesFrom someValues = dataFactory.getOWLObjectSomeValuesFrom(hasCharacteristic,
                     dataFactory.getOWLClass(characteristic));
@@ -491,12 +507,11 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return algorithm;
     }
 
-    private Set<IRI> getPropertyValues(IRI iri, final IPropertyValueByAlgorithmVisitor visitor) {
+    private Set<IRI> getPropertyValues(OWLClassExpression algorithm, final IPropertyValueByAlgorithmVisitor visitor) {
         visitor.clear();
-        final OWLClass algorithm = dataFactory.getOWLClass(iri);
-
         final Set<OWLClass> superAlgorithms = getAncestors(algorithm);
-        Set<OWLSubClassOfAxiom> axioms = kisao.getSubClassAxiomsForSubClass(algorithm);
+        Set<OWLSubClassOfAxiom> axioms = algorithm instanceof OWLClass ?
+                kisao.getSubClassAxiomsForSubClass((OWLClass) algorithm) : new HashSet<OWLSubClassOfAxiom>();
         for (OWLClass clzz : superAlgorithms) {
             axioms.addAll(kisao.getSubClassAxiomsForSubClass(clzz));
         }
