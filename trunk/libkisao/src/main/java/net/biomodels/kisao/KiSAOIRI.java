@@ -33,6 +33,8 @@ public interface KiSAOIRI {
     IRI PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000107");
     IRI PROGRESSION_WITH_FIXED_TIME_STEP_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000108");
     IRI SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000102");
+    IRI IMPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");
+    IRI EXPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000239");
     IRI HYBRIDITY_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000322");
 
 }
