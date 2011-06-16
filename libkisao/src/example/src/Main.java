@@ -109,9 +109,9 @@ public class Main {
         System.out.println("\n");
         // Check which parameters has algorithm, which is implicit, uses adaptive time-steps and is Runge-Kutta based?
         IRI rkIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000064");
-        IRI implicitIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");
         for (IRI parameterIRI : kisaoQuery.getParametersByAncestorAndCharacteristic(rkIri, true,
-                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI, implicitIri)) {
+                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI)) {
             System.out.printf("every implicit Runge-Kutta based algorithm with adaptive time-steps uses parameter %s\n",
                     kisaoQuery.getName(parameterIRI));
         }

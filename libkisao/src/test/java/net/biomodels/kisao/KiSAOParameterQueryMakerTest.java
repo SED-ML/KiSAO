@@ -19,8 +19,6 @@ public class KiSAOParameterQueryMakerTest extends TestCase {
     private static final IRI lsodaMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000094");
     private static final IRI rungeKuttaIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000064");
 
-    private static final IRI implicitIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");
-
     private static final IRI absoluteTolerance = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000211");
     private static final IRI tauLeapEpsilon = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000228");
     private static final IRI stepSize = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000114");
@@ -157,30 +155,36 @@ public class KiSAOParameterQueryMakerTest extends TestCase {
     }
 
     public void testHasParameterByCharacteristicAndAncestorNotNull() {
-        assertNotNull(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true, implicitIri));
+        assertNotNull(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI));
     }
 
     public void testHasParameterByCharacteristicAndAncestorSize() {
-        assertEquals(1, me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true, implicitIri).size());
+        assertEquals(1, me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI).size());
     }
 
     public void testHasParameterByCharacteristicAndAncestorContent() {
-        assertTrue(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true, implicitIri).contains(stepSize));
+        assertTrue(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI).contains(stepSize));
     }
 
     public void testHasMultiParameterByCharacteristicAndAncestorNotNull() {
         assertNotNull(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
-                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI, implicitIri));
+                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI));
     }
 
     public void testHasMultiParameterByCharacteristicAndAncestorSize() {
         assertEquals(1, me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
-                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI, implicitIri).size());
+                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI).size());
     }
 
     public void testHasMultiParameterByCharacteristicAndAncestorContent() {
         assertTrue(me.getParametersByAncestorAndCharacteristic(rungeKuttaIri, true,
-                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI, implicitIri).contains(stepSize));
+                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI,
+                KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI).contains(stepSize));
     }
 
 
