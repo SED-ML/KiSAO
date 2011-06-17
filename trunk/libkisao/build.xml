@@ -2,17 +2,24 @@
 <project name="kisaoquery" basedir="." default="zip">
      <property name="version" value="1.0.1-rc1"/>
 
-    <property name="src" value="src/main/java"/>
-    <property name="out" value="target/classes"/>
-    <property name="artifacts" value="target/artifacts"/>
-    <property name="lib" value="lib"/>
+    <property name="src" location="src/main/java"/>
+    <property name="out" location="target/classes"/>
+    <property name="artifacts" location="target/artifacts"/>
+    <property name="lib" location="lib"/>
     <property name="temp" location="${artifacts}/temp"/>
     <property name="test" location="src/test"/>
     <property name="javadoc" location="target/javadoc"/>
-    <property name="example" value="src/example"/>
+    <property name="example" location="src/example"/>
+    <property name="licenses" location="Licenses"/>
+
     <property name="bin.jar" value="libKiSAO.jar"/>
     <property name="src.jar" value="libKiSAO-src.jar"/>
     <property name="zip.zip" value="libKiSAO-${version}.zip"/>
+
+    <property name="gpl.txt" value="gpl.txt"/>
+    <property name="lgpl.txt" value="lgpl-3.0.txt"/>
+    <property name="readme.txt" value="README.txt"/>
+    <property name="build.xml" value="build.xml"/>
 
 
     <target name="unjar.deps" depends="clean-temp"
@@ -22,6 +29,11 @@
                dest="${temp}"/>
         <unzip src="${lib}/owlapi-3.2.2/owlapi-bin.jar"
                dest="${temp}"/>
+        <delete dir="${temp}/Licenses"/>
+        <delete dir="${temp}/META-INF"/>
+        <copy todir="${temp}/Licenses">
+            <fileset dir="${licenses}"/>
+        </copy>
     </target>
 
     <target name="zip" depends="jar, src-jar, javadoc" description="Creates a zip archive, containing src, bin and javadoc">
@@ -36,8 +48,10 @@
         <copy todir="${distdir}">
             <fileset file="${artifacts}/${bin.jar}"/>
             <fileset file="${artifacts}/${src.jar}"/>
-            <fileset file="build.xml"/>
-            <fileset file="README.txt"/>
+            <fileset file="${build.xml}"/>
+            <fileset file="${readme.txt}"/>
+            <fileset file="${gpl.txt}"/>
+            <fileset file="${lgpl.txt}"/>
         </copy>
         <zip destfile="${artifacts}/${zip.zip}">
             <fileset dir="${distdir}"/>
@@ -69,6 +83,7 @@
                 <attribute name="Implementation-Title" value="KiSAO Query"/>
                 <attribute name="Implementation-Version" value="${version}"/>
             </manifest>
+
         </jar>
         <antcall target="clean-temp"/>
     </target>
