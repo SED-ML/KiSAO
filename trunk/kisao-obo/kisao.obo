@@ -1,5 +1,5 @@
 format-version: 1.4
-date: 20:05:2011 14:15
+date: 22:06:2011 09:38
 saved-by: zhutchok
 auto-generated-by: The OWL API (version 3.2.2.1502)
 id_space: rdfs http://www.w3.org/2000/01/rdf-schema#
@@ -140,6 +140,7 @@ def: "The agent-based simulation method instantiates each molecule as an individ
 comment: The agent-based simulation method is, for example, used in StochSim.
 synonym: "Morton-Firth" EXACT []
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
@@ -150,9 +151,9 @@ disjoint_from: KISAO:0000019
 disjoint_from: KISAO:0000231
 relationship: KISAO:0000245 KISAO:0000108
 
-relationship: KISAO:0000247 KISAO:0000102
-
 relationship: KISAO:0000245 KISAO:0000104
+
+relationship: KISAO:0000247 KISAO:0000102
 
 relationship: KISAO:0000245 KISAO:0000105
 
@@ -174,6 +175,7 @@ namespace: KISAO
 def: "The CVODE is a package written in C that solves initial value problems for ODEs. It is capable for stiff and non-stiff systems and uses two different linear multi-step methods, namely the Adam-Moulton method and the Backward differentiation formula (BNF)." [citeulike:1832863 "Cohen S, Hindmarsh C. Cvode, A Stiff/nonstiff Ode Solver In C. Computers in Physics, Vol. 10 (2), pages 138-143 (1996)."]
 synonym: "code value ordinary differential equation solver" EXACT []
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
@@ -454,10 +456,10 @@ disjoint_from: KISAO:0000029
 disjoint_from: KISAO:0000075
 relationship: KISAO:0000245 KISAO:0000237
 
-relationship: KISAO:0000259 KISAO:0000230
+relationship: KISAO:0000259 KISAO:0000228
 cardinality: 1
 
-relationship: KISAO:0000259 KISAO:0000228
+relationship: KISAO:0000259 KISAO:0000230
 cardinality: 1
 
 creation_date: 2008-07-08T00:00:00Z
@@ -592,6 +594,7 @@ name: Smoluchowski equation based method
 namespace: KISAO
 def: "Methods based on the Smoluchowski equation." [citeulike:1839950 "Smoluchowski M. Mathematical theory of the kinetics of the coagulation of colloidal solutions. Z. Phys. Chem, Vol. 92, No. 129. (1917)."]
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
 disjoint_from: KISAO:0000241
@@ -654,6 +657,7 @@ namespace: KISAO
 def: "Explicit or implicit method for the approximation of solutions for ordinary differential equations (ODEs). Runge-Kutta methods have been invented by Runge and Kutta in the 1900s." [urn:miriam:isbn:0-471-91046-5 "Butcher JC. The Numerical Analysis of Ordinary Differential Equations: Runge-Kutta and General Linear Methods (1987)."]
 synonym: "modified Euler method" RELATED []
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
@@ -948,6 +952,7 @@ name: Livermore solver
 namespace: KISAO
 def: "Method to solve ordinary differential equations developed at the Lawrence Livermore National Laboratory." [:]
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000241
@@ -1304,6 +1309,7 @@ name: Pahle hybrid method
 namespace: KISAO
 def: "The hybrid method combines the stochastic 'Gibson-Bruck's next reaction method' with different algorithms for the numerical integration of ODEs. The biochemical network is dynamically partitioned into a deterministic and a stochastic subnet depending on the current particle numbers in the system. The user can define limits for when a particle number should be considered low or high. The stochastic subnet contains reactions involving low numbered species as substrate or product. All the other reactions form the deterministic subnet. The two subnets are then simulated in parallel using the stochastic and deterministic solver, respectively. The reaction probabilities in the stochastic subnet are approximated as constant between two stochastic reaction events." [urn:miriam:pubmed:17032683 "Pahle,J. (2002) Eine Hybridmethode zur Simulation biochemischer Prozess (in German). Diploma thesis Universita Karlsruhe (TH), Germany., COPASI--a COmplex PAthway SImulator. Hoops S, Sahle S, Gauges R, Lee C, Pahle J, Simus N, Singhal M, Xu L, Mendes P, Kummer U. Bioinformatics. 2006 Dec 15;22(24):3067-74. Epub 2006 Oct 10."]
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
@@ -1434,6 +1440,7 @@ id: KISAO:0000241
 name: Gillespie-like method
 def: "Stochastic simulation algorithm using the an approach alike the one described in Gillespie's papers of 1976 and 1977." [:]
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
 disjoint_from: KISAO:0000094
@@ -1619,18 +1626,19 @@ name: Euler method
 namespace: KISAO
 def: "The Euler method, named after Leonhard Euler, is a first-order numerical procedure for solving ordinary differential equations (ODEs) with a given initial value." [urn:miriam:isbn:052143064X "Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001)."]
 is_a: KISAO:0000000
-disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000264
-disjoint_from: KISAO:0000087
-disjoint_from: KISAO:0000033
-disjoint_from: KISAO:0000032
 disjoint_from: KISAO:0000241
+disjoint_from: KISAO:0000019
+disjoint_from: KISAO:0000231
+disjoint_from: KISAO:0000365
+disjoint_from: KISAO:0000056
+disjoint_from: KISAO:0000033
+disjoint_from: KISAO:0000087
+disjoint_from: KISAO:0000032
 disjoint_from: KISAO:0000094
 disjoint_from: KISAO:0000086
-disjoint_from: KISAO:0000017
-disjoint_from: KISAO:0000019
 disjoint_from: KISAO:0000064
-disjoint_from: KISAO:0000231
+disjoint_from: KISAO:0000017
 relationship: KISAO:0000245 KISAO:0000108
 
 relationship: KISAO:0000245 KISAO:0000103
@@ -1672,6 +1680,7 @@ synonym: "homogeneous structures" EXACT []
 synonym: "CA" EXACT []
 synonym: "tessellation structures" EXACT []
 is_a: KISAO:0000000
+disjoint_from: KISAO:0000365
 disjoint_from: KISAO:0000056
 disjoint_from: KISAO:0000094
 disjoint_from: KISAO:0000241
@@ -1687,6 +1696,24 @@ relationship: KISAO:0000245 KISAO:0000108
 relationship: KISAO:0000245 KISAO:0000105
 
 creation_date: 2011-04-07T00:00:00Z
+created_by: AZ
+
+[Term]
+id: KISAO:0000365
+name: NDSolve method
+namespace: KISAO
+def: "The Mathematica computation system function NDSolve is a general numerical differential equation solver. It can handle a wide range of ordinary differential equations as well as some partial differential equations. NDSolve can also solve some differential-algebraic equations, which are typically a mix of differential and algebraic equations." [urn:miriam:isbn:978-1-57955-058-5 "Advanced Numerical Differential Equation Solving in Mathematica, Wolfram Mathematica Tutorial Collection, 2008."]
+is_a: KISAO:0000000
+disjoint_from: KISAO:0000056
+disjoint_from: KISAO:0000264
+disjoint_from: KISAO:0000094
+disjoint_from: KISAO:0000241
+disjoint_from: KISAO:0000261
+disjoint_from: KISAO:0000064
+disjoint_from: KISAO:0000017
+disjoint_from: KISAO:0000019
+disjoint_from: KISAO:0000231
+creation_date: 0007-11-20T00:00:00Z
 created_by: AZ
 
 
