@@ -23,9 +23,9 @@ import java.util.Set;
  * // Get KiSAO element IRI by name...
  * IRI iri = kisaoQuery.getIRIByName("tau-leaping method");
  * // ... or by MIRIAM URN ...
- * assert iri.equals(kisaoQuery.getIRIbyURN("urn:miriam:biomodels.kisao:KISAO_0000039"));
+ * assert iri.equals(kisaoQuery.getIRIbyMiriamURIorId("urn:miriam:biomodels.kisao:KISAO_0000039"));
  * // ... or by ID ...
- * assert iri.equals(kisaoQuery.getIRIbyURN("kisao:0000039"));
+ * assert iri.equals(kisaoQuery.getIRIbyMiriamURIorId("kisao:0000039"));
  *
  * // Check if it's an algorithm
  * assert kisaoQuery.isAlgorithm(iri);
@@ -191,9 +191,11 @@ public interface IKiSAOQueryMaker {
      * @param algorithmIri KiSAO IRI of a simulation algorithm.
      * @param positive     false, if negated characteristics should be looked at,
      *                     for example 'KMC' not ('has characteristic' 'spatial description').
+     * @param type         type (optional) IRIs of the characteristic categories (e.g. 'system behaviour') to be considered.
+     *                     All the characteristics are considered if no type is specified.
      * @return set of IRIs of the algorithm characteristics.
      */
-    Set<IRI> getCharacteristics(IRI algorithmIri, boolean positive);
+    Set<IRI> getCharacteristics(IRI algorithmIri, boolean positive, IRI... type);
 
     /**
      * Given the class expression, describing potential algorithm,
@@ -202,9 +204,11 @@ public interface IKiSAOQueryMaker {
      * @param algorithm    OWLClassExpression describing algorithm.
      * @param positive     false, if negated characteristics should be looked at,
      *                     for example 'KMC' not ('has characteristic' 'spatial description').
+     * @param type         type (optional) IRIs of the characteristic categories (e.g. 'system behaviour') to be considered.
+     *             All the characteristics are considered if no type is specified.
      * @return set of IRIs of the algorithm characteristics.
      */
-    Set<IRI> getCharacteristics(OWLClassExpression algorithm, boolean positive);
+    Set<IRI> getCharacteristics(OWLClassExpression algorithm, boolean positive, IRI... type);
 
     /**
      * Given KiSAO IRIs of simulation algorithm characteristics,
@@ -471,7 +475,7 @@ public interface IKiSAOQueryMaker {
      * @param urn miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) or id (kisao:KISAO_XXXXXXX or kisao:XXXXXXX).
      * @return KiSAO IRI.
      */
-    IRI getIRIbyURN(String urn);
+    IRI getIRIbyMiriamURIorId(String urn);
 
     /**
      * Returns miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) by KiSAO IRI.
@@ -479,7 +483,7 @@ public interface IKiSAOQueryMaker {
      * @param iri KiSAO IRI.
      * @return string, representing miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX)
      */
-    String getURNByIRI(IRI iri);
+    String getMiriamURIByIRI(IRI iri);
 
     /**
      * Returns id (kisao:XXXXXXX) by KiSAO IRI.
@@ -518,4 +522,20 @@ public interface IKiSAOQueryMaker {
      * @return OWLDataFactory.
      */
     OWLDataFactory getDataFactory();
+
+    /**
+     * Returns algorithms having the same characteristics as the specified one.
+     * @param algorithm The sample algorithm IRI.
+     * @param type (optional) IRIs of the characteristic categories (e.g. 'system behaviour') to be considered.
+     *             All the characteristics are considered if no type is specified.
+     * @return set of algorithm IRIs.
+     */
+    Set<IRI> getAlgorithmsWithSameCharacteristics(IRI algorithm, IRI... type);
+
+    /**
+     * Returns algorithms described by the specified query.
+     * @param query OWLClassExpression describing algorithm.
+     * @return set of algorithm IRIS.
+     */
+    Set<IRI> getAlgorithmsByQuery(OWLClassExpression query);
 }

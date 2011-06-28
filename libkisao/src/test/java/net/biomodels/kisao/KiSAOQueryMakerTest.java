@@ -35,7 +35,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testAllAlgorithmsSize() {
-        assertEquals(84, me.getAllAlgorithms().size());
+        assertEquals(83, me.getAllAlgorithms().size());
     }
 
     public void testAllAlgorithmsContent() {
@@ -182,19 +182,19 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testUrnByIRI() {
-        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getURNByIRI(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
+        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getMiriamURIByIRI(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
     }
 
     public void testIRIByURN() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyURN("urn:miriam:biomodels.kisao:KISAO_0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("urn:miriam:biomodels.kisao:KISAO_0000245"));
     }
 
     public void testIRIById() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyURN("kisao:KISAO_0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("kisao:KISAO_0000245"));
     }
 
     public void testIRIById2() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyURN("kisao:0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("kisao:0000245"));
     }
 
     public void testIsNotHybrid() {
