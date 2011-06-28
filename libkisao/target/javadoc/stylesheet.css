@@ -1,0 +1,114 @@
+/* Javadoc style sheet */
+
+/* Define colors, fonts and other style attributes here to override the defaults */
+
+/* Page background color */
+body { background-color: #FFFFFF }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, helvetica, sans-serif;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 3px;
+  padding: 6px 0 0 0;
+  color: #00658f;
+}
+
+th {
+  font-family: Arial, helvetica, sans-serif;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 3px;
+  padding: 6px 0 0 0;
+  color: white;
+}
+
+h1 {
+  font-size: 200%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 14px;
+  padding-top: 2em;
+  border-bottom: 1px dashed rgb(221, 221, 221);
+}
+
+h3 {
+  font-size: 12px;
+  font-style: italic;
+  padding-top: 1em;
+}
+
+h4 {
+  font-size: 10px;
+}
+
+body
+{
+  background-color: white;
+  color: black;
+  font-family: Tahoma, Arial, helvetica, sans-serif;
+  font-size: 12px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: #00658f;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #318db3;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #00658f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Table colors */
+.TableHeadingColor     { background: #00658f; color: white} /* kisao */
+.TableSubHeadingColor  { background: #318db3; color: white } /* Light kisao */
+.TableRowColor         { background: #FFFFFF } /* White */
+
+/* Font used in left-hand frame lists */
+.FrameTitleFont   { font-size: 12px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
+.FrameHeadingFont { font-size: 12px; font-family: Tahoma, Arial, Helvetica, sans-serif; font-weight: bold;}
+.FrameItemFont    { font-size: 12px; font-family: Tahoma, Arial, Helvetica, sans-serif }
+
+/* Navigation bar fonts and colors */
+.NavBarCell1    {
+  padding: 2px 6px 5px 6px;
+  background-color: white;
+  margin: 0;
+}
+.NavBarCell1Rev {
+  margin: 0;
+  padding: 1px 6px 5px 6px;
+  background-color: #00658f;
+  position: relative;
+  z-index: 1;
+}
+.NavBarFont1    {
+  font-size: 11px;
+  font-weight: bold;
+  color: #00658f;
+}
+.NavBarFont1Rev {
+  font-weight: bold;
+  color: white;
+}
+
+.NavBarCell2    { font-family: Tahoma, Arial, Helvetica, sans-serif; background-color:white;}
+.NavBarCell3    { font-family: Tahoma, Arial, Helvetica, sans-serif; background-color:white;}
+

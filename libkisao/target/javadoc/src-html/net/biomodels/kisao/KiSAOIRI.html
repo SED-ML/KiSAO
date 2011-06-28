@@ -1,0 +1,106 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.biomodels.kisao;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import org.semanticweb.owlapi.model.IRI;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    /**<a name="line.5"></a>
+<FONT color="green">006</FONT>     * Declares the most common KiSAO IRIs.<a name="line.6"></a>
+<FONT color="green">007</FONT>     * @author Anna Zhukova<a name="line.7"></a>
+<FONT color="green">008</FONT>     *         Date: 13-May-2011<a name="line.8"></a>
+<FONT color="green">009</FONT>     *         Time: 17:36:36<a name="line.9"></a>
+<FONT color="green">010</FONT>     */<a name="line.10"></a>
+<FONT color="green">011</FONT>    public interface KiSAOIRI {<a name="line.11"></a>
+<FONT color="green">012</FONT>        String KISAO_PREFIX = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259").getStart();<a name="line.12"></a>
+<FONT color="green">013</FONT>        String KISAO_URN = "urn:miriam:biomodels.kisao:";<a name="line.13"></a>
+<FONT color="green">014</FONT>    <a name="line.14"></a>
+<FONT color="green">015</FONT>        IRI SYNONYM_IRI = IRI.create("http://www.geneontology.org/formats/oboInOwl#Synonym");<a name="line.15"></a>
+<FONT color="green">016</FONT>        IRI SYNONYM_TYPE_IRI = IRI.create("http://www.geneontology.org/formats/oboInOwl#SynonymType");<a name="line.16"></a>
+<FONT color="green">017</FONT>    <a name="line.17"></a>
+<FONT color="green">018</FONT>        IRI KINETIC_SIMULATION_ALGORITHM_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000000");<a name="line.18"></a>
+<FONT color="green">019</FONT>        IRI KINETIC_SIMULATION_ALGORITHM_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000097");<a name="line.19"></a>
+<FONT color="green">020</FONT>        IRI KINETIC_SIMULATION_ALGORITHM_PARAMETER_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000201");<a name="line.20"></a>
+<FONT color="green">021</FONT>    <a name="line.21"></a>
+<FONT color="green">022</FONT>        IRI HAS_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000245");<a name="line.22"></a>
+<FONT color="green">023</FONT>        IRI HAS_PARAMETER_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259");<a name="line.23"></a>
+<FONT color="green">024</FONT>        IRI IS_HYBRID_OF_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000246");<a name="line.24"></a>
+<FONT color="green">025</FONT>    <a name="line.25"></a>
+<FONT color="green">026</FONT>    <a name="line.26"></a>
+<FONT color="green">027</FONT>        IRI HAS_TYPE = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000251");<a name="line.27"></a>
+<FONT color="green">028</FONT>    <a name="line.28"></a>
+<FONT color="green">029</FONT>        IRI STOCHASTIC_SYSTEM_BEHAVIOUR_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000104");<a name="line.29"></a>
+<FONT color="green">030</FONT>        IRI DETERMINISTIC_SYSTEM_BEHAVIOUR_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000103");<a name="line.30"></a>
+<FONT color="green">031</FONT>        IRI CONTINUOUS_VARIABLE_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000106");<a name="line.31"></a>
+<FONT color="green">032</FONT>        IRI DISCRETE_VARIABLE_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000105");<a name="line.32"></a>
+<FONT color="green">033</FONT>        IRI PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000107");<a name="line.33"></a>
+<FONT color="green">034</FONT>        IRI PROGRESSION_WITH_FIXED_TIME_STEP_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000108");<a name="line.34"></a>
+<FONT color="green">035</FONT>        IRI SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000102");<a name="line.35"></a>
+<FONT color="green">036</FONT>        IRI IMPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");<a name="line.36"></a>
+<FONT color="green">037</FONT>        IRI EXPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000239");<a name="line.37"></a>
+<FONT color="green">038</FONT>        IRI HYBRIDITY_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000322");<a name="line.38"></a>
+<FONT color="green">039</FONT>    <a name="line.39"></a>
+<FONT color="green">040</FONT>    }<a name="line.40"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
