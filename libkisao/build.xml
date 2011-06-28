@@ -106,7 +106,8 @@
 
     <target name="javadoc" description="Generates Javadoc">
         <mkdir dir="${javadoc}"/>
-        <javadoc destdir="${javadoc}" verbose="no" windowtitle="KiSAO Query" public="true" linksource="true">
+        <javadoc destdir="${javadoc}" verbose="no" windowtitle="KiSAO Query" public="true"
+                 linksource="true" stylesheetfile="resources/stylesheet.css">
             <fileset dir="${src}" defaultexcludes="yes"/>
             <classpath>
                 <pathelement location="${lib}/HermiT/org.semanticweb.HermiT.jar"/>
