@@ -1493,7 +1493,7 @@
         <oboInOwl:Synonym xml:lang="en">GFRD</oboInOwl:Synonym>
         <oboInOwl:Synonym xml:lang="en">Green&#39;s function reaction dynamics</oboInOwl:Synonym>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
-        <rdfs:comment xml:lang="en">Method that simulates biochemical networks on particle level. It considers both, changes in time and space by &#39;&#39;exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm&#39;&#39; which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Method that simulates biochemical networks on particle level. It considers both changes in time and space by &#39;&#39;exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm&#39;&#39; which allows for large jumps in time when the considered particles are far away from each other [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions taking place between them in one simulation step.</rdfs:comment>
     </Class>
     <Axiom>
         <oboInOwl:SynonymType xml:lang="en">EXACT</oboInOwl:SynonymType>
@@ -2283,7 +2283,7 @@
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:CreatedBy xml:lang="en">AZ</oboInOwl:CreatedBy>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
-        <rdfs:comment xml:lang="en">Simulation algorithm property, which can for example describe the model, such as the type of variables (discrete or continuous), and information on the treatment of spatial descriptions, or can be a numerical characteristic, such as the system&#39;s behaviour (deterministic or stochastic) as well as the progression mechanism (fixed or adaptive time steps).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Simulation algorithm property, which can, for example, describe the model, such as the type of variables (discrete or continuous), and information on the treatment of spatial descriptions, or can be a numerical characteristic, such as the system&#39;s behaviour (deterministic or stochastic) as well as the progression mechanism (fixed or adaptive time steps).</rdfs:comment>
     </Class>
     
 
@@ -2306,7 +2306,7 @@
         <rdfs:label xml:lang="en">type of system behaviour</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000097"/>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
-        <rdfs:comment xml:lang="en">Characteristic describing the rules, algorithm uses to simulate the temporal evolution of a system: if it may provide different or always the same ending state from a precise initial one.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A characteristic describing the rules the algorithm uses to simulate the temporal evolution of a system, specifically whether or not the final state is uniquely determined from a precise initial state.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
     </Class>
     
@@ -2344,7 +2344,7 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000099"/>
         <disjointWith rdf:resource="&kisao;KISAO_0000104"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system using determined descriptions, that from a precise initial state always provide the same ending state.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system deterministically, so that from a precise initial state the algorithm will always end up in the same final state.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
     </Class>
@@ -2357,7 +2357,7 @@
         <rdfs:label xml:lang="en">stochastic system behaviour</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000099"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system using probabilistic rules, that from a precise initial state may provide different ending state.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system using probabilistic rules, so that between two simulations, the same precise initial state may result in a different final state.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
     </Class>
@@ -2371,7 +2371,7 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000098"/>
         <disjointWith rdf:resource="&kisao;KISAO_0000106"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <rdfs:comment xml:lang="en">Algorithm that allows to change the values of a system&#39;s variables by discrete (integral) amounts.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Algorithm that allows values of system&#39;s variables to change by discrete (integral) amounts.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
     </Class>
@@ -2384,7 +2384,7 @@
         <rdfs:label xml:lang="en">continuous variable</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000098"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <rdfs:comment xml:lang="en">Algorithm that allows to change the values of a system&#39;s variables by continuous (non-integral) amounts.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Algorithm that allows the values of a system&#39;s variables to change by continuous (non-integral) amounts.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
     </Class>
@@ -2545,7 +2545,7 @@
         </rdfs:subClassOf>
         <oboInOwl:Namespace xml:lang="en">KISAO</oboInOwl:Namespace>
         <oboInOwl:Synonym xml:lang="en">RTOL</oboInOwl:Synonym>
-        <rdfs:comment xml:lang="en">This parameter is a numeric value specifying the desired relative tolerance the user wants to achieve. A smaller value means that the trajectory is calculated more accurate.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This parameter is a numeric value specifying the desired relative tolerance the user wants to achieve. A smaller value means that the trajectory is calculated more accurately.</rdfs:comment>
     </Class>
     <Axiom>
         <oboInOwl:SynonymType xml:lang="en">EXACT</oboInOwl:SynonymType>
