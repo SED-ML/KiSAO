@@ -26,10 +26,6 @@ import static net.biomodels.kisao.KiSAOIRI.*;
  *         Time: 11:29:03
  */
 public class KiSAOQueryMaker implements IKiSAOQueryMaker {
-    /**
-     * IRI of the KiSA Ontology.
-     */
-    public static final IRI KISAO_IRI = IRI.create("http://kisao.svn.sourceforge.net/viewvc/kisao/trunk/kisao-owl/kisao.owl");
 
     private final Pattern pattern = Pattern.compile("^\\s*(" + KISAO_URN + "|kisao:)?(KISAO_|KISAO:)?\\d{7}\\s*$");
     private final Pattern idPattern = Pattern.compile("\\d{7}");
@@ -58,7 +54,10 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         if (kisaoIri == null) {
             kisaoIri = KISAO_IRI;
         }
-        kisao = manager.loadOntologyFromOntologyDocument(kisaoIri);
+        kisao = manager.loadOntology(kisaoIri);
+
+        addImportedAxioms(manager);
+
         collectLabels();
 
         if (factory == null) {
@@ -69,6 +68,12 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         }
         reasoner = factory.createNonBufferingReasoner(kisao, new SimpleConfiguration(monitor));
         addInferredAxioms(manager);
+    }
+
+    private void addImportedAxioms(OWLOntologyManager manager) {
+        for (OWLOntology importedOntology : kisao.getImports()) {
+            manager.addAxioms(kisao, importedOntology.getAxioms());
+        }
     }
 
     /**

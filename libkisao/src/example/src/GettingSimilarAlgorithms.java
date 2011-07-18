@@ -14,7 +14,7 @@ public class GettingSimilarAlgorithms {
 
     public static void main(String[] args) throws OWLOntologyCreationException {
         // Create KiSAOQueryMaker instance, which uses last version of kisao.owl ontology
-        // (URL: http://kisao.svn.sourceforge.net/viewvc/kisao/trunk/kisao-owl/kisao.owl).
+        // (URL: http://biomodels.net/kisao/KISAO).
         IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker();
         // ... or use kisao.owl stored locally instead, by specifying IRI constructor argument:
         // IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker(IRI.create("file:///path-to-kisao.owl"));
