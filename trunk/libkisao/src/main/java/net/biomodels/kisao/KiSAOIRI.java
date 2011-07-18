@@ -9,6 +9,9 @@ import org.semanticweb.owlapi.model.IRI;
  *         Time: 17:36:36
  */
 public interface KiSAOIRI {
+    IRI KISAO_IRI = IRI.create("http://biomodels.net/kisao/KISAO");
+    IRI KISAO_FULL_IRI = IRI.create("http://biomodels.net/kisao/KISAO_FULL");
+
     String KISAO_PREFIX = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259").getStart();
     String KISAO_URN = "urn:miriam:biomodels.kisao:";
 
