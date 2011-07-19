@@ -22,12 +22,12 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <Ontology rdf:about="http://www.biomodels.net/kisao/KISAO_FULL#">
-        <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (full version)</rdfs:label>
+        <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology</rdfs:label>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
         <versionInfo>2.1</versionInfo>
         <oboInOwl:Synonym xml:lang="en">KiSAO</oboInOwl:Synonym>
-        <rdfs:comment xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation of Systems Biology models.</rdfs:comment>
-        <rdfs:comment xml:lang="en">This is a full version, which contains deprecated classes and imports the core KiSAO version, containing non-deprecated classes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation of models in biology, and their characteristics and the parameters required for their use.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is the full version which contains all classes, including deprecated ones.</rdfs:comment>
         <imports rdf:resource="http://www.biomodels.net/kisao/KISAO#"/>
     </Ontology>
     
@@ -120,22 +120,17 @@
 
     <Class rdf:about="&kisao;KISAO_0000002">
         <rdfs:label xml:lang="en">non-spatial tau-leaping method</rdfs:label>
-        <equivalentClass>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
+        <rdfs:subClassOf>
             <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&kisao;KISAO_0000039"/>
-                    <Class>
-                        <complementOf>
-                            <Restriction>
-                                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
-                            </Restriction>
-                        </complementOf>
-                    </Class>
-                </intersectionOf>
+                <complementOf>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                    </Restriction>
+                </complementOf>
             </Class>
-        </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        </rdfs:subClassOf>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
@@ -158,7 +153,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -184,7 +179,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
@@ -210,7 +205,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
@@ -225,18 +220,17 @@
 
     <Class rdf:about="&kisao;KISAO_0000024">
         <rdfs:label xml:lang="en">partial differential equation method</rdfs:label>
-        <equivalentClass rdf:resource="&kisao;KISAO_0000369"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -259,8 +253,24 @@
 
     <Class rdf:about="&kisao;KISAO_0000025">
         <rdfs:label xml:lang="en">Gillespie-like stochastic simulation method</rdfs:label>
-        <equivalentClass rdf:resource="&kisao;KISAO_0000241"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&kisao;KISAO_0000241"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
@@ -271,12 +281,6 @@
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
@@ -294,22 +298,7 @@
 
     <Class rdf:about="&kisao;KISAO_0000026">
         <rdfs:label xml:lang="en">algorithm using non-spatial description</rdfs:label>
-        <equivalentClass>
-            <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&kisao;KISAO_0000000"/>
-                    <Class>
-                        <complementOf>
-                            <Restriction>
-                                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
-                            </Restriction>
-                        </complementOf>
-                    </Class>
-                </intersectionOf>
-            </Class>
-        </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -324,18 +313,24 @@
 
     <Class rdf:about="&kisao;KISAO_0000034">
         <rdfs:label xml:lang="en">optimized direct method</rdfs:label>
-        <equivalentClass>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000333"/>
+        <rdfs:subClassOf>
             <Class>
-                <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&kisao;KISAO_0000333"/>
+                <complementOf>
                     <Restriction>
                         <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                        <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
                     </Restriction>
-                </intersectionOf>
+                </complementOf>
             </Class>
-        </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -361,7 +356,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -387,7 +382,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
@@ -413,7 +408,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
@@ -439,7 +434,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
@@ -469,7 +464,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
@@ -481,8 +476,7 @@
 
     <Class rdf:about="&kisao;KISAO_0000044">
         <rdfs:label xml:lang="en">Gillespie based method for stiff systems.</rdfs:label>
-        <equivalentClass rdf:resource="&kisao;KISAO_0000241"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
@@ -505,7 +499,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Explicit tau-leaping method.</rdfs:comment>
@@ -529,7 +523,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Implicit tau-leaping method.</rdfs:comment>
@@ -548,12 +542,16 @@
                     <rdf:Description rdf:about="&kisao;KISAO_0000241"/>
                     <Restriction>
                         <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                         <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-14</oboInOwl:CreationDate>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
@@ -564,15 +562,16 @@
     
 
 
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000241 -->
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000262 -->
 
-    <rdf:Description rdf:about="&kisao;KISAO_0000241"/>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000369 -->
-
-    <rdf:Description rdf:about="&kisao;KISAO_0000369"/>
+    <Class rdf:about="&kisao;KISAO_0000262">
+        <rdfs:label xml:lang="en">deprecated class</rdfs:label>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <oboInOwl:CreatedBy xml:lang="en">AZ</oboInOwl:CreatedBy>
+        <oboInOwl:Namespace>KISAO_DEPRECATED</oboInOwl:Namespace>
+        <rdfs:comment xml:lang="en">The root of the branch where all the deprecated terms are stored.</rdfs:comment>
+    </Class>
 </rdf:RDF>
 
 
