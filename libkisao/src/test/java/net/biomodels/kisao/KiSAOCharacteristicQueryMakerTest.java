@@ -31,7 +31,7 @@ public class KiSAOCharacteristicQueryMakerTest extends TestCase {
     }
 
     public void testAllCharacteristicsSize() {
-        assertEquals(16, me.getAllCharacteristics().size());
+        assertEquals(22, me.getAllCharacteristics().size());
     }
 
     public void testAllCharacteristicsContent() {
@@ -43,7 +43,7 @@ public class KiSAOCharacteristicQueryMakerTest extends TestCase {
     }
 
     public void testCharacteristicByAlgorithmSize() {
-        assertEquals(5, me.getCharacteristics(poissonMethod, true).size());
+        assertEquals(6, me.getCharacteristics(poissonMethod, true).size());
     }
 
     public void testCharacteristicByAlgorithmContent() {
@@ -55,11 +55,11 @@ public class KiSAOCharacteristicQueryMakerTest extends TestCase {
     }
 
     public void testAlgorithmByCharacteristicSize() {
-        assertEquals(21, me.getAlgorithmsByCharacteristic(true, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI).size());
+        assertEquals(32, me.getAlgorithmsByCharacteristic(true, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI).size());
     }
 
     public void testAlgorithmByMultiCharacteristicSize() {
-        assertEquals(5, me.getAlgorithmsByCharacteristic(true, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI,
+        assertEquals(16, me.getAlgorithmsByCharacteristic(true, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI,
                 KiSAOIRI.DETERMINISTIC_SYSTEM_BEHAVIOUR_CHARACTERISTIC_IRI).size());
     }
 
@@ -89,7 +89,7 @@ public class KiSAOCharacteristicQueryMakerTest extends TestCase {
     }
 
     public void testNegativeAlgorithmByCharacteristicSize() {
-        assertEquals(53, me.getAlgorithmsByCharacteristic(false, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI).size());
+        assertEquals(70, me.getAlgorithmsByCharacteristic(false, KiSAOIRI.SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI).size());
     }
 
     public void testNegativeAlgorithmByMultiCharacteristicSize() {

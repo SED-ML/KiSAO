@@ -180,12 +180,12 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     public String getName(IRI iri) {
         OWLClass clazz = dataFactory.getOWLClass(iri);
-        return clazz == null ? null : getAnnotation(clazz, dataFactory.getRDFSLabel());
+        return clazz == null ? null : getAnnotation(clazz, dataFactory.getOWLAnnotationProperty(NAME_IRI));
     }
 
     public String getDefinition(IRI iri) {
         OWLClass clazz = dataFactory.getOWLClass(iri);
-        return clazz == null ? null : getAnnotation(clazz, dataFactory.getRDFSComment());
+        return clazz == null ? null : getAnnotation(clazz, dataFactory.getOWLAnnotationProperty(DEFINITION_IRI));
     }
 
     public boolean isDeprecated(IRI iri) {

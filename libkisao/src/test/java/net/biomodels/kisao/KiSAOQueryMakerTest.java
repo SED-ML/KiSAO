@@ -15,13 +15,13 @@ import java.net.URISyntaxException;
 public class KiSAOQueryMakerTest extends TestCase {
     private static IRI poissonMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000040");
     private static IRI gfrdMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000058");
-    //private static IRI pdeMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000024");
     private static IRI tauMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000039");
     private static IRI lsoda = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000088");
     private static IRI eulerMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000261");
     private static IRI forwardEulerMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000030");
-    private static IRI linearMultiStepMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000281");
+    private static IRI oneStepMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000377");
     private static IRI pahleMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000231");
+    private static IRI gibsonBruck = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000027");
 
     IKiSAOQueryMaker me;
 
@@ -35,7 +35,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testAllAlgorithmsSize() {
-        assertEquals(83, me.getAllAlgorithms().size());
+        assertEquals(139, me.getAllAlgorithms().size());
     }
 
     public void testAllAlgorithmsContent() {
@@ -43,16 +43,17 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testName() {
-        assertEquals("GFRD", me.getName(gfrdMethod));
+        assertEquals("Greens function reaction dynamics", me.getName(gfrdMethod));
     }
 
     public void testDefinition() {
         assertEquals("Method that simulates biochemical networks on particle level. " +
-                "It considers both, changes in time and space by " +
-                "''exploiting both the exact solution of the Smoluchowski Equation to set up an event-driven algorithm''" +
-                " which allows for large jumps in time when the considered particles are far away from each other" +
-                " [in space] and thus cannot react. GFRD combines the propagation of particles in space with the reactions" +
-                " taking place between them in one simulation step.", me.getDefinition(gfrdMethod));
+                "It considers both changes in time and space " +
+                "by ''exploiting both the exact solution of the Smoluchowski Equation " +
+                "to set up an event-driven algorithm'' which allows for large jumps in time " +
+                "when the considered particles are far away from each other [in space] and thus cannot react. " +
+                "GFRD combines the propagation of particles in space with the reactions " +
+                "taking place between them in one simulation step.", me.getDefinition(gfrdMethod));
     }
 
     public void testLinksNotNull() {
@@ -80,7 +81,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testSynonymSize() {
-        assertEquals(1, me.getAllSynonyms(gfrdMethod).size());
+        assertEquals(2, me.getAllSynonyms(gfrdMethod).size());
     }
 
     public void testSynonymContent() {
@@ -93,7 +94,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testExactSynonymSize() {
-        assertEquals(1, me.getSynonyms(gfrdMethod, SynonymType.EXACT).size());
+        assertEquals(2, me.getSynonyms(gfrdMethod, SynonymType.EXACT).size());
     }
 
     public void testExactSynonymContent() {
@@ -114,27 +115,27 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testDirectDescendantsNotNull() {
-        assertNotNull(me.getDescendants(linearMultiStepMethod, true));
+        assertNotNull(me.getDescendants(oneStepMethod, true));
     }
 
     public void testDirectDescendantsSize() {
-        assertEquals(3, me.getDescendants(linearMultiStepMethod, true).size());
+        assertEquals(4, me.getDescendants(oneStepMethod, true).size());
     }
 
     public void testDirectDescendantsContent() {
-        assertTrue(me.getDescendants(linearMultiStepMethod, true).contains(eulerMethod));
+        assertTrue(me.getDescendants(oneStepMethod, true).contains(eulerMethod));
     }
 
     public void testDescendantsNotNull() {
-        assertNotNull(me.getDescendants(linearMultiStepMethod, false));
+        assertNotNull(me.getDescendants(oneStepMethod, false));
     }
 
     public void testDescendantsSize() {
-        assertEquals(7, me.getDescendants(linearMultiStepMethod, false).size());
+        assertEquals(29, me.getDescendants(oneStepMethod, false).size());
     }
 
     public void testDescendantsContent() {
-        assertTrue(me.getDescendants(linearMultiStepMethod, false).contains(forwardEulerMethod));
+        assertTrue(me.getDescendants(oneStepMethod, false).contains(forwardEulerMethod));
     }
 
     public void testDirectAncestorsNotNull() {
@@ -158,7 +159,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testAncestorsContent() {
-        assertTrue(me.getAncestors(forwardEulerMethod, false).contains(linearMultiStepMethod));
+        assertTrue(me.getAncestors(forwardEulerMethod, false).contains(oneStepMethod));
     }
 
     public void testGetTypeOfAlgorithm() {
@@ -210,11 +211,11 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testHybridOfSize() {
-        assertEquals(2, me.getHybridOf(pahleMethod).size());
+        assertEquals(1, me.getHybridOf(pahleMethod).size());
     }
 
     public void testHybridOfContent() {
-        assertTrue(me.getHybridOf(pahleMethod).contains(lsoda));
+        assertTrue(me.getHybridOf(pahleMethod).contains(gibsonBruck));
     }
 
     public void testReasoner() {
