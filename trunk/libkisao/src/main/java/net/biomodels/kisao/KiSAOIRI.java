@@ -1,6 +1,7 @@
 package net.biomodels.kisao;
 
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 
 /**
  * Declares the most common KiSAO IRIs.
@@ -15,8 +16,10 @@ public interface KiSAOIRI {
     String KISAO_PREFIX = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259").getStart();
     String KISAO_URN = "urn:miriam:biomodels.kisao:";
 
-    IRI SYNONYM_IRI = IRI.create("http://www.geneontology.org/formats/oboInOwl#Synonym");
-    IRI SYNONYM_TYPE_IRI = IRI.create("http://www.geneontology.org/formats/oboInOwl#SynonymType");
+    IRI SYNONYM_IRI = IRI.create("http://www.w3.org/TR/skos-reference/skos.html#altLabel");
+    IRI SYNONYM_TYPE_IRI = OWLRDFVocabulary.RDFS_COMMENT.getIRI();
+    IRI NAME_IRI = OWLRDFVocabulary.RDFS_LABEL.getIRI();
+    IRI DEFINITION_IRI = IRI.create("http://www.w3.org/TR/skos-reference/skos.html#definition");
 
     IRI KINETIC_SIMULATION_ALGORITHM_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000000");
     IRI KINETIC_SIMULATION_ALGORITHM_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000097");
@@ -25,6 +28,7 @@ public interface KiSAOIRI {
     IRI HAS_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000245");
     IRI HAS_PARAMETER_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259");
     IRI IS_HYBRID_OF_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000246");
+    IRI USES_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000360");
 
 
     IRI HAS_TYPE = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000251");
