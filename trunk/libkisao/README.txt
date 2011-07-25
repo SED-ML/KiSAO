@@ -22,7 +22,10 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.2rc1 release candidate.
+This version is a 1.0.2rc2 release candidate.
+
+libKiSAO 1.0.2rc2
+- annotation IRIs for definitions and synonyms were updated to be compatible with KiSAO 2.2
 
 libKiSAO 1.0.2rc1
 - more methods for retrieving similar algorithms
