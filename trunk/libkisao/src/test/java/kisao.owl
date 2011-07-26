@@ -9,7 +9,7 @@ Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(dc:=<http://purl.org/dc/terms/>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-Prefix(skos:=<http://www.w3.org/TR/skos-reference/skos.html#>)
+Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
 
 
 Ontology(<http://www.biomodels.net/kisao/KISAO#>

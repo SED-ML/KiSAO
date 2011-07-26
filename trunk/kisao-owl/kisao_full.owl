@@ -9,7 +9,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY skos "http://www.w3.org/TR/skos-reference/skos.html#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
 ]>
 
 
@@ -22,7 +22,7 @@
      xmlns:kisao="http://www.biomodels.net/kisao/KISAO#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:skos="http://www.w3.org/TR/skos-reference/skos.html#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <Ontology rdf:about="http://www.biomodels.net/kisao/KISAO_FULL#">
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
