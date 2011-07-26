@@ -16,10 +16,10 @@ public interface KiSAOIRI {
     String KISAO_PREFIX = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259").getStart();
     String KISAO_URN = "urn:miriam:biomodels.kisao:";
 
-    IRI SYNONYM_IRI = IRI.create("http://www.w3.org/TR/skos-reference/skos.html#altLabel");
+    IRI SYNONYM_IRI = IRI.create("http://www.w3.org/2004/02/skos/core#altLabel");
     IRI SYNONYM_TYPE_IRI = OWLRDFVocabulary.RDFS_COMMENT.getIRI();
     IRI NAME_IRI = OWLRDFVocabulary.RDFS_LABEL.getIRI();
-    IRI DEFINITION_IRI = IRI.create("http://www.w3.org/TR/skos-reference/skos.html#definition");
+    IRI DEFINITION_IRI = IRI.create("http://www.w3.org/2004/02/skos/core#definition");
 
     IRI KINETIC_SIMULATION_ALGORITHM_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000000");
     IRI KINETIC_SIMULATION_ALGORITHM_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000097");
