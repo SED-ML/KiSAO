@@ -20,7 +20,7 @@ public class GettingAlgorithmCharacteristics {
 
         String name = "trapezoidal tau-leaping method";
         // Get algorithm IRI by name
-        IRI iri = kisaoQuery.getIRIByName(name);
+        IRI iri = kisaoQuery.searchByName(name).iterator().next();
         System.out.printf("%s\n", name);
         
         // Get positive algorithm characteristics,

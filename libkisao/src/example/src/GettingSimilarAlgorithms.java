@@ -21,7 +21,7 @@ public class GettingSimilarAlgorithms {
 
         String name = "binomial tau-leaping method";
         // Get algorithm IRI by name
-        IRI iri = kisaoQuery.getIRIByName(name);
+        IRI iri = kisaoQuery.searchByName(name).iterator().next();
 
         // Get algorithms with all the same characteristics
         // (system behaviour, type of variables, spatial description, method type, etc.)
@@ -35,8 +35,8 @@ public class GettingSimilarAlgorithms {
         System.out.println("");
 
         // Get algorithms with the same system behaviour and type of variable characteristics
-        IRI systemBehaviour = kisaoQuery.getIRIByName("system behaviour");
-        IRI typeOfVariable = kisaoQuery.getIRIByName("type of variable");
+        IRI systemBehaviour = kisaoQuery.searchByName("type of system behaviour").iterator().next();
+        IRI typeOfVariable = kisaoQuery.searchByName("type of variable").iterator().next();
         similarIRIs = kisaoQuery.getAlgorithmsWithSameCharacteristics(iri, systemBehaviour, typeOfVariable);
         System.out.printf("%s is similar to %d methods in KiSAO, concerning system behaviour and type of variables:\n",
                 name, similarIRIs.size());

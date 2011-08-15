@@ -21,7 +21,7 @@ public class BrowsingAlgorithmHierarchy {
 
         // List simulation algorithms, stored in KiSAO
         for (IRI iri : kisaoQuery.getAllAlgorithms()) {
-            String id = kisaoQuery.getIdByIRI(iri);
+            String id = kisaoQuery.getId(iri);
             String name = kisaoQuery.getName(iri);
             boolean directOnly = true;
             Collection<IRI> ancestorIRIs = kisaoQuery.getAncestors(iri, directOnly);
@@ -38,8 +38,8 @@ public class BrowsingAlgorithmHierarchy {
         }
 
         // Check if there is a descendant-ancestor relationship between algorithms
-        IRI tauLeap = kisaoQuery.getIRIByName("tau-leaping method");
-        IRI monteCarlo = kisaoQuery.getIRIByName("Monte Carlo method");
+        IRI tauLeap = kisaoQuery.searchByName("tau-leaping method").iterator().next();
+        IRI monteCarlo = kisaoQuery.searchByName("Monte Carlo method").iterator().next();
         System.out.printf("\nIt is %s, that tau-leaping method is Monte Carlo based.\n",
             kisaoQuery.isA(tauLeap, monteCarlo));
     }

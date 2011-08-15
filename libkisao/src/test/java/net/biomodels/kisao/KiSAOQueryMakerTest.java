@@ -6,6 +6,7 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.net.URISyntaxException;
+import java.util.Set;
 
 /**
  * @author zhutchok
@@ -16,7 +17,6 @@ public class KiSAOQueryMakerTest extends TestCase {
     private static IRI poissonMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000040");
     private static IRI gfrdMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000058");
     private static IRI tauMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000039");
-    private static IRI lsoda = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000088");
     private static IRI eulerMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000261");
     private static IRI forwardEulerMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000030");
     private static IRI oneStepMethod = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000377");
@@ -175,27 +175,29 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testGetByName() {
-        assertEquals(forwardEulerMethod, me.getIRIByName("Euler forward method"));
+        Set<IRI> iriSet = me.searchByName("Euler forward method");
+        assertTrue(iriSet.size() == 1 && iriSet.contains(forwardEulerMethod));
     }
 
     public void testGetByNameOrSynonym() {
-        assertEquals(gfrdMethod, me.getIRIByNameOrSynonym("greens function reaction dynamics"));
+        Set<IRI> iriSet = me.searchByName("GFRD");
+        assertTrue(iriSet.size() == 1 && iriSet.contains(gfrdMethod));
     }
 
     public void testUrnByIRI() {
-        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getMiriamURIByIRI(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
+        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getMiriamURI(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
     }
 
     public void testIRIByURN() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("urn:miriam:biomodels.kisao:KISAO_0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.searchById("urn:miriam:biomodels.kisao:KISAO_0000245"));
     }
 
     public void testIRIById() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("kisao:KISAO_0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.searchById("kisao:KISAO_0000245"));
     }
 
     public void testIRIById2() {
-        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.getIRIbyMiriamURIorId("kisao:0000245"));
+        assertEquals(KiSAOIRI.HAS_CHARACTERISTIC_IRI, me.searchById("kisao:0000245"));
     }
 
     public void testIsNotHybrid() {

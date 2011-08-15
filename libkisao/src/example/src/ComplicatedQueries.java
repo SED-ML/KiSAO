@@ -19,8 +19,6 @@ public class ComplicatedQueries {
         IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker();
         // ... or use kisao.owl stored locally instead, by specifying IRI constructor argument:
         // IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker(IRI.create("file:///path-to-kisao.owl"));
-
-        System.out.println("\n");
         // Make our own query
         OWLReasoner reasoner = kisaoQuery.getReasoner();
         OWLDataFactory dataFactory = kisaoQuery.getDataFactory();
@@ -32,20 +30,13 @@ public class ComplicatedQueries {
                         dataFactory.getOWLClass(KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_CHARACTERISTIC_IRI))) ?
                         "" : " not");
 
-        System.out.println("\n");
-        // Check which parameters has every deterministic algorithm
-        for (IRI parameterIRI : kisaoQuery.getParametersByCharacteristic(true, KiSAOIRI.DETERMINISTIC_SYSTEM_BEHAVIOUR_CHARACTERISTIC_IRI)) {
-            System.out.printf("every deterministic algorithm uses parameter %s\n",
-                    kisaoQuery.getName(parameterIRI));
-        }
-
-        System.out.println("\n");
-        // Check which parameters has algorithm, which is implicit, uses adaptive time-steps and is Runge-Kutta based?
-        IRI rkIri = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000064");
-        for (IRI parameterIRI : kisaoQuery.getParametersByAncestorAndCharacteristic(rkIri, true,
-                KiSAOIRI.PROGRESSION_WITH_ADAPTIVE_TIME_STEP_CHARACTERISTIC_IRI,
+        System.out.println();
+        
+        // Check which parameters has algorithm, which is implicit, uses adaptive time-steps and is tau-leaping based?
+        IRI tauIRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000039");
+        for (IRI parameterIRI : kisaoQuery.getParametersByAncestorAndCharacteristic(tauIRI, true,
                 KiSAOIRI.IMPLICIT_METHOD_CHARACTERISTIC_IRI)) {
-            System.out.printf("every implicit Runge-Kutta based algorithm with adaptive time-steps uses parameter %s\n",
+            System.out.printf("Every implicit tau-leaping based algorithm uses parameter %s\n",
                     kisaoQuery.getName(parameterIRI));
         }
     }
