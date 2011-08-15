@@ -5,7 +5,6 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,17 +14,17 @@ import java.util.Set;
  * <pre>
  * {@code
  * // Create KiSAOQueryMaker instance, which uses last version of kisao.owl ontology
- * // (URL: http://kisao.svn.sourceforge.net/viewvc/kisao/trunk/kisao-owl/kisao.owl).
+ * // (URL: http://biomodels.net/kisao/KISAO).
  * IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker();
  * // To use kisao.owl, stored locally, instead, one should specify IRI constructor argument:
  * // IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker(IRI.create("file:///..."));
  *
  * // Get KiSAO element IRI by name...
- * IRI iri = kisaoQuery.getIRIByName("tau-leaping method");
+ * IRI iri = kisaoQuery.searchByName("tau-leaping method").iterator().next();
  * // ... or by MIRIAM URN ...
- * assert iri.equals(kisaoQuery.getIRIbyMiriamURIorId("urn:miriam:biomodels.kisao:KISAO_0000039"));
+ * assert iri.equals(kisaoQuery.searchById("urn:miriam:biomodels.kisao:KISAO_0000039"));
  * // ... or by ID ...
- * assert iri.equals(kisaoQuery.getIRIbyMiriamURIorId("kisao:0000039"));
+ * assert iri.equals(kisaoQuery.searchById("kisao:0000039"));
  *
  * // Check if it's an algorithm
  * assert kisaoQuery.isAlgorithm(iri);
@@ -112,27 +111,27 @@ import java.util.Set;
 public interface IKiSAOQueryMaker {
 
     /**
-     * Provides a list of IRIs of simulation algorithms, stored in KiSAO.
+     * Provides a set of IRIs of simulation algorithms, stored in KiSAO.
      *
-     * @return list of algorithm IRIs.
+     * @return set of algorithm IRIs.
      */
-    List<IRI> getAllAlgorithms();
+    Set<IRI> getAllAlgorithms();
 
     /**
-     * Provides a list of IRIs of simulation algorithm characteristics, stored in KiSAO.
+     * Provides a set of IRIs of simulation algorithm characteristics, stored in KiSAO.
      * Subsumption characteristics (e.g. 'type of time steps') are not included.
      *
-     * @return list of algorithm characteristic IRIs.
+     * @return set of algorithm characteristic IRIs.
      */
-    List<IRI> getAllCharacteristics();
+    Set<IRI> getAllCharacteristics();
 
     /**
-     * Provides a list of IRIs of simulation algorithm parameters, stored in KiSAO.
+     * Provides a set of IRIs of simulation algorithm parameters, stored in KiSAO.
      * Subsumption parameters (e.g. 'granularity control parameter') are not included.
      *
-     * @return list of algorithm parameter IRIs.
+     * @return set of algorithm parameter IRIs.
      */
-    List<IRI> getAllParameters();
+    Set<IRI> getAllParameters();
 
     /**
      * Returns name (rdfs:label) by given KiSAO IRI.
@@ -396,20 +395,22 @@ public interface IKiSAOQueryMaker {
     boolean isParameter(IRI iri);
 
     /**
-     * Looks for a KiSAO entry with the specified label.
+     * Looks for a KiSAO entry with the specified name or synonym.
      *
-     * @param name Label.
-     * @return KiSAO IRI.
+     * @param name String representing name or synonym.
+     * @return set of KiSAO IRI.
      */
-    IRI getIRIByName(String name);
+    Set<IRI> searchByName(String name);
 
     /**
-     * Looks for a KiSAO entry with the specified label or synonym.
+     * Looks for a KiSAO entries matching specified query.
      *
-     * @param name Label or synonym.
+     * @param query String containing entry identifier (e.g. kisao:0000001)
+     *        or MIRIAM URI (e.g. urn:miriam:biomodels.kisao:KISAO_0000001)
+     *        or URI (e.g. "http://www.biomodels.net/kisao/KISAO#KISAO_0000259").
      * @return KiSAO IRI.
      */
-    IRI getIRIByNameOrSynonym(String name);
+    IRI searchById(String query);
 
     /**
      * Returns a set of descendant IRIs for the specified entry.
@@ -469,13 +470,6 @@ public interface IKiSAOQueryMaker {
      */
     boolean isA(OWLClassExpression descendantCandidate, OWLClassExpression ancestorCandidate);
 
-    /**
-     * Returns KiSAO IRI by miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) or id (kisao:KISAO_XXXXXXX or kisao:XXXXXXX).
-     *
-     * @param urn miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) or id (kisao:KISAO_XXXXXXX or kisao:XXXXXXX).
-     * @return KiSAO IRI.
-     */
-    IRI getIRIbyMiriamURIorId(String urn);
 
     /**
      * Returns miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) by KiSAO IRI.
@@ -483,7 +477,7 @@ public interface IKiSAOQueryMaker {
      * @param iri KiSAO IRI.
      * @return string, representing miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX)
      */
-    String getMiriamURIByIRI(IRI iri);
+    String getMiriamURI(IRI iri);
 
     /**
      * Returns id (kisao:XXXXXXX) by KiSAO IRI.
@@ -491,7 +485,7 @@ public interface IKiSAOQueryMaker {
      * @param iri KiSAO IRI.
      * @return string, representing id (kisao:XXXXXXX)
      */
-    String getIdByIRI(IRI iri);
+    String getId(IRI iri);
 
     /**
      * Checks whether the algorithm with the specified IRI is a hybrid one.

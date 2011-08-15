@@ -27,13 +27,15 @@ import static net.biomodels.kisao.KiSAOIRI.*;
  */
 public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
-    private final Pattern pattern = Pattern.compile("^\\s*(" + KISAO_URN + "|kisao:)?(KISAO_|KISAO:)?\\d{7}\\s*$");
+    private final Pattern pattern = Pattern.compile("^\\s*(" + KISAO_URN + "|kisao:|http://www.biomodels.net/kisao/KISAO#)?(KISAO_|KISAO:)?\\d{7}\\s*$", Pattern.CASE_INSENSITIVE);
     private final Pattern idPattern = Pattern.compile("\\d{7}");
     private final OWLOntology kisao;
     private final OWLReasoner reasoner;
     private final OWLDataFactory dataFactory;
 
     private final Map<String, IRI> label2iri = new HashMap<String, IRI>();
+
+    private Map<String, Set<IRI>> synonym2iri = null;
 
     /**
      * Creates a new KiSAOQueryMaker.
@@ -234,15 +236,15 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return result;
     }
 
-    public List<IRI> getAllAlgorithms() {
+    public Set<IRI> getAllAlgorithms() {
         return getSubBranch(KINETIC_SIMULATION_ALGORITHM_IRI);
     }
 
-    public List<IRI> getAllCharacteristics() {
+    public Set<IRI> getAllCharacteristics() {
         return getSubBranchLeaves(KINETIC_SIMULATION_ALGORITHM_CHARACTERISTIC_IRI);
     }
 
-    public List<IRI> getAllParameters() {
+    public Set<IRI> getAllParameters() {
         return getSubBranchLeaves(KINETIC_SIMULATION_ALGORITHM_PARAMETER_IRI);
     }
 
@@ -360,6 +362,7 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     }
 
     // TODO: make it faster
+
     public Set<IRI> getParameters(OWLClassExpression algorithm) {
         OWLObjectProperty hasParameter = dataFactory.getOWLObjectProperty(HAS_PARAMETER_IRI);
         Set<IRI> result = new HashSet<IRI>();
@@ -462,45 +465,70 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return isA(iri, KiSAOIRI.KINETIC_SIMULATION_ALGORITHM_PARAMETER_IRI);
     }
 
-    public IRI getIRIByName(String name) {
-        assert name != null;
-        return label2iri.get(normalize(name));
-    }
-
-    public IRI getIRIByNameOrSynonym(String name) {
-        assert name != null;
+    public Set<IRI> searchByName(String name) {
+        if (name == null || name.length() <= 0) {
+            return null;
+        }
+        Set<IRI> result = new HashSet<IRI>();
         name = normalize(name);
         IRI iri = label2iri.get(name);
-        if (iri != null) return iri;
+        if (iri != null) {
+            result.add(iri);
+        }
         OWLAnnotationProperty synonym = dataFactory.getOWLAnnotationProperty(SYNONYM_IRI);
-        for (OWLAnnotationAssertionAxiom ax : kisao.getAxioms(AxiomType.ANNOTATION_ASSERTION)) {
-            OWLAnnotation annotation = ax.getAnnotation();
-            if (synonym.equals(annotation.getProperty())
-                    && name.equals(normalize(getLiteral(annotation)))) {
-                OWLAnnotationSubject subject = ax.getSubject();
-                if (subject instanceof IRI) {
-                    return (IRI) subject;
-                }
+        if (synonym2iri == null) {
+            initSynonymMap(name, result, synonym);
+        } else {
+            Set<IRI> synonymIris = synonym2iri.get(name);
+            if (synonymIris != null) {
+                result.addAll(synonymIris);
             }
+        }
+        return Collections.unmodifiableSet(result);
+    }
+
+    public IRI searchById(String name) {
+        if (name == null || name.length() <= 0) {
+            return null;
+        }
+        if (pattern.matcher(name).find()) {
+            Matcher matcher = idPattern.matcher(name);
+            matcher.find();
+            return IRI.create(String.format("%sKISAO_%s", KISAO_PREFIX, matcher.group()));
         }
         return null;
     }
 
-    public IRI getIRIbyMiriamURIorId(String id) {
-        if (pattern.matcher(id).find()) {
-            Matcher matcher = idPattern.matcher(id);
-            matcher.find();
-            id = matcher.group();
+    private Set<IRI> initSynonymMap(String name, Set<IRI> result, OWLAnnotationProperty synonym) {
+        synonym2iri = new HashMap<String, Set<IRI>>();
+        for (OWLAnnotationAssertionAxiom ax : kisao.getAxioms(AxiomType.ANNOTATION_ASSERTION)) {
+            OWLAnnotation annotation = ax.getAnnotation();
+            String synonymValue = normalize(getLiteral(annotation));
+            if (synonym.equals(annotation.getProperty())) {
+                OWLAnnotationSubject subject = ax.getSubject();
+                if (subject instanceof IRI) {
+                    Set<IRI> iriSet = synonym2iri.get(synonymValue);
+                    if (iriSet == null) {
+                        iriSet = new HashSet<IRI>();
+                        synonym2iri.put(synonymValue, iriSet);
+                    }
+                    IRI subjIRI = (IRI) subject;
+                    iriSet.add(subjIRI);
+                    if (name.equals(synonymValue)) {
+                        result.add(subjIRI);
+                    }
+                }
+            }
         }
-        return IRI.create(String.format("%sKISAO_%s", KISAO_PREFIX, id));
+        return result;
     }
 
-    public String getMiriamURIByIRI(IRI iri) {
+    public String getMiriamURI(IRI iri) {
         String id = iri.getFragment();
         return String.format("%s%s", KISAO_URN, id);
     }
 
-    public String getIdByIRI(IRI iri) {
+    public String getId(IRI iri) {
         if (iri == null) return null;
         String fragment = iri.getFragment();
         if (fragment == null || !pattern.matcher(fragment).find()) {
@@ -597,7 +625,7 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
 
     private void addInferredAxioms(OWLOntologyManager manager) {
         List<InferredAxiomGenerator<? extends OWLAxiom>> generators = Arrays.asList(
-                (InferredAxiomGenerator<? extends OWLAxiom>)new InferredClassAssertionAxiomGenerator(),
+                (InferredAxiomGenerator<? extends OWLAxiom>) new InferredClassAssertionAxiomGenerator(),
                 new InferredEquivalentClassAxiomGenerator(),
                 new InferredInverseObjectPropertiesAxiomGenerator(),
                 new InferredPropertyAssertionGenerator(),
@@ -616,8 +644,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return ancestors;
     }
 
-    private List<IRI> getSubBranch(IRI branchParent) {
-        List<IRI> result = new ArrayList<IRI>();
+    private Set<IRI> getSubBranch(IRI branchParent) {
+        Set<IRI> result = new HashSet<IRI>();
         for (Node<OWLClass> node : reasoner.getSubClasses(dataFactory.getOWLClass(branchParent), false)) {
             OWLClass element = node.getRepresentativeElement();
             if (!element.isOWLThing() && !element.isOWLNothing()) {
@@ -627,8 +655,8 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return result;
     }
 
-    private List<IRI> getSubBranchLeaves(IRI branchParent) {
-        List<IRI> result = new ArrayList<IRI>();
+    private Set<IRI> getSubBranchLeaves(IRI branchParent) {
+        Set<IRI> result = new HashSet<IRI>();
         for (Node<OWLClass> node : reasoner.getSubClasses(dataFactory.getOWLClass(branchParent), false)) {
             OWLClass element = node.getRepresentativeElement();
             if (element.getSubClasses(kisao).isEmpty() && !element.isOWLNothing() && !element.isOWLThing()) {

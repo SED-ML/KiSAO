@@ -20,9 +20,9 @@ public class RetrievingAlgorithmInformation {
         // ... or use kisao.owl stored locally instead, by specifying IRI constructor argument:
         // IKiSAOQueryMaker kisaoQuery = new KiSAOQueryMaker(IRI.create("file:///path-to-kisao.owl"));
 
-        IRI iri = kisaoQuery.getIRIbyMiriamURIorId("KISAO_0000039");
-        String id = kisaoQuery.getIdByIRI(iri);
-        String miriamURI = kisaoQuery.getMiriamURIByIRI(iri);
+        IRI iri = kisaoQuery.searchById("KISAO_0000039");
+        String id = kisaoQuery.getId(iri);
+        String miriamURI = kisaoQuery.getMiriamURI(iri);
         String name = kisaoQuery.getName(iri);
         Collection<String> synonymNames = kisaoQuery.getAllSynonyms(iri);
         String definition = kisaoQuery.getDefinition(iri);

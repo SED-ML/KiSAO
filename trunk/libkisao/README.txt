@@ -22,7 +22,17 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.2rc2 release candidate.
+This version is a 1.0.2rc3 release candidate.
+
+libKiSAO 1.0.2rc3
+- return type of getAllAlgorithms/Parameters/Characteristics methods was changed to Set<IRI> (was List<IRI>)
+- getMiriamURIByIRI method was renamed to getMiriamURI
+- getIdByIRI method was renamed to getId
+- getIRIByName and getIRIByNameOrSynonym methods were replaced with searchByName
+- getIRIbyMiriamURIorId method was replaced with searchById
+
+libKiSAO 1.0.2rc2
+- annotation IRIs for definitions and synonyms were updated to be compatible with KiSAO 2.2
 
 libKiSAO 1.0.2rc2
 - annotation IRIs for definitions and synonyms were updated to be compatible with KiSAO 2.2
