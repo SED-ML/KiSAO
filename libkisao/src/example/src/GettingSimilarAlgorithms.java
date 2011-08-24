@@ -5,6 +5,8 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.util.Set;
 
+import static net.biomodels.kisao.KiSAOIRI.*;
+
 /**
  * @author Anna Zhukova
  *         Date: 28-Jun-2011
@@ -42,6 +44,15 @@ public class GettingSimilarAlgorithms {
                 name, similarIRIs.size());
         for (IRI similar : similarIRIs) {
             System.out.printf("  %s\n", kisaoQuery.getName(similar));
+        }
+
+        System.out.println("");
+
+        // Get 6 most similar algorithms to the Zonneveld method
+        for (IRI algo : kisaoQuery.getNMostSimilarAlgorithms(IRI.create( "http://www.biomodels.net/kisao/KISAO#KISAO_0000086"), 10,
+                TYPE_OF_VARIABLE_IRI, SPATIAL_DESCRIPTION_CHARACTERISTIC_IRI, TYPE_OF_SYSTEM_BEHAVIOUR_IRI, TYPE_OF_DIFFERENTIAL_EQUATION_IRI
+                )) {
+            System.out.printf("%s is similar to Zonneveld method\n", kisaoQuery.getName(algo));
         }
 
     }

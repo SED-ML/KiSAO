@@ -5,6 +5,7 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -504,6 +505,30 @@ public interface IKiSAOQueryMaker {
     Set<IRI> getHybridOf(IRI iri);
 
     /**
+     * Checks whether the algorithm with the specified IRI is a complex one:
+     * is a hybrid one of uses other algorithms.
+     *
+     * @param iri KiSAO IRI.
+     * @return if algorithm with the specified IRI is a complex one.
+     */
+    boolean isComplex(IRI iri);
+
+    /**
+     * Returns IRIs of the algorithms, the specified one uses.
+     *
+     * @param iri KiSAO IRI of the complex algorithm.
+     * @return set of IRIs of the algorithms, the specified one uses.
+     */
+    Set<IRI> getUsedAlgorithms(IRI iri);
+
+    /**
+     * Returns IRIs of the algorithms, which use other algorithms.
+     *
+     * @return set of IRIs of complex algorithms.
+     */
+    Set<IRI> getComplexAlgorithms();
+
+    /**
      * Returns reasoner.
      *
      * @return OWLReasoner.
@@ -525,6 +550,24 @@ public interface IKiSAOQueryMaker {
      * @return set of algorithm IRIs.
      */
     Set<IRI> getAlgorithmsWithSameCharacteristics(IRI algorithm, IRI... type);
+
+    /**
+     * Returns algorithms having the same characteristics as the specified one.
+     * @param algorithm The sample algorithm IRI.
+     * @param n The number of algorithms to return. n &lt; 0 is considered as infinity.
+     * @param type (optional) IRIs of the characteristic categories (e.g. 'system behaviour') to be considered.
+     *             All the characteristics are considered if no type is specified.
+     * @return sorted (by similarity) list of n (or less if n were not found) IRIs of the algorithms most similar to the given one.
+     */
+    List<IRI> getNMostSimilarAlgorithms(IRI algorithm, int n, IRI... type);
+
+    /**
+     * Distance between two algorithms in the hierarchy tree.
+     * @param algorithm1 IRI of the first algorithm.
+     * @param algorithm2 IRI of the second algorithm.
+     * @return distance value which is not less that 0 and not greater than 1.
+     */
+    double distance(IRI algorithm1, IRI algorithm2);
 
     /**
      * Returns algorithms described by the specified query.

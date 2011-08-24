@@ -43,5 +43,9 @@ public interface KiSAOIRI {
     IRI IMPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000240");
     IRI EXPLICIT_METHOD_CHARACTERISTIC_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000239");
     IRI HYBRIDITY_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000322");
-
+    IRI TYPE_OF_VARIABLE_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000098");
+    IRI TYPE_OF_SYSTEM_BEHAVIOUR_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000099");
+    IRI TYPE_OF_DIFFERENTIAL_EQUATION_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000405");
+    IRI TYPE_OF_PROGRESSION_TIME_STEP_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000100");
+   
 }

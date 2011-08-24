@@ -22,7 +22,11 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.2rc3 release candidate.
+This version is a 1.0.2-rc4 release candidate.
+
+libKiSAO 1.0.2rc4
+- getNMostSimilarAlgorithms method was added
+- getComplexAlgorithms and isComplex methods were added
 
 libKiSAO 1.0.2rc3
 - return type of getAllAlgorithms/Parameters/Characteristics methods was changed to Set<IRI> (was List<IRI>)

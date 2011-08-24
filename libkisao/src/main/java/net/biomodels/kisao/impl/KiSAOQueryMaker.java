@@ -36,7 +36,6 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     private final Map<String, IRI> label2iri = new HashMap<String, IRI>();
 
     private Map<String, Set<IRI>> synonym2iri = null;
-
     /**
      * Creates a new KiSAOQueryMaker.
      *
@@ -357,6 +356,20 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
                 : null;
     }
 
+    public boolean isComplex(IRI iri) {
+        return isHybrid(iri) || !getPropertyValues(dataFactory.getOWLClass(iri), new PropertyValueByAlgorithmVisitor(USES_IRI)).isEmpty();
+    }
+    
+    public Set<IRI> getUsedAlgorithms(IRI iri) {
+        Set<IRI> result = new HashSet<IRI>();
+        result.addAll(getPropertyValues(dataFactory.getOWLClass(iri), new PropertyValueByAlgorithmVisitor(USES_IRI)));
+        Set<IRI> hybridOf = getHybridOf(iri);
+        if (hybridOf != null) {
+            result.addAll(hybridOf);
+        }
+        return Collections.unmodifiableSet(result);
+    }
+
     public Set<IRI> getParameters(IRI algorithmIri) {
         return getParameters(dataFactory.getOWLClass(algorithmIri));
     }
@@ -557,6 +570,55 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         similar.remove(algorithm);
         return similar;
     }
+
+    public List<IRI> getNMostSimilarAlgorithms(final IRI algorithm, int n, IRI... type) {
+        Set<IRI> result = new HashSet<IRI>();
+        result.addAll(getAlgorithmsWithSameCharacteristics(algorithm, type));
+        List<IRI> resultList = new ArrayList<IRI>(result);
+        final Set<IRI> characteristics = getCharacteristics(algorithm, true);
+        final Set<IRI> negativeCharacteristics = getCharacteristics(algorithm, false);
+        Collections.sort(resultList, new Comparator<IRI>() {
+
+            public int compare(IRI o1, IRI o2) {
+                double diff = distance(algorithm, o1) - distance(algorithm, o2);
+                if (diff == 0) {
+                    Set<IRI> firstPositive = new HashSet<IRI>(getCharacteristics(o1, true));
+                    firstPositive.retainAll(characteristics);
+                    Set<IRI> firstNegative = new HashSet<IRI>(getCharacteristics(o1, false));
+                    firstNegative.retainAll(negativeCharacteristics);
+
+                    Set<IRI> secondPositive = new HashSet<IRI>(getCharacteristics(o2, true));
+                    secondPositive.retainAll(characteristics);
+                    Set<IRI> secondNegative = new HashSet<IRI>(getCharacteristics(o2, false));
+                    secondNegative.retainAll(negativeCharacteristics);
+                    return firstPositive.size() + firstNegative.size() - (secondPositive.size() + secondNegative.size());
+                }
+                return diff > 0 ? 1 : -1;
+            }
+        });
+        if (resultList.size() > n) resultList = resultList.subList(0, n);
+        return resultList;
+    }
+
+    public double distance(IRI algorithm1, IRI algorithm2) {
+        if (algorithm1.equals(algorithm2)) return 0;
+        Set<IRI> firstAncestors = getAncestors(algorithm1, false);
+        firstAncestors.add(algorithm1);
+        int first = firstAncestors.size();
+        Set<IRI> secondAncestors = getAncestors(algorithm2, false);
+        secondAncestors.add(algorithm2);
+        int second = secondAncestors.size();
+        firstAncestors.retainAll(secondAncestors);
+        int common = firstAncestors.size();
+        return 1 - 2.0 * common / (first + second);
+    }
+
+    public Set<IRI> getComplexAlgorithms() {
+        OWLClassExpression query= dataFactory.getOWLObjectSomeValuesFrom(dataFactory.getOWLObjectProperty(USES_IRI),
+                    dataFactory.getOWLClass(KINETIC_SIMULATION_ALGORITHM_IRI));
+        return getAlgorithmsByQuery(query);
+    }
+
 
     /* ------------------- private methods ------------------------ */
 
