@@ -1,25 +1,26 @@
-package net.biomodels.kisao.impl;
+package net.biomodels.ontology.impl;
 
-import net.biomodels.kisao.visitors.IPropertyValueByAlgorithmVisitor;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLObjectComplementOf;
+import org.semanticweb.owlapi.model.OWLPropertyExpression;
 import org.semanticweb.owlapi.util.OWLClassExpressionVisitorAdapter;
 
 import java.util.Set;
+
 
 /**
  * @author Anna Zhukova
  *         Date: 13-May-2011
  *         Time: 18:23:01
  */
-class NegativePropertyValueByAlgorithmVisitor extends OWLClassExpressionVisitorAdapter
-        implements IPropertyValueByAlgorithmVisitor {
-    private final IPropertyValueByAlgorithmVisitor visitor;
+class NegativePropertyValueBySubjectVisitor extends OWLClassExpressionVisitorAdapter
+        implements IPropertyValueBySubjectVisitor {
+    private final IPropertyValueBySubjectVisitor visitor;
 
-    public NegativePropertyValueByAlgorithmVisitor(IRI iri) {
-        assert iri != null;
-        visitor = new PropertyValueByAlgorithmVisitor(iri);
+    public NegativePropertyValueBySubjectVisitor(OWLPropertyExpression property) {
+        assert property != null;
+        visitor = new PropertyValueBySubjectVisitor(property);
     }
 
     public void visit(OWLObjectComplementOf ce) {
@@ -37,5 +38,3 @@ class NegativePropertyValueByAlgorithmVisitor extends OWLClassExpressionVisitorA
         return visitor.getValues();
     }
 }
-
-

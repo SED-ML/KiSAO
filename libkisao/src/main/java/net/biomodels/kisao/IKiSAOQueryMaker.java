@@ -1,5 +1,6 @@
 package net.biomodels.kisao;
 
+import net.biomodels.ontology.IQueryMaker;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
