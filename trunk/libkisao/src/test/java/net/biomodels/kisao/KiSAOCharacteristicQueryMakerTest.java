@@ -6,6 +6,7 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.net.URISyntaxException;
+import java.util.Set;
 
 /**
  * @author Anna Zhukova
