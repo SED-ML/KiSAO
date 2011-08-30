@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="kisaoquery" basedir="." default="zip">
-     <property name="version" value="1.0.2-rc4"/>
+     <property name="version" value="1.0.2-rc5"/>
 
     <property name="src" location="src/main/java"/>
     <property name="out" location="target/classes"/>
@@ -14,11 +14,15 @@
 
     <property name="bin.jar" value="libKiSAO.jar"/>
     <property name="src.jar" value="libKiSAO-src.jar"/>
+    <property name="onto.jar" value="libOnto.jar"/>
+    <property name="onto-src.jar" value="libOnto-src.jar"/>
     <property name="zip.zip" value="libKiSAO-${version}.zip"/>
+    <property name="onto-zip.zip" value="libOnto-${version}.zip"/>
 
     <property name="gpl.txt" value="gpl.txt"/>
     <property name="lgpl.txt" value="lgpl-3.0.txt"/>
     <property name="readme.txt" value="README.txt"/>
+    <property name="readme-onto.txt" value="readme.txt"/>
     <property name="build.xml" value="build.xml"/>
 
 
@@ -59,6 +63,26 @@
         <delete dir="${distdir}"/>
     </target>
 
+    <target name="zip-onto" depends="jar, src-jar, javadoc" description="Creates a zip archive, containing src, bin and javadoc">
+        <property name="distdir" value="${artifacts}/dist"/>
+        <mkdir dir="${distdir}"/>
+        <copy todir="${distdir}/javadoc">
+            <fileset dir="${javadoc}" excludes="net/biomodels/kisao/**"/>
+        </copy>
+        <copy todir="${distdir}">
+            <fileset file="${artifacts}/${onto.jar}"/>
+            <fileset file="${artifacts}/${onto-src.jar}"/>
+            <fileset file="${build.xml}"/>
+            <fileset file="${readme-onto.txt}"/>
+            <fileset file="${gpl.txt}"/>
+            <fileset file="${lgpl.txt}"/>
+        </copy>
+        <zip destfile="${artifacts}/${onto-zip.zip}">
+            <fileset dir="${distdir}"/>
+        </zip>
+        <delete dir="${distdir}"/>
+    </target>
+
     <target name="build" depends="clean" description="Compiles this project">
         <mkdir dir="${out}"/>
         <javac srcdir="${src}" destdir="${out}" compiler="javac1.5">
@@ -80,7 +104,25 @@
                 <attribute name="Manifest-Version" value="1.0"/>
                 <!-- Information about the program itself -->
                 <attribute name="Implementation-Vendor" value="Biomodels.net"/>
-                <attribute name="Implementation-Title" value="KiSAO Query"/>
+                <attribute name="Implementation-Title" value="libKiSAO"/>
+                <attribute name="Implementation-Version" value="${version}"/>
+            </manifest>
+
+        </jar>
+
+        <jar jarfile="${artifacts}/${onto.jar}" excludes="net/biomodels/kisao/**">
+            <fileset dir="${out}">
+                <include name="**/*.class"/>
+                <exclude name="net/biomodels/kisao/**"/>
+            </fileset>
+            <fileset dir="${temp}"/>
+            <manifest>
+                <!-- Who is building this jar? -->
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Manifest-Version" value="1.0"/>
+                <!-- Information about the program itself -->
+                <attribute name="Implementation-Vendor" value="Biomodels.net"/>
+                <attribute name="Implementation-Title" value="libOnto"/>
                 <attribute name="Implementation-Version" value="${version}"/>
             </manifest>
 
@@ -98,9 +140,26 @@
                 <attribute name="Manifest-Version" value="1.0"/>
                 <!-- Information about the program itself -->
                 <attribute name="Implementation-Vendor" value="Biomodels.net"/>
-                <attribute name="Implementation-Title" value="KiSAO Query Source Code"/>
+                <attribute name="Implementation-Title" value="libKiSAO Source Code"/>
                 <attribute name="Implementation-Version" value="${version}"/>
             </manifest>
+        </jar>
+
+        <jar jarfile="${artifacts}/${onto-src.jar}" excludes="net/biomodels/kisao/**">
+            <fileset dir="${src}">
+                <include name="**/*.java"/>
+                <exclude name="net/biomodels/kisao/**"/>
+            </fileset>
+            <manifest>
+                <!-- Who is building this jar? -->
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Manifest-Version" value="1.0"/>
+                <!-- Information about the program itself -->
+                <attribute name="Implementation-Vendor" value="Biomodels.net"/>
+                <attribute name="Implementation-Title" value="libOnto Source Code"/>
+                <attribute name="Implementation-Version" value="${version}"/>
+            </manifest>
+
         </jar>
     </target>
 
