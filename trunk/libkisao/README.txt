@@ -22,7 +22,10 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.2-rc4 release candidate.
+This version is a 1.0.2-rc5 release candidate.
+
+libKiSAO 1.0.2rc5
+- general ontology querying functionality was separated from KiSAO-specific one and extracted to a separate package.
 
 libKiSAO 1.0.2rc4
 - getNMostSimilarAlgorithms method was added

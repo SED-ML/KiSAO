@@ -3,7 +3,6 @@ package net.biomodels.ontology;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -247,4 +246,64 @@ public interface IQueryMaker {
      * @return set of branch leaf element IRIs.
      */
     Set<IRI> getSubBranchLeaves(IRI branchParent);
+
+    /**
+     * Returns the IRI of the annotation representing synonyms.
+     * @return IRI
+     */
+    IRI getSynonymIRI();
+
+    /**
+     * Sets the IRI of the annotation representing synonyms.
+     * @param synonymIRI IRI
+     */
+    void setSynonymIRI(IRI synonymIRI);
+
+    /**
+     * Returns the IRI of the annotation representing synonym types.
+     * @return IRI
+     */
+    IRI getSynonymTypeIRI();
+
+    /**
+     * Sets the IRI of the annotation representing synonym types.
+     * @param synonymTypeIRI IRI
+     */
+    void setSynonymTypeIRI(IRI synonymTypeIRI);
+
+    /**
+     * Returns the IRI of the annotation representing names.
+     * @return IRI
+     */
+    IRI getNameIRI();
+
+    /**
+     * Sets the IRI of the annotation representing names.
+     * @param nameIRI IRI
+     */
+    void setNameIRI(IRI nameIRI);
+
+    /**
+     * Returns the IRI of the annotation representing definitions.
+     * @return IRI
+     */
+    IRI getDefinitionIRI();
+
+    /**
+     * Sets the IRI of the annotation representing definitions.
+     * @param definitionIRI IRI
+     */
+    void setDefinitionIRI(IRI definitionIRI);
+
+    /**
+     * Returns the IRI of the annotation representing references.
+     * @return IRI
+     */
+    IRI getLinkIRI();
+
+    /**
+     * Sets the IRI of the annotation representing references.
+     * @param linkIRI IRI
+     */
+    void setLinkIRI(IRI linkIRI);
 }

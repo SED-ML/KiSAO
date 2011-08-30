@@ -1,9 +1,6 @@
 package net.biomodels.ontology.impl;
 
 import net.biomodels.ontology.IQueryMaker;
-import net.biomodels.ontology.impl.IPropertyValueBySubjectVisitor;
-import net.biomodels.ontology.impl.NegativePropertyValueBySubjectVisitor;
-import net.biomodels.ontology.impl.PropertyValueBySubjectVisitor;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
@@ -357,7 +354,7 @@ public class QueryMaker implements IQueryMaker {
         return result;
     }
 
-        public IRI getSynonymIRI() {
+    public IRI getSynonymIRI() {
         return synonymIRI;
     }
 
