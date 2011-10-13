@@ -1961,7 +1961,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1007/BF02241732</annotatedTarget>
-        <rdfs:comment xml:lang="de">Erwin Fehlberg (1970). Klassische Runge-Kutta-Formeln vierter und niedrigerer Ordnung mit Schrittweiten-Kontrolle und ihre Anwendung auf Wärmeleitungsprobleme, Computing (Arch. Elektron. Rechnen), vol. 6, pp. 61–71.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Erwin Fehlberg (1970). Klassische Runge-Kutta-Formeln vierter und niedrigerer Ordnung mit Schrittweiten-Kontrolle und ihre Anwendung auf Wärmeleitungsprobleme, Computing (Arch. Elektron. Rechnen), vol. 6, pp. 61-71.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000086"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -3529,7 +3529,7 @@
         <annotatedProperty rdf:resource="&skos;altLabel"/>
     </Axiom>
     <Axiom>
-        <rdfs:comment rdf:datatype="&xsd;string">Wolfram, Stephen (1983) Statistical mechanics of cellular automata. Reviews of Modern Physics 55 (3): 601–644.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">Wolfram, Stephen (1983) Statistical mechanics of cellular automata. Reviews of Modern Physics 55 (3): 601-644.</rdfs:comment>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1103/RevModPhys.55.601</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000264"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
@@ -3730,11 +3730,11 @@
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isImplementedIn xml:lang="en">CompuCell3D</kisao:isImplementedIn>
         <skos:altLabel xml:lang="en">Metropolis algorithm</skos:altLabel>
-        <skos:altLabel xml:lang="en">Metropolis–Hastings algorithm</skos:altLabel>
+        <skos:altLabel xml:lang="en">Metropolis-Hastings algorithm</skos:altLabel>
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1063/1.1699114</annotatedTarget>
-        <rdfs:comment xml:lang="en">Metropolis, N.; Rosenbluth, A.W.; Rosenbluth, M.N.; Teller, A.H.; Teller, E. (1953). Equations of State Calculations by Fast Computing Machines. Journal of Chemical Physics 21 (6): 1087–1092.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Metropolis, N.; Rosenbluth, A.W.; Rosenbluth, M.N.; Teller, A.H.; Teller, E. (1953). Equations of State Calculations by Fast Computing Machines. Journal of Chemical Physics 21 (6): 1087-1092.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000278"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -3746,7 +3746,7 @@
     </Axiom>
     <Axiom>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
-        <annotatedTarget xml:lang="en">Metropolis–Hastings algorithm</annotatedTarget>
+        <annotatedTarget xml:lang="en">Metropolis-Hastings algorithm</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000278"/>
         <annotatedProperty rdf:resource="&skos;altLabel"/>
     </Axiom>
@@ -3756,7 +3756,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000279 -->
 
     <Class rdf:about="&kisao;KISAO_0000279">
-        <rdfs:label xml:lang="en">Adams–Bashforth method</rdfs:label>
+        <rdfs:label xml:lang="en">Adams-Bashforth method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000289"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -3923,7 +3923,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1137/0911026</annotatedTarget>
-        <rdfs:comment xml:lang="en">BROWN, P. N. AND SAAD, Y. 1990. Hybrid Krylov methods for nonlinear systems of equations. SIAM  J. Sci. Stat. Comput. 11, 450–481.</rdfs:comment>
+        <rdfs:comment xml:lang="en">BROWN, P. N. AND SAAD, Y. 1990. Hybrid Krylov methods for nonlinear systems of equations. SIAM  J. Sci. Stat. Comput. 11, 450-481.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000282"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -4004,7 +4004,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1137/0915088</annotatedTarget>
-        <rdfs:comment xml:lang="en">BROWN, P. N., HINDMARSH, A. C., AND PETZOLD, L. R. 1994. Using Krylov methods in the solution of large-scale differential-algebraic systems. SIAM J. Sci. Comput. 15, 1467–1488.</rdfs:comment>
+        <rdfs:comment xml:lang="en">BROWN, P. N., HINDMARSH, A. C., AND PETZOLD, L. R. 1994. Using Krylov methods in the solution of large-scale differential-algebraic systems. SIAM J. Sci. Comput. 15, 1467-1488.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000283"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -4113,7 +4113,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000286 -->
 
     <Class rdf:about="&kisao;KISAO_0000286">
-        <rdfs:label xml:lang="en">Euler–Maruyama method</rdfs:label>
+        <rdfs:label xml:lang="en">Euler-Maruyama method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000377"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -4154,7 +4154,7 @@
         <dc:created rdf:datatype="&xsd;date">2011-05-09</dc:created>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1098/rspa.2003.1247</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <skos:definition xml:lang="en">The Euler–Maruyama method is a method for the approximate numerical solution of a stochastic differential equation, which truncates the Ito and Stratonovich Taylor series of the exact solution after the first order stochastic terms. This converges to the Ito solution with strong global order accuracy 1/2 or weak global order accuracy 1. It is a simple generalization of the Euler method [urn:miriam:biomodels.kisao:KISAO_0000261] for ordinary differential equations to stochastic differential equations.</skos:definition>
+        <skos:definition xml:lang="en">The Euler-Maruyama method is a method for the approximate numerical solution of a stochastic differential equation, which truncates the Ito and Stratonovich Taylor series of the exact solution after the first order stochastic terms. This converges to the Ito solution with strong global order accuracy 1/2 or weak global order accuracy 1. It is a simple generalization of the Euler method [urn:miriam:biomodels.kisao:KISAO_0000261] for ordinary differential equations to stochastic differential equations.</skos:definition>
         <skos:altLabel xml:lang="en">stochastic Euler scheme</skos:altLabel>
     </Class>
     <Axiom>
@@ -4328,13 +4328,13 @@
         </rdfs:subClassOf>
         <dc:created rdf:datatype="&xsd;date">2011-05-10</dc:created>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://nla.gov.au/nla.cat-vn870866</rdfs:seeAlso>
-        <skos:definition xml:lang="en">A five-stage Runge–Kutta method with fourth-order accuracy.</skos:definition>
+        <skos:definition xml:lang="en">A five-stage Runge-Kutta method with fourth-order accuracy.</skos:definition>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isImplementedIn xml:lang="en">JSim</kisao:isImplementedIn>
         <skos:altLabel xml:lang="en">KM</skos:altLabel>
-        <skos:altLabel xml:lang="en">Kutta–Merson method</skos:altLabel>
+        <skos:altLabel xml:lang="en">Kutta-Merson method</skos:altLabel>
         <skos:altLabel xml:lang="en">Merson&#39;s method</skos:altLabel>
-        <skos:altLabel xml:lang="en">Runge-Kutta–Merson method</skos:altLabel>
+        <skos:altLabel xml:lang="en">Runge-Kutta-Merson method</skos:altLabel>
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">http://nla.gov.au/nla.cat-vn870866</annotatedTarget>
@@ -4356,13 +4356,13 @@
     </Axiom>
     <Axiom>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
-        <annotatedTarget xml:lang="en">Kutta–Merson method</annotatedTarget>
+        <annotatedTarget xml:lang="en">Kutta-Merson method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000290"/>
         <annotatedProperty rdf:resource="&skos;altLabel"/>
     </Axiom>
     <Axiom>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
-        <annotatedTarget xml:lang="en">Runge-Kutta–Merson method</annotatedTarget>
+        <annotatedTarget xml:lang="en">Runge-Kutta-Merson method</annotatedTarget>
         <annotatedSource rdf:resource="&kisao;KISAO_0000290"/>
         <annotatedProperty rdf:resource="&skos;altLabel"/>
     </Axiom>
@@ -4451,7 +4451,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000299 -->
 
     <Class rdf:about="&kisao;KISAO_0000299">
-        <rdfs:label xml:lang="en">Butcher–Kuntzmann method</rdfs:label>
+        <rdfs:label xml:lang="en">Butcher-Kuntzmann method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000064"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -4475,7 +4475,7 @@
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:issn:1088-6842(e)</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1002/zamm.19660460519</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <skos:definition xml:lang="en">From a theoretical point of view, the Butcher–Kuntzmann Runge–Kutta methods belong to the best step-by-step methods for nonstiff problems. These methods integrate first-order initial-value problems by means of formulas based on Gauss–Legendre quadrature, and combine excellent stability features with the property of superconvergence at the step points.</skos:definition>
+        <skos:definition xml:lang="en">From a theoretical point of view, the Butcher-Kuntzmann Runge-Kutta methods belong to the best step-by-step methods for nonstiff problems. These methods integrate first-order initial-value problems by means of formulas based on Gauss-Legendre quadrature, and combine excellent stability features with the property of superconvergence at the step points.</skos:definition>
         <skos:altLabel xml:lang="en">Gauss method</skos:altLabel>
     </Class>
     <Axiom>
@@ -4526,7 +4526,7 @@
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:miriam:isbn:978-3-540-56670-0</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <skos:altLabel xml:lang="en">Heun&#39;s method</skos:altLabel>
-        <skos:definition xml:lang="en">The method is named after Karl L. W. M. Heun and is a numerical procedure for solving ordinary differential equations (ODEs) with a given initial value. It can be seen as extension of the Euler method [urn:miriam:biomodels.kisao:KISAO_0000261] into two-stage second-order Runge–Kutta method.</skos:definition>
+        <skos:definition xml:lang="en">The method is named after Karl L. W. M. Heun and is a numerical procedure for solving ordinary differential equations (ODEs) with a given initial value. It can be seen as extension of the Euler method [urn:miriam:biomodels.kisao:KISAO_0000261] into two-stage second-order Runge-Kutta method.</skos:definition>
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:isbn:978-3-540-56670-0</annotatedTarget>
@@ -4633,7 +4633,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:issn:1088-6842(e)</annotatedTarget>
-        <rdfs:comment xml:lang="en">J. C. Butcher, Integration processes based on Radau quadrature formulas, Math. Comput., 18(1964), 233–244.</rdfs:comment>
+        <rdfs:comment xml:lang="en">J. C. Butcher, Integration processes based on Radau quadrature formulas, Math. Comput., 18(1964), 233-244.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000304"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -4653,7 +4653,7 @@
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1137/0728027</annotatedTarget>
-        <rdfs:comment xml:lang="en">J.H. Verner, Some Runge–Kutta formula pairs, SIAM J. Numer. Anal 28 (1991) 496–511</rdfs:comment>
+        <rdfs:comment xml:lang="en">J.H. Verner, Some Runge-Kutta formula pairs, SIAM J. Numer. Anal 28 (1991) 496-511</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000305"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -4817,7 +4817,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000309 -->
 
     <Class rdf:about="&kisao;KISAO_0000309">
-        <rdfs:label xml:lang="en">Crank–Nicolson method</rdfs:label>
+        <rdfs:label xml:lang="en">Crank-Nicolson method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000307"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -4828,11 +4828,11 @@
         <dc:created rdf:datatype="&xsd;date">2011-05-11</dc:created>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1007/BF02127704</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <skos:definition xml:lang="en">In numerical analysis, the Crank–Nicolson method is a finite difference method [urn:miriam:biomodels.kisao:KISAO_0000307] used for numerically solving the heat equation and similar partial differential equations. It is a second-order method in time, implicit in time, and is numerically stable. The method was developed by John Crank and Phyllis Nicolson in the mid 20th century.</skos:definition>
+        <skos:definition xml:lang="en">In numerical analysis, the Crank-Nicolson method is a finite difference method [urn:miriam:biomodels.kisao:KISAO_0000307] used for numerically solving the heat equation and similar partial differential equations. It is a second-order method in time, implicit in time, and is numerically stable. The method was developed by John Crank and Phyllis Nicolson in the mid 20th century.</skos:definition>
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1007/BF02127704</annotatedTarget>
-        <rdfs:comment xml:lang="en">Crank, J.; Nicolson, P. (1947). A practical method for numerical evaluation of solutions of partial differential equations of the heat conduction type. Proc. Camb. Phil. Soc. 43 (1): 50–67.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Crank, J.; Nicolson, P. (1947). A practical method for numerical evaluation of solutions of partial differential equations of the heat conduction type. Proc. Camb. Phil. Soc. 43 (1): 50-67.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000309"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -4952,7 +4952,7 @@
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:urn:doi:10.1137/0727042</annotatedTarget>
-        <rdfs:comment xml:lang="en">Irvine, D.H. and Savageau, M.A., Efficient solution of nonlinear ordinary differential equations expressed in S-System canonical form, Siam. J. Numer. Anal., 27:704–735, 1990.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Irvine, D.H. and Savageau, M.A., Efficient solution of nonlinear ordinary differential equations expressed in S-System canonical form, Siam. J. Numer. Anal., 27:704-735, 1990.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000314"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -5178,7 +5178,7 @@
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.2307/2280232</annotatedTarget>
-        <rdfs:comment xml:lang="en">Metropolis, N.; Ulam, S. (1949). &quot;The Monte Carlo Method&quot;. Journal of the American Statistical Association (American Statistical Association) 44 (247): 335–341.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Metropolis, N.; Ulam, S. (1949). &quot;The Monte Carlo Method&quot;. Journal of the American Statistical Association (American Statistical Association) 44 (247): 335-341.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000319"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -5232,7 +5232,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000321 -->
 
     <Class rdf:about="&kisao;KISAO_0000321">
-        <rdfs:label xml:lang="en">Cash–Karp method</rdfs:label>
+        <rdfs:label xml:lang="en">Cash-Karp method</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000302"/>
         <rdfs:subClassOf>
             <Restriction>
@@ -5998,7 +5998,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1016/0021-9991(88)90002-2</annotatedTarget>
-        <rdfs:comment xml:lang="en">Osher, S.; Sethian, J. A. (1988), &quot;Fronts propagating with curvature-dependent speed: Algorithms based on Hamilton-Jacobi formulations&quot;, J. Comput. Phys. 79: 12–49.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Osher, S.; Sethian, J. A. (1988), &quot;Fronts propagating with curvature-dependent speed: Algorithms based on Hamilton-Jacobi formulations&quot;, J. Comput. Phys. 79: 12-49.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000342"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -6050,7 +6050,7 @@
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1142/S0219876204000083</annotatedTarget>
-        <rdfs:comment xml:lang="en">Babuska, Ivo; Uday Banerjee, John E. Osborn (June 2004). Generalized Finite Element Methods: Main Ideas, Results, and Perspective. International Journal of Computational Methods 1 (1): 67–103.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Babuska, Ivo; Uday Banerjee, John E. Osborn (June 2004). Generalized Finite Element Methods: Main Ideas, Results, and Perspective. International Journal of Computational Methods 1 (1): 67-103.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000343"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -6119,7 +6119,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1002/(SICI)1098-2426(199611)12:6&lt;673::AID-NUM3&gt;3.0.CO;2-P</annotatedTarget>
-        <rdfs:comment xml:lang="en">Duarte, C. A. and Oden, J. T. (1996), H-p clouds—an h-p meshless method. Numerical Methods for Partial Differential Equations, 12: 673–705.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Duarte, C. A. and Oden, J. T. (1996), H-p clouds—an h-p meshless method. Numerical Methods for Partial Differential Equations, 12: 673-705.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000345"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -6288,7 +6288,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1021/jp011404w</annotatedTarget>
-        <rdfs:comment xml:lang="en">Resat H, Wiley HS, Dixon DA. Probability-weighted dynamic Monte Carlo method for reaction kinetics simulations. J Phys Chem B. 2001;105:11026–11034.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Resat H, Wiley HS, Dixon DA. Probability-weighted dynamic Monte Carlo method for reaction kinetics simulations. J Phys Chem B. 2001;105:11026-11034.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000350"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -6612,7 +6612,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1007/BFb0080109</annotatedTarget>
-        <rdfs:comment xml:lang="en">Fletcher, R. (1976). &quot;Conjugate gradient methods for indefinite systems&quot;. Numerical Analysis. Lecture Notes in Mathematics (Springer Berlin / Heidelberg) 506: 73–89.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Fletcher, R. (1976). &quot;Conjugate gradient methods for indefinite systems&quot;. Numerical Analysis. Lecture Notes in Mathematics (Springer Berlin / Heidelberg) 506: 73-89.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000358"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -6691,7 +6691,7 @@
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:asin:B0000EFQ8B</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isImplementedIn xml:lang="en">GSL</kisao:isImplementedIn>
-        <skos:definition xml:lang="en">The combination of evaluating a single explicit integration method (&#39;Adams–Bashforth method&#39; [urn:miriam:biomodels.kisao:KISAO_0000279]) (the predictor step) in order to provide a good initial guess for the successive evaluation of an implicit method (&#39;Adams-Moulton method&#39; [urn:miriam:biomodels.kisao:KISAO_0000280]) (the corrector step) using iteration.</skos:definition>
+        <skos:definition xml:lang="en">The combination of evaluating a single explicit integration method (&#39;Adams-Bashforth method&#39; [urn:miriam:biomodels.kisao:KISAO_0000279]) (the predictor step) in order to provide a good initial guess for the successive evaluation of an implicit method (&#39;Adams-Moulton method&#39; [urn:miriam:biomodels.kisao:KISAO_0000280]) (the corrector step) using iteration.</skos:definition>
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:asin:B0000EFQ8B</annotatedTarget>
@@ -7026,7 +7026,7 @@
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">urn:miriam:isbn:978-3-540-56670-0</rdfs:seeAlso>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isImplementedIn xml:lang="en">GSL</kisao:isImplementedIn>
-        <skos:definition xml:lang="en">The implicit midpoint rule is a second-order case of the more general implicit s-stage Runge–Kutta methods [urn:miriam:biomodels.kisao:KISAO_0000064 and (urn:miriam:biomodels.kisao:KISAO_0000245 some urn:miriam:biomodels.kisao:KISAO_0000240)].</skos:definition>
+        <skos:definition xml:lang="en">The implicit midpoint rule is a second-order case of the more general implicit s-stage Runge-Kutta methods [urn:miriam:biomodels.kisao:KISAO_0000064 and (urn:miriam:biomodels.kisao:KISAO_0000245 some urn:miriam:biomodels.kisao:KISAO_0000240)].</skos:definition>
         <skos:altLabel xml:lang="en">implicit Gaussian second order Runge-Kutta method</skos:altLabel>
     </Class>
     <Axiom>
@@ -7108,7 +7108,7 @@
     </Class>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1098/rsta.1911.0009</annotatedTarget>
-        <rdfs:comment xml:lang="en">Richardson, L. F. (1911). The approximate arithmetical solution by finite differences of physical problems including differential equations, with an application to the stresses in a masonry dam. Philosophical Transactions of the Royal Society of London, Series A 210 (459-470): 307–357.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Richardson, L. F. (1911). The approximate arithmetical solution by finite differences of physical problems including differential equations, with an application to the stresses in a masonry dam. Philosophical Transactions of the Royal Society of London, Series A 210 (459-470): 307-357.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000380"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
@@ -7353,7 +7353,7 @@
     </Axiom>
     <Axiom>
         <annotatedTarget rdf:datatype="&xsd;anyURI">urn:miriam:doi:10.1137/0913035</annotatedTarget>
-        <rdfs:comment xml:lang="en">Van der Vorst, H. A. (1992). Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems. SIAM Journal on Scientific and Statistical Computing 13: 631–644.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Van der Vorst, H. A. (1992). Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems. SIAM Journal on Scientific and Statistical Computing 13: 631-644.</rdfs:comment>
         <annotatedSource rdf:resource="&kisao;KISAO_0000392"/>
         <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
     </Axiom>
