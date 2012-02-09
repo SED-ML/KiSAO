@@ -1,5 +1,10 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3 (encoded in OWL 2)
+- steady state method branch is added
+- PLSR method branch is added
+- 'kinetic simulation algorithm' term is renamed to 'modeling and simulation algorithm'.
+
 KiSAO 2.2 (encoded in OWL 2)
 - more Krylov subspace projection methods
 - 'type of problem' characteristic is added
