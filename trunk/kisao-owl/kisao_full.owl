@@ -117,6 +117,72 @@
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000284 -->
+
+    <Class rdf:about="&kisao;KISAO_0000284">
+        <rdfs:label xml:lang="en">SUNDIALS method</rdfs:label>
+        <equivalentClass>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&kisao;KISAO_0000019"/>
+                    <rdf:Description rdf:about="&kisao;KISAO_0000020"/>
+                    <rdf:Description rdf:about="&kisao;KISAO_0000282"/>
+                    <rdf:Description rdf:about="&kisao;KISAO_0000283"/>
+                    <rdf:Description rdf:about="&kisao;KISAO_0000355"/>
+                    <rdf:Description rdf:about="&kisao;KISAO_0000356"/>
+                </unionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Class>
+                <complementOf>
+                    <Restriction>
+                        <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                        <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+                    </Restriction>
+                </complementOf>
+            </Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000237"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="&xsd;date">2011-05-09</dc:created>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://identifiers.org/doi/10.1145/1089014.1089020</rdfs:seeAlso>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <skos:definition xml:lang="en">One of the methods, implemented in SUNDIALS (a suite of advanced computational codes for solving large-scale problems that can be modeled as a system of nonlinear algebraic equations, or as initial-value problems in ordinary differential or differential-algebraic equations).</skos:definition>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
+    </Class>
+    <Axiom>
+        <annotatedTarget rdf:datatype="&xsd;anyURI">http://identifiers.org/doi/10.1145/1089014.1089020</annotatedTarget>
+        <rdfs:comment xml:lang="en">Hindmarsh, A. C., et al., SUNDIALS: Suite of Nonlinear and Differential/Algebraic Equation Solvers, ACM Trans. Math. Softw., 31:363-396, 2005.</rdfs:comment>
+        <annotatedSource rdf:resource="&kisao;KISAO_0000284"/>
+        <annotatedProperty rdf:resource="&rdfs;seeAlso"/>
+    </Axiom>
     
 
 
