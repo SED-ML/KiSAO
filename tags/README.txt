@@ -1,5 +1,9 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.1 (encoded in OWL 2)
+- KINSOL and IDA solvers are moved to the 'Newton-type method' subbranch of the algorithm hierarchy tree.
+- MIRIAM URNs in 'seeAlso' annotations are replaced with corresponding identifiers.org URLs.
+
 KiSAO 2.3 (encoded in OWL 2)
 - steady state method branch is added
 - PLSR method branch is added
