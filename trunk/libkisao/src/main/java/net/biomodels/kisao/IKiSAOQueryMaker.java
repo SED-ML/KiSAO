@@ -1,6 +1,5 @@
 package net.biomodels.kisao;
 
-import net.biomodels.ontology.IQueryMaker;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -472,14 +471,21 @@ public interface IKiSAOQueryMaker {
      */
     boolean isA(OWLClassExpression descendantCandidate, OWLClassExpression ancestorCandidate);
 
-
     /**
      * Returns miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX) by KiSAO IRI.
      *
      * @param iri KiSAO IRI.
      * @return string, representing miriam urn (urn:miriam:biomodels.kisao:KISAO_XXXXXXX)
      */
-    String getMiriamURI(IRI iri);
+    String getMiriamURN(IRI iri);
+
+    /**
+     * Returns identifiers.org URL (http://identifiers.org/biomodels.kisao/KISAO_XXXXXXX) by KiSAO IRI.
+     *
+     * @param iri KiSAO IRI.
+     * @return IRI, representing identifiers.org URL (http://identifiers.org/biomodels.kisao/KISAO_XXXXXXX)
+     */
+    IRI getIdentifiersOrgURL(IRI iri);
 
     /**
      * Returns id (kisao:XXXXXXX) by KiSAO IRI.
@@ -576,4 +582,13 @@ public interface IKiSAOQueryMaker {
      * @return set of algorithm IRIS.
      */
     Set<IRI> getAlgorithmsByQuery(OWLClassExpression query);
+
+    /**
+     * Checks whether the algorithm with the specified IRI is an organisational one:
+     * not a concrete algorithm, but a subsumption.
+     *
+     * @param iri KiSAO IRI.
+     * @return if algorithm with the specified IRI is an organisational one.
+     */
+    boolean isOrganisational(IRI iri);
 }

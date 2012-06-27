@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="kisaoquery" basedir="." default="zip">
-     <property name="version" value="1.0.2-rc5"/>
+     <property name="version" value="1.0.3-rc"/>
 
     <property name="src" location="src/main/java"/>
     <property name="out" location="target/classes"/>
@@ -22,7 +22,7 @@
     <property name="gpl.txt" value="gpl.txt"/>
     <property name="lgpl.txt" value="lgpl-3.0.txt"/>
     <property name="readme.txt" value="README.txt"/>
-    <property name="readme-onto.txt" value="readme.txt"/>
+    <property name="readme-onto.txt" value="readme_libonto.txt"/>
     <property name="build.xml" value="build.xml"/>
 
 

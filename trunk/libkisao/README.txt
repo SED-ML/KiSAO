@@ -14,7 +14,7 @@ LibKiSAO uses the following libraries in unmodified form:
 2) HermiT, http://www.hermit-reasoner.com
    released under the GNU Lesser General Public License, see HermiT.LICENSE in Licenses/ folder of libKiSAO.jar
 
-The libKiSAO.zip archive is organised as follows:
+The libKiSAO.zip archive is organized as follows:
 
 - libKiSAO.jar is a stand-alone version of libKiSAO that can be used from within other Java programs. 
 It contains all required libraries.
@@ -22,36 +22,38 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.2-rc5 release candidate.
+This version is a 1.0.3-rc release candidate.
 
-libKiSAO 1.0.2rc5
+libKiSAO 1.0.3-rc
+- similar algorithm finding methods improved by not taking into account subsumption-like (organizational) algorithms
+- KiSAO id to identifiers.org URL conversion supported
+- identifiers.org URLs supported by searchById method
+
+libKiSAO 1.0.2-rc5
 - general ontology querying functionality was separated from KiSAO-specific one and extracted to a separate package.
 
-libKiSAO 1.0.2rc4
+libKiSAO 1.0.2-rc4
 - getNMostSimilarAlgorithms method was added
 - getComplexAlgorithms and isComplex methods were added
 
-libKiSAO 1.0.2rc3
+libKiSAO 1.0.2-rc3
 - return type of getAllAlgorithms/Parameters/Characteristics methods was changed to Set<IRI> (was List<IRI>)
 - getMiriamURIByIRI method was renamed to getMiriamURI
 - getIdByIRI method was renamed to getId
 - getIRIByName and getIRIByNameOrSynonym methods were replaced with searchByName
 - getIRIbyMiriamURIorId method was replaced with searchById
 
-libKiSAO 1.0.2rc2
+libKiSAO 1.0.2-rc2
 - annotation IRIs for definitions and synonyms were updated to be compatible with KiSAO 2.2
 
-libKiSAO 1.0.2rc2
-- annotation IRIs for definitions and synonyms were updated to be compatible with KiSAO 2.2
-
-libKiSAO 1.0.2rc1
+libKiSAO 1.0.2-rc1
 - more methods for retrieving similar algorithms
 - more code examples
 
-libKiSAO 1.0.1rc1
+libKiSAO 1.0.1-rc1
 - compatible with java 1.5
 
-libKiSAO 1.0rc1
+libKiSAO 1.0-rc1
 - compatible with java 1.6
 
 Please send bug-reports, suggestions and comments to the KiSAO tracker at <https://sourceforge.net/tracker/?group_id=293617>
