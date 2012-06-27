@@ -15,6 +15,7 @@ public interface KiSAOIRI {
 
     String KISAO_PREFIX = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000259").getStart();
     String KISAO_URN = "urn:miriam:biomodels.kisao:";
+    String KISAO_URL = "http://identifiers.org/biomodels.kisao/";
 
     IRI SYNONYM_IRI = IRI.create("http://www.w3.org/2004/02/skos/core#altLabel");
     IRI SYNONYM_TYPE_IRI = OWLRDFVocabulary.RDFS_COMMENT.getIRI();
@@ -47,5 +48,7 @@ public interface KiSAOIRI {
     IRI TYPE_OF_SYSTEM_BEHAVIOUR_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000099");
     IRI TYPE_OF_DIFFERENTIAL_EQUATION_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000405");
     IRI TYPE_OF_PROGRESSION_TIME_STEP_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#KISAO_0000100");
+
+    IRI IS_ORGANIZATIONAL_IRI = IRI.create("http://www.biomodels.net/kisao/KISAO#isOrganizational");
    
 }

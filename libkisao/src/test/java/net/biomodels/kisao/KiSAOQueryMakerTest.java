@@ -185,7 +185,7 @@ public class KiSAOQueryMakerTest extends TestCase {
     }
 
     public void testUrnByIRI() {
-        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getMiriamURI(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
+        assertEquals("urn:miriam:biomodels.kisao:KISAO_0000245", me.getMiriamURN(KiSAOIRI.HAS_CHARACTERISTIC_IRI));
     }
 
     public void testIRIByURN() {

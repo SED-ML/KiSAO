@@ -13,7 +13,7 @@ LibOnto uses the following libraries in unmodified form:
 2) HermiT, http://www.hermit-reasoner.com
    released under the GNU Lesser General Public License, see HermiT.LICENSE in Licenses/ folder of libKiSAO.jar
 
-The libOnto.zip archive is organised as follows:
+The libOnto.zip archive is organized as follows:
 
 - libOnto.jar is a stand-alone version of libOnto that can be used from other Java programs.
 It contains all required libraries.

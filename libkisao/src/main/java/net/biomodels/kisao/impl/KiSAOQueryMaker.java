@@ -25,8 +25,7 @@ import static net.biomodels.kisao.KiSAOIRI.*;
  *         Time: 11:29:03
  */
 public class KiSAOQueryMaker implements IKiSAOQueryMaker {
-
-    private final Pattern pattern = Pattern.compile("^\\s*(" + KISAO_URN + "|kisao:|http://www.biomodels.net/kisao/KISAO#)?(KISAO_|KISAO:)?\\d{7}\\s*$", Pattern.CASE_INSENSITIVE);
+    private final Pattern pattern = Pattern.compile("^\\s*(" + KISAO_URN + "|" + KISAO_URL + "|kisao:|http://www.biomodels.net/kisao/KISAO#)?(KISAO_|KISAO:)?\\d{7}\\s*$", Pattern.CASE_INSENSITIVE);
     private final Pattern idPattern = Pattern.compile("\\d{7}");
 
     protected final IQueryMaker queryMaker;
@@ -366,9 +365,14 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         return null;
     }
 
-    public String getMiriamURI(IRI iri) {
+    public String getMiriamURN(IRI iri) {
         String id = iri.getFragment();
         return String.format("%s%s", KISAO_URN, id);
+    }
+
+    public IRI getIdentifiersOrgURL(IRI iri) {
+        String id = iri.getFragment();
+        return IRI.create(String.format("%s%s", KISAO_URL, id));
     }
 
     public String getId(IRI iri) {
@@ -401,6 +405,12 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
         Set<IRI> similar = getAlgorithmsByQuery(query);
         // remove self
         similar.remove(algorithm);
+        // remove organisational algorithms (subsumptions)
+        for (Iterator<IRI> it = similar.iterator(); it.hasNext(); ) {
+            if (isOrganisational(it.next())) {
+                it.remove();
+            }
+        }
         return similar;
     }
 
@@ -449,5 +459,12 @@ public class KiSAOQueryMaker implements IKiSAOQueryMaker {
     public Set<IRI> getComplexAlgorithms() {
         OWLDataFactory dataFactory = getDataFactory();
         return queryMaker.getPropertySubjects(dataFactory.getOWLObjectProperty(USES_IRI), true, KINETIC_SIMULATION_ALGORITHM_IRI);
+    }
+
+    public boolean isOrganisational(IRI iri) {
+        OWLClass clazz = queryMaker.getDataFactory().getOWLClass(iri);
+        if (clazz == null) return true;
+        String annotation = queryMaker.getAnnotation(clazz, IS_ORGANIZATIONAL_IRI);
+        return annotation != null && "true".equals(annotation.toLowerCase().trim());
     }
 }
