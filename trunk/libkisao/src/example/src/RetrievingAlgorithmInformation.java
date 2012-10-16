@@ -22,14 +22,14 @@ public class RetrievingAlgorithmInformation {
 
         IRI iri = kisaoQuery.searchById("KISAO_0000039");
         String id = kisaoQuery.getId(iri);
-        String miriamURI = kisaoQuery.getMiriamURI(iri);
+        IRI identifiersOrgURL = kisaoQuery.getIdentifiersOrgURL(iri);
         String name = kisaoQuery.getName(iri);
         Collection<String> synonymNames = kisaoQuery.getAllSynonyms(iri);
         String definition = kisaoQuery.getDefinition(iri);
         Map<String, String> linkMap = kisaoQuery.getLinks(iri);
 
         System.out.printf("%s (%s): %s\n", name, id, definition);
-        System.out.printf("  has MIRIAM URN %s\n", miriamURI);
+        System.out.printf("  has Identifiers.org URI %s\n", identifiersOrgURL);
         for (String synonym : synonymNames) {
             System.out.printf("  is also known as %s\n", synonym);
         }
