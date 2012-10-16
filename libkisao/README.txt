@@ -22,7 +22,10 @@ It contains all required libraries.
 - javadoc/* folder contains java documentation for libKiSAO.
 - example/* folder contains Main.java example class, showing how libKiSAO might be used.
 
-This version is a 1.0.3-rc release candidate.
+This version is a 1.0.3.1-rc release candidate.
+
+libKiSAO 1.0.3.1-rc
+- RetrievingAlgorithmInfo example updated: getMiriamURI method replaced with getIdentifiersOrgIRI.
 
 libKiSAO 1.0.3-rc
 - similar algorithm finding methods improved by not taking into account subsumption-like (organizational) algorithms
