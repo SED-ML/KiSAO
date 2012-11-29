@@ -1,6 +1,9 @@
 This folder contains releases of KiSAO.
 
 KiSAO 2.3.2 (encoded in OWL 2)
+- 'flux balance analysis' is added.
+
+KiSAO 2.3.2 (encoded in OWL 2)
 - 'Embedded Runge-Kutta method' branch is updated: 'Dormand-Prince 8(5,3) method' and 'Higham-Hall method' are added.
 
 KiSAO 2.3.1 (encoded in OWL 2)
