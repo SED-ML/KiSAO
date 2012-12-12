@@ -59,7 +59,7 @@ libKiSAO 1.0.1-rc1
 libKiSAO 1.0-rc1
 - compatible with java 1.6
 
-Please send bug-reports, suggestions and comments to the KiSAO tracker at <https://sourceforge.net/tracker/?group_id=293617>
+Please send bug-reports, suggestions and comments to the KiSAO tracker at <https://sourceforge.net/p/kisao/bugs/new/>
 or to biomodels-net-support@lists.sf.net.
 
 Thank you

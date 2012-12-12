@@ -1,4 +1,3 @@
 This folder contains current developers' version of KiSAO.
-For the release versions visit: https://sourceforge.net/p/kisao/code/198/tree/tags/
-
+For the release versions visit: http://svn.code.sf.net/p/kisao/code/tags/
 

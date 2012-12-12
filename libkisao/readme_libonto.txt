@@ -22,7 +22,7 @@ It contains all required libraries.
 
 This version is a 1.0.2-rc5 release candidate.
 
-Please send bug-reports, suggestions and comments to our tracker at <https://sourceforge.net/tracker/?group_id=293617>
+Please send bug-reports, suggestions and comments to our tracker at <https://sourceforge.net/p/kisao/bugs/new/>
 or to biomodels-net-support@lists.sf.net.
 
 Thank you
