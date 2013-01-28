@@ -1,6 +1,11 @@
 This folder contains releases of KiSAO.
 
 KiSAO 2.3.3 (encoded in OWL 2)
+- COAST method is added
+- 'logical model simulation method' sub-branch is added
+- 'type of updating policy' sub-brach is added to characteristics
+
+KiSAO 2.3.3 (encoded in OWL 2)
 - 'flux balance analysis' is added.
 
 KiSAO 2.3.2 (encoded in OWL 2)
