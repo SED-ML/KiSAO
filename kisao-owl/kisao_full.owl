@@ -26,9 +26,10 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <Ontology rdf:about="http://www.biomodels.net/kisao/KISAO_FULL#">
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
         <dc:rights>Artistic License 2.0</dc:rights>
-        <versionInfo>2.3.3</versionInfo>
+        <versionInfo>2.3.4</versionInfo>
         <rdfs:comment xml:lang="en">Kinetic Simulation Algorithm Ontology (full version, containing deprecated classes)</rdfs:comment>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
         <imports rdf:resource="http://www.biomodels.net/kisao/KISAO#"/>
@@ -230,6 +231,12 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -237,12 +244,6 @@
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000102"/>
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
@@ -274,13 +275,13 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -605,12 +606,6 @@
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -623,13 +618,19 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="&xsd;date">2011-05-09</dc:created>
