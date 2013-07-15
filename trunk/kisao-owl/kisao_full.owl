@@ -28,8 +28,8 @@
     <Ontology rdf:about="http://www.biomodels.net/kisao/KISAO_FULL#">
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
+        <versionInfo>2.3.5</versionInfo>
         <dc:rights>Artistic License 2.0</dc:rights>
-        <versionInfo>2.3.4</versionInfo>
         <rdfs:comment xml:lang="en">Kinetic Simulation Algorithm Ontology (full version, containing deprecated classes)</rdfs:comment>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
         <imports rdf:resource="http://www.biomodels.net/kisao/KISAO#"/>
@@ -45,22 +45,36 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#Comment -->
+
     <AnnotationProperty rdf:about="&oboInOwl;Comment"/>
-    <AnnotationProperty rdf:about="&oboInOwl;Namespace"/>
-    <AnnotationProperty rdf:about="&oboInOwl;OwlDef"/>
-    <AnnotationProperty rdf:about="&oboInOwl;CreationDate"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#CreatedBy -->
+
     <AnnotationProperty rdf:about="&oboInOwl;CreatedBy"/>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://www.geneontology.org/formats/oboInOwl#CreationDate -->
 
+    <AnnotationProperty rdf:about="&oboInOwl;CreationDate"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#Namespace -->
+
+    <AnnotationProperty rdf:about="&oboInOwl;Namespace"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#OwlDef -->
+
+    <AnnotationProperty rdf:about="&oboInOwl;OwlDef"/>
     
 
 
@@ -116,8 +130,8 @@
             </Class>
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000025"/>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
     
@@ -138,8 +152,8 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
     
@@ -162,8 +176,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Algorithm that allows to change the values of a system&apos;s variables by discrete (integral) amounts.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -188,8 +202,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Algorithm that allows to change the values of a system&apos;s variables by continuous (non-integral) amounts.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -214,8 +228,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Algorithm that takes into account the location of the reacting components.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -237,18 +251,18 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
         <rdfs:comment xml:lang="en">Partial differential equations are used to describe variations in concentrations over both, space and time.</rdfs:comment>
@@ -275,7 +289,7 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -287,12 +301,12 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000105"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000104"/>
             </Restriction>
         </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
         <rdfs:comment xml:lang="en">Stochastic simulation algorithm using the an approach alike the one described in Gillespie&apos;s papers of 1976 and 1977.</rdfs:comment>
@@ -307,8 +321,8 @@
         <rdfs:label xml:lang="en">algorithm using non-spatial description</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Algorithms that considers the system to be simulated as made of well-stirred components, that is the activity of the components is the same independently of their location.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -323,12 +337,6 @@
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000333"/>
         <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <Class>
                 <complementOf>
                     <Restriction>
@@ -338,9 +346,15 @@
                 </complementOf>
             </Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000236"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Algorithm aimed to speed-up Gillespie&apos;s direct method.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -365,8 +379,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system using determined descriptions, that from a precise initial state always provide the same ending state.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -391,8 +405,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Algorithm that simulates the temporal evolution of a system using probabilistic rules, that from a precise initial state may provide different ending state.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -417,8 +431,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Algorithm that uses timesteps of constant length to update the state of a system during the whole simulation.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -443,8 +457,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-08</oboInOwl:CreationDate>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Algorithm that does not use fixed timesteps to update the state of a system during the whole simulation, but on the contrary adapts the length of the timesteps to the local situation.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -472,8 +486,8 @@
             </Class>
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
     
@@ -484,8 +498,8 @@
     <Class rdf:about="&kisao;KISAO_0000044">
         <rdfs:label xml:lang="en">Gillespie based method for stiff systems.</rdfs:label>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
     
@@ -507,8 +521,8 @@
             </Class>
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Explicit tau-leaping method.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
@@ -531,8 +545,8 @@
             </Class>
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
-        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
+        <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
         <rdfs:comment xml:lang="en">Implicit tau-leaping method.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
     </Class>
@@ -560,8 +574,8 @@
         </equivalentClass>
         <rdfs:subClassOf rdf:resource="&kisao;KISAO_0000262"/>
         <oboInOwl:CreationDate rdf:datatype="&xsd;date">2008-07-14</oboInOwl:CreationDate>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <rdfs:comment xml:lang="en">Gillespie-like algorithm that produces exact realisation of the vector of entity amounts at each time by choosing rigorously time and reaction at each iteration.</rdfs:comment>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <oboInOwl:CreatedBy xml:lang="en">NLN</oboInOwl:CreatedBy>
@@ -573,10 +587,10 @@
 
     <Class rdf:about="&kisao;KISAO_0000262">
         <rdfs:label xml:lang="en">deprecated class</rdfs:label>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
-        <oboInOwl:CreatedBy xml:lang="en">AZ</oboInOwl:CreatedBy>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <oboInOwl:Namespace>KISAO_DEPRECATED</oboInOwl:Namespace>
+        <oboInOwl:CreatedBy xml:lang="en">AZ</oboInOwl:CreatedBy>
         <rdfs:comment xml:lang="en">The root of the branch where all the deprecated terms are stored.</rdfs:comment>
     </Class>
     
@@ -602,7 +616,19 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000237"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
+                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -618,25 +644,13 @@
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000107"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
                 <someValuesFrom rdf:resource="&kisao;KISAO_0000106"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&kisao;KISAO_0000245"/>
-                <someValuesFrom rdf:resource="&kisao;KISAO_0000103"/>
             </Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="&xsd;date">2011-05-09</dc:created>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://identifiers.org/doi/10.1145/1089014.1089020</rdfs:seeAlso>
-        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <kisao:isOrganizational rdf:datatype="&xsd;boolean">true</kisao:isOrganizational>
+        <deprecated rdf:datatype="&xsd;boolean">true</deprecated>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <oboInOwl:Namespace xml:lang="en">KISAO_DEPRECATED</oboInOwl:Namespace>
         <skos:definition xml:lang="en">One of the methods, implemented in SUNDIALS (a suite of advanced computational codes for solving large-scale problems that can be modeled as a system of nonlinear algebraic equations, or as initial-value problems in ordinary differential or differential-algebraic equations).</skos:definition>
@@ -651,5 +665,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

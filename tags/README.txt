@@ -1,6 +1,10 @@
 This folder contains releases of KiSAO.
 
-KiSAO 2.3.3 (encoded in OWL 2)
+KiSAO 2.3.5 (encoded in OWL 2)
+- 'maximum step size' parameter is added
+- hierarchical relationships for 'Newton-type method' is updated
+
+KiSAO 2.3.4 (encoded in OWL 2)
 - COAST method is added
 - 'logical model simulation method' sub-branch is added
 - 'type of updating policy' sub-brach is added to characteristics
