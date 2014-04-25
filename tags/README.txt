@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.6 (OWL 2)
+- 'maximal timestep method' added
+
 KiSAO 2.3.5 (encoded in OWL 2)
 - 'maximum step size' parameter is added
 - hierarchical relationships for 'Newton-type method' is updated
