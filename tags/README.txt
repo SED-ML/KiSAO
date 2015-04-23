@@ -1,5 +1,11 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.7 (OWL 2)
+- 'optimization algorithm' branch added (ticket 6) including 2 child terms:
+ -- 'local optimization algorithm' added (ticket 7)
+ -- 'global optimization algorithm' added (ticket 8)
+- 'bayesian inference algorithm' added (ticket 9)
+
 KiSAO 2.3.6 (OWL 2)
 - 'maximal timestep method' added
 
