@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.8 (OWL 2)
+- several algorithm parameters added (tickets 12-13)
+
 KiSAO 2.3.7 (OWL 2)
 - 'optimization algorithm' branch added (ticket 6) including 2 child terms:
  -- 'local optimization algorithm' added (ticket 7)
