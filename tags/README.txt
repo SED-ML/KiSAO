@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.11 (OWL 2)
+- several terms updated (tickets 21-29)
+
 KiSAO 2.3.10 (OWL 2)
 - several algorithm parameters updated (ticket 20)
 
