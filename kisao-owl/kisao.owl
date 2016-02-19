@@ -17,7 +17,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
-        <versionInfo>2.3.10</versionInfo>
+        <versionInfo>2.3.11</versionInfo>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
         <rdfs:comment xml:lang="en">This is a core version which contains all but deprecated classes.</rdfs:comment>
@@ -6736,7 +6736,7 @@ DASPK is written in Fortran.</skos:definition>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</kisao:isOrganizational>
         <rdfs:label xml:lang="en">rule-based simulation method</rdfs:label>
-        <skos:definition xml:lang="en">Rule-based models provide a powerful alternative to approaches that require explicit enumeration of all possible molecular species of a system. Such models consist of formal rules governing interactive behaviour. Rule-based simulation methods are methods, used to simulated such models.</skos:definition>
+        <skos:definition xml:lang="en">Rule-based models provide a powerful alternative to approaches that require explicit enumeration of all possible molecular species of a system. Such models consist of formal rules governing interactive behaviour. Rule-based simulation methods simulate such models.</skos:definition>
     </Class>
     
 
@@ -8631,12 +8631,6 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000451">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000097"/>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000268"/>
-                <someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000450"/>
-            </Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-28</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</kisao:isOrganizational>
@@ -8888,7 +8882,6 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <kisao:isImplementedIn xml:lang="en">OpenCOR</kisao:isImplementedIn>
-        <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
         <rdfs:label xml:lang="en">integration method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.3389/fphys.2015.00026</rdfs:seeAlso>
         <skos:definition xml:lang="en">the integration method used by the solver</skos:definition>
@@ -9127,7 +9120,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
             </Restriction>
         </rdfs:subClassOf>
         <kisao:isImplementedIn xml:lang="en">Roadrunner</kisao:isImplementedIn>
-        <rdfs:comment xml:lang="en">The dampening factor is a variable for at least some steady state algorithms: roadrunner allows you to set the minimum value for this.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The damping factor is a variable for at least some steady state algorithms: roadrunner allows you to set the minimum value for this.</rdfs:comment>
         <rdfs:label xml:lang="en">minimum damping</rdfs:label>
     </Class>
     
@@ -9155,6 +9148,72 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">seed</rdfs:label>
         <skos:definition xml:lang="en">Random seed of a stochastic algorithm. Setting it allows one to reproduce their results while running the same algorithm on the same computer..</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000491 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000491">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000105"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">discrete event simulation algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0387333320</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">DES</skos:altLabel>
+        <skos:definition xml:lang="en">Discrete Event Simulation algorithm refers to the simulation of systems whose (countable) discrete states change over time and are event-driven.</skos:definition>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000491"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0387333320</annotatedTarget>
+        <rdfs:comment xml:lang="en">C.G. Cassandras &amp; S. Lafortune &quot;Introduction to Discrete Event Systems&quot;, Chapt 1 2nd Ed 2008. Springer</rdfs:comment>
+    </Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000492 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000492">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000451"/>
+        <disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000493"/>
+        <rdfs:label xml:lang="en">asynchronous updating policy</rdfs:label>
+        <skos:definition xml:lang="en">An updating policy where all enabled transitions (events) occur independently. Thus a state has as many successors as the number of transitions enabled in this state.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000493 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000493">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000451"/>
+        <rdfs:label xml:lang="en">synchronous updating policy</rdfs:label>
+        <skos:definition xml:lang="en">An updating policy where all enabled transitions occur simultaneously. Thus a state will have at most one successor.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000494 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000494">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000492"/>
+        <rdfs:label xml:lang="en">fully asynchronous updating policy</rdfs:label>
+        <skos:definition xml:lang="en">An updating policy where all enabled transitions occur either independently or (partially) simultaneously. (i.e. considering all possible combinations of enabled transitions). Thus a state has as many successors as the number of combinations of transitions enabled in this state.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000495 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000495">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000452"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000492"/>
+        <rdfs:label xml:lang="en">random asynchronous updating policy</rdfs:label>
+        <skos:definition xml:lang="en">An updating policy where a single transition is picked randomly from the set of transitions enabled in this state. Thus a state will have at most one successor.</skos:definition>
     </Class>
     
 
@@ -9376,6 +9435,28 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000377"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000397"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000398"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000408"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000419"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000433"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000491"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000056"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000094"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000273"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000281"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000306"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000314"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000319"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000363"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000369"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000377"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000397"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000398"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000419"/>
         </members>
     </rdf:Description>
@@ -9525,7 +9606,6 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000478"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000481"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000482"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000484"/>
         </members>
     </rdf:Description>
     <rdf:Description>
