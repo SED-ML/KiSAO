@@ -14,10 +14,10 @@
      xmlns:dc="http://purl.org/dc/terms/">
     <Ontology rdf:about="http://www.biomodels.net/kisao/KISAO#">
         <dc:rights>Artistic License 2.0</dc:rights>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.biomodels.net/kisao/</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
-        <versionInfo>2.3.11</versionInfo>
+        <versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">2.3.112</versionInfo>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
         <rdfs:comment xml:lang="en">This is a core version which contains all but deprecated classes.</rdfs:comment>
@@ -9218,6 +9218,51 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
     
 
 
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000496 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000496">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000433"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000359"/>
+                <someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000019"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000360"/>
+                <someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000497"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <kisao:isImplementedIn xml:lang="en">SUNDIALS</kisao:isImplementedIn>
+        <rdfs:comment xml:lang="en">CVODES is a superset of CVODE [http://identifiers.org/biomodels.kisao/KISAO_0000019] and hence all options available to CVODE (with the exception of the FCVODE interface module) are also available for CVODES. Both integration methods (Adams-Moulton [http://identifiers.org/biomodels.kisao/KISAO_0000280] and BDF [http://identifiers.org/biomodels.kisao/KISAO_0000288]) and the corresponding nonlinear iteration methods, as well as all linear solver and preconditioner modules, are available for the integration of the original ODEs, the sensitivity systems, or the adjoint system.</rdfs:comment>
+        <rdfs:label xml:lang="en">CVODES</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://computation.llnl.gov/projects/sundials/cvodes</rdfs:seeAlso>
+        <skos:definition xml:lang="en">CVODES is a solver for stiff and nonstiff ODE systems (initial value problem) given in explicit form y’ = f(t,y,p) with sensitivity analysis capabilities (both forward and adjoint modes).</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000497 -->
+
+    <Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000497">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <dc:created xml:lang="en">2017-01-09</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label xml:lang="en">KLU</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1145/1824801.1824814</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">&quot;Clark Kent&quot; LU factorization algorithm</skos:altLabel>
+        <skos:definition xml:lang="en">KLU is a software package and an algorithm for solving sparse unsymmetric linear systems of equations that arise in circuit simulation applications. It relies on a permutation to Block Triangular Form (BTF), several methods for finding a fill-reducing ordering (variants of approximate minimum degree and nested dissection), and Gilbert/Peierls’ sparse left-looking LU factorization algorithm to factorize each block. The package is written in C and includes a MATLAB interface.</skos:definition>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000497"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1145/1824801.1824814</annotatedTarget>
+        <rdfs:comment xml:lang="en">Davis, Timothy A., and Ekanathan Palamadai Natarajan. &quot;Algorithm 907: KLU, a direct sparse solver for circuit simulation problems.&quot; ACM Transactions on Mathematical Software (TOMS) 37.3 (2010): 36.</rdfs:comment>
+    </Axiom>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -9484,6 +9529,24 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000056"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000094"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000273"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000306"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000314"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000363"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000419"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000433"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000470"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000473"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000491"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000497"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000261"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000286"/>
@@ -9742,5 +9805,5 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
 
 
-<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
