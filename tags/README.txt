@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.3.12 (OWL 2)
+- KLU added (ticket 30)
+
 KiSAO 2.3.11 (OWL 2)
 - several terms updated (tickets 21-29)
 
