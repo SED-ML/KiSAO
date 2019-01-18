@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.biomodels.net/kisao/KISAO#"
      xml:base="http://www.biomodels.net/kisao/KISAO"
-     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:kisao="http://www.biomodels.net/kisao/KISAO#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/terms/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:dc="http://purl.org/dc/terms/">
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:kisao="http://www.biomodels.net/kisao/KISAO#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://www.biomodels.net/kisao/KISAO#">
+        <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:rights>Artistic License 2.0</dc:rights>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">2.4</owl:versionInfo>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">This is a core version which contains all but deprecated classes.</rdfs:comment>
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
-        <protege:defaultLanguage>en</protege:defaultLanguage>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
-        <rdfs:comment xml:lang="en">This is a core version which contains all but deprecated classes.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -8809,6 +8809,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000470">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-23</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -8846,6 +8852,12 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000472">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000470"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-23</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">global optimization algorithm</rdfs:label>
@@ -9104,6 +9116,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000244"/>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">maximum iterations</rdfs:label>
+        <skos:altLabel xml:lang="en">iteration limit</skos:altLabel>
         <skos:definition xml:lang="en">For algorithms that iterate to a solution (steady state finders in particular), a limit on the number of iterations that should be performed.</skos:definition>
     </owl:Class>
     
@@ -9147,7 +9160,8 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">seed</rdfs:label>
-        <skos:definition xml:lang="en">Random seed of a stochastic algorithm. Setting it allows one to reproduce their results while running the same algorithm on the same computer..</skos:definition>
+        <skos:altLabel xml:lang="en">random seed</skos:altLabel>
+        <skos:definition xml:lang="en">Random seed of a stochastic algorithm. Setting it allows one to reproduce their results while running the same algorithm on the same computer.</skos:definition>
     </owl:Class>
     
 
@@ -9390,6 +9404,526 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
         <rdfs:comment xml:lang="en">DFBAlab: a fast and reliable MATLAB code for dynamic flux balance analysis.
 Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000503 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000503">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000211"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000522"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000523"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>simulated annealing</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1126/science.220.4598.671</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Simulated annealing is an optimization algorithm first proposed by Kirkpatrick et al. and was inspired by statistical mechanics and the way in which perfect crystals are formed. Perfect crystals are formed by first melting the substance of interest, and then cooling it very slowly. At large temperatures the particles vibrate with wide amplitude and this allows a search for global optimum. As the temperature decreases so do the vibrations until the system settles to the global optimum (the perfect crystal).
+
+The simulated annealing optimization algorithm uses a similar concept: the objective function is considered a measure of the energy of the system and this is maintained constant for a certain number of iterations (a temperature cycle). In each iteration, the parameters are changed to a nearby location in parameter space and the new objective function value calculated; if it decreased, then the new state is accepted, if it increased then the new state is accepted with a probability that follows a Boltzmann distribution (higher temperature means higher probability of accepting the new state). After a fixed number of iterations, the stopping criterion is checked; if it is not time to stop, then the system&apos;s temperature is reduced and the algorithm continues.
+
+Simulated annealing is a stochastic algorithm that is guaranteed to converge if ran for an infinite number of iterations. It is one of the most robust global optimization algorithms, although it is also one of the slowest. (Be warned that simulated annealing can run for hours or even days!).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000503"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1126/science.220.4598.671</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">S. Kirkpatrick, J., C.D. Gelatt, and M. P. Vecchi. Optimization by simulated annealing. Science. 220. 671 - 680. 1983.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000504 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000504">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>random search</rdfs:label>
+        <skos:definition xml:lang="en">Random search is an optimization method that attempts to find the optimum by testing the objective function&apos;s value on a series of combinations of random values of the adjustable parameters. The random values are generated complying with any boundaries selected by the user, furthermore, any combinations of parameter values that do not fulfill constraints on the variables are excluded. This means that the method is capable of handling bounds on the adjustable parameters and fulfilling constraints.
+
+For infinite number of iterations this method is guaranteed to find the global optimum of the objective function. In general one is interested in processing a very large number of iterations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000505 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000505">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>particle swarm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ICNN.1995.488968</rdfs:seeAlso>
+        <skos:definition xml:lang="en">The particle swarm optimization method suggested by Kennedy and Eberhart is inspired by a flock of birds or a school of fish searching for food. Each particle has a position Xi and a velocity Vi in the parameter space. Additionally, it remembers its best achieved objective value O and position Mi. Dependent on its own information and the position of its best neighbor (a random subset of particles of the swarm) a new velocity is calculated. With this information the position is updated.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000505"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ICNN.1995.488968</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">J. Kennedy and R. Eberhart. Particle Swarm Optimization. Proceedings of the Fourth IEEE International Conference on Neural Networks, Perth, Australia. 1942 - 1948. 1995.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000506 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000506">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000520"/>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000508"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>genetic algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">GA</skos:altLabel>
+        <skos:definition xml:lang="en">The genetic algorithm (GA) is a computational technique that mimics evolution and is based on reproduction and selection. A GA is composed of individuals that reproduce and compete, each one is a potential solution to the (optimization) problem and is represented by a &quot;genome&quot; where each gene corresponds to one adjustable parameter. At each generation of the GA, each individual is paired with one other at random for reproduction. Two offspring are produced by combining their genomes and allowing for &quot;cross-over&quot;, i.e., the two new individuals have genomes that are formed from a combination of the genomes of their parents. Also each new gene might have mutated, i.e. the parameter value might have changed slightly. At the end of the generation, the algorithm has double the number of individuals. Then each of the individuals is confronted with a number of others to count how many does it outperform (the number of wins is the number of these competitors that represent worse solutions than itself). All the individuals are ranked by their number of wins, and the population is again reduced to the original number of individuals by eliminating those which have worse fitness (solutions).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000506"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">T. Bäck, D.B. Fogel, and Z. Michalewicz. Handbook of evolutionary computation. Oxford: IOP Publishing/Oxford University Press. 1997.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000507 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000507">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000506"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>genetic algorithm SR</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">genetic algorithm with stochastic ranking</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000507"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">T. Runarsson and X. Yao. Stochastic ranking for constrained evolutionary optimization. EEE Transactions on Evolutionary Computation. 4. 284 - 294. 2000.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000508 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000508">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000520"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>evolutionary programming</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">EP</skos:altLabel>
+        <skos:definition xml:lang="en">Evolutionary programming (EP) is a computational technique that mimics evolution and is based on reproduction and selection. An EP algorithm is composed of individuals that reproduce and compete, each one is a potential solution to the (optimization) problem and is represented by a &quot;genome&quot; where each gene corresponds to one adjustable parameter. At each generation of the EP, each individual reproduces asexually, i.e. divides into two individuals. One of these contains exactly the same &quot;genome&quot; as the parent while the other suffers some mutations (the parameter values of each gene change slightly). At the end of the generation, the algorithm has double the number of individuals. Then each of the individuals is confronted with a number of others to count how many does it outperform (the number of wins is the number of these competitors that represent worse solutions than itself). All the individuals are ranked by their number of wins, and the population is again reduced to the original number of individuals by eliminating those which have worse fitness (solutions).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000508"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">T. Bäck, D.B. Fogel, and Z. Michalewicz. Handbook of evolutionary computation. Oxford: IOP Publishing/Oxford University Press. 1997.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000509 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000509">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000508"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>evolutionary strategy</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">SRES</skos:altLabel>
+        <skos:altLabel xml:lang="en">evolutionary strategies with stochastic ranking</skos:altLabel>
+        <skos:definition xml:lang="en">Evolutionary Strategies with Stochastic Ranking (SRES) is similar to Evolutionary Programming. However, a parent has multiple offsprings during each generation. Each offspring will contain a recombination of genes with another parent and additional mutations. The algorithm assures that each parameter value will be within its boundaries. But constraints to the solutions may be violated.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000509"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">T. Runarsson and X. Yao. Stochastic ranking for constrained evolutionary optimization. EEE Transactions on Evolutionary Computation. 4. 284 - 294. 2000.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000510 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000510">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>truncated Newton</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0122839528</rdfs:seeAlso>
+        <skos:definition xml:lang="en">The Truncated Newton method is a sophisticated variant of the Newton optimization method. The Newton optimization method searches for the minimum of a nonlinear function by following descent directions determined from the function&apos;s first and second partial derivatives. The Truncated Newton method does an incomplete (truncated) solution of a system of linear equations to calculate the Newton direction. This means that the actual direction chosen for the descent is between the steepest descent direction and the true Newton direction.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000510"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0122839528</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">P.E. Gill, W. Murray, and M.H. Wright. Practical Optimization. London, Academic Press. 1981.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000511 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000511">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>steepest descent</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ACSSC.1991.186507</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Steepest descent is an optimization method that follows the direction of steepest descent on the hyper-surface of the objective function to find a local minimum. The direction of steepest descent is defined by the negative of the gradient of the objective function.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000511"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ACSSC.1991.186507</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">D.B. Fogel, L.J. Fogel, and J.W. Atmar. Meta-evolutionary programming. 25th Asiloma Conference on Signals, Systems and Computers. IEEE Computer Society, Asilomar . 540 - 545. 1992.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000512 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000512">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>praxis</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0486419983</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Praxis is a direct search method that searches for the minimum of a nonlinear function without requiring (or attempting to calculate) derivatives of that function. Praxis was developed by Brent after the method proposed by Powell. The inspiration for Praxis was the well-known method of minimising each adjustable parameter (direction) at a time - the principal axes method. In Praxis directions are chosen that do not coincide with the principal axes, in fact if the objective function is quadratic then these will be conjugate directions, assuring a fast convergence rate.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000512"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0486419983</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">P.R. Brent. A new algorithm for minimizing a function of several variables without calculating derivatives. In Algorithms for minimization without derivatives, (Englewood Cliffs, NJ: Prentice-Hall, Inc.). 117 - 167. 1973.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000513 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000513">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>NL2SOL</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/355958.355966</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">adaptive nonlinear least-squares algorithm</skos:altLabel>
+        <skos:definition xml:lang="en">The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton or Levenberg-Marquardt method and more efficient than the secant or variable metric algorithms that are intended for general function minimization.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000513"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/355958.355966</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">J. E. Dennis, D. M. Gay, and R. E. Welsch. An adaptive nonlinear least-squares algorithm. ACM Trans. Math. Softw.. 7(3). 348 - 368. 1981.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000514 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000514">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000211"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>Nelder-Mead</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1093/comjnl/7.4.308</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">simplex method</skos:altLabel>
+        <skos:definition xml:lang="en">This method also known as the simplex method is due to Nelder and Mead. A simplex is a polytope of N+1 vertices in N dimensions. The objective function is evaluated at each vertex. Dependent on these calculated values a new simplex is constructed. The simplest step is to replace the worst point with a point reflected through the centroid of the remaining N points. If this point is better than the best current point, then we can try stretching exponentially out along this line. On the other hand, if this new point isn&apos;t much better than the previous value then we are stepping across a valley, so we shrink the simplex towards the best point.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000514"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1093/comjnl/7.4.308</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">J. A. Nelder and R. Mead. A simplex method for function minimization. Computer Journal. 7. 308 - 313. 1965.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000515 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000515">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>Levenberg-Marquardt</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1090/qam/10666</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0111030</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Levenberg-Marquardt is a gradient descent method. It is a hybrid between the steepest descent and the Newton methods.
+Levenberg first suggested an improvement to the Newton method in order to make it more robust, i.e. to overcome the problem of non-convergence. His suggestion was to add a factor to the diagonal elements of the Hessian matrix of second derivatives when not close to the minimum (this can be judged by how positive definite the matrix is). The effect when this factor is large compared to the elements of Hessian is that the method then becomes the steepest descent method. Later Marquardt suggested that the factor should be multiplicative rather than additive and also defined a heuristic to make this factor increase or decrease. The method known as Levenberg-Marquardt is thus an adaptive method that effectively changes between the steepest descent to the Newton method.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000515"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1090/qam/10666</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">K. Levenberg. A method for the solution of certain nonlinear problems in least squares. Quart. Appl. Math.. 2. 164 - 168. 1944.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000515"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0111030</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">D.W. Marquardt. An algorithm for least squares estimation of nonlinear parameters. SIAM Journal. 11. 431 - 441. 1963.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000516 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000516">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000471"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label>Hooke&amp;Jeeves</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/321062.321069</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Hooke and Jeeves method</skos:altLabel>
+        <skos:altLabel xml:lang="en">method of Hooke and Jeeves</skos:altLabel>
+        <skos:definition xml:lang="en">The method of Hooke and Jeeves is a direct search algorithm that searches for the minimum of a nonlinear function without requiring (or attempting to calculate) derivatives of the function. Instead it is based on a heuristic that suggests a descent direction using the values of the function calculated in a number of previous iterations.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000516"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/321062.321069</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">R. Hooke and T. A. Jeeves. &quot;Direct search&quot; solution of numerical and statistical problems. Journal of the Association for Computing Machinery. 8. 212 - 229. 1961.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000517 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000517">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000518"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000519"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>number of generations</rdfs:label>
+        <skos:definition xml:lang="en">The parameter is a positive integer value to determine the number of generations the evolutionary algorithm shall evolve the population.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000518 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000518">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000520"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>evolutionary algorithm parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000519 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000519">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000518"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>population size</rdfs:label>
+        <skos:definition xml:lang="en">The parameter is a positive integer value to determine the size of the population, i.e., the number of individuals that survive after each generation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000520 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000520">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000517"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000519"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isOrganizational xml:lang="en">true</isOrganizational>
+        <rdfs:label>evolutionary algorithm</rdfs:label>
+        <skos:definition xml:lang="en">An optimisation algorithm that mimics evolution and is based on reproduction and selection.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000521 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000521">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000503"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label>simulated annealing parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000522 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000522">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000521"/>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000523"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>start temperature</rdfs:label>
+        <skos:definition xml:lang="en">Initial temperature of the system. The higher the temperature, the larger the probability that a global optimum is found. Note that the temperature should be very high in the beginning of the method (the system should be above the &quot;melting&quot; temperature). This value has the same units as the objective function, so what represents &quot;high&quot; is different from problem to problem.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000523 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000523">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000521"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <rdfs:label>cooling factor</rdfs:label>
+        <skos:definition xml:lang="en">Rate by which the temperature is reduced from one cycle to the next, given by the formula: Tnew=Told*&quot;Cooling Factor&quot;. The simulated annealing algorithm works best if the temperature is reduced at a slow rate, so this value should be close to 1.</skos:definition>
+    </owl:Class>
     
 
 
@@ -9972,6 +10506,27 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
         </owl:members>
     </rdf:Description>
     <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000503"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000504"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000505"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000520"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000510"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000511"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000512"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000513"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000514"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000515"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000516"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -9986,5 +10541,5 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
 
