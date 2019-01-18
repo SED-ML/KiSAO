@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.5 (OWL 2)
+-  added optimisation methods (ticket 33)
+
 KiSAO 2.4 (OWL 2)
 -  added dynamic FBA methods (ticket 32)
 
