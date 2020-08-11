@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.6</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.7</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -9966,6 +9966,230 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     
 
 
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000526 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000531"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000532"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000534"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
+        <rdfs:label xml:lang="en">flux variability analysis</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">FVA</skos:altLabel>
+        <skos:definition xml:lang="en">Method for determining the minimum and maximum flux of each reaction that satisfies the flux constraints of the flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Mahadevan R, Schilling CH. The effects of alternate optimal solutions in constraint-based genome-scale metabolic models. Metab Eng. 2003;5(4):264-276.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000527 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000527">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
+        <rdfs:label xml:lang="en">geometric flux balance analysis</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">gFBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">geometric FBA</skos:altLabel>
+        <skos:definition xml:lang="en">Method for determining the central flux distribution among all flux distributions that satisfy the constraints of the  flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000527"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Smallbone K, Simeonidis E. Flux balance analysis: a geometric perspective. J Theor Biol. 2009;258(2):311-315.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000528 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000528">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000531"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000533"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
+        <rdfs:label xml:lang="en">parsimonious enzyme usage flux balance analysis</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1038/msb.2010.47</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">pFBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">parsimonious FBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">parsimonious flux balance analysis</skos:altLabel>
+        <skos:definition xml:lang="en">Method for determining the smallest flux distribution among all flux distributions that satisfy the constraints of the flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1038/msb.2010.47</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Lewis NE, Hixson KK, Conrad TM, et al. Omic data from evolved E. coli are consistent with computed optimal growth from genome-scale models. Mol Syst Biol. 2010;6:390.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000529 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000529">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">parallelism</rdfs:label>
+        <skos:definition xml:lang="en">Number of parallel processes to use.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000531 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000531">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">fraction of optimum</rdfs:label>
+        <skos:definition xml:lang="en">Fraction of the optimum solution which must be maintained.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000532 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000532">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">loopless</rdfs:label>
+        <skos:definition xml:lang="en">Whether to return only loopless flux solutions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000533 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000533">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">pFBA factor</rdfs:label>
+        <skos:definition xml:lang="en">Maximum permissible sum of absolute fluxes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000534 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000534">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">reactions</rdfs:label>
+        <skos:definition xml:lang="en">FVA algorithm [http://www.biomodels.net/kisao/KISAO#KISAO_0000526] parameter: reactions to compute the variablity of.</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -10399,6 +10623,92 @@ Levenberg first suggested an improvement to the Newton method in order to make i
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000487"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000498"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000518"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000521"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000525"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000244"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000252"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000420"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000421"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000422"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000429"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000430"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000475"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000476"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000477"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000478"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000481"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000482"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000487"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000498"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000518"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000521"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000525"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000531"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000244"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000252"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000420"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000421"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000422"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000429"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000430"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000475"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000476"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000477"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000478"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000481"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000482"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000487"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000498"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000518"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000521"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000525"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000531"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000532"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000533"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000534"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000244"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000252"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000420"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000421"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000422"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000429"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000430"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000475"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000476"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000477"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000478"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000481"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000482"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000487"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000498"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000525"/>
         </owl:members>
     </rdf:Description>
@@ -10567,6 +10877,14 @@ Levenberg first suggested an improvement to the Newton method in order to make i
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000514"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000515"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000516"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000527"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
