@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.7 (OWL 2)
+-  added gFBA, pFBA, FVA and related parameters (tickets 37-44)
+
 KiSAO 2.6 (OWL 2)
 -  added patitioned leaping (KISAO_0000524) and stop condition (KISAO_0000525) (tickets 35-36)
 
