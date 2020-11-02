@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.7</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.8</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -516,22 +516,45 @@
                 <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000543"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000570"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000571"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000355"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-11-30</dc:created>
         <dc:creator xml:lang="en">dk</dc:creator>
         <isImplementedIn xml:lang="en">BioNetGen</isImplementedIn>
         <isImplementedIn xml:lang="en">JSim</isImplementedIn>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
+        <isImplementedIn xml:lang="en">PySCeS</isImplementedIn>
         <isImplementedIn xml:lang="en">SBML-SAT</isImplementedIn>
         <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
         <isImplementedIn xml:lang="en">VCell</isImplementedIn>
+        <isImplementedIn xml:lang="en">libRoadRunner</isImplementedIn>
+        <isImplementedIn xml:lang="en">tellurium</isImplementedIn>
         <rdfs:label xml:lang="en">CVODE</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">citeulike:1832863</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/1089014.1089020</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">VODE</skos:altLabel>
         <skos:altLabel xml:lang="en">VODEPK</skos:altLabel>
         <skos:altLabel xml:lang="en">code value ordinary differential equation solver</skos:altLabel>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">code value ordinary differential equation solver</skos:altLabel>
         <skos:definition xml:lang="en">The CVODE is a package written in C that solves ODE initial value problems, in real N-space, written as y&apos;=f(t,y),  y(t0)=y0. It is capable for stiff and non-stiff systems and uses two different linear multi-step methods, namely the Adam-Moulton [http://identifiers.org/biomodels.kisao/KISAO_0000280] method and the backward differentiation formula [http://identifiers.org/biomodels.kisao/KISAO_0000288].</skos:definition>
     </owl:Class>
     <owl:Axiom>
@@ -1002,6 +1025,12 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000031"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">implicit Gaussian first order Runge-Kutta</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000031"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/052143064X</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Press WH, Teukolsky SA, Vetterling WT, Flannery BP. Numerical Recipes in Fortran 77. Cambridge University Press (2001).</rdfs:comment>
@@ -1010,12 +1039,6 @@
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000031"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <owl:annotatedTarget xml:lang="en">implicit Euler method</owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000031"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
-        <owl:annotatedTarget xml:lang="en">implicit Gaussian first order Runge-Kutta</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </owl:Axiom>
     
@@ -1238,7 +1261,7 @@
         <rdfs:label xml:lang="en">Poisson tau-leaping method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.1378322</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">explicit tau-leaping</skos:altLabel>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">explicit tau-leaping method with basic pre-leap check</skos:altLabel>
+        <skos:altLabel xml:lang="en">explicit tau-leaping method with basic pre-leap check</skos:altLabel>
         <skos:altLabel xml:lang="en">explicit tau-leaping method with basic preleap check</skos:altLabel>
         <skos:altLabel xml:lang="en">poisson tau-leaping</skos:altLabel>
         <skos:definition xml:lang="en">Explicit tau-leaping method with basic pre leap check.</skos:definition>
@@ -1337,7 +1360,6 @@
         <rdfs:label xml:lang="en">trapezoidal tau-leaping method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">citeulike:1755561</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">trapezoidal implicit tau-leaping method</skos:altLabel>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trapezoidal implicit tau-leaping method</skos:altLabel>
         <skos:definition xml:lang="en">Formula for accelerated discrete efficient stochastic simulation of chemically reacting system [which] has better accuracy and stiff stability properties than the explicit and implicit [http://identifiers.org/biomodels.kisao/KISAO_0000045] tau-leaping formulas for discrete stochastic systems, and it limits to the trapezoidal rule in the deterministic regime.</skos:definition>
     </owl:Class>
     <owl:Axiom>
@@ -1786,7 +1808,6 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2771548</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">BtauL</skos:altLabel>
         <skos:altLabel xml:lang="en">binomial tau-leap spatial stochastic simulation algorithm</skos:altLabel>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binomial tau-leap spatial stochastic simulation algorithm</skos:altLabel>
         <skos:definition xml:lang="en">Coarse grained modified version of the next subvolume method [http://identifiers.org/biomodels.kisao/KISAO_0000022] that allows the user to consider both diffusion and reaction events in relatively long simulation time spans as compared with the original method and other commonly used fully stochastic computational methods.</skos:definition>
     </owl:Class>
     <owl:Axiom>
@@ -2040,6 +2061,41 @@
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000087">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000435"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000538"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000539"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000540"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000541"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000559"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-11-12</dc:created>
         <dc:creator xml:lang="en">dk</dc:creator>
         <isImplementedIn xml:lang="en">ECell3</isImplementedIn>
@@ -2124,6 +2180,13 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000220"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000559"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-11-30</dc:created>
@@ -3530,7 +3593,7 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000264"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1103/RevModPhys.55.601</owl:annotatedTarget>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wolfram, Stephen (1983) Statistical mechanics of cellular automata. Reviews of Modern Physics 55 (3): 601-644.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wolfram, Stephen (1983) Statistical mechanics of cellular automata. Reviews of Modern Physics 55 (3): 601-644.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000264"/>
@@ -5386,7 +5449,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000328"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created>2011-06-02</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-02</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">equation-free probabilistic steady-state approximation</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2131050</rdfs:seeAlso>
@@ -5457,7 +5520,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created>2011-06-02</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-02</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">minimum fast/discrete reaction occurrences number</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2131050</rdfs:seeAlso>
@@ -5488,7 +5551,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created>2011-06-02</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-02</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">number of samples</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2131050</rdfs:seeAlso>
@@ -5519,7 +5582,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created>2011-06-02</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-02</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">maximum discrete number</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2131050</rdfs:seeAlso>
@@ -5550,7 +5613,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created>2011-06-02</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-02</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">minimum fast rate</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2131050</rdfs:seeAlso>
@@ -6878,7 +6941,7 @@ DASPK is written in Fortran.</skos:definition>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-16</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">partitioned Runge-Kutta method</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1007/BF01389456</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1007/BF01389456</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">PRK</skos:altLabel>
         <skos:altLabel xml:lang="en">SPRK</skos:altLabel>
         <skos:altLabel xml:lang="en">symplectic partitioned Runge-Kutta method</skos:altLabel>
@@ -6887,7 +6950,7 @@ DASPK is written in Fortran.</skos:definition>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000367"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1007/BF01389456</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1007/BF01389456</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">P. Rentrop (1985): Partitioned Runge-Kutta methods with stiffness detection and stepsize control. Numer. Math., Vol. 47, p.545-564.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
@@ -8359,6 +8422,13 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000467"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000559"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-24</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -8479,6 +8549,41 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000538"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000539"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000540"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000541"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000559"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-09-26</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">Dormand-Prince 8(5,3) method</rdfs:label>
@@ -8587,6 +8692,13 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000107"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000572"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-28</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">logical model simulation method</rdfs:label>
@@ -8619,6 +8731,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000450">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000448"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000574"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-28</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">asynchronous logical model simulation method</rdfs:label>
@@ -9248,10 +9366,46 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000497"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000543"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000555"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000556"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000557"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000558"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <isImplementedIn xml:lang="en">AMICI</isImplementedIn>
         <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
         <rdfs:comment xml:lang="en">CVODES is a superset of CVODE [http://identifiers.org/biomodels.kisao/KISAO_0000019] and hence all options available to CVODE (with the exception of the FCVODE interface module) are also available for CVODES. Both integration methods (Adams-Moulton [http://identifiers.org/biomodels.kisao/KISAO_0000280] and BDF [http://identifiers.org/biomodels.kisao/KISAO_0000288]) and the corresponding nonlinear iteration methods, as well as all linear solver and preconditioner modules, are available for the integration of the original ODEs, the sensitivity systems, or the adjoint system.</rdfs:comment>
         <rdfs:label xml:lang="en">CVODES</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://computation.llnl.gov/projects/sundials/cvodes</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://computation.llnl.gov/projects/sundials/cvodes</rdfs:seeAlso>
         <skos:definition xml:lang="en">CVODES is a solver for stiff and nonstiff ODE systems (initial value problem) given in explicit form y’ = f(t,y,p) with sensitivity analysis capabilities (both forward and adjoint modes).</skos:definition>
     </owl:Class>
     
@@ -9261,17 +9415,17 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000497">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-        <dc:created xml:lang="en">2017-01-09</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-01-09</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">KLU</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1145/1824801.1824814</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/1824801.1824814</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">&quot;Clark Kent&quot; LU factorization algorithm</skos:altLabel>
         <skos:definition xml:lang="en">KLU is a software package and an algorithm for solving sparse unsymmetric linear systems of equations that arise in circuit simulation applications. It relies on a permutation to Block Triangular Form (BTF), several methods for finding a fill-reducing ordering (variants of approximate minimum degree and nested dissection), and Gilbert/Peierls’ sparse left-looking LU factorization algorithm to factorize each block. The package is written in C and includes a MATLAB interface.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000497"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1145/1824801.1824814</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/1824801.1824814</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Davis, Timothy A., and Ekanathan Palamadai Natarajan. &quot;Algorithm 907: KLU, a direct sparse solver for circuit simulation problems.&quot; ACM Transactions on Mathematical Software (TOMS) 37.3 (2010): 36.</rdfs:comment>
     </owl:Axiom>
     
@@ -9281,7 +9435,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000498">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created xml:lang="en">2017-07-18</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-07-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/31/</rdfs:comment>
         <rdfs:label xml:lang="en">number of runs</rdfs:label>
@@ -9294,19 +9448,19 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000499">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-        <dc:created xml:lang="en">2017-09-12</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
         <rdfs:comment xml:lang="en">Ticket 32</rdfs:comment>
         <rdfs:label xml:lang="en">dynamic flux balance analysis</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">DFBA</skos:altLabel>
         <skos:definition xml:lang="en">Dynamic flux balance analysis (DFBA) enables the simulation of dynamic biological systems by assuming organisms reach steady state rapidly in response to changes in the extracellular environment. DFBA couples flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model approaches with dynamic model approaches.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000499"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">DFBAlab: a fast and reliable MATLAB code for dynamic flux balance analysis.
 Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:comment>
     </owl:Axiom>
@@ -9323,12 +9477,12 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000030"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2017-09-12</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
         <rdfs:comment xml:lang="en">Ticket 32</rdfs:comment>
         <rdfs:label xml:lang="en">SOA-DFBA</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">SOA</skos:altLabel>
         <skos:altLabel xml:lang="en">static optimization approach dynamic flux balance analysis</skos:altLabel>
         <skos:definition xml:lang="en">Dynamic Flux Balance Analysis (DFBA) [http://identifiers.org/biomodels.kisao/KISAO_0000499] couples flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model approaches with dynamic model approaches. The static optimization approach (SOA) uses the Euler forward method [http://identifiers.org/biomodels.kisao/KISAO_0000030], solving the embedded LPs at each time step. The FBA fluxes are assumed to be constant during the time step.</skos:definition>
@@ -9336,7 +9490,7 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000500"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">DFBAlab: a fast and reliable MATLAB code for dynamic flux balance analysis.
 Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:comment>
     </owl:Axiom>
@@ -9357,12 +9511,12 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2017-09-12</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
         <rdfs:comment xml:lang="en">Ticket 32</rdfs:comment>
         <rdfs:label xml:lang="en">DOA-DFBA</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">DOA</skos:altLabel>
         <skos:altLabel xml:lang="en">dynamic optimization approach dynamic flux balance analysis</skos:altLabel>
         <skos:definition xml:lang="en">Dynamic Flux Balance Analysis (DFBA) [http://identifiers.org/biomodels.kisao/KISAO_0000499] couples flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model approaches with dynamic model approaches. The dynamic optimization approach (DOA) discretizes the time horizon and optimizes simultaneously over the entire time period of interest by solving a nonlinear programming problem (NLP).</skos:definition>
@@ -9370,7 +9524,7 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000501"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">DFBAlab: a fast and reliable MATLAB code for dynamic flux balance analysis.
 Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:comment>
     </owl:Axiom>
@@ -9387,12 +9541,12 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2017-09-12</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
         <rdfs:comment xml:lang="en">Ticket 32</rdfs:comment>
         <rdfs:label xml:lang="en">DA-DFBA</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">DA</skos:altLabel>
         <skos:altLabel xml:lang="en">direct approach dynamics flux balance analysis</skos:altLabel>
         <skos:definition xml:lang="en">Dynamic Flux Balance Analysis (DFBA) [http://identifiers.org/biomodels.kisao/KISAO_0000499] couples flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model approaches with dynamic model approaches. The direct approach (DA) includes the LP solver in the right-hand side evaluator for the ordinary differential equations (ODEs) and takes advantage of reliable implicit ODE integrators with adaptive step size for error control.</skos:definition>
@@ -9400,7 +9554,7 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000502"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">DFBAlab: a fast and reliable MATLAB code for dynamic flux balance analysis.
 Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:comment>
     </owl:Axiom>
@@ -9432,7 +9586,7 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>simulated annealing</rdfs:label>
+        <rdfs:label xml:lang="en">simulated annealing</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1126/science.220.4598.671</rdfs:seeAlso>
         <skos:definition xml:lang="en">Simulated annealing is an optimization algorithm first proposed by Kirkpatrick et al. and was inspired by statistical mechanics and the way in which perfect crystals are formed. Perfect crystals are formed by first melting the substance of interest, and then cooling it very slowly. At large temperatures the particles vibrate with wide amplitude and this allows a search for global optimum. As the temperature decreases so do the vibrations until the system settles to the global optimum (the perfect crystal).
 
@@ -9462,7 +9616,7 @@ Simulated annealing is a stochastic algorithm that is guaranteed to converge if 
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>random search</rdfs:label>
+        <rdfs:label xml:lang="en">random search</rdfs:label>
         <skos:definition xml:lang="en">Random search is an optimization method that attempts to find the optimum by testing the objective function&apos;s value on a series of combinations of random values of the adjustable parameters. The random values are generated complying with any boundaries selected by the user, furthermore, any combinations of parameter values that do not fulfill constraints on the variables are excluded. This means that the method is capable of handling bounds on the adjustable parameters and fulfilling constraints.
 
 For infinite number of iterations this method is guaranteed to find the global optimum of the objective function. In general one is interested in processing a very large number of iterations.</skos:definition>
@@ -9483,7 +9637,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>particle swarm</rdfs:label>
+        <rdfs:label xml:lang="en">particle swarm</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ICNN.1995.488968</rdfs:seeAlso>
         <skos:definition xml:lang="en">The particle swarm optimization method suggested by Kennedy and Eberhart is inspired by a flock of birds or a school of fish searching for food. Each particle has a position Xi and a velocity Vi in the parameter space. Additionally, it remembers its best achieved objective value O and position Mi. Dependent on its own information and the position of its best neighbor (a random subset of particles of the swarm) a new velocity is calculated. With this information the position is updated.</skos:definition>
     </owl:Class>
@@ -9504,7 +9658,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>genetic algorithm</rdfs:label>
+        <rdfs:label xml:lang="en">genetic algorithm</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">GA</skos:altLabel>
         <skos:definition xml:lang="en">The genetic algorithm (GA) is a computational technique that mimics evolution and is based on reproduction and selection. A GA is composed of individuals that reproduce and compete, each one is a potential solution to the (optimization) problem and is represented by a &quot;genome&quot; where each gene corresponds to one adjustable parameter. At each generation of the GA, each individual is paired with one other at random for reproduction. Two offspring are produced by combining their genomes and allowing for &quot;cross-over&quot;, i.e., the two new individuals have genomes that are formed from a combination of the genomes of their parents. Also each new gene might have mutated, i.e. the parameter value might have changed slightly. At the end of the generation, the algorithm has double the number of individuals. Then each of the individuals is confronted with a number of others to count how many does it outperform (the number of wins is the number of these competitors that represent worse solutions than itself). All the individuals are ranked by their number of wins, and the population is again reduced to the original number of individuals by eliminating those which have worse fitness (solutions).</skos:definition>
@@ -9525,7 +9679,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>genetic algorithm SR</rdfs:label>
+        <rdfs:label xml:lang="en">genetic algorithm SR</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">genetic algorithm with stochastic ranking</skos:altLabel>
     </owl:Class>
@@ -9545,7 +9699,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>evolutionary programming</rdfs:label>
+        <rdfs:label xml:lang="en">evolutionary programming</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/9780750308953</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">EP</skos:altLabel>
         <skos:definition xml:lang="en">Evolutionary programming (EP) is a computational technique that mimics evolution and is based on reproduction and selection. An EP algorithm is composed of individuals that reproduce and compete, each one is a potential solution to the (optimization) problem and is represented by a &quot;genome&quot; where each gene corresponds to one adjustable parameter. At each generation of the EP, each individual reproduces asexually, i.e. divides into two individuals. One of these contains exactly the same &quot;genome&quot; as the parent while the other suffers some mutations (the parameter values of each gene change slightly). At the end of the generation, the algorithm has double the number of individuals. Then each of the individuals is confronted with a number of others to count how many does it outperform (the number of wins is the number of these competitors that represent worse solutions than itself). All the individuals are ranked by their number of wins, and the population is again reduced to the original number of individuals by eliminating those which have worse fitness (solutions).</skos:definition>
@@ -9566,7 +9720,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>evolutionary strategy</rdfs:label>
+        <rdfs:label xml:lang="en">evolutionary strategy</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/4235.873238</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">SRES</skos:altLabel>
         <skos:altLabel xml:lang="en">evolutionary strategies with stochastic ranking</skos:altLabel>
@@ -9588,7 +9742,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>truncated Newton</rdfs:label>
+        <rdfs:label xml:lang="en">truncated Newton</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0122839528</rdfs:seeAlso>
         <skos:definition xml:lang="en">The Truncated Newton method is a sophisticated variant of the Newton optimization method. The Newton optimization method searches for the minimum of a nonlinear function by following descent directions determined from the function&apos;s first and second partial derivatives. The Truncated Newton method does an incomplete (truncated) solution of a system of linear equations to calculate the Newton direction. This means that the actual direction chosen for the descent is between the steepest descent direction and the true Newton direction.</skos:definition>
     </owl:Class>
@@ -9619,7 +9773,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>steepest descent</rdfs:label>
+        <rdfs:label xml:lang="en">steepest descent</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1109/ACSSC.1991.186507</rdfs:seeAlso>
         <skos:definition xml:lang="en">Steepest descent is an optimization method that follows the direction of steepest descent on the hyper-surface of the objective function to find a local minimum. The direction of steepest descent is defined by the negative of the gradient of the objective function.</skos:definition>
     </owl:Class>
@@ -9645,7 +9799,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>praxis</rdfs:label>
+        <rdfs:label xml:lang="en">praxis</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0486419983</rdfs:seeAlso>
         <skos:definition xml:lang="en">Praxis is a direct search method that searches for the minimum of a nonlinear function without requiring (or attempting to calculate) derivatives of that function. Praxis was developed by Brent after the method proposed by Powell. The inspiration for Praxis was the well-known method of minimising each adjustable parameter (direction) at a time - the principal axes method. In Praxis directions are chosen that do not coincide with the principal axes, in fact if the objective function is quadratic then these will be conjugate directions, assuring a fast convergence rate.</skos:definition>
     </owl:Class>
@@ -9671,7 +9825,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>NL2SOL</rdfs:label>
+        <rdfs:label xml:lang="en">NL2SOL</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/355958.355966</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">adaptive nonlinear least-squares algorithm</skos:altLabel>
         <skos:definition xml:lang="en">The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton or Levenberg-Marquardt method and more efficient than the secant or variable metric algorithms that are intended for general function minimization.</skos:definition>
@@ -9704,7 +9858,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>Nelder-Mead</rdfs:label>
+        <rdfs:label xml:lang="en">Nelder-Mead</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1093/comjnl/7.4.308</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">simplex method</skos:altLabel>
         <skos:definition xml:lang="en">This method also known as the simplex method is due to Nelder and Mead. A simplex is a polytope of N+1 vertices in N dimensions. The objective function is evaluated at each vertex. Dependent on these calculated values a new simplex is constructed. The simplest step is to replace the worst point with a point reflected through the centroid of the remaining N points. If this point is better than the best current point, then we can try stretching exponentially out along this line. On the other hand, if this new point isn&apos;t much better than the previous value then we are stepping across a valley, so we shrink the simplex towards the best point.</skos:definition>
@@ -9743,7 +9897,7 @@ For infinite number of iterations this method is guaranteed to find the global o
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>Levenberg-Marquardt</rdfs:label>
+        <rdfs:label xml:lang="en">Levenberg-Marquardt</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1090/qam/10666</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0111030</rdfs:seeAlso>
         <skos:definition xml:lang="en">Levenberg-Marquardt is a gradient descent method. It is a hybrid between the steepest descent and the Newton methods.
@@ -9783,7 +9937,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
-        <rdfs:label>Hooke&amp;Jeeves</rdfs:label>
+        <rdfs:label xml:lang="en">Hooke&amp;Jeeves</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/321062.321069</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Hooke and Jeeves method</skos:altLabel>
         <skos:altLabel xml:lang="en">method of Hooke and Jeeves</skos:altLabel>
@@ -9812,7 +9966,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000519"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>number of generations</rdfs:label>
+        <rdfs:label xml:lang="en">number of generations</rdfs:label>
         <skos:definition xml:lang="en">The parameter is a positive integer value to determine the number of generations the evolutionary algorithm shall evolve the population.</skos:definition>
     </owl:Class>
     
@@ -9830,7 +9984,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>evolutionary algorithm parameter</rdfs:label>
+        <rdfs:label xml:lang="en">evolutionary algorithm parameter</rdfs:label>
     </owl:Class>
     
 
@@ -9847,7 +10001,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>population size</rdfs:label>
+        <rdfs:label xml:lang="en">population size</rdfs:label>
         <skos:definition xml:lang="en">The parameter is a positive integer value to determine the size of the population, i.e., the number of individuals that survive after each generation.</skos:definition>
     </owl:Class>
     
@@ -9872,7 +10026,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational xml:lang="en">true</isOrganizational>
-        <rdfs:label>evolutionary algorithm</rdfs:label>
+        <rdfs:label xml:lang="en">evolutionary algorithm</rdfs:label>
         <skos:definition xml:lang="en">An optimisation algorithm that mimics evolution and is based on reproduction and selection.</skos:definition>
     </owl:Class>
     
@@ -9891,7 +10045,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label>simulated annealing parameter</rdfs:label>
+        <rdfs:label xml:lang="en">simulated annealing parameter</rdfs:label>
     </owl:Class>
     
 
@@ -9903,7 +10057,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000523"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>start temperature</rdfs:label>
+        <rdfs:label xml:lang="en">start temperature</rdfs:label>
         <skos:definition xml:lang="en">Initial temperature of the system. The higher the temperature, the larger the probability that a global optimum is found. Note that the temperature should be very high in the beginning of the method (the system should be above the &quot;melting&quot; temperature). This value has the same units as the objective function, so what represents &quot;high&quot; is different from problem to problem.</skos:definition>
     </owl:Class>
     
@@ -9921,7 +10075,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-18</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:label>cooling factor</rdfs:label>
+        <rdfs:label xml:lang="en">cooling factor</rdfs:label>
         <skos:definition xml:lang="en">Rate by which the temperature is reduced from one cycle to the next, given by the formula: Tnew=Told*&quot;Cooling Factor&quot;. The simulated annealing algorithm works best if the temperature is reduced at a slow rate, so this value should be close to 1.</skos:definition>
     </owl:Class>
     
@@ -9937,17 +10091,17 @@ Levenberg first suggested an improvement to the Newton method in order to make i
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000488"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2020-05-29</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-29</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">BioNetGen</isImplementedIn>
         <rdfs:label xml:lang="en">partitioned leaping method</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1063/1.2354085</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2354085</rdfs:seeAlso>
         <skos:definition xml:lang="en">Multiscale simulation approach for modeling stochasticity in chemical reaction networks. The approach seamlessly integrates exact-stochastic and &quot;leaping&quot; methodologies into a single partitioned leaping algorithmic framework. The technique correctly accounts for stochastic noise at significantly reduced computational cost, requires the definition of only three modelindependent parameters and is particularly well-suited for simulating systems containing widely disparate species populations.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000524"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1063/1.2354085</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1063/1.2354085</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Harris LA, Clancy P. A &quot;partitioned leaping&quot; approach for multiscale modeling of chemical reaction dynamics. J Chem Phys. 125 (14), 144107 (2006).</rdfs:comment>
     </owl:Axiom>
     
@@ -9957,7 +10111,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000525">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created xml:lang="en">2020-05-29</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-29</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">BioNetGen</isImplementedIn>
         <rdfs:label xml:lang="en">stop condition</rdfs:label>
@@ -9994,18 +10148,18 @@ Levenberg first suggested an improvement to the Newton method in order to make i
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000534"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-11</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
         <rdfs:label xml:lang="en">flux variability analysis</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">FVA</skos:altLabel>
         <skos:definition xml:lang="en">Method for determining the minimum and maximum flux of each reaction that satisfies the flux constraints of the flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1016/j.ymben.2003.09.002</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Mahadevan R, Schilling CH. The effects of alternate optimal solutions in constraint-based genome-scale metabolic models. Metab Eng. 2003;5(4):264-276.</rdfs:comment>
     </owl:Axiom>
     
@@ -10014,18 +10168,18 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000527 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000527">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000529"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-11</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
         <rdfs:label xml:lang="en">geometric flux balance analysis</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">gFBA</skos:altLabel>
         <skos:altLabel xml:lang="en">geometric FBA</skos:altLabel>
         <skos:definition xml:lang="en">Method for determining the central flux distribution among all flux distributions that satisfy the constraints of the  flux balance analysis (FBA) [http://identifiers.org/biomodels.kisao/KISAO_0000437] model.</skos:definition>
@@ -10033,7 +10187,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000527"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1016/j.jtbi.2009.01.027</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Smallbone K, Simeonidis E. Flux balance analysis: a geometric perspective. J Theor Biol. 2009;258(2):311-315.</rdfs:comment>
     </owl:Axiom>
     
@@ -10042,7 +10196,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000528 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000528">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -10055,11 +10209,12 @@ Levenberg first suggested an improvement to the Newton method in order to make i
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000533"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created xml:lang="en">2020-08-11</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-11</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">CBMPy</isImplementedIn>
         <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
-        <rdfs:label xml:lang="en">parsimonious enzyme usage flux balance analysis</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">http://identifiers.org/doi/10.1038/msb.2010.47</rdfs:seeAlso>
+        <rdfs:label xml:lang="en">parsimonious enzyme usage flux balance analysis (minimum sum of absolute fluxes)</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1038/msb.2010.47</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">pFBA</skos:altLabel>
         <skos:altLabel xml:lang="en">parsimonious FBA</skos:altLabel>
         <skos:altLabel xml:lang="en">parsimonious flux balance analysis</skos:altLabel>
@@ -10068,7 +10223,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget xml:lang="en">http://identifiers.org/doi/10.1038/msb.2010.47</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1038/msb.2010.47</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Lewis NE, Hixson KK, Conrad TM, et al. Omic data from evolved E. coli are consistent with computed optimal growth from genome-scale models. Mol Syst Biol. 2010;6:390.</rdfs:comment>
     </owl:Axiom>
     
@@ -10187,6 +10342,1022 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:label xml:lang="en">reactions</rdfs:label>
         <skos:definition xml:lang="en">FVA algorithm [http://www.biomodels.net/kisao/KISAO#KISAO_0000526] parameter: reactions to compute the variablity of.</skos:definition>
     </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000535 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000535">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000433"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000542"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000359"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">deSolve</isImplementedIn>
+        <rdfs:label xml:lang="en">VODE</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">DVODE</skos:altLabel>
+        <skos:altLabel xml:lang="en">Real-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
+        <skos:definition xml:lang="en">VODE provides implicit Adams method (for non-stiff problems) and a method based on backward differentiation formulas (BDF) (for stiff problems).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000535"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter N. Brown, George D. Byrne &amp; Alan C. Hindmarsh. VODE: A Variable-Coefficient ODE Solver. SIAM J. Sci. and Stat. Comput., 10(5), 1038–1051 (1988).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000535"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">DVODE</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">RELATED</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000535"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Real-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000536 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000536">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000433"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000542"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000359"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">deSolve</isImplementedIn>
+        <rdfs:label xml:lang="en">ZVODE</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Complex-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
+        <skos:definition xml:lang="en">ZVODE provides implicit Adams method (for non-stiff problems) and a method based on backward differentiation formulas (BDF) (for stiff problems).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000536"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter N. Brown, George D. Byrne &amp; Alan C. Hindmarsh. VODE: A Variable-Coefficient ODE Solver. SIAM J. Sci. and Stat. Comput., 10(5), 1038–1051 (1988).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000536"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Complex-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000537 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000537">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">MATLAB</isImplementedIn>
+        <isImplementedIn xml:lang="en">Octave</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">deSolve</isImplementedIn>
+        <rdfs:label xml:lang="en">explicit Runge-Kutta method of order 3(2)</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/0893-9659(89)90079-7</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">RK23</skos:altLabel>
+        <skos:definition xml:lang="en">RK23 uses the Bogacki-Shampine pair of formulas [1]. The error is controlled assuming accuracy of the second-order method, but steps are taken using the third-order accurate formula (local extrapolation is done). A cubic Hermite polynomial is used for the dense output.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000537"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/0893-9659(89)90079-7</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">P. Bogacki &amp; L. F. Shampine. A 3(2) pair of Runge - Kutta formulas. Applied Mathematics Letters 2(4), 321-325 (1989).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000537"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">RK23</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000538 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000538">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">JModelica</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <rdfs:label xml:lang="en">safety factor on new step selection</rdfs:label>
+        <skos:altLabel xml:lang="en">safe</skos:altLabel>
+        <skos:altLabel xml:lang="en">safety</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000538"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">safe</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000538"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">safety</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000539 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000539">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">JModelica</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <rdfs:label xml:lang="en">minimum factor to change step size by</rdfs:label>
+        <skos:altLabel xml:lang="en">dfactor</skos:altLabel>
+        <skos:altLabel xml:lang="en">fac1</skos:altLabel>
+        <skos:definition xml:lang="en">Minimum factor to increase/decrease step size by in one step. The new step-size is chosen subject to the restriction fac1 &lt;= current step-size / old step-size &lt;= fac2.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000539"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">dfactor</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000539"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">fac1</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000540 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000540">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">JModelica</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <rdfs:label xml:lang="en">maximum factor to change step size by</rdfs:label>
+        <skos:altLabel xml:lang="en">fac2</skos:altLabel>
+        <skos:altLabel xml:lang="en">ifactor</skos:altLabel>
+        <skos:definition xml:lang="en">Maximum factor to increase/decrease step size by in one step. The new step-size is chosen subject to the restriction fac1 &lt;= current step-size / old step-size &lt;= fac2.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000540"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">fac2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000540"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">ifactor</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000541 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000541">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">JModelica</isImplementedIn>
+        <isImplementedIn xml:lang="en">Odespy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <rdfs:label xml:lang="en">Beta parameter for stabilized step size control</rdfs:label>
+        <skos:altLabel xml:lang="en">beta</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000541"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">beta</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000542 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000542">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <rdfs:label xml:lang="en">correction step should use internally generated full Jacobian</rdfs:label>
+        <skos:altLabel xml:lang="en">MF=22</skos:altLabel>
+        <skos:altLabel xml:lang="en">with Jacobian</skos:altLabel>
+        <skos:definition xml:lang="en">Specifies whether the iteration method of the ODE solver’s correction step is chord iteration with an internally generated full Jacobian or functional iteration with no Jacobian. Option is only considered when the user has not supplied a Jacobian function and has not indicated (by setting either upper or lower band) that the Jacobian is banded.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000542"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">MF=22</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000542"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">with Jacobian</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000543 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000543">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">stability limit detection flag</rdfs:label>
+        <skos:definition xml:lang="en">Flag to activate stability limit detection.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000544 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000544">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000432"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000545"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">IDAS</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1145/1089014.1089020</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">implicit differential-algebraic solver with sensitivity analysis</skos:altLabel>
+        <skos:definition xml:lang="en">IDAS solves real differential-algebraic systems in N-space, in the general form F(t,y,y&apos;)=0, y(t0)=y0, y&apos;(t0)=y&apos;0 with sensitivity analysis.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000544"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1145/1089014.1089020</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">SUNDIALS: Suite of nonlinear and differential/algebraic equation solvers. Alan C. Hindmarsh, Peter N. Brown, Keith E. Grant, Steven L. Lee, Radu Serban, Dana E. Shumaker &amp; Carol S. Woodward. ACM Transactions on Mathematical Software 31(3), 363-396 (2005).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000544"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">implicit differential-algebraic solver with sensitivity analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000545 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000545">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">include sensitivity variables in error control mechanism</rdfs:label>
+        <skos:altLabel xml:lang="en">errconS</skos:altLabel>
+        <skos:definition xml:lang="en">Specifies whether sensitivity variables are included or not in the error control mechanism.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000545"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">errconS</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000546 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000546">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">convex optimization algorithm</rdfs:label>
+        <skos:definition xml:lang="en">Optimization of a convex function over a convex set. Convex optimization is subclass of global optimization because conveness gaurantees that each local optimum is a global optimum.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000547 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000547">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000546"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CPLEX</isImplementedIn>
+        <isImplementedIn xml:lang="en">CVXOPT</isImplementedIn>
+        <isImplementedIn xml:lang="en">ConvOpt</isImplementedIn>
+        <isImplementedIn xml:lang="en">GLPK</isImplementedIn>
+        <isImplementedIn xml:lang="en">Gurobi</isImplementedIn>
+        <isImplementedIn xml:lang="en">MATLAB</isImplementedIn>
+        <isImplementedIn xml:lang="en">Mosek</isImplementedIn>
+        <isImplementedIn xml:lang="en">OptLang</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">SoPlex</isImplementedIn>
+        <isImplementedIn xml:lang="en">XPRESS</isImplementedIn>
+        <rdfs:label xml:lang="en">linear programming</rdfs:label>
+        <skos:altLabel xml:lang="en">LP</skos:altLabel>
+        <skos:definition xml:lang="en">Method to achieve the best outcome (such as maximum profit or lowest cost) in a mathematical model whose requirements are represented by linear relationships.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000547"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">LP</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000548 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000548">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000549"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CPLEX</isImplementedIn>
+        <isImplementedIn xml:lang="en">CVXOPT</isImplementedIn>
+        <isImplementedIn xml:lang="en">ConvOpt</isImplementedIn>
+        <isImplementedIn xml:lang="en">Gurobi</isImplementedIn>
+        <isImplementedIn xml:lang="en">MATLAB</isImplementedIn>
+        <isImplementedIn xml:lang="en">Mosek</isImplementedIn>
+        <isImplementedIn xml:lang="en">OptLang</isImplementedIn>
+        <isImplementedIn xml:lang="en">XPRESS</isImplementedIn>
+        <rdfs:label xml:lang="en">quadratic programming</rdfs:label>
+        <skos:altLabel xml:lang="en">QP</skos:altLabel>
+        <skos:definition xml:lang="en">Process of solving a quadratic optimization problem.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000548"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">QP</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000549 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000549">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000472"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">non-linear programming</rdfs:label>
+        <skos:definition xml:lang="en">Process of solving an optimization problem where some of the constraints or the objective function are nonlinear.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000550 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000550">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000547"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CPLEX</isImplementedIn>
+        <isImplementedIn xml:lang="en">GLPK</isImplementedIn>
+        <isImplementedIn xml:lang="en">Gurobi</isImplementedIn>
+        <rdfs:label xml:lang="en">simplex method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://projecteuclid.org/euclid.pjm/1103044531</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Dantzig&apos;s simplex algorithm</skos:altLabel>
+        <skos:definition xml:lang="en">Approach to solving linear programming models by hand using slack variables, tableaus, and pivot variables as a means to finding the optimal solution of an optimization problem.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000550"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Dantzig&apos;s simplex algorithm</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000551 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000551">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000547"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CPLEX</isImplementedIn>
+        <isImplementedIn xml:lang="en">GLPK</isImplementedIn>
+        <isImplementedIn xml:lang="en">Gurobi</isImplementedIn>
+        <rdfs:label xml:lang="en">primal-dual interior point method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0802028</rdfs:seeAlso>
+        <skos:definition xml:lang="en">The Interior Point method approximates the constraints of a linear programming model as a set of boundaries surrounding a region.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000551"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0802028</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Sanjay Mehrotra. On the Implementation of a Primal-Dual Interior Point Method. SIAM Journal on Optimization, 2(4), 575–601(1991).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000552 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000552">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CPLEX</isImplementedIn>
+        <isImplementedIn xml:lang="en">GLPK</isImplementedIn>
+        <isImplementedIn xml:lang="en">Gurobi</isImplementedIn>
+        <rdfs:label xml:lang="en">optimization method</rdfs:label>
+        <skos:definition xml:lang="en">Optimization method such as the revised simplex method [http://identifiers.org/biomodels.kisao/KISAO_0000550] or primal-dual interior point method [http://identifiers.org/biomodels.kisao/KISAO_0000551].</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000553 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000553">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CBMPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
+        <isImplementedIn xml:lang="en">ConvOpt</isImplementedIn>
+        <isImplementedIn xml:lang="en">OptLang</isImplementedIn>
+        <isImplementedIn xml:lang="en">RAVEN</isImplementedIn>
+        <rdfs:label xml:lang="en">optimization solver</rdfs:label>
+        <skos:definition xml:lang="en">Optimization solver such as CPLEX, GLPK, or Gurobi.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000554 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000554">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CBMPy</isImplementedIn>
+        <rdfs:label xml:lang="en">parsimonius flux balance analysis (minimum number of active fluxes)</rdfs:label>
+        <skos:altLabel xml:lang="en">pFBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">parsimonious FBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">parsimonious flux balance analysis</skos:altLabel>
+        <skos:definition xml:lang="en">A technique for selecting a parsimonious flux distribution which has a minimal number of active fluxes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000555 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000555">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000211"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">AMICI</isImplementedIn>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">absolute quadrature tolerance</rdfs:label>
+        <skos:definition xml:lang="en">Absolute error tolerance of the adjoint solution.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000556 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000556">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">AMICI</isImplementedIn>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">relative quadrature tolerance</rdfs:label>
+        <skos:definition xml:lang="en">Relative error tolerance of the adjoint solution.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000557 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000557">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000211"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">AMICI</isImplementedIn>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">absolute steady-state tolerance</rdfs:label>
+        <skos:definition xml:lang="en">Absolute error tolerance of the steady-state.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000558 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000558">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">AMICI</isImplementedIn>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <rdfs:label xml:lang="en">relative steady-state tolerance</rdfs:label>
+        <skos:definition xml:lang="en">Relative error tolerance of the steady-state.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000559 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000559">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <isImplementedIn xml:lang="en">SUNDIALS</isImplementedIn>
+        <isImplementedIn xml:lang="en">SciPy</isImplementedIn>
+        <isImplementedIn xml:lang="en">libRoadRunner</isImplementedIn>
+        <isImplementedIn xml:lang="en">tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">initial step size</rdfs:label>
+        <skos:definition xml:lang="en">Initial time step size.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000560 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000560">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">automatically use LSODA (no roots) or LSODAR (roots)</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Automatically use LSODA or LSODAR as apropriate for the given problem. Use LSODA if the problem has no roots. Use LSODAR if the problem has roots.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000560"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Pedro Mendes, Stefan Hoops, Sven Sahle, Ralph Gauges, Joseph Dada &amp; Ursula Kummer. Computational modeling of biochemical networks using COPASI. Methods in Molecular Biology 500, 17–59 (2009).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000560"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Frank T. Bergmann, Stefan Hoops, Brian Klahn, Ursula Kummer, Pedro Mendes Jürgen Pahle &amp; Sven Sahle. COPASI and its applications in biotechnology. Journal of Biotechnology 261, 215–220 (2017).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000560"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Stefan Hoops, Sven Sahle, Ralph Gauges, Christine Lee, Jürgen Pahle, Natalia Simus, Mudita Singhal, Liang Xu, Pedro Mendes &amp; Ursula Kummer. COPASI—a complex pathway simulator. Bioinformatics 22 (24), 3067–3074 (2006).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000560"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Sven Sahle, Ralph Gauges, Jürgen Pahle, Natalia Simus, Ursula Kummer, Stefan Hoops, Christine Lee, Mudita Singhal, Liang Xu &amp; Pedro Mendes. Simulation of biochemical networks using COPASI—a complex pathway simulator. Proceedings of the 2006 Winter Simulation Conference, Monterey, CA, USA, 1698–1706 (2006).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000561 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000561">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000231"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000032"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">Pahle hybrid Gibson-Bruck Next Reaction method/Runge-Kutta method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Combines a deterministic numerical integration of ODEs with a stochastic simulation algorithm. The whole biochemical network is partitioned into a deterministic and a stochastic subnet internally. The deterministic subnet contains all reactions in which only species with high particle numbers take part. All reactions with at least one low-numbered species are in the stochastic subnet. The partitioning of the biochemical network can change dynamically during the simulation. The reaction probabilities of the stochastic subnet are approximated as constant during one stochastic step. A 4th-order Runge-Kutta method is used to numerically integrate the deterministic part of the system. The stochastic subnet is simulated by the Gibson-Bruck Next Reaction Method.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000561"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Pedro Mendes, Stefan Hoops, Sven Sahle, Ralph Gauges, Joseph Dada &amp; Ursula Kummer. Computational modeling of biochemical networks using COPASI. Methods in Molecular Biology 500, 17–59 (2009).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000561"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Frank T. Bergmann, Stefan Hoops, Brian Klahn, Ursula Kummer, Pedro Mendes Jürgen Pahle &amp; Sven Sahle. COPASI and its applications in biotechnology. Journal of Biotechnology 261, 215–220 (2017).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000561"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Stefan Hoops, Sven Sahle, Ralph Gauges, Christine Lee, Jürgen Pahle, Natalia Simus, Mudita Singhal, Liang Xu, Pedro Mendes &amp; Ursula Kummer. COPASI—a complex pathway simulator. Bioinformatics 22 (24), 3067–3074 (2006).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000561"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Sven Sahle, Ralph Gauges, Jürgen Pahle, Natalia Simus, Ursula Kummer, Stefan Hoops, Christine Lee, Mudita Singhal, Liang Xu &amp; Pedro Mendes. Simulation of biochemical networks using COPASI—a complex pathway simulator. Proceedings of the 2006 Winter Simulation Conference, Monterey, CA, USA, 1698–1706 (2006).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000562 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000562">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000231"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">Pahle hybrid Gibson-Bruck Next Reaction method/LSODA method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Combines a deterministic numerical integration of ODEs with a stochastic simulation algorithm. The whole biochemical network is partitioned into a deterministic and a stochastic subnet internally. The deterministic subnet contains all reactions in which only species with high particle numbers take part. All reactions with at least one low-numbered species are in the stochastic subnet. The partitioning of the biochemical network can change dynamically during the simulation. The reaction probabilities of the stochastic subnet are approximated as constant during one stochastic step. The deterministic subnet is integrated with LSODA. The stochastic subnet is simulated by the Gibson-Bruck Next Reaction Method.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000562"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Pedro Mendes, Stefan Hoops, Sven Sahle, Ralph Gauges, Joseph Dada &amp; Ursula Kummer. Computational modeling of biochemical networks using COPASI. Methods in Molecular Biology 500, 17–59 (2009).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000562"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Frank T. Bergmann, Stefan Hoops, Brian Klahn, Ursula Kummer, Pedro Mendes Jürgen Pahle &amp; Sven Sahle. COPASI and its applications in biotechnology. Journal of Biotechnology 261, 215–220 (2017).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000562"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Stefan Hoops, Sven Sahle, Ralph Gauges, Christine Lee, Jürgen Pahle, Natalia Simus, Mudita Singhal, Liang Xu, Pedro Mendes &amp; Ursula Kummer. COPASI—a complex pathway simulator. Bioinformatics 22 (24), 3067–3074 (2006).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000562"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Sven Sahle, Ralph Gauges, Jürgen Pahle, Natalia Simus, Ursula Kummer, Stefan Hoops, Christine Lee, Mudita Singhal, Liang Xu &amp; Pedro Mendes. Simulation of biochemical networks using COPASI—a complex pathway simulator. Proceedings of the 2006 Winter Simulation Conference, Monterey, CA, USA, 1698–1706 (2006).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000563 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000563">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000231"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">Pahle hybrid Gibson-Bruck Next Reaction method/RK-45 method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Combines a deterministic numerical integration of ODEs with a stochastic simulation algorithm. The whole biochemical network is partitioned into a deterministic and a stochastic subnet internally. The deterministic subnet contains all reactions in which only species with high particle numbers take part. All reactions with at least one low-numbered species are in the stochastic subnet. The partitioning of the biochemical network can change dynamically during the simulation. The reaction probabilities of the stochastic subnet are approximated as constant during one stochastic step. The deterministic subnet is integrated with RK-45. The stochastic subnet is simulated by the Gibson-Bruck Next Reaction Method.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000563"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Pedro Mendes, Stefan Hoops, Sven Sahle, Ralph Gauges, Joseph Dada &amp; Ursula Kummer. Computational modeling of biochemical networks using COPASI. Methods in Molecular Biology 500, 17–59 (2009).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000563"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Frank T. Bergmann, Stefan Hoops, Brian Klahn, Ursula Kummer, Pedro Mendes Jürgen Pahle &amp; Sven Sahle. COPASI and its applications in biotechnology. Journal of Biotechnology 261, 215–220 (2017).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000563"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Stefan Hoops, Sven Sahle, Ralph Gauges, Christine Lee, Jürgen Pahle, Natalia Simus, Mudita Singhal, Liang Xu, Pedro Mendes &amp; Ursula Kummer. COPASI—a complex pathway simulator. Bioinformatics 22 (24), 3067–3074 (2006).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000563"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.5555/1218112.1218421</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Sven Sahle, Ralph Gauges, Jürgen Pahle, Natalia Simus, Ursula Kummer, Stefan Hoops, Christine Lee, Mudita Singhal, Liang Xu &amp; Pedro Mendes. Simulation of biochemical networks using COPASI—a complex pathway simulator. Proceedings of the 2006 Winter Simulation Conference, Monterey, CA, USA, 1698–1706 (2006).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000564 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000564">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000371"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">stochastic Runge-Kutta method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_method_(SDE)</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Technique for the approximate numerical solution of a systems of stochastic differential equations (SDEs). The method is a generalisation of the Runge-Kutta method for ordinary differential equations to stochastic differential equations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000565 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000565">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000211"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">absolute tolerance for root finding</rdfs:label>
+        <skos:definition xml:lang="en">Absolute error tolerance for root finding.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000566 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000566">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000564"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000565"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000567"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">stochastic second order Runge-Kutta method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/060673308</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">RI5</skos:altLabel>
+        <skos:definition xml:lang="en">Technique for the second order approximate numerical solution of a systems of stochastic differential equations (SDEs). The method is a generalisation of the Runge-Kutta method for ordinary differential equations to stochastic differential equations.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000566"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/060673308</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Andreas Rößler. Second order Runge-Kutta methods for Itô stochastic differential equations. SIAM Journal Numerical Analysis 47 (3), 1713–1738 (2009).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000566"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">RI5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000567 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000567">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
+        <rdfs:label xml:lang="en">force physical correctness</rdfs:label>
+        <skos:definition xml:lang="en">Indicates whether to force physical correctness.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000568 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000568">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000408"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">NLEQ1</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.43.3751</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-3-642-23899-4</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Newton-type method for solveing non-linear (NL) equations (EQ)</skos:altLabel>
+        <skos:altLabel xml:lang="en">Numerical solution of nonlinear (NL) equations (EQ) especially designed for numerically sensitive problems</skos:altLabel>
+        <skos:definition xml:lang="en">Damped Newton-algorithm with rank strategy for systems of highly nonlinear equations.
+
+Global Newton method with error oriented convergence criterion; arbitrary selection of direct linear equation solver.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000568"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.43.3751</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Ulrich Nowak &amp; Lutz Weimann. A family of Newton codes for systems of highly nonlinear equations - algorithm, implementation, application. Konrad-Zuse-Zentrum für Informationstechnik Berlin 91-10 (1991).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000568"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-3-642-23899-4</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter Deuflhard. Newton methods for nonlinear problems. Affine Invariance and Adaptive Algorithms (2004).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000569 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000569">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000408"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">NLEQ2</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.43.3751</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-3-642-23899-4</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Newton-type method for solveing non-linear (NL) equations (EQ)</skos:altLabel>
+        <skos:altLabel xml:lang="en">Numerical solution of nonlinear (NL) equations (EQ) especially designed for numerically sensitive problems</skos:altLabel>
+        <skos:definition xml:lang="en">Damped Newton-algorithm with rank strategy for systems of highly nonlinear equations.
+
+Global Newton method with error oriented convergence criterion; QR-decomposition with subcondition number estimate.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000569"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.43.3751</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Ulrich Nowak &amp; Lutz Weimann. A family of Newton codes for systems of highly nonlinear equations - algorithm, implementation, application. Konrad-Zuse-Zentrum für Informationstechnik Berlin 91-10 (1991).</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000569"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-3-642-23899-4</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter Deuflhard. Newton methods for nonlinear problems. Affine Invariance and Adaptive Algorithms (2004).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000570 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000570">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">PySCeS</isImplementedIn>
+        <rdfs:label xml:lang="en">auto reduce tolerances</rdfs:label>
+        <skos:definition xml:lang="en">Whether to automatically reduce tolerances.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000571 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000571">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">PySCeS</isImplementedIn>
+        <rdfs:label xml:lang="en">absolute tolerance adjustment factor</rdfs:label>
+        <skos:definition xml:lang="en">How much to adjust the absolute tolerance.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000572 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000572">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">BoolNet</isImplementedIn>
+        <rdfs:label xml:lang="en">level of superimposed noise</rdfs:label>
+        <skos:altLabel xml:lang="en">noise level</skos:altLabel>
+        <skos:definition xml:lang="en">Standard deviation of the Gaussian noise which is added to each prediction.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000572"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">noise level</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000573 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000573">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000448"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">BoolNet</isImplementedIn>
+        <rdfs:label xml:lang="en">probabilistic logical model simulation method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btq124</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Qualitative (logical) models specify the evolution rules of their components. Probabilistic networks allow for specifying more than one transition function per variable/gene. Each of these functions has a probability to be chosen, where the probabilities of all functions for one variable sum up to 1. Transitions are performed synchronously by choosing one transition function for each gene according to their probabilities and applying them to the current state.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000574 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000574">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">BoolNet</isImplementedIn>
+        <rdfs:label xml:lang="en">species transition probabilities</rdfs:label>
+        <skos:definition xml:lang="en">Probability of each species to be chosen for the next state transition.</skos:definition>
+    </owl:Class>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </rdf:Description>
     
 
 

@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.8 (OWL 2)
+-  added terms suggested in tickets 45-83
+
 KiSAO 2.7 (OWL 2)
 -  added gFBA, pFBA, FVA and related parameters (tickets 37-44)
 
