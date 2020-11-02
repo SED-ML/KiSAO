@@ -1,7 +1,9 @@
 LibKiSAO
 
 LibKiSAO is a java library that provides methods to query Kinetic Simulation Algorithm Ontology (KiSAO).
-More information about KiSA Ontology and libKiSAO is available at <http://www.biomodels.net/kisao/>.
+More information about KiSA Ontology and libKiSAO is available at <http://co.mbine.org/standards/kisao> and in
+
+Zhukova, A., Adams, R., Laibe, C. et al. LibKiSAO: a Java library for Querying KiSAO. BMC Res Notes 5, 520 (2012). https://doi.org/10.1186/1756-0500-5-520
 
 LibKiSAO is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
