@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.8</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.9</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -2696,7 +2696,7 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000209 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000209">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000597"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
@@ -2730,7 +2730,7 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000211 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000211">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000597"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000250"/>
@@ -4742,6 +4742,24 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000484"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000583"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000584"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-11</dc:created>
@@ -8886,7 +8904,7 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-04-25</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-25</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:comment xml:lang="en">Requested by Andrzej Kierzek on Thursday, April 24, 2014 12:40:35 PM</rdfs:comment>
         <rdfs:comment xml:lang="en">Used to simulate systems involving reactions with propensities varying by many orders of magnitude.</rdfs:comment>
@@ -8908,7 +8926,7 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000469">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-04-25</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-25</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">maximal timestep</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/14990466</rdfs:seeAlso>
@@ -9009,7 +9027,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000475">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:label xml:lang="en">integration method</rdfs:label>
@@ -9029,7 +9047,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000476">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9050,7 +9068,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000477">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9071,7 +9089,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000478">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9099,7 +9117,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000480"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9126,7 +9144,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9153,7 +9171,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">OpenCOR</isImplementedIn>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/12/</rdfs:comment>
@@ -9184,7 +9202,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000483">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-10</dc:created>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:comment xml:lang="en">Requested in https://sourceforge.net/p/kisao/feature-requests/13/</rdfs:comment>
         <rdfs:label xml:lang="en">step size</rdfs:label>
@@ -9196,7 +9214,7 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000484 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000484">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000251"/>
@@ -10148,6 +10166,12 @@ Levenberg first suggested an improvement to the Newton method in order to make i
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000534"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000578"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-11</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
@@ -10932,7 +10956,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000560 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000560">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000094"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn xml:lang="en">COPASI</isImplementedIn>
@@ -11301,7 +11325,7 @@ Global Newton method with error oriented convergence criterion; QR-decomposition
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000571 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000571">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000597"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn xml:lang="en">PySCeS</isImplementedIn>
@@ -11354,6 +11378,507 @@ Global Newton method with error oriented convergence criterion; QR-decomposition
         <isImplementedIn xml:lang="en">BoolNet</isImplementedIn>
         <rdfs:label xml:lang="en">species transition probabilities</rdfs:label>
         <skos:definition xml:lang="en">Probability of each species to be chosen for the next state transition.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000575 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000575">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+                                    <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
+                                    <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000281"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-06</dc:created>
+        <dc:creator xml:lang="en">BD</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">GillesPy2</isImplementedIn>
+        <rdfs:label xml:lang="en">Hybrid tau-leaping method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/StochSS/GillesPy2</rdfs:seeAlso>
+        <skos:definition xml:lang="en">A continuously coupled hybrid deterministic/stochastic simulation algorithm for biochemical networks. Biochemical species are classified as continuous, discrete, or switch. Tau-leaping is used to simulate stochastic species, and LSODA or another ODE integration method is used to simulate continuous species. Switch species are dynamically classified as either continuous or discrete at each timestep depending on a user defined error tolerance.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000575"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/StochSS/GillesPy2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Drawert B et al. GillesPy2</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000576 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000576">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000593"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000577"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <isImplementedIn xml:lang="en">OptFlux</isImplementedIn>
+        <isImplementedIn xml:lang="en">RAVEN</isImplementedIn>
+        <rdfs:label xml:lang="en">Quadratic MOMA</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.232349399</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">MOMA</skos:altLabel>
+        <skos:altLabel xml:lang="en">Minimization of Metabolic Adjustment</skos:altLabel>
+        <skos:altLabel xml:lang="en">Quadratic Minimization of Metabolic Adjustment</skos:altLabel>
+        <skos:definition xml:lang="en">Minimization Of Metabolic Adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. MOMA employs quadratic programming to identify the closest point (in terms of its Euclidean distance) in the permissible flux space of the knockout to the wild-type flux vector by solving the optimization problem
+
+Min sum((fluxAi - fluxBi)^2) + sum(fluxAi)^(fluxMinimizationWeight) + sum(fluxBi)^(fluxMinimizationWeight)</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000576"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.232349399</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Segre, D., Vitkup, D., &amp; Church, G. M. (2002). Analysis of optimality in natural and perturbed metabolic networks. Proceedings of the National Academy of Sciences, 99(23), 15112-15117.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000576"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Quadratic Minimization of Metabolic Adjustment</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000577 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000577">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">flux minimization weight</rdfs:label>
+        <skos:definition xml:lang="en">The degree to which minimization of the sum of fluxes should be taken into account in Minimization of Metabolic Adjustment (MOMA) which solvers the optimization problem
+ 
+Min sum((fluxAi - fluxBi)^2) + sum(fluxAi)^(fluxMinimizationWeight) + sum(fluxBi)^(fluxMinimizationWeight)</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000578 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000578">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">nested algorithm</rdfs:label>
+        <skos:altLabel xml:lang="en">nested method</skos:altLabel>
+        <skos:altLabel xml:lang="en">subalgorithm</skos:altLabel>
+        <skos:definition xml:lang="en">A nested algorithm of an algorithm</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000578"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">nested method</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000578"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">subalgorithm</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000579 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000579">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000593"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <isImplementedIn xml:lang="en">Optflux</isImplementedIn>
+        <rdfs:label xml:lang="en">Linear MOMA</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/ng.846</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Linear Minimization of Metabolic Adjustment</skos:altLabel>
+        <skos:definition xml:lang="en">Linear Minimization Of Metabolic Adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. Linear MOMA employs linear programming to identify the closest point (in terms of its L1 norm) in the permissible flux space of the knockout to the wild-type flux vector by solving the optimization problem
+
+Min sum(|fluxAi - fluxBi|)</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000579"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/ng.846</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Szappanos, B., Kovács, K., Szamecz, B., Honti, F., Costanzo, M., Baryshnikova, A., ... &amp; Andrews, B. J. (2011). An integrated approach to characterize genetic interaction networks in yeast metabolism. Nature genetics, 43(7), 656-662.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000579"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Linear Minimization of Metabolic Adjustment</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000580 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000580">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <isImplementedIn xml:lang="en">Optflux</isImplementedIn>
+        <rdfs:label xml:lang="en">ROOM</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.0406346102</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Regulatory on/off minimization of metabolic flux changes</skos:altLabel>
+        <skos:definition xml:lang="en">Constraint-based algorithm for predicting the metabolic steady state after gene knockouts which aims to minimize the number of significant flux changes (hence on/off) with respect to the wild type.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000580"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.0406346102</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Shlomi, T., Berkman, O., &amp; Ruppin, E. (2005). Regulatory on/off minimization of metabolic flux changes after genetic perturbations. Proceedings of the national academy of sciences, 102(21), 7695-7700.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000580"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Regulatory on/off minimization of metabolic flux changes</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000581 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000581">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000450"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">MaBoSS</isImplementedIn>
+        <rdfs:label xml:lang="en">BKMC</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1752-0509-6-116</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Boolean Kinetic Monte-Carlo</skos:altLabel>
+        <skos:definition xml:lang="en">The Boolean Kinetic Monte Carlo method (BKMC) is a natural generalization of the asynchronous Boolean simulation method, with a direct probabilistic interpretation. In the BKMC framework, the dynamics is parameterized by a biological time and the order of update is noisy, which is less strict than priority classes introduced in GINsin. A BKMC model is specified by logical rules as in regular Boolean models but with a more precise information: a numerical rate is added for each transition of each node.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000581"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1752-0509-6-116</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Stoll, G., Viara, E., Barillot, E., &amp; Calzone, L. (2012). Continuous time Boolean modeling for biological signaling: application of Gillespie algorithm. BMC systems biology, 6(1), 1-18.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000581"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Boolean Kinetic Monte-Carlo</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000582 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000582">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000056"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">E-Cell 4</isImplementedIn>
+        <rdfs:label xml:lang="en">Spatiocyte method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/npre.2009.3845.1</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Lattice-based stochastic particle simulation method for biochemical reaction and diffusion processes.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000582"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/npre.2009.3845.1</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Arjunan, S., &amp; Tomita, M. (2009). A new multicompartmental reaction-diffusion modeling method links transient membrane attachment of E. coli MinE to E-ring formation. Nature Precedings, 1-1.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000583 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000583">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000594"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">JSim</isImplementedIn>
+        <rdfs:label xml:lang="en">minimum order</rdfs:label>
+        <skos:definition xml:lang="en">Minimum order of method.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000584 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000584">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000594"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">JSim</isImplementedIn>
+        <rdfs:label xml:lang="en">initial order</rdfs:label>
+        <skos:definition xml:lang="en">Initial order of method.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000585 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000585">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000369"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">JSim</isImplementedIn>
+        <rdfs:label xml:lang="en">TOMS731</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1145/178365.178391</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Moving-grid interface for systems of one-dimensional time-dependent partial differential equations.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000585"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1145/178365.178391</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Blom, J. G., &amp; Zegeling, P. A. (1994). Algorithm 731: a moving-grid interface for systems of one-dimensional time-dependent partial differential equations. ACM Transactions on Mathematical Software (TOMS), 20(2), 194-214.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000586 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000586">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">SBSCL</isImplementedIn>
+        <rdfs:label xml:lang="en">Gibson-Bruck next reaction algorithm with indexed priority queue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000587 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000587">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">BioUML</isImplementedIn>
+        <rdfs:label xml:lang="en">IMEX</rdfs:label>
+        <skos:altLabel xml:lang="en">Implicit-Explicit Runge-Kutta method</skos:altLabel>
+        <skos:definition xml:lang="en">Method for solving stiff and imaginary ODE problems</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000587"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Implicit-Explicit Runge-Kutta method</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000588 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000588">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">flux sampling</rdfs:label>
+        <skos:definition xml:lang="en">Method for sampling fluxes from the null space of a flux balance analysis model</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000589 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000589">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000588"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <rdfs:label xml:lang="en">ACB flux sampling method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/s41596-018-0098-2</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Artificial centering boundary flux sampling method</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000589"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/s41596-018-0098-2</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Heirendt, L., Arreckx, S., Pfau, T., Mendoza, S. N., Richelle, A., Heinken, A., ... &amp; Magnusdóttir, S. (2019). Creation and analysis of biochemical constraint-based models using the COBRA Toolbox v. 3.0. Nature protocols, 14(3), 639-702.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000589"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Artificial centering boundary flux sampling method</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000590 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000590">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000588"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <isImplementedIn xml:lang="en">COBRApy</isImplementedIn>
+        <rdfs:label xml:lang="en">ACHR flux sampling method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1287/opre.46.1.84</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Artificial Centering Hit-and-Run flux sampling method</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000590"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1287/opre.46.1.84</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Kaufman, D. E., &amp; Smith, R. L. (1998). Direction choice for accelerated convergence in hit-and-run sampling. Operations Research, 46(1), 84-95.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000591 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000591">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <rdfs:label xml:lang="en">mdFBA</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/gb-2010-11-4-r43</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">metabolic dilution flux balance analysis</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000591"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/gb-2010-11-4-r43</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Benyamini, T., Folger, O., Ruppin, E., &amp; Shlomi, T. (2010). Flux balance analysis accounting for metabolite dilution. Genome biology, 11(4), R43.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000592 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000592">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">COBRA Toolbox</isImplementedIn>
+        <rdfs:label xml:lang="en">dynamic rFBA</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://identifiers.org/doi/10.1006/jtbi.2001.2405</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">dynamic regulatory flux balance analysis</skos:altLabel>
+        <skos:altLabel xml:lang="en">rFBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">regulatory flux balance analysis</skos:altLabel>
+        <skos:definition xml:lang="en">Method for predicting the dynamics of metabolic fluxes under patterns of the regulation of gene expression</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000592"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget xml:lang="en">https://identifiers.org/doi/10.1006/jtbi.2001.2405</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Covert, M. W., Schilling, C. H., &amp; Palsson, B. (2001). Regulation of gene expression in flux balance models of metabolism. Journal of theoretical biology, 213(1), 73-88.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000592"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">dynamic regulatory flux balance analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000593 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000593">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">MOMA</rdfs:label>
+        <skos:altLabel xml:lang="en">Minimization of Metabolic Adjustment</skos:altLabel>
+        <skos:definition xml:lang="en">Minimization Of Metabolic Adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. MOMA identifies the closest point in the permissible flux space of the knockout to the wild-type flux vector by solving an optimization problem.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000593"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Minimization of Metabolic Adjustment</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000594 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000594">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">order</rdfs:label>
+        <skos:definition xml:lang="en">Order of method</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000595 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000595">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">rFBA</rdfs:label>
+        <skos:altLabel xml:lang="en">regulatory flux balance analysis</skos:altLabel>
+        <skos:definition xml:lang="en">Method for predicting metabolic fluxes under patterns of the regulation of gene expression</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">regulatory flux balance analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000596 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000596">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">srFBA</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://identifiers.org/doi/10.1038/msb4100141</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">SR-FBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">steady-state regulatory flux balance analysis</skos:altLabel>
+        <skos:definition xml:lang="en">Method for predicting steady-state metabolic fluxes under patterns of the regulation of gene expression</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000596"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget xml:lang="en">https://identifiers.org/doi/10.1038/msb4100141</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Shlomi, T., Eisenberg, Y., Sharan, R., &amp; Ruppin, E. (2007). A genome‐scale computational study of the interplay between transcriptional regulation and metabolism. Molecular systems biology, 3(1), 101.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000596"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">SR-FBA</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000597 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000597">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">tolerance</rdfs:label>
+        <skos:definition xml:lang="en">Numeric value specifying the desired tolerance the user wants to achieve. A smaller value means that the prediction is calculated more accurately.</skos:definition>
     </owl:Class>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>

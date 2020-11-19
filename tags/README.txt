@@ -1,5 +1,11 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.9 (OWL 2)
+- added term suggested in ticket 85
+- added algorithm and parameter terms for COBRA Toolbox, Optflux, RAVEN, The Cell Collective, MaBoSS, E-Cell 4, JSim, SBSCL, BioUML, COBRApy
+- organized order and tolerance parameter terms
+- fixed data types of created dates
+
 KiSAO 2.8 (OWL 2)
 -  added terms suggested in tickets 45-83
 
