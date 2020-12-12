@@ -1,5 +1,9 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.10 (OWL 2)
+- Corrected capitalization of OptFlux to Optflux
+- Added BioSimulators identifiers for simulation tools
+
 KiSAO 2.9 (OWL 2)
 - added term suggested in ticket 85
 - added algorithm and parameter terms for COBRA Toolbox, Optflux, RAVEN, The Cell Collective, MaBoSS, E-Cell 4, JSim, SBSCL, BioUML, COBRApy
