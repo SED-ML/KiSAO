@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.11 (OWL 2)
+- Added algorithm and parameter terms for Salis hybrid methods implemented in VCell
+
 KiSAO 2.10 (OWL 2)
 - Corrected capitalization of OptFlux to Optflux
 - Added BioSimulators identifiers for simulation tools
