@@ -12586,11 +12586,17 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
-        <isImplementedIn xml:lang="en">VCell</isImplementedIn>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
         <rdfs:label xml:lang="en">Hybrid Gibson - Milstein Method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1471-2105-7-93</rdfs:seeAlso>
         <skos:definition xml:lang="en">A hybrid stochastic method partitions the system into subsets of fast and slow reactions and approximates the fast reactions as a continuous Markov process, using a chemical Langevin equation, and accurately describes the slow dynamics using the Gibson algorithm. Fixed time step Milstein is used for approximate numerical solution of CLE.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000598"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000598"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
@@ -12607,11 +12613,17 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
-        <isImplementedIn xml:lang="en">VCell</isImplementedIn>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
         <rdfs:label xml:lang="en">Hybrid Gibson - Euler-Maruyama Method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1471-2105-7-93</rdfs:seeAlso>
         <skos:definition xml:lang="en">A hybrid stochastic method partitions the system into subsets of fast and slow reactions and approximates the fast reactions as a continuous Markov process, using a chemical Langevin equation, and accurately describes the slow dynamics using the Gibson algorithm. Fixed time step Milstein is used for approximate numerical solution of CLE.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000599"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000599"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
@@ -12628,11 +12640,17 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
-        <isImplementedIn xml:lang="en">VCell</isImplementedIn>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
         <rdfs:label xml:lang="en">Hybrid Adaptive Gibson - Milstein Method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1471-2105-7-93</rdfs:seeAlso>
         <skos:definition xml:lang="en">A hybrid stochastic method partitions the system into subsets of fast and slow reactions and approximates the fast reactions as a continuous Markov process, using a chemical Langevin equation, and accurately describes the slow dynamics using the Gibson algorithm. Fixed time step Milstein is used for approximate numerical solution of CLE.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000600"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000600"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
