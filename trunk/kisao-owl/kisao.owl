@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.11</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.12</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -8737,6 +8737,7 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000302"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-09-26</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
