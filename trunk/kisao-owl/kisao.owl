@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.12</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.13</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -12752,6 +12752,254 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <owl:annotatedTarget xml:lang="en">Maximum allowed value of the drift and diffusion errors.</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000606 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000606">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Hierarchical Stochastic Simulation Algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">hSSA</skos:altLabel>
+        <skos:definition xml:lang="en">Fast, memory-efficient method for stochastic simulation of hierarchically organized models, such as a model of a cellular population where each cell in the population is represented by the same species and reactions.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Watanabe, L. H., &amp; Myers, C. J. (2014). Hierarchical stochastic simulation algorithm for SBML models of genetic circuits. Frontiers in bioengineering and biotechnology, 2, 55.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">hSSA</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000607 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000607">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Hierarchical Fehlberg method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Hierarchical ODE integration method</skos:altLabel>
+        <skos:altLabel xml:lang="en">Hierarchical ordinary differential equation integration method</skos:altLabel>
+        <skos:altLabel xml:lang="en">hODE</skos:altLabel>
+        <skos:definition xml:lang="en">Method for continuous simulation of hierarchically organized models, such as a model of a cellular population where each cell in the population is represented by the same species and reactions.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000607"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000607"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Watanabe, L. H., &amp; Myers, C. J. (2014). Hierarchical stochastic simulation algorithm for SBML models of genetic circuits. Frontiers in bioengineering and biotechnology, 2, 55.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000607"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">hODE</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000608 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000608">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Hierarchical flux balance analysis</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Hierarchical FBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">hFBA</skos:altLabel>
+        <skos:definition xml:lang="en">Method for constraint-based simulation of hierarchically organized models, such as a model of a cellular population where each cell in the population is represented by the same species and reactions.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000608"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000608"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Watanabe, L. H., &amp; Myers, C. J. (2014). Hierarchical stochastic simulation algorithm for SBML models of genetic circuits. Frontiers in bioengineering and biotechnology, 2, 55.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000608"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Hierarchical FBA</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000608"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">hFBA</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000609 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000609">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000302"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Embedded Runge-Kutta Prince-Dormand (8,9) method</rdfs:label>
+        <skos:altLabel xml:lang="en">RK8PD</skos:altLabel>
+        <skos:definition xml:lang="en">An embedded Runge-Kutta integrator of order 8(9).</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000609"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000609"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">RK8PD</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000610 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000610">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Composite-rejection stochastic simulation algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1063/1.2919546</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">SSA-CR</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000610"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000610"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1063/1.2919546</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Slepoy, A., Thompson, A. P., &amp; Plimpton, S. J. (2008). A constant-time kinetic Monte Carlo algorithm for simulation of large biochemical reaction networks. The journal of chemical physics, 128(20), 05B618.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000611 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000611">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Incremental stochastic simulation algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1109/ISCAS.2010.5537539</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">iSSA</skos:altLabel>
+        <skos:definition xml:lang="en">Performs local averaging over small time-intervals to compute statistics on typical behavior.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000611"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000611"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1109/ISCAS.2010.5537539</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Winstead, C., Madsen, C., &amp; Myers, C. (2010, May). iSSA: An incremental stochastic simulation algorithm for genetic circuits. In Proceedings of 2010 IEEE International Symposium on Circuits and Systems (pp. 553-556). IEEE.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000611"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">iSSA</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000612 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000612">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <dc:created xml:lang="en">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">implicit 4th order Runge-Kutta method at Gaussian points</rdfs:label>
+        <skos:altLabel xml:lang="en">RK4IMP</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000612"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget xml:lang="en">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000612"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">RK4IMP</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000613 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000613">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">Stochastic simulation algorithm with normally-distributed next reaction times</rdfs:label>
+        <skos:altLabel xml:lang="en">NMC</skos:altLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000613"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000614 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000614">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">Implementation</rdfs:label>
+        <skos:definition xml:lang="en">An implementation of an algorithm. For example, simulation tools can this parameter to differentiate among C, Python, and Java implementations of the same algorithms and allow investigators to select one of these specific implementations through SED-ML.</skos:definition>
+    </owl:Class>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </rdf:Description>

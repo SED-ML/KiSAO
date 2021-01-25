@@ -1,5 +1,8 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.13 (OWL 2)
+- Added algorithm and parameter terms for iBioSim methods
+
 KiSAO 2.12 (OWL 2)
 - Added missing subclass annotation for KISAO_0000435 of KISAO_0000302
 
