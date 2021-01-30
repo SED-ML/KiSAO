@@ -1,5 +1,9 @@
 This folder contains releases of KiSAO.
 
+KiSAO 2.14 (OWL 2)
+- Added algorithms for iBioSim bunker and emc-sim methods
+- Added algorithms for VCell finite volume methods and VCell hybrid IDA/CVODE method
+
 KiSAO 2.13 (OWL 2)
 - Added algorithm and parameter terms for iBioSim methods
 
