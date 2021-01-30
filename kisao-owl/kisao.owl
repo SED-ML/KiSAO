@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.13</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.14</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -13000,6 +13000,101 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <rdfs:label xml:lang="en">Implementation</rdfs:label>
         <skos:definition xml:lang="en">An implementation of an algorithm. For example, simulation tools can this parameter to differentiate among C, Python, and Java implementations of the same algorithms and allow investigators to select one of these specific implementations through SED-ML.</skos:definition>
     </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000615 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000615">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000285"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
+        <rdfs:label xml:lang="en">fully-implicit regular grid finite volume method with a variable time step</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000615"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000616 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000616">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000285"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
+        <rdfs:label xml:lang="en">semi-implicit regular grid finite volume method with a fixed time step</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000616"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000617 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000617">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</isImplementedIn>
+        <rdfs:label xml:lang="en">IDA-CVODE hybrid method</rdfs:label>
+        <skos:definition xml:lang="en">Meta algorithm which chooses between IDA and CVODE depending on the problem to be solved.
+
+CVODE is used for ordinary differential equation (ODE) systems. IDA is used for differential-algebraic equation (DAE) systems.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000617"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/vcell</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">VCell</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000618 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000618">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">bunker</rdfs:label>
+        <skos:definition xml:lang="en">A variant of the stochastic simulation algorithm (SSA) in which the time to the next reaction is equated to the mean inter-event time (inverse of the sum of the propensitites of the reactions) rather than sampled from a distribution parameterized by this mean inter-event time. In this method, the next reaction time is deterministic rather than stochastic as in SSA.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000618"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000619 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000619">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
+        <rdfs:label xml:lang="en">emc-sim</rdfs:label>
+        <skos:definition xml:lang="en">A variant of the stochastic simulation algorithm (SSA) in which the time to the next reaction is a constant equal to 1 time unit. In this method, the next reaction time is deterministic rather than stochastic as in SSA.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000619"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
+    </owl:Axiom>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </rdf:Description>
