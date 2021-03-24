@@ -1,0 +1,71 @@
+name: Release version
+
+on:
+  push:
+    branches:
+      - 'tags/**'
+
+jobs:
+  createGitHubRelease:
+    name: Create GitHub release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Merge dev branch into deploy branch
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: deploy
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: false
+          files: |
+            README.md
+            *.owl
+            docs/*
+            docs/**/*
+            LICENSE
+
+  releaseToBioPortal:
+    name: Release version to BioPortal
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Install jq
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends jq moreutils
+
+      - name: Prepare BioPortal submission
+        env:
+          TAG: ${{ github.ref }}
+        run: |
+          version="${TAG/refs\/tags\//}"
+          released=$(date --iso-8601=second)
+          cp .github/workflows/BioPortal-submission.json .github/workflows/BioPortal-submission-version.json
+          jq \
+            ".version = \"${version}\"" \
+            .github/workflows/BioPortal-submission-version.json | sponge .github/workflows/BioPortal-submission-version.json
+          jq \
+            ".released = \"${released}\"" \
+            .github/workflows/BioPortal-submission-version.json | sponge .github/workflows/BioPortal-submission-version.json
+
+      - name: Submit to BioPortal
+        run: |
+          curl -X POST \
+            -H "Authorization: apikey token=${API_KEY}" \
+            -H "Content-Type: application/json" \
+            -H "Accept: application/json" \
+            -d @.github/workflows/BioPortal-submission-version.json \
+            http://data.bioontology.org/ontologies/KISAO/submissions
+          echo

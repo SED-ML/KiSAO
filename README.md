@@ -26,9 +26,20 @@ If you plan to request a significant number of terms, relationships, or changes,
 
 1. Install the [Protégé](https://protege.stanford.edu/) ontology editor.
 2. Fork this repository.
-3. Use Protégé to edit `kisao-owl/kisao.owl`.
+3. Use Protégé to edit `kisao.owl`.
 4. Save and commit your changes.
 5. Create a pull request for your changes. In the body of the pull request, please provide a brief overview of your requested changes.
+
+## Releasing new versions
+
+1. Revise `kisao.owl`.
+2. Add description of changes to `CHANGELOG.txt`.
+3. Increment the version in `kisao.owl` and `kisao_full.owl`.
+4. Commit and push the new version (e.g., `git add kisao.owl kisao_full.owl; git commit -m "..."; git push`).
+5. Tag the new version (e.g., `git tag 2.14`).
+6. Push the new tag (`git push --tags`).
+7. Pushing this tag will trigger a GitHub action which will merge the changes into the deploy branch and create a new GitHub release.
+8. Log into BioPortal and create a new release -- this is not yet automated into the GitHub action.
 
 ## License
 
