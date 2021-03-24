@@ -2,7 +2,7 @@
 
 The Kinetic Simulation Algorithm Ontology (KiSAO: http://co.mbine.org/standards/kisao) is an ontology of algorithms for simulating and analyzing biological models, as well as the characteristics of these algorithms, their input parameters, and their outputs. In addition, KiSAO captures relationships among algorithms, their parameters, and their outputs.
 
-![Overview of KiSAO](https://github.com/SED-ML/KiSAO/blob/dev/docs/overview.jpg?raw=true)
+![Overview of KiSAO](https://github.com/SED-ML/KiSAO/raw/dev/docs/overview.jpeg)
 
 ## Browsing KiSAO
 
