@@ -54,13 +54,16 @@ jobs:
           python -m pip install -r tests/requirements.txt
 
       - name: Run the tests
+        working-directory: libkisao/python
         run: python -m pytest tests/ --cov
 
       # Compile documentation
       - name: Install the requirements for compiling the documentation
+        working-directory: libkisao/python
         run: python -m pip install -r docs-src/requirements.txt
 
       - name: Compile the documentation
+        working-directory: libkisao/python
         run: |
           sphinx-apidoc . setup.py --output-dir docs-src/source --force --module-first --no-toc
           mkdir -p docs-src/_static
@@ -72,7 +75,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
-          file: ./coverage.xml
+          file: ./libkisao/python/coverage.xml
 
   commitCompiledDocumentation:
     name: Commit and push compiled documentation to GitHub
@@ -112,9 +115,11 @@ jobs:
           python -m pip install .
 
       - name: Install the requirements for compiling the documentation
+        working-directory: libkisao/python
         run: python -m pip install -r docs-src/requirements.txt
 
       - name: Compile the documentation
+        working-directory: libkisao/python
         run: |
           sphinx-apidoc . setup.py --output-dir docs-src/source --force --module-first --no-toc
           mkdir -p docs-src/_static
