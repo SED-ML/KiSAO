@@ -36,6 +36,7 @@ jobs:
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
         run: |
+          cp ../../kisao.owl kisao/
           python -m pip install .
 
       # Lint the package
@@ -112,6 +113,7 @@ jobs:
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
         run: |
+          cp ../../kisao.owl kisao/
           python -m pip install .
 
       - name: Install the requirements for compiling the documentation
