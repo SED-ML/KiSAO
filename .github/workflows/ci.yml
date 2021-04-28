@@ -179,11 +179,10 @@ jobs:
 
   releaseToBioPortal:
     name: Release version to BioPortal
-    if: startsWith(github.ref, 'refs/tags/')
+    if: false && startsWith(github.ref, 'refs/tags/')
     needs:
       - test
     runs-on: ubuntu-latest
-    if: false
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
