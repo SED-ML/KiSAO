@@ -409,8 +409,14 @@ def get_preferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
 
     if alt_algorithm is None:
         raise AlgorithmCannotBeSubstitutedException(
-            "No algorithm can be substituted for '{}' ({}) at substitution policy '{}'.".format(
-                algorithm.name, algorithm.id.partition('#')[2], substitution_policy.name))
+            (
+                "No algorithm can be substituted for '{}' ({}) at substitution policy '{}'. "
+                "Algorithms can only be substituted for the following algorithms:\n  {}"
+            ).format(
+                algorithm.name, algorithm.id.partition('#')[2], substitution_policy.name,
+                '\n  '.join(sorted('{}: {}'.format(alt_algorithm.id.partition('#')[2], alt_algorithm.name)
+                                   for alt_algorithm in alt_algorithms))
+            ))
 
     if alt_algorithm != algorithm:
         msg = "'{}' ({}) will be substituted for '{}'' ({}) at substitution policy '{}'.".format(
