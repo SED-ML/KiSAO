@@ -100,6 +100,7 @@ jobs:
         with:
           fetch-depth: 1
           ref: dev
+          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       # Install the requirements for the tests
       - name: Install Python
@@ -176,7 +177,7 @@ jobs:
         if: steps.commit-docs.outputs.docsChanged == '1'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ADMIN_GITHUB_TOKEN  }}
           branch: ${{ steps.get-main-branch.outputs.mainBranch }}
 
   createGitHubRelease:
@@ -188,18 +189,21 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
+        with:
+          ref: dev
+          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Merge dev branch into deploy branch
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
           target_branch: deploy
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Create GitHub release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.ADMIN_GITHUB_TOKEN }}"
           draft: false
           prerelease: false
 
