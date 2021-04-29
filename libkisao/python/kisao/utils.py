@@ -8,8 +8,12 @@
 
 from .core import Kisao
 from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+from .exceptions import AlgorithmCannotBeSubstitutedException
+from .warnings import AlgorithmSubstitutedWarning
 import functools
 import pronto  # noqa: F401
+import termcolor
+import warnings
 
 __all__ = [
     'ID_HAS_CHARACTERISTIC_RELATIONSHIP',
@@ -334,11 +338,25 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
         return algorithm
 
     sub_algorithms = get_substitutable_algorithms(algorithm, substitution_policy=substitution_policy)
-    for alt_algorithm in alt_algorithms:
-        if alt_algorithm in sub_algorithms:
-            return alt_algorithm
+    alt_algorithm = None
+    for possible_alt_algorithm in alt_algorithms:
+        if possible_alt_algorithm in sub_algorithms:
+            alt_algorithm = possible_alt_algorithm
+            break
 
-    return None
+    if alt_algorithm is None:
+        raise AlgorithmCannotBeSubstitutedException(
+            "No algorithm can be substituted for '{}' ({}) at substitution policy '{}'.".format(
+                algorithm.name, algorithm.id.partition('#')[2], substitution_policy.name))
+
+    if alt_algorithm != algorithm:
+        msg = "'{}' ({}) will be substituted for '{}'' ({}) at substitution policy '{}'.".format(
+            alt_algorithm.name, alt_algorithm.id.partition('#')[2],
+            algorithm.name, algorithm.id.partition('#')[2],
+            substitution_policy.name)
+        warnings.warn(termcolor.colored(msg, 'yellow'), AlgorithmSubstitutedWarning)
+
+    return alt_algorithm
 
 
 def get_algorithm_substitution_report():

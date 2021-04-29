@@ -1,6 +1,8 @@
 from kisao import utils
 from kisao.core import Kisao
 from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+from kisao.exceptions import AlgorithmCannotBeSubstitutedException
+from kisao.warnings import AlgorithmSubstitutedWarning
 import os
 import tempfile
 import unittest
@@ -249,10 +251,11 @@ class UtilsTestCase(unittest.TestCase):
 
         self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda, lsoda_lsodar_hybrid, euler_method]),
                          lsoda)
-        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
-                         cvode)
-        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, []),
-                         None)
+        with self.assertWarns(AlgorithmSubstitutedWarning):
+            self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
+                             cvode)
+        with self.assertRaises(AlgorithmCannotBeSubstitutedException):
+            utils.get_perferred_substitute_algorithm(lsoda, [])
 
     def test_get_algorithm_substitution_report(self):
         fid, filename = tempfile.mkstemp()
