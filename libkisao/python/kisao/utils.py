@@ -7,7 +7,7 @@
 """
 
 from .core import Kisao
-from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
 from .exceptions import AlgorithmCannotBeSubstitutedException
 from .warnings import AlgorithmSubstitutedWarning
 import functools
@@ -44,8 +44,8 @@ __all__ = [
     'get_substitutable_algorithms_for_policy',
     'get_substitutable_algorithms',
     'group_substitutable_algorithms_by_policy',
-    'get_perferred_substitute_algorithm',
-    'get_perferred_substitute_algorithm_by_ids',
+    'get_preferred_substitute_algorithm',
+    'get_preferred_substitute_algorithm_by_ids',
     'get_algorithm_substitution_matrix',
 ]
 
@@ -385,7 +385,7 @@ def group_substitutable_algorithms_by_policy(alt_algorithms):
     return algs_at_policy
 
 
-def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
+def get_preferred_substitute_algorithm(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
     """ Get the preferred substitute for an algorithm for a given substitution policy.
 
     Args:
@@ -422,13 +422,16 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
     return alt_algorithm
 
 
-def get_perferred_substitute_algorithm_by_ids(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
+def get_preferred_substitute_algorithm_by_ids(algorithm, alt_algorithms,
+                                              substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES,
+                                              id_dialect=IdDialect.kisao):
     """ Get the preferred substitute for an algorithm working with the ids of algorithms
 
     Args:
         algorithm (:obj:`str`): KiSAO id of the target algorithm (e.g., ``KISAO_0000019``)
         alt_algorithms (:obj:`str`): KiSAO ids of potential alternative algorithms (e.g., that a simulation tool implements)
         substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy
+        id_dialect (:obj:`IdDialect`, optional): dialect for id
 
     Returns:
         :obj:`str`: KiSAO id of the preferred algorithm to execute (e.g., ``KISAO_0000088``)
@@ -436,8 +439,8 @@ def get_perferred_substitute_algorithm_by_ids(algorithm, alt_algorithms, substit
     kisao = Kisao()
     algorithm_term = kisao.get_term(algorithm)
     alt_algorithm_terms = [kisao.get_term(alt_algorithm) for alt_algorithm in alt_algorithms]
-    alt_algorithm = get_perferred_substitute_algorithm(algorithm_term, alt_algorithm_terms, substitution_policy=substitution_policy)
-    return kisao.get_term_id(alt_algorithm)
+    alt_algorithm = get_preferred_substitute_algorithm(algorithm_term, alt_algorithm_terms, substitution_policy=substitution_policy)
+    return kisao.get_term_id(alt_algorithm, dialect=id_dialect)
 
 
 def get_algorithm_substitution_matrix():

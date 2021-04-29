@@ -1,6 +1,6 @@
 from kisao import utils
 from kisao.core import Kisao
-from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
 from kisao.exceptions import AlgorithmCannotBeSubstitutedException
 from kisao.warnings import AlgorithmSubstitutedWarning
 import os
@@ -289,7 +289,7 @@ class UtilsTestCase(unittest.TestCase):
             AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS: utils.get_tau_leaping_algorithms(),
         })
 
-    def test_get_perferred_substitute_algorithm(self):
+    def test_get_preferred_substitute_algorithm(self):
         kisao = Kisao()
 
         cvode = kisao.get_term('KISAO_0000019')
@@ -297,24 +297,37 @@ class UtilsTestCase(unittest.TestCase):
         lsoda_lsodar_hybrid = kisao.get_term('KISAO_0000560')
         euler_method = kisao.get_term('KISAO_0000030')
 
-        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda, lsoda_lsodar_hybrid, euler_method]),
+        self.assertEqual(utils.get_preferred_substitute_algorithm(lsoda, [cvode, lsoda, lsoda_lsodar_hybrid, euler_method]),
                          lsoda)
         with self.assertWarns(AlgorithmSubstitutedWarning):
-            self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
+            self.assertEqual(utils.get_preferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
                              cvode)
         with self.assertRaises(AlgorithmCannotBeSubstitutedException):
-            utils.get_perferred_substitute_algorithm(lsoda, [])
+            utils.get_preferred_substitute_algorithm(lsoda, [])
 
         self.assertEqual(
-            utils.get_perferred_substitute_algorithm_by_ids(
+            utils.get_preferred_substitute_algorithm_by_ids(
                 'KISAO_0000088',
                 ['KISAO_0000019', 'KISAO_0000088', 'KISAO_0000560', 'KISAO_0000030']),
             'KISAO_0000088')
         self.assertEqual(
-            utils.get_perferred_substitute_algorithm_by_ids(
+            utils.get_preferred_substitute_algorithm_by_ids(
                 'KISAO_0000088',
                 ['KISAO_0000019', 'KISAO_0000560', 'KISAO_0000030']),
             'KISAO_0000019')
+
+        self.assertEqual(
+            utils.get_preferred_substitute_algorithm_by_ids(
+                88,
+                [19, 88, 560, 30],
+                id_dialect=IdDialect.integer),
+            88)
+        self.assertEqual(
+            utils.get_preferred_substitute_algorithm_by_ids(
+                88,
+                [19, 560, 30],
+                id_dialect=IdDialect.integer),
+            19)
 
     def test_get_algorithm_substitution_matrix(self):
         fid, filename = tempfile.mkstemp()

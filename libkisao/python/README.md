@@ -83,21 +83,21 @@ sorted([alt_alg.name for alt_alg in alt_algs])[0:5]
 # get a preferred substitution for an algorithm
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [cvode, lsoda, lsodar, euler_forward]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg.name
 >> 'LSODA'
 
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [cvode, euler_forward]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg.name
 >> 'CVODE'
 
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [fba, fva]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg
 >> None
