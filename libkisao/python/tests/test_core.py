@@ -20,6 +20,22 @@ class CoreTestCase(unittest.TestCase):
                 '\n  '.join(sorted(duplicatate_labels))
             ))
 
+    def test_get_term(self):
+        kisao = Kisao()
+        kisao.get_term('KISAO_0000029')
+        with self.assertRaises(ValueError):
+            kisao.get_term('KISAO_9999999')
+        with self.assertRaises(ValueError):
+            kisao.get_term('KISAO_0000245')
+
+    def test_get_relationship(self):
+        kisao = Kisao()
+        kisao.get_relationship('KISAO_0000245')
+        with self.assertRaises(ValueError):
+            kisao.get_relationship('KISAO_9999999')
+        with self.assertRaises(ValueError):
+            kisao.get_relationship('KISAO_0000029')
+
     def test_get_normalized_id(self):
         self.assertEqual(Kisao.get_normalized_id('KISAO_0000029'), 'KISAO_0000029')
         self.assertEqual(Kisao.get_normalized_id('KISAO:0000029'), 'KISAO_0000029')

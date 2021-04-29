@@ -101,7 +101,10 @@ class Kisao(object):
             :obj:`pronto.Term`: term
         """
         base_iri = self.get_base_iri()
-        return self._ontology.get_term(base_iri + self.get_normalized_id(id))
+        try:
+            return self._ontology.get_term(base_iri + self.get_normalized_id(id))
+        except KeyError:
+            raise ValueError('No KiSAO term has the id `{}`.'.format(id))
 
     def get_relationship(self, id):
         """ Get a relationship by its id (e.g., ``KISAO_0000245``)
@@ -113,7 +116,10 @@ class Kisao(object):
             :obj:`pronto.Relationship`: relationship
         """
         base_iri = self.get_base_iri()
-        return self._ontology.get_relationship(base_iri + self.get_normalized_id(id))
+        try:
+            return self._ontology.get_relationship(base_iri + self.get_normalized_id(id))
+        except KeyError:
+            raise ValueError('No KiSAO relationship has the id `{}`.'.format(id))
 
     def get_term_id(self, term, dialect=IdDialect.kisao):
         """ Get the ids of a list of KiSAO terms
