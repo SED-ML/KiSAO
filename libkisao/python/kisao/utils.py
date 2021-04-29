@@ -428,8 +428,9 @@ def get_preferred_substitute_algorithm_by_ids(algorithm, alt_algorithms,
     """ Get the preferred substitute for an algorithm working with the ids of algorithms
 
     Args:
-        algorithm (:obj:`str`): KiSAO id of the target algorithm (e.g., ``KISAO_0000019``)
-        alt_algorithms (:obj:`str`): KiSAO ids of potential alternative algorithms (e.g., that a simulation tool implements)
+        algorithm (:obj:`str` or :obj:`int`): KiSAO id of the target algorithm (e.g., ``KISAO_0000019``)
+        alt_algorithms (:obj:`list` of :obj:`str` or :obj:`int`): KiSAO ids of potential alternative algorithms
+            (e.g., that a simulation tool implements)
         substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy
         id_dialect (:obj:`IdDialect`, optional): dialect for id
 
