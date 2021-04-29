@@ -42,8 +42,12 @@ Below are instructions for releasing a new version:
 4. Commit and push the new version (e.g., `git add kisao.owl kisao_full.owl; git commit -m "..."; git push`).
 5. Tag the new version (e.g., `git tag 2.14`).
 6. Push the new tag (`git push --tags`).
-7. Pushing this tag will trigger a GitHub action which will merge the changes into the deploy branch and create a new GitHub release.
-8. Log into BioPortal and create a new release -- this is not yet automated into the GitHub action.
+7. Pushing this tag will trigger a GitHub action which will perform the following tasks: 
+   * Merge the changes into the deploy branch
+   * Create a new GitHub release
+   * Submit the new version to BioPortal
+   * Submit the new version of the Python package to PyPI
+   * Compile the documentation of the Python package and push it to this repository.
 
 ## Reporting issues
 
