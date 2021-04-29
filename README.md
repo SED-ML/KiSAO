@@ -8,6 +8,10 @@ The Kinetic Simulation Algorithm Ontology (KiSAO: http://co.mbine.org/standards/
 
 KiSAO can be browsed through [BioPortal](https://bioportal.bioontology.org/ontologies/KISAO) and [OLS](https://www.ebi.ac.uk/ols/ontologies/kisao).
 
+## Browsing the substitutability of algorithms catalogued by KiSAO
+
+A report of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv).
+
 ## Obtaining KiSAO in other formats
 
 KiSAO is developed in the OWL format. The current release of KiSAO is available in OWL format [here](https://github.com/SED-ML/KiSAO/tree/dev/kisao.owl). KiSAO is available in CSV and RDF/XML formats from [BioPortal](https://bioportal.bioontology.org/ontologies/KISAO).
