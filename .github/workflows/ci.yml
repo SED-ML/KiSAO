@@ -76,7 +76,7 @@ jobs:
         run: |
           import kisao.utils
           import os
-          report = kisao.utils.get_algorithm_substitution_report()
+          report = kisao.utils.get_algorithm_substitution_matrix()
           report.to_csv(os.path.join('docs', 'algorithm-substitutability.csv'))
 
       - name: Upload the coverage report to Codecov
@@ -143,7 +143,7 @@ jobs:
         run: |
           import kisao.utils
           import os
-          report = kisao.utils.get_algorithm_substitution_report()
+          report = kisao.utils.get_algorithm_substitution_matrix()
           report.to_csv(os.path.join('docs', 'algorithm-substitutability.csv'))
 
       # If new tag, commit and push documentation

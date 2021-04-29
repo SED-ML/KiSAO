@@ -43,6 +43,7 @@ __all__ = [
     'get_hybrid_algorithms',
     'get_substitutable_algorithms',
     'get_perferred_substitute_algorithm',
+    'get_algorithm_substitution_matrix',
 ]
 
 ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
@@ -373,7 +374,7 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
     return alt_algorithm
 
 
-def get_algorithm_substitution_report():
+def get_algorithm_substitution_matrix():
     """ Get a report of the substitutability of algorithms
 
     Returns:

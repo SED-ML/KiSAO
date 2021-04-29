@@ -262,11 +262,11 @@ class UtilsTestCase(unittest.TestCase):
         with self.assertRaises(AlgorithmCannotBeSubstitutedException):
             utils.get_perferred_substitute_algorithm(lsoda, [])
 
-    def test_get_algorithm_substitution_report(self):
+    def test_get_algorithm_substitution_matrix(self):
         fid, filename = tempfile.mkstemp()
         os.close(fid)
 
-        report = utils.get_algorithm_substitution_report()
+        report = utils.get_algorithm_substitution_matrix()
         report.to_csv(filename)
 
         self.assertEqual(report['KISAO_0000019']['CVODE']['KISAO_0000019']['CVODE'],
