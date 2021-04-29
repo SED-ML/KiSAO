@@ -226,6 +226,9 @@ jobs:
           released=$(date --iso-8601=second)
           cp .github/workflows/BioPortal-submission.json .github/workflows/BioPortal-submission-version.json
           jq \
+            ".pullLocation = \"https://raw.githubusercontent.com/SED-ML/KiSAO/${version}/kisao.owl\"" \
+            .github/workflows/BioPortal-submission-version.json | sponge .github/workflows/BioPortal-submission-version.json
+          jq \
             ".version = \"${version}\"" \
             .github/workflows/BioPortal-submission-version.json | sponge .github/workflows/BioPortal-submission-version.json
           jq \
