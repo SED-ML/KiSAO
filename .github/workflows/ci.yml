@@ -99,6 +99,7 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
+          ref: dev
 
       # Install the requirements for the tests
       - name: Install Python
