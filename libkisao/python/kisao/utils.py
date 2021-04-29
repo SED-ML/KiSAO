@@ -13,9 +13,11 @@ from .warnings import AlgorithmSubstitutedWarning
 import functools
 import pronto  # noqa: F401
 import termcolor
+import urllib.parse
 import warnings
 
 __all__ = [
+    'get_ols_url_for_term',
     'ID_HAS_CHARACTERISTIC_RELATIONSHIP',
     'ID_ODE_PROBLEM_CHARACTERISTIC',
     'ID_SDE_PROBLEM_CHARACTERISTIC',
@@ -58,6 +60,18 @@ ID_RULE_BASED_ALGORITHM = 'KISAO_0000363'  # rule-based simulation method
 ID_FLUX_BALANCE_ALGORITHM = 'KISAO_0000622'  # flux balance method
 ID_LOGICAL_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
 ID_HYBRID_ALGORITHM = 'KISAO_0000352'  # hybrid method
+
+
+def get_ols_url_for_term(term):
+    """ Get the URL for the OLS web page for a KiSAO term
+
+    Args:
+        term (:obj:`pronto.Term`): term
+
+    Returns:
+        :obj:`str`: URL for the OLS web page for a KiSAO term
+    """
+    return 'https://www.ebi.ac.uk/ols/ontologies/kisao/terms?' + urllib.parse.urlencode({'iri': term.id})
 
 
 def get_terms_with_characteristics(parent_ids, characteristic_ids=None):

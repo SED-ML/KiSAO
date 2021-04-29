@@ -1,4 +1,5 @@
 from kisao.core import Kisao
+from kisao.data_model import IdDialect
 import unittest
 
 
@@ -18,6 +19,25 @@ class CoreTestCase(unittest.TestCase):
             raise ValueError('Each term should have a unique label. The following labels are repeated:\n  {}'.format(
                 '\n  '.join(sorted(duplicatate_labels))
             ))
+
+    def test_get_normalized_id(self):
+        self.assertEqual(Kisao.get_normalized_id('KISAO_0000029'), 'KISAO_0000029')
+        self.assertEqual(Kisao.get_normalized_id('KISAO:0000029'), 'KISAO_0000029')
+        self.assertEqual(Kisao.get_normalized_id('29'), 'KISAO_0000029')
+        self.assertEqual(Kisao.get_normalized_id(29), 'KISAO_0000029')
+        with self.assertRaisesRegex(ValueError, 'is not an id'):
+            Kisao.get_normalized_id('X')
+
+    def test_get_term_id(self):
+        kisao = Kisao()
+        term = kisao.get_term('KISAO_0000450')
+
+        self.assertEqual(kisao.get_term_id(term), 'KISAO_0000450')
+        self.assertEqual(kisao.get_term_id(term, dialect=IdDialect.kisao), 'KISAO_0000450')
+        self.assertEqual(kisao.get_term_id(term, dialect=IdDialect.sedml), 'KISAO:0000450')
+        self.assertEqual(kisao.get_term_id(term, dialect=IdDialect.integer), 450)
+        with self.assertRaises(NotImplementedError):
+            kisao.get_term_id(term, dialect=None)
 
     def test_get_term_ids(self):
         kisao = Kisao()

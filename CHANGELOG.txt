@@ -1,3 +1,14 @@
+KiSAO 2.15.3 (OWL 2)
+- Added more functionality to Python package
+
+KiSAO 2.15.2 (OWL 2)
+- Debugged CI action
+
+KiSAO 2.15.1 (OWL 2)
+- Added Python package for getting sets of similar algorithms
+- Added unit tests for the above
+- Added unit tests to CI action
+
 KiSAO 2.15 (OWL 2)
 - Improved organization and relationships to facilitate the inference of similar simulation algorithms
     - Nested dynamic flux balance (KISAO_0000499) analysis under hybrid method (KISAO_0000352)
@@ -25,9 +36,6 @@ KiSAO 2.15 (OWL 2)
     - Added missing exact (KISAO_0000236) vs approximate (KISAO_0000237) characteristics for non-generalized Gillespie-like methods
     - Added organizational term for flux balance methods (KISAO_0000622)
     - Added 'flux balance problem' (KISAO_0000623)
-- Added Python package for getting sets of similar algorithms
-- Added unit tests for the above
-- Added unit tests to CI action
 
 KiSAO 2.14 (OWL 2)
 - Added algorithms for iBioSim bunker and emc-sim methods

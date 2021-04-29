@@ -10,9 +10,17 @@ import collections
 import enum
 
 __all__ = [
+    'IdDialect',
     'AlgorithmSubstitutionPolicy',
     'ALGORITHM_SUBSTITUTION_POLICY_LEVELS',
 ]
+
+
+class IdDialect(str, enum.Enum):
+    """ Dialect of ids of KiSAO terms """
+    kisao = 'kisao'  # e.g., ``KISAO_0000019``
+    sedml = 'sedml'  # e.g., ``KISAO:0000019``
+    integer = 'integer'  # e.g., ``19`
 
 
 class AlgorithmSubstitutionPolicy(str, enum.Enum):

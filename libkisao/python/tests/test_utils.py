@@ -9,6 +9,11 @@ import unittest
 
 
 class UtilsTestCase(unittest.TestCase):
+    def test_get_url_for_term(self):
+        term = Kisao().get_term('KISAO_0000029')
+        self.assertEqual(utils.get_ols_url_for_term(term),
+                         'https://www.ebi.ac.uk/ols/ontologies/kisao/terms?iri=http%3A%2F%2Fwww.biomodels.net%2Fkisao%2FKISAO%23KISAO_0000029')
+
     def test_sets_of_algorithms_disjoint(self):
         kisao = Kisao()
         alg_sets = [
