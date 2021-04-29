@@ -36,6 +36,7 @@ __all__ = [
     'get_logical_algorithms',
     'get_hybrid_algorithms',
     'get_substitutable_algorithms',
+    'get_perferred_substitute_algorithm',
 ]
 
 ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
@@ -92,6 +93,7 @@ def get_terms_with_characteristics(parent_ids, characteristic_ids=None):
     return terms
 
 
+@functools.lru_cache(maxsize=None)
 def get_ode_algorithms():
     """ Get the terms for ODE integration algorithms::
 
@@ -103,6 +105,7 @@ def get_ode_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_ODE_PROBLEM_CHARACTERISTIC])
 
 
+@functools.lru_cache(maxsize=None)
 def get_gillespie_like_algorithms(exact=True, approximate=False):
     """ Get the terms for algorithms that execute similar simulations to Gillespie's
     algorithm (KISAO_0000029).
@@ -137,6 +140,7 @@ def get_gillespie_like_algorithms(exact=True, approximate=False):
     return get_terms_with_characteristics([ID_GILLESPIE_LIKE_ALGORITHM], characteristics)
 
 
+@functools.lru_cache(maxsize=None)
 def get_tau_leaping_algorithms():
     """ Get the terms for tau-leaping algorithms (KISAO_0000039).::
 
@@ -148,6 +152,7 @@ def get_tau_leaping_algorithms():
     return get_terms_with_characteristics([ID_TAU_LEAPING_ALGORITHM])
 
 
+@functools.lru_cache(maxsize=None)
 def get_rule_based_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -159,6 +164,7 @@ def get_rule_based_algorithms():
     return get_terms_with_characteristics([ID_RULE_BASED_ALGORITHM])
 
 
+@functools.lru_cache(maxsize=None)
 def get_sde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -170,6 +176,7 @@ def get_sde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_SDE_PROBLEM_CHARACTERISTIC])
 
 
+@functools.lru_cache(maxsize=None)
 def get_pde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -181,6 +188,7 @@ def get_pde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_PDE_PROBLEM_CHARACTERISTIC])
 
 
+@functools.lru_cache(maxsize=None)
 def get_flux_balance_algorithms():
     """ Get the terms for flux balance algorithms (KISAO_0000622).::
 
@@ -192,6 +200,7 @@ def get_flux_balance_algorithms():
     return get_terms_with_characteristics([ID_FLUX_BALANCE_ALGORITHM])
 
 
+@functools.lru_cache(maxsize=None)
 def get_logical_algorithms():
     """ Get the terms for logical simulation algorithms (KISAO_0000448).::
 
@@ -203,6 +212,7 @@ def get_logical_algorithms():
     return get_terms_with_characteristics([ID_LOGICAL_ALGORITHM])
 
 
+@functools.lru_cache(maxsize=None)
 def get_hybrid_algorithms():
     """ Get the terms for hybrid algorithms (KISAO_0000352).::
 
@@ -243,14 +253,7 @@ def get_substitutable_algorithms(algorithm, substitution_policy=AlgorithmSubstit
             (False, get_logical_algorithms),
             (False, get_flux_balance_algorithms),
         ]
-        for substitutable, alg_set_func in alg_set_funcs:
-            alg_set = alg_set_func()
-            if algorithm in alg_set:
-                if substitutable:
-                    alt_algs = alg_set
-                else:
-                    alt_algs = set([algorithm])
-                break
+        alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
 
     elif substitution_policy == AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS:
         alg_set_funcs = [
@@ -262,14 +265,7 @@ def get_substitutable_algorithms(algorithm, substitution_policy=AlgorithmSubstit
             (False, get_logical_algorithms),
             (False, get_flux_balance_algorithms),
         ]
-        for substitutable, alg_set_func in alg_set_funcs:
-            alg_set = alg_set_func()
-            if algorithm in alg_set:
-                if substitutable:
-                    alt_algs = alg_set
-                else:
-                    alt_algs = set([algorithm])
-                break
+        alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
 
     elif (
         ALGORITHM_SUBSTITUTION_POLICY_LEVELS[substitution_policy]
@@ -284,35 +280,24 @@ def get_substitutable_algorithms(algorithm, substitution_policy=AlgorithmSubstit
             (True, get_logical_algorithms),
             # (False, get_flux_balance_algorithms),
         ]
-        for substitutable, alg_set_func in alg_set_funcs:
-            alg_set = alg_set_func()
-            if algorithm in alg_set:
-                if substitutable:
-                    alt_algs = alg_set
-                else:
-                    alt_algs = set([algorithm])
-                break
+        alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
 
     elif substitution_policy == AlgorithmSubstitutionPolicy.SAME_FRAMEWORK:
         alg_set_funcs = [
-            get_ode_algorithms,
-            lambda: get_gillespie_like_algorithms(
-                exact=True, approximate=False) | get_tau_leaping_algorithms(),
-            get_sde_algorithms,
-            get_pde_algorithms,
-            get_flux_balance_algorithms,
-            get_logical_algorithms,
+            (True, get_ode_algorithms),
+            (True, lambda: get_gillespie_like_algorithms(
+                exact=True, approximate=False) | get_tau_leaping_algorithms()),
+            (True, get_sde_algorithms),
+            (True, get_pde_algorithms),
+            (True, get_flux_balance_algorithms),
+            (True, get_logical_algorithms),
         ]
-        for alg_set_func in alg_set_funcs:
-            alg_set = alg_set_func()
-            if algorithm in alg_set:
-                alt_algs = alg_set
-                break
+        alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
 
     elif substitution_policy == AlgorithmSubstitutionPolicy.ANY:
         alt_algs = get_terms_with_characteristics([ID_ALGORITHM])
 
-    else:
+    else:  # pragma: no cover # above will raise errors if a substitution_policy isn't a member of :obj:`AlgorithmSubstitutionPolicy`
         raise NotImplementedError('Algorithm substitution for policy {} is not implemented.'.format(substitution_policy.value))
 
     if alt_algs is None:
@@ -320,3 +305,86 @@ def get_substitutable_algorithms(algorithm, substitution_policy=AlgorithmSubstit
             algorithm.name, algorithm.id, substitution_policy.value))
 
     return alt_algs
+
+
+def _find_substitutable_algorithms(algorithm, alg_set_funcs):
+    for substitutable, alg_set_func in alg_set_funcs:
+        alg_set = alg_set_func()
+        if algorithm in alg_set:
+            if substitutable:
+                return alg_set
+            else:
+                return set([algorithm])
+    return None
+
+
+def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
+    """ Get the preferred substitute for an algorithm for a given substitution policy.
+
+    Args:
+        algorithm (:obj:`pronto.Term`): algorithm requested to be executed
+        alt_algorithms (:obj:`list` of :obj:`pronto.Term`): possible alternative algorithms in order of their substitution preference
+        substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy; defines the degree to which
+            alternative algorithms can be substituted
+
+    Returns:
+        :obj:`term`: set of algorithms that an algorithm can be substituted for
+    """
+    if algorithm in alt_algorithms:
+        return algorithm
+
+    sub_algorithms = get_substitutable_algorithms(algorithm, substitution_policy=substitution_policy)
+    for alt_algorithm in alt_algorithms:
+        if alt_algorithm in sub_algorithms:
+            return alt_algorithm
+
+    return None
+
+
+def get_algorithm_substitution_report():
+    """ Get a report of the substitutability of algorithms
+
+    Returns:
+        :obj:`pandas.DataFrame`: report of the substitutability of algorithms
+    """
+    import natsort
+    import numpy
+    import pandas
+
+    algs = (
+        natsort.natsorted(get_ode_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_gillespie_like_algorithms(exact=True, approximate=False), key=lambda alg: alg.name)
+        + natsort.natsorted(get_tau_leaping_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_sde_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_pde_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_logical_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_flux_balance_algorithms(), key=lambda alg: alg.name)
+    )
+
+    levels = list(ALGORITHM_SUBSTITUTION_POLICY_LEVELS.keys())
+
+    report = []
+    for alg in algs:
+        report.append([None] * len(algs))
+
+    for i_alg, alg in enumerate(algs):
+
+        for policy in levels[1:-1]:
+            try:
+                alt_algs = get_substitutable_algorithms(alg, substitution_policy=policy)
+            except NotImplementedError:
+                continue
+
+            for alt_alg in alt_algs:
+                try:
+                    i_alt_alg = algs.index(alt_alg)
+                except ValueError:
+                    continue
+
+                if report[i_alg][i_alt_alg] is None:
+                    report[i_alg][i_alt_alg] = policy.name
+                    report[i_alt_alg][i_alg] = policy.name
+
+    alg_id_names = pandas.MultiIndex.from_tuples([(alg.id.partition('#')[2], alg.name) for alg in algs])
+    report_df = pandas.DataFrame(numpy.array(report), index=alg_id_names, columns=alg_id_names)
+    return report_df

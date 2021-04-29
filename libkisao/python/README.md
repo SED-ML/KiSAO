@@ -15,6 +15,11 @@ Please run the following command to install this package:
 pip install kisao
 ```
 
+To generate a report of the substitutability among algorithms, install this package with the `substitutability-report` option:
+```
+pip install kisao[substitutability-report]
+```
+
 ## Browsing KiSAO
 
 KiSAO can be browsed through [BioPortal](https://bioportal.bioontology.org/ontologies/KISAO) and [OLS](https://www.ebi.ac.uk/ols/ontologies/kisao).

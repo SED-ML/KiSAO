@@ -1,6 +1,8 @@
 from kisao import utils
 from kisao.core import Kisao
 from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+import os
+import tempfile
 import unittest
 
 
@@ -236,3 +238,30 @@ class UtilsTestCase(unittest.TestCase):
                 alt_algs = utils.get_substitutable_algorithms(alg, policy)
                 assert prev_alt_algs.difference(alt_algs) == set(), 'Substition error'
                 prev_alt_algs = alt_algs
+
+    def test_get_perferred_substitute_algorithm(self):
+        kisao = Kisao()
+
+        cvode = kisao.get_term('KISAO_0000019')
+        lsoda = kisao.get_term('KISAO_0000088')
+        lsoda_lsodar_hybrid = kisao.get_term('KISAO_0000560')
+        euler_method = kisao.get_term('KISAO_0000030')
+
+        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda, lsoda_lsodar_hybrid, euler_method]),
+                         lsoda)
+        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
+                         cvode)
+        self.assertEqual(utils.get_perferred_substitute_algorithm(lsoda, []),
+                         None)
+
+    def test_get_algorithm_substitution_report(self):
+        fid, filename = tempfile.mkstemp()
+        os.close(fid)
+
+        report = utils.get_algorithm_substitution_report()
+        report.to_csv(filename)
+
+        self.assertEqual(report['KISAO_0000019']['CVODE']['KISAO_0000019']['CVODE'],
+                         'SAME_METHOD')
+
+        os.remove(filename)

@@ -37,7 +37,7 @@ jobs:
         working-directory: libkisao/python
         run: |
           cp ../../kisao.owl kisao/
-          python -m pip install .
+          python -m pip install .[all]
 
       # Lint the package
       - name: Install flake8
@@ -69,6 +69,15 @@ jobs:
           sphinx-apidoc . setup.py --output-dir docs-src/source --force --module-first --no-toc
           mkdir -p docs-src/_static
           sphinx-build docs-src docs
+
+      - name: Compile a report of the substitutability among algorithms
+        working-directory: libkisao/python
+        shell: python
+        run: |
+          import kisao.utils
+          import os
+          report = kisao.utils.get_algorithm_substitution_report()
+          report.to_csv(os.path.join('docs', 'algorithm-substitutability.csv'))
 
       - name: Upload the coverage report to Codecov
         if: false
@@ -114,7 +123,7 @@ jobs:
         working-directory: libkisao/python
         run: |
           cp ../../kisao.owl kisao/
-          python -m pip install .
+          python -m pip install .[all]
 
       - name: Install the requirements for compiling the documentation
         working-directory: libkisao/python
@@ -126,6 +135,15 @@ jobs:
           sphinx-apidoc . setup.py --output-dir docs-src/source --force --module-first --no-toc
           mkdir -p docs-src/_static
           sphinx-build docs-src docs
+
+      - name: Compile a report of the substitutability among algorithms
+        working-directory: libkisao/python
+        shell: python
+        run: |
+          import kisao.utils
+          import os
+          report = kisao.utils.get_algorithm_substitution_report()
+          report.to_csv(os.path.join('docs', 'algorithm-substitutability.csv'))
 
       # If new tag, commit and push documentation
       - name: Configure Git
