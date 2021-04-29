@@ -1,0 +1,4 @@
+[substitutability-report]
+natsort
+numpy
+pandas

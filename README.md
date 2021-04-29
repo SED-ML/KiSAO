@@ -8,9 +8,19 @@ The Kinetic Simulation Algorithm Ontology (KiSAO: http://co.mbine.org/standards/
 
 KiSAO can be browsed through [BioPortal](https://bioportal.bioontology.org/ontologies/KISAO) and [OLS](https://www.ebi.ac.uk/ols/ontologies/kisao).
 
+## Browsing the substitutability of algorithms catalogued by KiSAO
+
+A report of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv).
+
 ## Obtaining KiSAO in other formats
 
 KiSAO is developed in the OWL format. The current release of KiSAO is available in OWL format [here](https://github.com/SED-ML/KiSAO/tree/dev/kisao.owl). KiSAO is available in CSV and RDF/XML formats from [BioPortal](https://bioportal.bioontology.org/ontologies/KISAO).
+
+## Working with KiSAO in code
+
+A package is available for working with KiSAO in Python: https://github.com/SED-ML/KiSAO/tree/dev/libkisao/python.
+
+A older package is available for working with KiSAO in Java: https://co.mbine.org/standards/kisao/libkisao.
 
 ## Obtaining older versions of KiSAO
 
@@ -22,13 +32,11 @@ Please use [GitHub issues](https://github.com/SED-ML/KiSAO/issues/new/choose) to
 
 ## Contributing multiple changes to KiSAO
 
-If you plan to request a significant number of terms, relationships, or changes, please submit your request as a pull request with the intended modifications to KiSAO:
+If you plan to request a significant number of terms, relationships, or changes, please submit your request as a pull request with the intended modifications to KiSAO. Please see the [Guide to Contributing](CONTRIBUTING.md).
 
-1. Install the [Protégé](https://protege.stanford.edu/) ontology editor.
-2. Fork this repository.
-3. Use Protégé to edit `kisao-owl/kisao.owl`.
-4. Save and commit your changes.
-5. Create a pull request for your changes. In the body of the pull request, please provide a brief overview of your requested changes.
+## Releasing new versions
+
+Please see the [Guide to Contributing](CONTRIBUTING.md).
 
 ## License
 

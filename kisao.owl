@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.14</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.15.1</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -960,11 +960,18 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1021/j100540a008</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">DM</skos:altLabel>
         <skos:altLabel xml:lang="en">Doob-Gillespie method</skos:altLabel>
+        <skos:altLabel xml:lang="en">Gillespie&apos;s algorithm</skos:altLabel>
         <skos:altLabel xml:lang="en">Gillespie&apos;s direct method</skos:altLabel>
         <skos:altLabel xml:lang="en">SSA</skos:altLabel>
         <skos:altLabel xml:lang="en">stochastic simulation algorithm</skos:altLabel>
         <skos:definition xml:lang="en">Stochastic simulation algorithm using the reaction probability density function (next-reaction density function), giving the probability that the next reaction will happen in a given time interval. To choose the next reaction to fire, the algorithm directly and separately calculates the identity of the reaction and the time it will fire.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <owl:annotatedTarget xml:lang="en">Gillespie&apos;s algorithm</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -1123,6 +1130,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1130,6 +1143,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1196,6 +1215,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1203,6 +1228,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-11-12</dc:created>
@@ -1298,7 +1329,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000039 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000039">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000621"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -1509,7 +1540,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000051 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000051">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
@@ -1748,19 +1779,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1924,7 +1943,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000075 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000075">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -2041,7 +2060,7 @@
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000082 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000082">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000621"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -3070,12 +3089,6 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
             </owl:Restriction>
@@ -3086,7 +3099,7 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
@@ -3112,6 +3125,7 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
         </rdfs:subClassOf>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/copasi</isImplementedIn>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">Pahle hybrid method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
         <skos:definition xml:lang="en">The hybrid method combines the stochastic &apos;Gibson-Bruck&apos;s next reaction method&apos; [http://identifiers.org/biomodels.kisao/KISAO_0000027] with different algorithms for the numerical integration of ODEs [http://identifiers.org/biomodels.kisao/KISAO_0000245 some http://identifiers.org/biomodels.kisao/KISAO_0000374]. The biochemical network is dynamically partitioned into a deterministic and a stochastic subnet depending on the current particle numbers in the system. The user can define limits for when a particle number should be considered low or high. The stochastic subnet contains reactions involving low numbered species as substrate or product. All the other reactions form the deterministic subnet. The two subnets are then simulated in parallel using the stochastic and deterministic solver, respectively. The reaction probabilities in the stochastic subnet are approximated as constant between two stochastic reaction events.</skos:definition>
@@ -3311,12 +3325,6 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000241">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000319"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -3834,12 +3842,6 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000107"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3892,6 +3894,12 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3899,6 +3907,12 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3944,12 +3958,6 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000102"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000104"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4651,6 +4659,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4658,6 +4672,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-10</dc:created>
@@ -4692,6 +4712,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4699,6 +4725,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-10</dc:created>
@@ -4730,6 +4762,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4743,6 +4781,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000366"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-10</dc:created>
@@ -4781,6 +4825,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4788,6 +4838,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4825,6 +4881,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000107"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4832,6 +4894,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-10</dc:created>
@@ -4915,6 +4983,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4922,6 +4996,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5460,12 +5540,6 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000317">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-23</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ecell4</isImplementedIn>
@@ -5495,6 +5569,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5508,6 +5588,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-26</dc:created>
@@ -5549,18 +5635,6 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000104"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000105"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000371"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-26</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -5592,18 +5666,6 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000107"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-05-26</dc:created>
@@ -5659,6 +5721,12 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000323">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -5907,7 +5975,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000330 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000330">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000621"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -5939,7 +6007,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000331 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000331">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000621"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -6691,18 +6759,19 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000352 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000352">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                        <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-09</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -7162,7 +7231,19 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000366"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -7386,7 +7467,19 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -7496,7 +7589,19 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -7527,7 +7632,19 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-07-01</dc:created>
@@ -7599,7 +7716,19 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000240"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-07-01</dc:created>
@@ -7942,6 +8071,7 @@ DASPK is written in Fortran.</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000407">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -8838,6 +8968,7 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000437">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-11-29</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:comment xml:lang="en">Requested by Frank T. Bergmann on Thursday, November 29, 2012 9:51:58 AM.</rdfs:comment>
@@ -8861,14 +8992,15 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000360"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000015"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000360"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000015"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -8921,19 +9053,6 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000105"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000107"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000572"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-28</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">logical model simulation method</rdfs:label>
@@ -8953,6 +9072,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000449">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000448"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000493"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000450"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-28</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
@@ -8966,6 +9091,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000450">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000448"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000492"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -9368,15 +9499,15 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000479"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.3389/fphys.2015.00026</owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">Garny A and Hunter PJ (2015) OpenCOR: a modular and interoperable approach to computational biology. Front. Physiol. 6:26</rdfs:comment>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000479"/>
         <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/opencor</owl:annotatedTarget>
         <rdfs:comment xml:lang="end">OpenCOR</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000479"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.3389/fphys.2015.00026</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Garny A and Hunter PJ (2015) OpenCOR: a modular and interoperable approach to computational biology. Front. Physiol. 6:26</rdfs:comment>
     </owl:Axiom>
     
 
@@ -9730,10 +9861,30 @@ Princeton Series in Applied Mathematics (illustrated), Princeton University Pres
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000499 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000499">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000623"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:comment xml:lang="en">Ticket 32</rdfs:comment>
         <rdfs:label xml:lang="en">dynamic flux balance analysis</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1186/s12859-014-0409-8</rdfs:seeAlso>
@@ -9818,12 +9969,6 @@ Gomez JA, Höffner K, Barton PI. BMC Bioinformatics. 2014 Dec 18;15:409.</rdfs:c
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000502">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000499"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-12</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn xml:lang="en">DFBAlab</isImplementedIn>
@@ -10497,6 +10642,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -10587,7 +10733,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000528 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000528">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000620"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -10600,6 +10746,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000533"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000554"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-11</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cbmpy</isImplementedIn>
@@ -10859,6 +11006,18 @@ Levenberg first suggested an improvement to the Newton method in order to make i
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000537">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn xml:lang="en">MATLAB</isImplementedIn>
@@ -11311,7 +11470,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000554 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000554">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000620"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cbmpy</isImplementedIn>
@@ -11450,10 +11609,23 @@ Levenberg first suggested an improvement to the Newton method in order to make i
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000560">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000094"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000089"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/copasi</isImplementedIn>
-        <rdfs:label xml:lang="en">automatically use LSODA (no roots) or LSODAR (roots)</rdfs:label>
+        <rdfs:label xml:lang="en">LSODA/LSODAR hybrid method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1007/978-1-59745-525-1_2</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1016/j.jbiotec.2017.06.1200</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1093/bioinformatics/btl485</rdfs:seeAlso>
@@ -11500,15 +11672,14 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000032"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000032"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
@@ -11561,15 +11732,14 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
@@ -11622,15 +11792,14 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
@@ -11683,8 +11852,13 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000371"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000104"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000371"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
@@ -11923,7 +12097,14 @@ Global Newton method with error oriented convergence criterion; QR-decomposition
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000573 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000573">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000319"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000448"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000452"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/boolnet</isImplementedIn>
@@ -12016,6 +12197,7 @@ Global Newton method with error oriented convergence criterion; QR-decomposition
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000577"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000579"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
@@ -12149,6 +12331,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000580">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
@@ -12188,8 +12371,26 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000581 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000581">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000319"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000450"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000322"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000452"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000359"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/maboss</isImplementedIn>
@@ -12331,6 +12532,18 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000587">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/biouml</isImplementedIn>
@@ -12359,6 +12572,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">flux sampling</rdfs:label>
         <skos:definition xml:lang="en">Method for sampling fluxes from the null space of a flux balance analysis model</skos:definition>
     </owl:Class>
@@ -12369,6 +12583,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000589">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000588"/>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000590"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
@@ -12460,6 +12675,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000592">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
+        <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000596"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
@@ -12495,8 +12711,10 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000593">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">MOMA</rdfs:label>
         <skos:altLabel xml:lang="en">Minimization of Metabolic Adjustment</skos:altLabel>
         <skos:definition xml:lang="en">Minimization Of Metabolic Adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. MOMA identifies the closest point in the permissible flux space of the knockout to the wild-type flux vector by solving an optimization problem.</skos:definition>
@@ -12525,9 +12743,11 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000595 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000595">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">rFBA</rdfs:label>
         <skos:altLabel xml:lang="en">regulatory flux balance analysis</skos:altLabel>
         <skos:definition xml:lang="en">Method for predicting metabolic fluxes under patterns of the regulation of gene expression</skos:definition>
@@ -12544,6 +12764,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000596 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000596">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
@@ -12584,6 +12805,19 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000598">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000287"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
@@ -12611,6 +12845,19 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000599">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000286"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
@@ -12638,6 +12885,19 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000600">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000352"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000246"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+                            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000287"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-13</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
@@ -12759,6 +13019,28 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000606">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                        <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000102"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000236"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000361"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -12892,7 +13174,13 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000610 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000610">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000236"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -12918,7 +13206,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000611 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000611">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifers.org/biosimulators/ibiosim</isImplementedIn>
         <rdfs:label xml:lang="en">Incremental stochastic simulation algorithm</rdfs:label>
@@ -12951,6 +13239,18 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000612">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000064"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created xml:lang="en">2021-01-25</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn xml:lang="en">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -12975,7 +13275,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000613 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000613">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-25</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -13063,7 +13363,7 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000618 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000618">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -13082,7 +13382,7 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000619 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000619">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-30</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
@@ -13095,6 +13395,55 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">iBioSim</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000620 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000620">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-27</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">parsimonius flux balance analysis</rdfs:label>
+        <skos:altLabel xml:lang="en">pFBA</skos:altLabel>
+        <skos:definition xml:lang="en">A technique for selecting a flux distribution which is parsimonious by some metric, such as a solution which has the minimal number of active fluxes or a solution which has the smallest sum of active fluxes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000621 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000621">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-27</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">stochastic simulation leaping method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000622 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000622">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021--04-27</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">flux balance method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000623 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000623">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000370"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-28</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">flux balance problem</rdfs:label>
+    </owl:Class>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </rdf:Description>
@@ -13199,21 +13548,26 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000015"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000075"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000003"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000027"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000028"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000038"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000323"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000324"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000329"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000350"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000610"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000621"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000015"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000051"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000075"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000029"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000333"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000335"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000606"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13222,6 +13576,16 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000017"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000021"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000264"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000019"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000020"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000496"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000535"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000536"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13271,6 +13635,15 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000039"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000082"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000330"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000331"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000040"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000045"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000046"/>
@@ -13279,6 +13652,21 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000081"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000084"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000351"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000524"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000575"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000051"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000075"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000095"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000336"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000611"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000613"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000618"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000619"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13418,15 +13806,7 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000087"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000321"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000434"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000071"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000088"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000089"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000090"/>
@@ -13435,6 +13815,16 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000232"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000233"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000234"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000560"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000086"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000087"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000321"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000434"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13503,6 +13893,14 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000320"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000365"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000447"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000468"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000499"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000575"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000595"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000598"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000599"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000600"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000617"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13511,6 +13909,7 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000241"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000274"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000278"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000573"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13751,6 +14150,7 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000376"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000404"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000405"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000623"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13759,6 +14159,16 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000416"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000417"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000418"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000437"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000580"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000588"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000593"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -13793,9 +14203,19 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526"/>
             <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000527"/>
-            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000528"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000591"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000596"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000608"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000620"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000561"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000562"/>
+            <rdf:Description rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000563"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

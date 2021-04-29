@@ -1,0 +1,11 @@
+# description
+include README.rst
+
+# license
+include LICENSE
+
+# requirements
+include requirements.txt
+
+# ontology
+include kisao/kisao.owl
