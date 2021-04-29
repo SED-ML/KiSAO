@@ -11,8 +11,9 @@ import unittest
 class UtilsTestCase(unittest.TestCase):
     def test_get_url_for_term(self):
         term = Kisao().get_term('KISAO_0000029')
-        self.assertEqual(utils.get_ols_url_for_term(term),
-                         'https://www.ebi.ac.uk/ols/ontologies/kisao/terms?iri=http%3A%2F%2Fwww.biomodels.net%2Fkisao%2FKISAO%23KISAO_0000029')
+        self.assertEqual(
+            utils.get_ols_url_for_term(term),
+            'https://www.ebi.ac.uk/ols/ontologies/kisao/terms?iri=http%3A%2F%2Fwww.biomodels.net%2Fkisao%2FKISAO%23KISAO_0000029')
 
     def test_sets_of_algorithms_disjoint(self):
         kisao = Kisao()
@@ -205,12 +206,15 @@ class UtilsTestCase(unittest.TestCase):
         self.assertIn(gillespie_direct, utils.get_substitutable_algorithms_for_policy(
             tau_leaping, AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS))
 
-        self.assertEqual(utils.get_substitutable_algorithms_for_policy(binomial_tau_leaping,
-                                                                       AlgorithmSubstitutionPolicy.NONE), set([binomial_tau_leaping]))
-        self.assertEqual(utils.get_substitutable_algorithms_for_policy(binomial_tau_leaping,
-                                                                       AlgorithmSubstitutionPolicy.SAME_METHOD), set([binomial_tau_leaping]))
-        self.assertEqual(utils.get_substitutable_algorithms_for_policy(binomial_tau_leaping,
-                                                                       AlgorithmSubstitutionPolicy.SAME_MATH), set([binomial_tau_leaping]))
+        self.assertEqual(utils.get_substitutable_algorithms_for_policy(
+            binomial_tau_leaping,
+            AlgorithmSubstitutionPolicy.NONE), set([binomial_tau_leaping]))
+        self.assertEqual(utils.get_substitutable_algorithms_for_policy(
+            binomial_tau_leaping,
+            AlgorithmSubstitutionPolicy.SAME_METHOD), set([binomial_tau_leaping]))
+        self.assertEqual(utils.get_substitutable_algorithms_for_policy(
+            binomial_tau_leaping,
+            AlgorithmSubstitutionPolicy.SAME_MATH), set([binomial_tau_leaping]))
         self.assertIn(poisson_tau_leaping, utils.get_substitutable_algorithms_for_policy(
             binomial_tau_leaping, AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS))
 
@@ -300,6 +304,17 @@ class UtilsTestCase(unittest.TestCase):
                              cvode)
         with self.assertRaises(AlgorithmCannotBeSubstitutedException):
             utils.get_perferred_substitute_algorithm(lsoda, [])
+
+        self.assertEqual(
+            utils.get_perferred_substitute_algorithm_by_ids(
+                'KISAO_0000088',
+                ['KISAO_0000019', 'KISAO_0000088', 'KISAO_0000560', 'KISAO_0000030']),
+            'KISAO_0000088')
+        self.assertEqual(
+            utils.get_perferred_substitute_algorithm_by_ids(
+                'KISAO_0000088',
+                ['KISAO_0000019', 'KISAO_0000560', 'KISAO_0000030']),
+            'KISAO_0000019')
 
     def test_get_algorithm_substitution_matrix(self):
         fid, filename = tempfile.mkstemp()
