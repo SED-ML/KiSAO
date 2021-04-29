@@ -69,7 +69,7 @@ lsodar = kisao.get_term('KISAO_0000089')
 fba = kisao.get_term('KISAO_0000437')
 fva = kisao.get_term('KISAO_0000526')
 
-alt_algs = utils.get_substitutable_algorithms(cvode,
+alt_algs = utils.get_substitutable_algorithms_for_policy(cvode,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 sorted([alt_alg.name for alt_alg in alt_algs])[0:5]
 >> [
