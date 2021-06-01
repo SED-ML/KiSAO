@@ -7,15 +7,18 @@
 """
 
 from .core import Kisao
-from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS
+from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
 from .exceptions import AlgorithmCannotBeSubstitutedException
 from .warnings import AlgorithmSubstitutedWarning
+import collections
 import functools
 import pronto  # noqa: F401
 import termcolor
+import urllib.parse
 import warnings
 
 __all__ = [
+    'get_ols_url_for_term',
     'ID_HAS_CHARACTERISTIC_RELATIONSHIP',
     'ID_ODE_PROBLEM_CHARACTERISTIC',
     'ID_SDE_PROBLEM_CHARACTERISTIC',
@@ -39,8 +42,12 @@ __all__ = [
     'get_flux_balance_algorithms',
     'get_logical_algorithms',
     'get_hybrid_algorithms',
+    'get_substitutable_algorithms_for_policy',
     'get_substitutable_algorithms',
-    'get_perferred_substitute_algorithm',
+    'group_substitutable_algorithms_by_policy',
+    'get_preferred_substitute_algorithm',
+    'get_preferred_substitute_algorithm_by_ids',
+    'get_algorithm_substitution_matrix',
 ]
 
 ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
@@ -58,6 +65,18 @@ ID_RULE_BASED_ALGORITHM = 'KISAO_0000363'  # rule-based simulation method
 ID_FLUX_BALANCE_ALGORITHM = 'KISAO_0000622'  # flux balance method
 ID_LOGICAL_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
 ID_HYBRID_ALGORITHM = 'KISAO_0000352'  # hybrid method
+
+
+def get_ols_url_for_term(term):
+    """ Get the URL for the OLS web page for a KiSAO term
+
+    Args:
+        term (:obj:`pronto.Term`): term
+
+    Returns:
+        :obj:`str`: URL for the OLS web page for a KiSAO term
+    """
+    return 'https://www.ebi.ac.uk/ols/ontologies/kisao/terms?' + urllib.parse.urlencode({'iri': term.id})
 
 
 def get_terms_with_characteristics(parent_ids, characteristic_ids=None):
@@ -228,11 +247,11 @@ def get_hybrid_algorithms():
     return get_terms_with_characteristics([ID_HYBRID_ALGORITHM])
 
 
-def get_substitutable_algorithms(algorithm, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
+def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
     """ Get a set of algorithms that an algorithm can be substituted for a given substitution policy.
 
     Args:
-        algorithm (:obj:`pronto.Term`): algorithm requested to be executed
+        algorithm (:obj:`pronto.Term`): target algorithm (e.g., requested to be executed in a SED-ML document)
         substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy; defines the degree to which
             alternative algorithms can be substituted
 
@@ -322,11 +341,57 @@ def _find_substitutable_algorithms(algorithm, alg_set_funcs):
     return None
 
 
-def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
+def get_substitutable_algorithms(algorithm):
+    """ Get a list of alternative algorithms that an algorithm can be substituted for and the most restrictive policy at which the
+    alternative algorithm can be substituted.
+
+    Args:
+        algorithm (:obj:`pronto.Term`): target algorithm (e.g., requested to be executed in a SED-ML document)
+
+    Returns:
+        :obj:`collections.OrderedDict` of :obj:`pronto.Term` => :obj:`AlgorithmSubstitutionPolicy`: dictionary that
+            maps alternative algorithms to the the most restrictive policy at which the alternative algorithm can be
+            substituted for the target algorithm.
+    """
+    levels = list(ALGORITHM_SUBSTITUTION_POLICY_LEVELS.keys())
+    alt_algs = collections.OrderedDict()
+    for policy in levels[1:-1]:
+        try:
+            alt_algs_at_policy = get_substitutable_algorithms_for_policy(algorithm, substitution_policy=policy)
+        except NotImplementedError:
+            continue
+
+        for alt_alg_at_policy in alt_algs_at_policy:
+            if alt_alg_at_policy not in alt_algs:
+                alt_algs[alt_alg_at_policy] = policy
+
+    return alt_algs
+
+
+def group_substitutable_algorithms_by_policy(alt_algorithms):
+    """ Group a map of substitutable algorithms by the most restrictive policies at which they can be substituted
+
+    Args:
+        :obj:`dict` of :obj:`pronto.Term` => :obj:`AlgorithmSubstitutionPolicy`: dictionary that maps alternative algorithms to the
+            the most restrictive policy at which the alternative algorithm can be substituted for the target algorithm.
+
+    Returns:
+        :obj:`dict` of :obj:`AlgorithmSubstitutionPolicy` => :obj:`set` of :obj:`pronto.Term`: diction that maps algorithm
+            substitution policies to the algorithms which can be substituted at that policy and less restrictive policies
+    """
+    algs_at_policy = {}
+    for alg, policy in alt_algorithms.items():
+        if policy not in algs_at_policy:
+            algs_at_policy[policy] = set()
+        algs_at_policy[policy].add(alg)
+    return algs_at_policy
+
+
+def get_preferred_substitute_algorithm(algorithm, alt_algorithms, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
     """ Get the preferred substitute for an algorithm for a given substitution policy.
 
     Args:
-        algorithm (:obj:`pronto.Term`): algorithm requested to be executed
+        algorithm (:obj:`pronto.Term`): target algorithm (e.g., requested to be executed in a SED-ML document)
         alt_algorithms (:obj:`list` of :obj:`pronto.Term`): possible alternative algorithms in order of their substitution preference
         substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy; defines the degree to which
             alternative algorithms can be substituted
@@ -337,7 +402,7 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
     if algorithm in alt_algorithms:
         return algorithm
 
-    sub_algorithms = get_substitutable_algorithms(algorithm, substitution_policy=substitution_policy)
+    sub_algorithms = get_substitutable_algorithms_for_policy(algorithm, substitution_policy=substitution_policy)
     alt_algorithm = None
     for possible_alt_algorithm in alt_algorithms:
         if possible_alt_algorithm in sub_algorithms:
@@ -346,8 +411,14 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
 
     if alt_algorithm is None:
         raise AlgorithmCannotBeSubstitutedException(
-            "No algorithm can be substituted for '{}' ({}) at substitution policy '{}'.".format(
-                algorithm.name, algorithm.id.partition('#')[2], substitution_policy.name))
+            (
+                "No algorithm can be substituted for '{}' ({}) at substitution policy '{}'. "
+                "Algorithms can only be substituted for the following algorithms:\n  {}"
+            ).format(
+                algorithm.name, algorithm.id.partition('#')[2], substitution_policy.name,
+                '\n  '.join(sorted('{}: {}'.format(alt_algorithm.id.partition('#')[2], alt_algorithm.name)
+                                   for alt_algorithm in alt_algorithms))
+            ))
 
     if alt_algorithm != algorithm:
         msg = "'{}' ({}) will be substituted for '{}'' ({}) at substitution policy '{}'.".format(
@@ -359,11 +430,33 @@ def get_perferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
     return alt_algorithm
 
 
-def get_algorithm_substitution_report():
-    """ Get a report of the substitutability of algorithms
+def get_preferred_substitute_algorithm_by_ids(algorithm, alt_algorithms,
+                                              substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES,
+                                              id_dialect=IdDialect.kisao):
+    """ Get the preferred substitute for an algorithm working with the ids of algorithms
+
+    Args:
+        algorithm (:obj:`str` or :obj:`int`): KiSAO id of the target algorithm (e.g., ``KISAO_0000019``)
+        alt_algorithms (:obj:`list` of :obj:`str` or :obj:`int`): KiSAO ids of potential alternative algorithms
+            (e.g., that a simulation tool implements)
+        substitution_policy (:obj:`AlgorithmSubstitutionPolicy`, optional): algorithm substitution policy
+        id_dialect (:obj:`IdDialect`, optional): dialect for id
 
     Returns:
-        :obj:`pandas.DataFrame`: report of the substitutability of algorithms
+        :obj:`str`: KiSAO id of the preferred algorithm to execute (e.g., ``KISAO_0000088``)
+    """
+    kisao = Kisao()
+    algorithm_term = kisao.get_term(algorithm)
+    alt_algorithm_terms = [kisao.get_term(alt_algorithm) for alt_algorithm in alt_algorithms]
+    alt_algorithm = get_preferred_substitute_algorithm(algorithm_term, alt_algorithm_terms, substitution_policy=substitution_policy)
+    return kisao.get_term_id(alt_algorithm, dialect=id_dialect)
+
+
+def get_algorithm_substitution_matrix():
+    """ Get a matrix of the substitutability of algorithms
+
+    Returns:
+        :obj:`pandas.DataFrame`: matrix of the substitutability of algorithms
     """
     import natsort
     import numpy
@@ -379,30 +472,20 @@ def get_algorithm_substitution_report():
         + natsort.natsorted(get_flux_balance_algorithms(), key=lambda alg: alg.name)
     )
 
-    levels = list(ALGORITHM_SUBSTITUTION_POLICY_LEVELS.keys())
-
-    report = []
+    matrix = []
     for alg in algs:
-        report.append([None] * len(algs))
+        matrix.append([None] * len(algs))
 
     for i_alg, alg in enumerate(algs):
-
-        for policy in levels[1:-1]:
+        alt_algs = get_substitutable_algorithms(alg)
+        for alt_alg, policy in alt_algs.items():
             try:
-                alt_algs = get_substitutable_algorithms(alg, substitution_policy=policy)
-            except NotImplementedError:
+                i_alt_alg = algs.index(alt_alg)
+            except ValueError:
                 continue
-
-            for alt_alg in alt_algs:
-                try:
-                    i_alt_alg = algs.index(alt_alg)
-                except ValueError:
-                    continue
-
-                if report[i_alg][i_alt_alg] is None:
-                    report[i_alg][i_alt_alg] = policy.name
-                    report[i_alt_alg][i_alg] = policy.name
+            matrix[i_alg][i_alt_alg] = policy.name
+            matrix[i_alt_alg][i_alg] = policy.name
 
     alg_id_names = pandas.MultiIndex.from_tuples([(alg.id.partition('#')[2], alg.name) for alg in algs])
-    report_df = pandas.DataFrame(numpy.array(report), index=alg_id_names, columns=alg_id_names)
+    report_df = pandas.DataFrame(numpy.array(matrix), index=alg_id_names, columns=alg_id_names)
     return report_df

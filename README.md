@@ -10,7 +10,7 @@ KiSAO can be browsed through [BioPortal](https://bioportal.bioontology.org/ontol
 
 ## Browsing the substitutability of algorithms catalogued by KiSAO
 
-A report of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv).
+A matrix of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv). Rules for generating this matrix are encoded into KiSAO Python package (see below) and described in its documentation.
 
 ## Obtaining KiSAO in other formats
 

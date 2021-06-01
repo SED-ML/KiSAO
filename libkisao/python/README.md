@@ -15,9 +15,9 @@ Please run the following command to install this package:
 pip install kisao
 ```
 
-To generate a report of the substitutability among algorithms, install this package with the `substitutability-report` option:
+To generate a matrix of the substitutability among algorithms, install this package with the `substitutability-matrix` option:
 ```
-pip install kisao[substitutability-report]
+pip install kisao[substitutability-matrix]
 ```
 
 ## Tutorial
@@ -69,7 +69,7 @@ lsodar = kisao.get_term('KISAO_0000089')
 fba = kisao.get_term('KISAO_0000437')
 fva = kisao.get_term('KISAO_0000526')
 
-alt_algs = utils.get_substitutable_algorithms(cvode,
+alt_algs = utils.get_substitutable_algorithms_for_policy(cvode,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 sorted([alt_alg.name for alt_alg in alt_algs])[0:5]
 >> [
@@ -83,21 +83,21 @@ sorted([alt_alg.name for alt_alg in alt_algs])[0:5]
 # get a preferred substitution for an algorithm
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [cvode, lsoda, lsodar, euler_forward]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg.name
 >> 'LSODA'
 
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [cvode, euler_forward]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg.name
 >> 'CVODE'
 
 requested_alg = lsoda
 implemented_algs_in_preferred_order = [fba, fva]
-alt_alg = utils.get_perferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
+alt_alg = utils.get_preferred_substitute_algorithm(requested_alg, implemented_algs_in_preferred_order,
     substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS)
 alt_alg
 >> None
@@ -109,7 +109,7 @@ KiSAO can be browsed through [BioPortal](https://bioportal.bioontology.org/ontol
 
 ## Browsing the substitutability of algorithms catalogued by KiSAO
 
-A report of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv).
+A matrix of the substitutability of algorithms catalogued by KiSAO is available [here](https://github.com/SED-ML/KiSAO/blob/dev/libkisao/python/docs/algorithm-substitutability.csv). The documentation for this package describes the queries and rules used to define this matrix.
 
 ## Contributing to KiSAO
 

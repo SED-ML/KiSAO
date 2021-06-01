@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. kisao package &#8212; KiSAO 2.15.0 documentation</title>
+    <title>1. kisao package &#8212; KiSAO 2.15.2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -51,6 +51,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. API documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">1.1. Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-kisao.core">1.2. kisao.core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kisao.data_model">1.3. kisao.data_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kisao.exceptions">1.4. kisao.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kisao.utils">1.5. kisao.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kisao.warnings">1.6. kisao.warnings module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">2. About KiSAO</a></li>
@@ -101,84 +105,118 @@
             
   <div class="section" id="module-kisao">
 <span id="kisao-package"></span><h1><span class="section-number">1. </span>kisao package<a class="headerlink" href="#module-kisao" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2><span class="section-number">1.1. </span>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-kisao.core">
-<span id="kisao-core-module"></span><h2><span class="section-number">1.2. </span>kisao.core module<a class="headerlink" href="#module-kisao.core" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="kisao.core.Kisao">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.core.</span></code><code class="sig-name descname"><span class="pre">Kisao</span></code><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao" title="Permalink to this definition">¶</a></dt>
+<dt id="kisao.AlgorithmSubstitutionPolicy">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.</span></code><code class="sig-name descname"><span class="pre">AlgorithmSubstitutionPolicy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Algorithm substitution policy</p>
+<p>More information: <a class="reference external" href="https://biosimulators.org/conventions/simulator-interfaces">https://biosimulators.org/conventions/simulator-interfaces</a></p>
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.ANY">
+<code class="sig-name descname"><span class="pre">ANY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'ANY'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.ANY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS">
+<code class="sig-name descname"><span class="pre">DISTINCT_APPROXIMATIONS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'DISTINCT_APPROXIMATIONS'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make distinct approximations
+to the same math.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; tau leaping &lt;=&gt; Pahle hybrid method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.DISTINCT_SCALES">
+<code class="sig-name descname"><span class="pre">DISTINCT_SCALES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'DISTINCT_SCALES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.DISTINCT_SCALES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make distinct approximations
+to the same math that substantially differ in their scale.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; CVODE</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.NONE">
+<code class="sig-name descname"><span class="pre">NONE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'None'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SAME_FRAMEWORK">
+<code class="sig-name descname"><span class="pre">SAME_FRAMEWORK</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_FRAMEWORK'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SAME_FRAMEWORK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any algorithm of the same framework can be substituted (e.g., CVODE, LSODA).</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; FVA</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SAME_MATH">
+<code class="sig-name descname"><span class="pre">SAME_MATH</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_MATH'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SAME_MATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with mathematically-equivalent algorithms.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; Next Reaction Method</p></li>
+<li><p>Simplex method &lt;=&gt; interior point method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SAME_METHOD">
+<code class="sig-name descname"><span class="pre">SAME_METHOD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_METHOD'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SAME_METHOD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with different realizations of the same method.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>GLPK Simplex method &lt;=&gt; SciPy Simplex method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SAME_VARIABLES">
+<code class="sig-name descname"><span class="pre">SAME_VARIABLES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_VARIABLES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SAME_VARIABLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms that predict the same dependent variables can be substituted.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; parsimonious FBA</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS">
+<code class="sig-name descname"><span class="pre">SIMILAR_APPROXIMATIONS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SIMILAR_APPROXIMATIONS'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make similar approximations
+to the same math.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>CVODE &lt;=&gt; LSODA &lt;=&gt; RK-45</p></li>
+<li><p>tau leaping &lt;=&gt; partitioned tau leaping</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES">
+<code class="sig-name descname"><span class="pre">SIMILAR_VARIABLES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SIMILAR_VARIABLES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms that predict similar dependent variables can be substituted.</p>
+<p>This is the recommended default value.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; geometric FBA</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="kisao.Kisao">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.</span></code><code class="sig-name descname"><span class="pre">Kisao</span></code><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>KiSAO ontology</p>
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000000'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_APPROXIMATE_SOLUTION_CHARACTERISTIC">
-<code class="sig-name descname"><span class="pre">ID_APPROXIMATE_SOLUTION_CHARACTERISTIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000237'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_APPROXIMATE_SOLUTION_CHARACTERISTIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_EXACT_SOLUTION_CHARACTERISTIC">
-<code class="sig-name descname"><span class="pre">ID_EXACT_SOLUTION_CHARACTERISTIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000236'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_EXACT_SOLUTION_CHARACTERISTIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_FLUX_BALANCE_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_FLUX_BALANCE_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000622'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_FLUX_BALANCE_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_GILLESPIE_LIKE_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_GILLESPIE_LIKE_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000241'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_GILLESPIE_LIKE_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_HAS_CHARACTERISTIC_RELATIONSHIP">
-<code class="sig-name descname"><span class="pre">ID_HAS_CHARACTERISTIC_RELATIONSHIP</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000245'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_HAS_CHARACTERISTIC_RELATIONSHIP" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_HYBRID_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_HYBRID_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000352'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_HYBRID_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_LOGICAL_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_LOGICAL_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000448'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_LOGICAL_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_ODE_PROBLEM_CHARACTERISTIC">
-<code class="sig-name descname"><span class="pre">ID_ODE_PROBLEM_CHARACTERISTIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000374'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_ODE_PROBLEM_CHARACTERISTIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_PDE_PROBLEM_CHARACTERISTIC">
-<code class="sig-name descname"><span class="pre">ID_PDE_PROBLEM_CHARACTERISTIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000372'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_PDE_PROBLEM_CHARACTERISTIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_RULE_BASED_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_RULE_BASED_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000363'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_RULE_BASED_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_SDE_PROBLEM_CHARACTERISTIC">
-<code class="sig-name descname"><span class="pre">ID_SDE_PROBLEM_CHARACTERISTIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000371'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_SDE_PROBLEM_CHARACTERISTIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kisao.core.Kisao.ID_TAU_LEAPING_ALGORITHM">
-<code class="sig-name descname"><span class="pre">ID_TAU_LEAPING_ALGORITHM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'KISAO_0000039'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.ID_TAU_LEAPING_ALGORITHM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_base_iri">
-<code class="sig-name descname"><span class="pre">get_base_iri</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_base_iri" title="Permalink to this definition">¶</a></dt>
+<dt id="kisao.Kisao.get_base_iri">
+<code class="sig-name descname"><span class="pre">get_base_iri</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao.get_base_iri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the base IRI for the ontology</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -191,120 +229,107 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_flux_balance_algorithms">
-<code class="sig-name descname"><span class="pre">get_flux_balance_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_flux_balance_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for flux balance algorithms (KISAO_0000622).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;flux balance method&#39;</span>
-</pre></div>
-</div>
+<dt id="kisao.Kisao.get_proto_ontology">
+<code class="sig-name descname"><span class="pre">get_proto_ontology</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao.get_proto_ontology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a proto object for the ontology</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
+<dd class="field-odd"><p>pronto object for the ontology</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Ontology</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_gillespie_like_algorithms">
-<code class="sig-name descname"><span class="pre">get_gillespie_like_algorithms</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approximate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_gillespie_like_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for algorithms that execute similar simulations to Gillespie’s
-algorithm (KISAO_0000029).</p>
-<p>Three subsets of terms can be returned:</p>
-<ul>
-<li><p>Terms for algorithms that produce simulation results that are mathematically equivalent to Gillespie’s
-algorithm such as the Gibson-Bruck Next Reaction Method (KISAO_0000027).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;exact solution&#39;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Terms for algorithms that approximate Gillespie’s algorithm such as tau-leaping (KISAO_0000039).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;approximate solution&#39;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Any Gillespie-like method.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span>
-</pre></div>
-</div>
-</li>
-</ul>
+<dt id="kisao.Kisao.get_relationship">
+<code class="sig-name descname"><span class="pre">get_relationship</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao.get_relationship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a relationship by its id (e.g., <code class="docutils literal notranslate"><span class="pre">KISAO_0000245</span></code>)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – id (e.g., <code class="docutils literal notranslate"><span class="pre">KISAO_0000245</span></code>)</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>relationship</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Relationship</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_hybrid_algorithms">
-<code class="sig-name descname"><span class="pre">get_hybrid_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_hybrid_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for hybrid algorithms (KISAO_0000352).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hybrid method&#39;</span>
-</pre></div>
-</div>
+<dt id="kisao.Kisao.get_term">
+<code class="sig-name descname"><span class="pre">get_term</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao.get_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a term by its id (e.g., <code class="docutils literal notranslate"><span class="pre">KISAO_0000019</span></code>)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – id (e.g., <code class="docutils literal notranslate"><span class="pre">KISAO_0000019</span></code>)</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>term</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_logical_algorithms">
-<code class="sig-name descname"><span class="pre">get_logical_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_logical_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for logical simulation algorithms (KISAO_0000448).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;logical simulation method&#39;</span>
-</pre></div>
-</div>
+<dt id="kisao.Kisao.get_term_ids">
+<code class="sig-name descname"><span class="pre">get_term_ids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terms</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/__init__.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.Kisao.get_term_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ids of a list of KiSAO terms</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>terms</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code>) – terms</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ids of a list of KiSAO terms (e.g., KISAO_0000352)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="kisao.core.Kisao.get_ode_algorithms">
-<code class="sig-name descname"><span class="pre">get_ode_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_ode_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for ODE integration algorithms:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;modelling simulation algorithm&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;ordinary differential equation problem&#39;</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="kisao.core.Kisao.get_pde_algorithms">
-<code class="sig-name descname"><span class="pre">get_pde_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_pde_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
-</pre></div>
+<div class="section" id="submodules">
+<h2><span class="section-number">1.1. </span>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="module-kisao.core">
+<span id="kisao-core-module"></span><h2><span class="section-number">1.2. </span>kisao.core module<a class="headerlink" href="#module-kisao.core" title="Permalink to this headline">¶</a></h2>
+<p>Utilities for working with the KiSAO ontology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Jonathan Karr &lt;<a class="reference external" href="mailto:karr&#37;&#52;&#48;mssm&#46;edu">karr<span>&#64;</span>mssm<span>&#46;</span>edu</a>&gt;</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>2021-04-28</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>2021, SED-ML Editors</p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>Apache 2.0</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="kisao.core.Kisao">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.core.</span></code><code class="sig-name descname"><span class="pre">Kisao</span></code><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>KiSAO ontology</p>
+<dl class="py method">
+<dt id="kisao.core.Kisao.get_base_iri">
+<code class="sig-name descname"><span class="pre">get_base_iri</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_base_iri" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the base IRI for the ontology</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
+<dd class="field-odd"><p>base IRI for the ontology</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -341,57 +366,6 @@ algorithm such as the Gibson-Bruck Next Reaction Method (KISAO_0000027).:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_rule_based_algorithms">
-<code class="sig-name descname"><span class="pre">get_rule_based_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_rule_based_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kisao.core.Kisao.get_sde_algorithms">
-<code class="sig-name descname"><span class="pre">get_sde_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_sde_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kisao.core.Kisao.get_tau_leaping_algorithms">
-<code class="sig-name descname"><span class="pre">get_tau_leaping_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_tau_leaping_algorithms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the terms for tau-leaping algorithms (KISAO_0000039).:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;tau-leaping method&#39;</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>terms</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="kisao.core.Kisao.get_term">
 <code class="sig-name descname"><span class="pre">get_term</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_term" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a term by its id (e.g., <code class="docutils literal notranslate"><span class="pre">KISAO_0000019</span></code>)</p>
@@ -409,8 +383,405 @@ algorithm such as the Gibson-Bruck Next Reaction Method (KISAO_0000027).:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kisao.core.Kisao.get_terms_with_characteristics">
-<code class="sig-name descname"><span class="pre">get_terms_with_characteristics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_terms_with_characteristics" title="Permalink to this definition">¶</a></dt>
+<dt id="kisao.core.Kisao.get_term_ids">
+<code class="sig-name descname"><span class="pre">get_term_ids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terms</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/core.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.core.Kisao.get_term_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ids of a list of KiSAO terms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>terms</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code>) – terms</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ids of a list of KiSAO terms (e.g., KISAO_0000352)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kisao.data_model">
+<span id="kisao-data-model-module"></span><h2><span class="section-number">1.3. </span>kisao.data_model module<a class="headerlink" href="#module-kisao.data_model" title="Permalink to this headline">¶</a></h2>
+<p>Data model for working with the KiSAO ontology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Jonathan Karr &lt;<a class="reference external" href="mailto:karr&#37;&#52;&#48;mssm&#46;edu">karr<span>&#64;</span>mssm<span>&#46;</span>edu</a>&gt;</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>2021-04-28</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>2021, SED-ML Editors</p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>Apache 2.0</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.data_model.</span></code><code class="sig-name descname"><span class="pre">AlgorithmSubstitutionPolicy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Algorithm substitution policy</p>
+<p>More information: <a class="reference external" href="https://biosimulators.org/conventions/simulator-interfaces">https://biosimulators.org/conventions/simulator-interfaces</a></p>
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.ANY">
+<code class="sig-name descname"><span class="pre">ANY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'ANY'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.ANY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS">
+<code class="sig-name descname"><span class="pre">DISTINCT_APPROXIMATIONS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'DISTINCT_APPROXIMATIONS'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make distinct approximations
+to the same math.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; tau leaping &lt;=&gt; Pahle hybrid method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.DISTINCT_SCALES">
+<code class="sig-name descname"><span class="pre">DISTINCT_SCALES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'DISTINCT_SCALES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.DISTINCT_SCALES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make distinct approximations
+to the same math that substantially differ in their scale.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; CVODE</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.NONE">
+<code class="sig-name descname"><span class="pre">NONE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'None'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SAME_FRAMEWORK">
+<code class="sig-name descname"><span class="pre">SAME_FRAMEWORK</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_FRAMEWORK'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SAME_FRAMEWORK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any algorithm of the same framework can be substituted (e.g., CVODE, LSODA).</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; FVA</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SAME_MATH">
+<code class="sig-name descname"><span class="pre">SAME_MATH</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_MATH'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SAME_MATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with mathematically-equivalent algorithms.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>SSA &lt;=&gt; Next Reaction Method</p></li>
+<li><p>Simplex method &lt;=&gt; interior point method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SAME_METHOD">
+<code class="sig-name descname"><span class="pre">SAME_METHOD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_METHOD'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SAME_METHOD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with different realizations of the same method.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>GLPK Simplex method &lt;=&gt; SciPy Simplex method</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SAME_VARIABLES">
+<code class="sig-name descname"><span class="pre">SAME_VARIABLES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SAME_VARIABLES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SAME_VARIABLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms that predict the same dependent variables can be substituted.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; parsimonious FBA</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS">
+<code class="sig-name descname"><span class="pre">SIMILAR_APPROXIMATIONS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SIMILAR_APPROXIMATIONS'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms can be substituted with others that make similar approximations
+to the same math.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>CVODE &lt;=&gt; LSODA &lt;=&gt; RK-45</p></li>
+<li><p>tau leaping &lt;=&gt; partitioned tau leaping</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kisao.data_model.AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES">
+<code class="sig-name descname"><span class="pre">SIMILAR_VARIABLES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'SIMILAR_VARIABLES'</span></em><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/data_model.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.data_model.AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Algorithms that predict similar dependent variables can be substituted.</p>
+<p>This is the recommended default value.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>FBA &lt;=&gt; geometric FBA</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kisao.exceptions">
+<span id="kisao-exceptions-module"></span><h2><span class="section-number">1.4. </span>kisao.exceptions module<a class="headerlink" href="#module-kisao.exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Standard exceptions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Jonathan Karr &lt;<a class="reference external" href="mailto:karr&#37;&#52;&#48;mssm&#46;edu">karr<span>&#64;</span>mssm<span>&#46;</span>edu</a>&gt;</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>2021-04-29</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>2021, SED-ML Editors</p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>Apache 2.0</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="kisao.exceptions.AlgorithmCannotBeSubstitutedException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.exceptions.</span></code><code class="sig-name descname"><span class="pre">AlgorithmCannotBeSubstitutedException</span></code><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/exceptions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.exceptions.AlgorithmCannotBeSubstitutedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception that the algorithm substitution policy does not allow an algorithm to be substituted</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-kisao.utils">
+<span id="kisao-utils-module"></span><h2><span class="section-number">1.5. </span>kisao.utils module<a class="headerlink" href="#module-kisao.utils" title="Permalink to this headline">¶</a></h2>
+<p>Utilities for working with the KiSAO ontology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Jonathan Karr &lt;<a class="reference external" href="mailto:karr&#37;&#52;&#48;mssm&#46;edu">karr<span>&#64;</span>mssm<span>&#46;</span>edu</a>&gt;</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>2021-04-28</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>2021, SED-ML Editors</p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>Apache 2.0</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="kisao.utils.get_flux_balance_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_flux_balance_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_flux_balance_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for flux balance algorithms (KISAO_0000622).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;flux balance method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_gillespie_like_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_gillespie_like_algorithms</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approximate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_gillespie_like_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for algorithms that execute similar simulations to Gillespie’s
+algorithm (KISAO_0000029).</p>
+<p>Three subsets of terms can be returned:</p>
+<ul>
+<li><p>Terms for algorithms that produce simulation results that are mathematically equivalent to Gillespie’s
+algorithm such as the Gibson-Bruck Next Reaction Method (KISAO_0000027).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;exact solution&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Terms for algorithms that approximate Gillespie’s algorithm such as tau-leaping (KISAO_0000039).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;approximate solution&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Any Gillespie-like method.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Gillespie-like method&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_hybrid_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_hybrid_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_hybrid_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for hybrid algorithms (KISAO_0000352).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hybrid method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_logical_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_logical_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_logical_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for logical simulation algorithms (KISAO_0000448).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;logical simulation method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_ode_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_ode_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_ode_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for ODE integration algorithms:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;modelling simulation algorithm&#39;</span> <span class="ow">and</span> <span class="s1">&#39;has characteristic&#39;</span> <span class="n">some</span> <span class="s1">&#39;ordinary differential equation problem&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_pde_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_pde_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_pde_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_perferred_substitute_algorithm">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_perferred_substitute_algorithm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">algorithm</span></em>, <em class="sig-param"><span class="pre">alt_algorithms</span></em>, <em class="sig-param"><span class="pre">substitution_policy=&lt;AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES:</span> <span class="pre">'SIMILAR_VARIABLES'&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_perferred_substitute_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the preferred substitute for an algorithm for a given substitution policy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>algorithm</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code>) – algorithm requested to be executed</p></li>
+<li><p><strong>alt_algorithms</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code>) – possible alternative algorithms in order of their substitution preference</p></li>
+<li><p><strong>substitution_policy</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">AlgorithmSubstitutionPolicy</span></code>, optional) – algorithm substitution policy; defines the degree to which
+alternative algorithms can be substituted</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>set of algorithms that an algorithm can be substituted for</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_rule_based_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_rule_based_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_rule_based_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_sde_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_sde_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_sde_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for rule-based simulation algorithms (KISAO_0000363).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;rule-based simulation method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_substitutable_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_substitutable_algorithms</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">algorithm</span></em>, <em class="sig-param"><span class="pre">substitution_policy=&lt;AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES:</span> <span class="pre">'SIMILAR_VARIABLES'&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_substitutable_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a set of algorithms that an algorithm can be substituted for a given substitution policy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>algorithm</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code>) – algorithm requested to be executed</p></li>
+<li><p><strong>substitution_policy</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">AlgorithmSubstitutionPolicy</span></code>, optional) – algorithm substitution policy; defines the degree to which
+alternative algorithms can be substituted</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>set of algorithms that an algorithm can be substituted for</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_tau_leaping_algorithms">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_tau_leaping_algorithms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_tau_leaping_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the terms for tau-leaping algorithms (KISAO_0000039).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;tau-leaping method&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>terms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pronto.Term</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="kisao.utils.get_terms_with_characteristics">
+<code class="sig-prename descclassname"><span class="pre">kisao.utils.</span></code><code class="sig-name descname"><span class="pre">get_terms_with_characteristics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.utils.get_terms_with_characteristics" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Get the subclasses of one or more terms which, optionally, have one or more characteristics</dt><dd><p>(e.g., <code class="docutils literal notranslate"><span class="pre">'has</span> <span class="pre">characteristic'</span> <span class="pre">some</span> <span class="pre">'ordinary</span> <span class="pre">differential</span> <span class="pre">equation</span> <span class="pre">problem'</span></code>)</p>
 </dd>
@@ -431,6 +802,29 @@ algorithm such as the Gibson-Bruck Next Reaction Method (KISAO_0000027).:</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-kisao.warnings">
+<span id="kisao-warnings-module"></span><h2><span class="section-number">1.6. </span>kisao.warnings module<a class="headerlink" href="#module-kisao.warnings" title="Permalink to this headline">¶</a></h2>
+<p>Standard warnings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Jonathan Karr &lt;<a class="reference external" href="mailto:karr&#37;&#52;&#48;mssm&#46;edu">karr<span>&#64;</span>mssm<span>&#46;</span>edu</a>&gt;</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>2021-04-29</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>2021, SED-ML Editors</p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>Apache 2.0</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="kisao.warnings.AlgorithmSubstitutedWarning">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">kisao.warnings.</span></code><code class="sig-name descname"><span class="pre">AlgorithmSubstitutedWarning</span></code><a class="reference external" href="https://github.com/SED-ML/KiSAO/blob/dev/kisao/warnings.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kisao.warnings.AlgorithmSubstitutedWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></p>
+<p>Warning that an alternative algorithm was used rather than the requested algorithm</p>
 </dd></dl>
 
 </div>
