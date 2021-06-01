@@ -13,6 +13,7 @@ __all__ = [
     'IdDialect',
     'AlgorithmSubstitutionPolicy',
     'ALGORITHM_SUBSTITUTION_POLICY_LEVELS',
+    'ALGORITHM_SUBSTITUTION_POLICY_NAMES',
 ]
 
 
@@ -29,7 +30,7 @@ class AlgorithmSubstitutionPolicy(str, enum.Enum):
     More information: `https://biosimulators.org/conventions/simulator-interfaces <https://biosimulators.org/conventions/simulator-interfaces>`_
     """
 
-    NONE = 'None'
+    NONE = 'NONE'
     # Algorithms should not be substituted.
 
     SAME_METHOD = 'SAME_METHOD'
@@ -121,3 +122,16 @@ ALGORITHM_SUBSTITUTION_POLICY_LEVELS = collections.OrderedDict([
     (AlgorithmSubstitutionPolicy.SAME_FRAMEWORK, 8),
     (AlgorithmSubstitutionPolicy.ANY, 9),
 ])
+
+ALGORITHM_SUBSTITUTION_POLICY_NAMES = {
+    AlgorithmSubstitutionPolicy.NONE: 'None',
+    AlgorithmSubstitutionPolicy.SAME_METHOD: 'Same method',
+    AlgorithmSubstitutionPolicy.SAME_MATH: 'Same math',
+    AlgorithmSubstitutionPolicy.SIMILAR_APPROXIMATIONS: 'Similar approximations',
+    AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS: 'Distinct approximations',
+    AlgorithmSubstitutionPolicy.DISTINCT_SCALES: 'Distinct scales',
+    AlgorithmSubstitutionPolicy.SAME_VARIABLES: 'Same variables',
+    AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES: 'Similar variables',
+    AlgorithmSubstitutionPolicy.SAME_FRAMEWORK: 'Same framework',
+    AlgorithmSubstitutionPolicy.ANY: 'Any',
+}

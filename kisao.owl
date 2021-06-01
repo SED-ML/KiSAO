@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.15.3</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.16</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -6803,6 +6803,7 @@ IDA is written in C, but derived from the package DASPK [http://identifiers.org/
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-06-10</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
         <rdfs:label xml:lang="en">generalized minimal residual algorithm</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0907058</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">GMRES</skos:altLabel>
@@ -7842,6 +7843,7 @@ DASPK is written in Fortran.</skos:definition>
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000392">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000395"/>
         <owl:disjointWith rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000393"/>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
         <rdfs:label xml:lang="en">biconjugate gradient stabilized method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0913035</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Bi-CGSTAB</skos:altLabel>
@@ -7948,6 +7950,7 @@ DASPK is written in Fortran.</skos:definition>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000389"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-07-19</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
         <rdfs:label xml:lang="en">transpose-free quasi-minimal residual algorithm</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1137/0914029</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">TFQMR</skos:altLabel>
@@ -7997,29 +8000,17 @@ DASPK is written in Fortran.</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000398 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000398">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000624"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000373"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000376"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-07-19</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label xml:lang="en">iterative method for linear system</rdfs:label>
+        <rdfs:label xml:lang="en">iterative method for solving a system of linear equations</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/isbn/0898715342</rdfs:seeAlso>
     </owl:Class>
     <owl:Axiom>
@@ -8091,13 +8082,7 @@ DASPK is written in Fortran.</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000408 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000408">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000631"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -13444,6 +13429,162 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
         <dc:creator xml:lang="en">JRK</dc:creator>
         <rdfs:label xml:lang="en">flux balance problem</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000624 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000624">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000373"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000376"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">method for solving a system of linear equations</rdfs:label>
+        <skos:definition xml:lang="en">method for solving a system of linear equations
+
+Example system of equations:
+
+3x + 2y - z = 0
+2x - 2y + 4z = 0
+-x + 1/2y - z = 0</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000625 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000625">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000624"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
+        <rdfs:label xml:lang="en">dense direct solver</rdfs:label>
+        <skos:altLabel xml:lang="en">denese</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000626 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000626">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000624"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
+        <rdfs:label xml:lang="en">band direct solver</rdfs:label>
+        <skos:altLabel xml:lang="en">banded</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000627 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000627">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000624"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
+        <rdfs:label xml:lang="en">diagonal approximate Jacobian solver</rdfs:label>
+        <skos:altLabel xml:lang="en">diagonal</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000628 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000628">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-06-01</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">modelling and simulation algorithm parameter value</rdfs:label>
+        <skos:definition xml:lang="en">A value of a parameter of an algorithm</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000629 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000629">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000628"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">Null</rdfs:label>
+        <skos:altLabel xml:lang="en">None</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000630 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000630">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">root-finding method</rdfs:label>
+        <skos:definition xml:lang="en">Method for finding the root of a function (f(x) = 0).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000631 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000631">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">iterative root-finding method</rdfs:label>
+        <skos:definition xml:lang="en">Iterative method for finding the root of a function (f(x) = 0).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000632 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000632">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000631"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
+        <rdfs:label>functional iteration root-finding method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bookdown.org/rdpeng/advstatcomp/functional-iteration.html</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Iterative method for finding the root of a function f(x) given by
+
+y^{n(m+1)} = h_{n} β_{n,0} f(t_{n}, y^{n(m)}) + a_n
+
+This method only involves evaluations of f. This method is suitable for non-stiff functions.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000632"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bookdown.org/rdpeng/advstatcomp/functional-iteration.html</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Roger Peng. Advanced Statistical Computing.</rdfs:comment>
+    </owl:Axiom>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </rdf:Description>

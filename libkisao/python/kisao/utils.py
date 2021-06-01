@@ -10,6 +10,7 @@ from .core import Kisao
 from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
 from .exceptions import AlgorithmCannotBeSubstitutedException
 from .warnings import AlgorithmSubstitutedWarning
+import collections
 import functools
 import pronto  # noqa: F401
 import termcolor
@@ -348,11 +349,12 @@ def get_substitutable_algorithms(algorithm):
         algorithm (:obj:`pronto.Term`): target algorithm (e.g., requested to be executed in a SED-ML document)
 
     Returns:
-        :obj:`dict` of :obj:`pronto.Term` => :obj:`AlgorithmSubstitutionPolicy`: dictionary that maps alternative algorithms to the
-            the most restrictive policy at which the alternative algorithm can be substituted for the target algorithm.
+        :obj:`collections.OrderedDict` of :obj:`pronto.Term` => :obj:`AlgorithmSubstitutionPolicy`: dictionary that
+            maps alternative algorithms to the the most restrictive policy at which the alternative algorithm can be
+            substituted for the target algorithm.
     """
     levels = list(ALGORITHM_SUBSTITUTION_POLICY_LEVELS.keys())
-    alt_algs = {}
+    alt_algs = collections.OrderedDict()
     for policy in levels[1:-1]:
         try:
             alt_algs_at_policy = get_substitutable_algorithms_for_policy(algorithm, substitution_policy=policy)
