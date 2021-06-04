@@ -33,12 +33,12 @@ The ontology should be edited using the [Protégé](https://protege.stanford.edu
    - `dcterms:creator`: (`language:en`): initial of the investigator who created the term (e.g., `JRK`)
    - `dcterms:created`: (`xsd:date`): date the term was created (e.g., `2021-06-03`)
 4. The following attributes can also be used to describe new terms:
-  - `isOrganizational` (`xsd:boolean`): set this to `true` if the term is an abstract concept (i.e. shouldn't be used in a SED-ML document; only its children should be used in SED-ML documents)
-  - `skos:altLabel` (`language:en`): synonym for the term
-  - `rdfs:seeAlso` (`xsd:anyURI`): URL for more information about the term (e.g., `https://identifiers.org/doi/XYZ`)
-     - `rdfs:comment` (`language:en`): human-readable citation for the URL
-  - `isImplementedIn` (`xsd:anyURI`): URL for a simulation tool which supports the term (e.g., `https://identifiers.org/biosimulators/tellurium`)
-     - `rdfs:comment` (`language:en`): name of the simulation tool (e.g., `tellurium`)
+   - `isOrganizational` (`xsd:boolean`): set this to `true` if the term is an abstract concept (i.e. shouldn't be used in a SED-ML document; only its children should be used in SED-ML documents)
+   - `skos:altLabel` (`language:en`): synonym for the term
+   - `rdfs:seeAlso` (`xsd:anyURI`): URL for more information about the term (e.g., `https://identifiers.org/doi/XYZ`)
+      - `rdfs:comment` (`language:en`): human-readable citation for the URL
+   - `isImplementedIn` (`xsd:anyURI`): URL for a simulation tool which supports the term (e.g., `https://identifiers.org/biosimulators/tellurium`)
+      - `rdfs:comment` (`language:en`): name of the simulation tool (e.g., `tellurium`)
 5. Save your changes to `kisao.owl`.
 
 ## Submitting changes
