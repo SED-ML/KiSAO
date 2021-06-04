@@ -1871,7 +1871,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">citeulike:1774586</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi/10.1145/1218052.1218054</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Livermore solver for ordinary differential equations</skos:altLabel>
-        <skos:definition xml:lang="en">LSODE solves stiff and nonstiff systems of the form dy/dt = f.  In the stiff case, it treats the Jacobian matrix sf/dy as either a dense (full) or a banded matrix, and as either user-supplied or internally approximated by difference quotients. It uses Adams methods (predictor-corrector) [http://identifiers.org/biomodels.kisao/KISAO_0000364] in the nonstiff case, and Backward Differentiation Formula (BDF) methods (the Gear methods) [http://identifiers.org/biomodels.kisao/KISAO_0000288] in the stiff case.</skos:definition>
+        <skos:definition xml:lang="en">LSODE solves stiff and nonstiff systems of the form dy/dt = f. In the stiff case, it treats the Jacobian matrix sf/dy as either a dense (full) or a banded matrix, and as either user-supplied or internally approximated by difference quotients. It uses Adams methods (predictor-corrector) [http://identifiers.org/biomodels.kisao/KISAO_0000364] in the nonstiff case, and Backward Differentiation Formula (BDF) methods (the Gear methods) [http://identifiers.org/biomodels.kisao/KISAO_0000288] in the stiff case.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000071"/>
@@ -13571,7 +13571,7 @@ Example system of equations:
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn xml:lang="en">CVODE</isImplementedIn>
-        <rdfs:label>functional iteration root-finding method</rdfs:label>
+        <rdfs:label xml:lang="en">functional iteration root-finding method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bookdown.org/rdpeng/advstatcomp/functional-iteration.html</rdfs:seeAlso>
         <skos:definition xml:lang="en">Iterative method for finding the root of a function f(x) given by
 
@@ -13592,11 +13592,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000816">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">Link matrix</rdfs:label>
-        <skos:definition>The link matrix of a model.</skos:definition>
+        <skos:definition xml:lang="en">The link matrix of a model.</skos:definition>
     </owl:Class>
     
 
@@ -13605,11 +13604,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000817">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">Kernel matrix</rdfs:label>
-        <skos:definition>The Kernel matrix of a model.</skos:definition>
+        <skos:definition xml:lang="en">The Kernel matrix of a model.</skos:definition>
     </owl:Class>
     
 
@@ -13618,11 +13616,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000818">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">L0 matrix</rdfs:label>
-        <skos:definition>The L0 matrix of a model.</skos:definition>
+        <skos:definition xml:lang="en">The L0 matrix of a model.</skos:definition>
     </owl:Class>
     
 
@@ -13631,11 +13628,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000819">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">Nr matrix</rdfs:label>
-        <skos:definition>The Nr matrix of a model.</skos:definition>
+        <skos:definition xml:lang="en">The Nr matrix of a model.</skos:definition>
     </owl:Class>
     
 
@@ -13643,11 +13639,11 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000820 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000820">
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">modelling and simulation value chooser</rdfs:label>
-        <skos:definition>The value of a model element if expressed with certain units with respect to other elements of that model.</skos:definition>
+        <skos:definition xml:lang="en">The value of a model element if expressed with certain units with respect to other elements of that model.</skos:definition>
     </owl:Class>
     
 
@@ -13656,11 +13652,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000821">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">amount</rdfs:label>
-        <skos:definition>The value of the element expressed as its amount (i.e. independent of the size of any other model entity in which it resides).</skos:definition>
+        <skos:definition xml:lang="en">The value of the element expressed as its amount (i.e. independent of the size of any other model entity in which it resides).</skos:definition>
     </owl:Class>
     
 
@@ -13669,11 +13664,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000822">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">concentration</rdfs:label>
-        <skos:definition>The value of the element expressed as a concentration (the amount of the element divided by the size of the entity in which it resides.</skos:definition>
+        <skos:definition xml:lang="en">The value of the element expressed as a concentration (the amount of the element divided by the size of the entity in which it resides.</skos:definition>
     </owl:Class>
     
 
@@ -13682,11 +13676,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000823">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">particle number</rdfs:label>
-        <skos:definition>The value of the element expressed as the molar amount of that element multiplied by avogadro&apos;s number.</skos:definition>
+        <skos:definition xml:lang="en">The value of the element expressed as the molar amount of that element multiplied by avogadro&apos;s number.</skos:definition>
     </owl:Class>
     
 
@@ -13694,11 +13687,11 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000824 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000824">
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">modelling and simulation result dimension reducing function</rdfs:label>
-        <skos:definition>A function that reduces the dimension of a set of results.</skos:definition>
+        <skos:definition xml:lang="en">A function that reduces the dimension of a set of results.</skos:definition>
     </owl:Class>
     
 
@@ -13707,11 +13700,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000825">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">mean</rdfs:label>
-        <skos:definition>The mean (average) of a set of values</skos:definition>
+        <skos:definition xml:lang="en">The mean (average) of a set of values</skos:definition>
     </owl:Class>
     
 
@@ -13720,11 +13712,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000826">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">standard deviation</rdfs:label>
-        <skos:definition>The standard deviation of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The standard deviation of a set of values.</skos:definition>
     </owl:Class>
     
 
@@ -13733,11 +13724,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000827">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">standard error</rdfs:label>
-        <skos:definition>The standard error of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The standard error of a set of values.</skos:definition>
     </owl:Class>
     
 
@@ -13746,11 +13736,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000828">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">maximum</rdfs:label>
-        <skos:definition>The maximum value of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The maximum value of a set of values.</skos:definition>
     </owl:Class>
     
 
@@ -13759,11 +13748,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000829">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">minimum</rdfs:label>
-        <skos:definition>The minimum value of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The minimum value of a set of values.</skos:definition>
     </owl:Class>
     
 
@@ -13771,11 +13759,11 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000831 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000831">
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">modelling and simulation implied variable</rdfs:label>
-        <skos:definition>A variable in a model that is not expressly given a label in the model itself.</skos:definition>
+        <skos:definition xml:lang="en">A variable in a model that is not expressly given a label in the model itself.</skos:definition>
     </owl:Class>
     
 
@@ -13784,11 +13772,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000832">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">time</rdfs:label>
-        <skos:definition>The implied time variable of the model state.</skos:definition>
+        <skos:definition xml:lang="en">The implied time variable of the model state.</skos:definition>
     </owl:Class>
     
 
@@ -13796,11 +13783,11 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000833 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000833">
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">modelling and simulation derived quantity</rdfs:label>
-        <skos:definition>A quantity from a model derived from elements of that model and the simulation it is undergoing.</skos:definition>
+        <skos:definition xml:lang="en">A quantity from a model derived from elements of that model and the simulation it is undergoing.</skos:definition>
     </owl:Class>
     
 
@@ -13809,11 +13796,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000834">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000833"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">rate of change</rdfs:label>
-        <skos:definition>The rate of change of one variable in a model with respect to a second variable in that model.</skos:definition>
+        <skos:definition xml:lang="en">The rate of change of one variable in a model with respect to a second variable in that model.</skos:definition>
     </owl:Class>
     
 
@@ -13822,11 +13808,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000835">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">Concentration control coefficient matrix (scaled)</rdfs:label>
-        <skos:definition>The scaled concentration control coefficient matrix.  The dimensions are species by reactions.</skos:definition>
+        <skos:definition xml:lang="en">The scaled concentration control coefficient matrix. The dimensions are species by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -13834,11 +13819,11 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#_KISAO_0000800 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800">
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">modelling and simulation analysis</rdfs:label>
-        <skos:definition>An analysis that can be performed on a model state without changing it.</skos:definition>
+        <skos:definition xml:lang="en">An analysis that can be performed on a model state without changing it.</skos:definition>
     </owl:Class>
     
 
@@ -13847,11 +13832,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000801">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Concentration control coefficient matrix (unscaled)</rdfs:label>
-        <skos:definition>The unscaled concentration control coefficient matrix.  The dimensions are species by reactions.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Concentration control coefficient matrix (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled concentration control coefficient matrix. The dimensions are species by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -13860,11 +13844,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000802">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Control coefficient (scaled)</rdfs:label>
-        <skos:definition>A scaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Control coefficient (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">A scaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
     </owl:Class>
     
 
@@ -13873,11 +13856,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000803">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Control coefficient (unscaled)</rdfs:label>
-        <skos:definition>An unscaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Control coefficient (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">An unscaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
     </owl:Class>
     
 
@@ -13886,11 +13868,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000804">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Unscaled elasticity matrix</rdfs:label>
-        <skos:definition>The unscaled elasticity matrix.  The dimensions are reactions by species.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Unscaled elasticity matrix</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
     </owl:Class>
     
 
@@ -13899,11 +13880,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000805">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Unscaled elasticity coefficient</rdfs:label>
-        <skos:definition>An unscaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Unscaled elasticity coefficient</rdfs:label>
+        <skos:definition xml:lang="en">An unscaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
     </owl:Class>
     
 
@@ -13912,11 +13892,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000806">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Scaled elasticity matrix</rdfs:label>
-        <skos:definition>The scaled elasticity matrix.  The dimensions are reactions by species.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Scaled elasticity matrix</rdfs:label>
+        <skos:definition xml:lang="en">The scaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
     </owl:Class>
     
 
@@ -13925,11 +13904,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000807">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Scaled elasticity coefficient</rdfs:label>
-        <skos:definition>A scaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Scaled elasticity coefficient</rdfs:label>
+        <skos:definition xml:lang="en">A scaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
     </owl:Class>
     
 
@@ -13938,11 +13916,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000808">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Reduced stoichiometry matrix</rdfs:label>
-        <skos:definition>The reduced stoichiometry matrix.  The dimensions are species by reactions.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Reduced stoichiometry matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -13951,11 +13928,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000809">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Reduced Jacobian matrix</rdfs:label>
-        <skos:definition>The reduced Jacobian matrix.  The dimensions are species by species.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Reduced Jacobian matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced Jacobian matrix. The dimensions are species by species.</skos:definition>
     </owl:Class>
     
 
@@ -13964,11 +13940,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000810">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Reduced eigenvalue matrix</rdfs:label>
-        <skos:definition>The reduced eigenvalue matrix of a model.  The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Reduced eigenvalue matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
     </owl:Class>
     
 
@@ -13977,11 +13952,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000811">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">Full stoichiometry matrix</rdfs:label>
-        <skos:definition>The full stoichiometry matrix.  The dimensions are species by reactions.</skos:definition>
+        <skos:definition xml:lang="en">The full stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -13990,11 +13964,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000812">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Full Jacobian matrix</rdfs:label>
-        <skos:definition>The full Jacobian matrix.  The dimensions are species by species.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Full Jacobian matrix</rdfs:label>
+        <skos:definition xml:lang="en">The full Jacobian matrix. The dimensions are species by species.</skos:definition>
     </owl:Class>
     
 
@@ -14003,11 +13976,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000813">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Full eigenvalue matrix</rdfs:label>
-        <skos:definition>The full eigenvalue matrix of a model.  The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Full eigenvalue matrix</rdfs:label>
+        <skos:definition xml:lang="en">The full eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
     </owl:Class>
     
 
@@ -14016,11 +13988,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000814">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Flux control coefficient matrix (unscaled)</rdfs:label>
-        <skos:definition>The unscaled flux control coefficient matrix.  The dimensions are reactions by reactions.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Flux control coefficient matrix (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -14029,11 +14000,10 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#_KISAO_0000815">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#_KISAO_0000800"/>
-        <dc:created>06-03-2021</dc:created>
-        <dc:creator>LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
-        <rdfs:label>Flux control coefficient matrix (scaled)</rdfs:label>
-        <skos:definition>The scaled flux control coefficient matrix.  The dimensions are reactions by reactions.</skos:definition>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Flux control coefficient matrix (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">The scaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
     </owl:Class>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
