@@ -4,6 +4,26 @@ on:
   push:
 
 jobs:
+  determineIfReleaseNeeded:
+    name: Determine if the package should be released
+    runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.determine-if-release-needed.outputs.release }}
+    steps:
+      - id: determine-if-release-needed
+        name: Determine if a release should be made
+        run: |
+          release="0"
+
+          if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then
+            tag_hash=$(git rev-parse "${{ github.ref }}")
+            if [ "$tag_hash" == "${{ steps.get-main-branch.outputs.mainBranchHeadRevision }}" ]; then
+              release="1"
+            fi
+          fi
+
+          echo "::set-output name=release::$release"
+
   test:
     name: Run unit tests on the ontology
     runs-on: ubuntu-latest
@@ -89,7 +109,8 @@ jobs:
 
   commitCompiledDocumentation:
     name: Commit and push compiled documentation to GitHub
-    if: startsWith(github.ref, 'refs/tags/')
+    needs: determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     needs:
       - test
     runs-on: ubuntu-latest
@@ -174,7 +195,7 @@ jobs:
           echo "::set-output name=docsChanged::$docsChanged"
 
       - name: Push the compiled documentation
-        if: steps.commit-docs.outputs.docsChanged == '1'
+        if: startsWith(github.ref, 'refs/tags/') && steps.commit-docs.outputs.docsChanged == '1'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ADMIN_GITHUB_TOKEN  }}
@@ -182,7 +203,8 @@ jobs:
 
   createGitHubRelease:
     name: Create GitHub release
-    if: startsWith(github.ref, 'refs/tags/')
+    needs: determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     needs:
       - test
     runs-on: ubuntu-latest
@@ -218,7 +240,8 @@ jobs:
 
   releaseToBioPortal:
     name: Release version to BioPortal
-    if: false && startsWith(github.ref, 'refs/tags/')
+    needs: determineIfReleaseNeeded
+    if: false && startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     needs:
       - test
     runs-on: ubuntu-latest
@@ -260,7 +283,8 @@ jobs:
 
   releaseToPyPI:
     name: Release version to PyPI
-    if: startsWith(github.ref, 'refs/tags/')
+    needs: determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     needs:
       - test
     runs-on: ubuntu-latest
