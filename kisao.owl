@@ -13596,7 +13596,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label xml:lang="en">mathematical function</rdfs:label>
+        <rdfs:label xml:lang="en">computational function</rdfs:label>
         <skos:definition xml:lang="en">A mathematical function such as the calculation of a minimum, maximum, or mean of a set of values.</skos:definition>
     </owl:Class>
     
@@ -13644,6 +13644,280 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:creator xml:lang="en">JRK</dc:creator>
         <rdfs:label xml:lang="en">derived property</rdfs:label>
         <skos:definition xml:lang="en">An output of a simulation which can be derived from its primary outputs.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000638 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000638">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000822"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">level</rdfs:label>
+        <skos:definition xml:lang="en">A level such as of a qualitative variable.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000639 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000639">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000655"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">flux</rdfs:label>
+        <skos:definition xml:lang="en">A rate through an volume such as of a reaction of a constraint-based models.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000640 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000640">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000641"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">lower bound</rdfs:label>
+        <skos:definition xml:lang="en">A lower bound on an estimate of a quantity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000641 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000641">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">bound</rdfs:label>
+        <skos:definition xml:lang="en">An upper or lower bound on an estimate of a quantity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000642 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000642">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000639"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000640"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">minimum flux</rdfs:label>
+        <skos:definition xml:lang="en">Minimum possible flux such as computed by flux variability analysis (FVA, KISAO_0000526).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000643 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000643">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000641"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">upper bound</rdfs:label>
+        <skos:definition xml:lang="en">An upper bound on an estimate of a quantity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000644 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000644">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000639"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000643"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">maximum flux</rdfs:label>
+        <skos:definition xml:lang="en">Maximum possible flux such as computed by flux variability analysis (FVA, KISAO_0000526).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000645 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000645">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">objective value</rdfs:label>
+        <skos:definition xml:lang="en">Value of an objective function such as of a constraint-based model.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000646 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000646">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">propensity</rdfs:label>
+        <skos:definition xml:lang="en">Tendency of an event such as of the firing of a reaction in the Stochastic Simulation Algorithm (SSA, KISAO_0000029).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000647 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000647">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000821"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">derivative</rdfs:label>
+        <skos:definition xml:lang="en">Rate of change of a variable with respect to another variable.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000648 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000648">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">step</rdfs:label>
+        <skos:definition xml:lang="en">Iteration such as along a pseudo timecourse of a logical simulation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000649 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000649">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000650"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">shadow price</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Shadow_price</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Change, per infinitesimal unit of the constraint, in the optimal value of the objective function of an optimization problem obtained by relaxing the constraint.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000650 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000650">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000647"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">sensitivity</rdfs:label>
+        <skos:definition xml:lang="en">The sensitivity of a variable to another variable, such as the derivative a variable with respect to another.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000651 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000651">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000650"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">reduced costs</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Reduced_cost</rdfs:seeAlso>
+        <skos:definition xml:lang="en">The amount by which an objective function coefficient would have to improve before it would be possible for a corresponding variable to assume a positive value in the optimal solution.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000652 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000652">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000834"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000821"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">concentration rate</rdfs:label>
+        <skos:definition xml:lang="en">Rate of a process relative to a volume, such as the rate of a reaction in molar^-1 s^-1.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000653 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000653">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000834"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000822"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">particle number rate</rdfs:label>
+        <skos:definition xml:lang="en">Rate of a process in extensive/absolute units such as mole reactions per second.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000654 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000654">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000834"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000822"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">Rate of a process in extensive/absolute units such as reactions per second.</rdfs:label>
+        <rdfs:label xml:lang="en">amount rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000655 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000655">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-04-2021</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">rate</rdfs:label>
+        <skos:definition xml:lang="en">Speed at which a process is occuring such as the temporal rate of a chemical reaction,</skos:definition>
     </owl:Class>
     
 
@@ -13836,9 +14110,22 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000834">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000647"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000655"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">rate of change</rdfs:label>
+        <skos:altLabel xml:lang="en">rate</skos:altLabel>
         <skos:definition xml:lang="en">The rate of change of one variable with respect to a second variable.</skos:definition>
     </owl:Class>
     
@@ -13893,7 +14180,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created>06-03-2021</dc:created>
         <dc:creator>LPS</dc:creator>
         <rdfs:label xml:lang="en">particle number</rdfs:label>
-        <skos:definition>The extensive quantity particle number, or, the molar amount of the entity multiplied by avogadro&apos;s number.</skos:definition>
+        <skos:definition>The extensive quantity particle number, or, the molar amount of the entity multiplied by Avogadro&apos;s number.</skos:definition>
     </owl:Class>
     
 
