@@ -87,11 +87,59 @@ jobs:
           flags: unittests
           file: ./libkisao/python/coverage.xml
 
+  getMainBranchHeadRevision:
+    name: Get the head revision of the main branch
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    outputs:
+      mainBranchHeadRevision: ${{ steps.get-main-branch.outputs.mainBranchHeadRevision }}
+    steps:
+      - name: Clone repository
+        run: |
+          git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} .
+
+      - id: get-main-branch
+        name: Determine main branch
+        run: |
+          mainBranch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f 4)
+          mainBranchHeadRevision=$(git rev-parse refs/remotes/origin/${mainBranch})
+          echo "::set-output name=mainBranchHeadRevision::$mainBranchHeadRevision"
+
+  determineIfReleaseNeeded:
+    name: Determine if the package should be released
+    needs:
+      - getMainBranchHeadRevision
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.determine-if-release-needed.outputs.release }}
+    steps:
+      # Check out the repository
+      - name: Checkout repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - id: determine-if-release-needed
+        name: Determine if a release should be made
+        run: |
+          release="0"
+
+          if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then
+            tag_hash=$(git rev-parse "${{ github.ref }}")
+            if [ "$tag_hash" == "${{ needs.getMainBranchHeadRevision.outputs.mainBranchHeadRevision }}" ]; then
+              release="1"
+            fi
+          fi
+
+          echo "::set-output name=release::$release"
+
   commitCompiledDocumentation:
     name: Commit and push compiled documentation to GitHub
-    if: startsWith(github.ref, 'refs/tags/')
     needs:
       - test
+      - determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
@@ -174,7 +222,7 @@ jobs:
           echo "::set-output name=docsChanged::$docsChanged"
 
       - name: Push the compiled documentation
-        if: steps.commit-docs.outputs.docsChanged == '1'
+        if: startsWith(github.ref, 'refs/tags/') && steps.commit-docs.outputs.docsChanged == '1'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ADMIN_GITHUB_TOKEN  }}
@@ -182,9 +230,10 @@ jobs:
 
   createGitHubRelease:
     name: Create GitHub release
-    if: startsWith(github.ref, 'refs/tags/')
     needs:
       - test
+      - determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -218,9 +267,10 @@ jobs:
 
   releaseToBioPortal:
     name: Release version to BioPortal
-    if: false && startsWith(github.ref, 'refs/tags/')
     needs:
       - test
+      - determineIfReleaseNeeded
+    if: false && startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -260,9 +310,10 @@ jobs:
 
   releaseToPyPI:
     name: Release version to PyPI
-    if: startsWith(github.ref, 'refs/tags/')
     needs:
       - test
+      - determineIfReleaseNeeded
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     runs-on: ubuntu-latest
     steps:
       # Check out the repository

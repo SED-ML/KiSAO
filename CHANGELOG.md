@@ -1,8 +1,11 @@
 # Changelog
 
+## 2.18 (OWL 2)
+- Added parameter for adaptive time steps
+
 ## 2.17 (OWL 2)
 - Added terms for simulation outputs (formerly `urn:sed:symbol`)
-- Added methods for getting types of terms
+- Added method for getting the type of a KiSAO term
 
 ## 2.16 (OWL 2)
 - Added terms for sub-methods of CVODE
