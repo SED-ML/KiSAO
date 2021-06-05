@@ -10,16 +10,16 @@ Please use GitHub issues to announce your plans to the community so that other d
 
 This repository is organized as follows:
 
-* `README.md`: Overview of this repository
-* `kisao.owl`: Definition of the ontology in OWL format
-* `kisao_full.owl`: Basic meta data about the ontology in OWL format
-* `CHANGELOG.txt`: Log of the changes with each version
-* `docs`: Documentation about KiSAO
-* `libkisao`: Libraries for working with KiSAO
-    * `python`: Python library for working with KiSAO
-* `LICENSE`: License for this package
-* `CONTRIBUTING.md`: Guide to contributing to this package (this document)
-* `CODE_OF_CONDUCT.md`: Code of conduct for developers of this package
+* [`README.md`](README.md): Overview of this repository
+* [`kisao.owl`](kisao.owl): Definition of the ontology in OWL format
+* [`kisao_full.owl`](kisao_full.owl): Basic meta data about the ontology in OWL format
+* [`CHANGELOG.md`](CHANGELOG.md): Log of the changes with each version
+* [`docs`](docs): Documentation about KiSAO
+* [`libkisao`](libkisao): Libraries for working with KiSAO
+    * `python`](python): Python library for working with KiSAO
+* [`LICENSE`](LICENSE): License for this package
+* [`CONTRIBUTING.md`](CONTRIBUTING.md): Guide to contributing to this package (this document)
+* [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md): Code of conduct for developers of this package
 
 ## Modifying the ontology
 
@@ -52,10 +52,10 @@ Below are instructions for submitting changes:
 
 Below are instructions for releasing a new version:
 
-1. Revise `kisao.owl`.
-2. Add description of changes to `CHANGELOG.txt`.
-3. Increment the version in `kisao.owl` and `kisao_full.owl`.
-3. Increment the version in `libkisao/python/kisao/_version.py`.
+1. Revise [`kisao.owl`](kisao.owl).
+2. Add description of changes to [`CHANGELOG.md`](CHANGELOG.md).
+3. Increment the version in [`kisao.owl`](kisao.owl) and [`kisao_full.owl`](kisao_full.owl).
+3. Increment the version in [`libkisao/python/kisao/_version.py`](libkisao/python/kisao/_version.py).
 4. Commit and push the new version (e.g., `git add kisao.owl kisao_full.owl; git commit -m "..."; git push`).
 5. Tag the new version (e.g., `git tag 2.14`).
 6. Push the new tag (`git push --tags`).

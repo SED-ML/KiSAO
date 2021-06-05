@@ -10,11 +10,53 @@ import collections
 import enum
 
 __all__ = [
+    'ID_HAS_CHARACTERISTIC_RELATIONSHIP',
+    'ID_ODE_PROBLEM_CHARACTERISTIC',
+    'ID_SDE_PROBLEM_CHARACTERISTIC',
+    'ID_PDE_PROBLEM_CHARACTERISTIC',
+    'ID_EXACT_SOLUTION_CHARACTERISTIC',
+    'ID_APPROXIMATE_SOLUTION_CHARACTERISTIC',
+    'ID_ALGORITHM',
+    'ID_GILLESPIE_LIKE_ALGORITHM',
+    'ID_TAU_LEAPING_ALGORITHM',
+    'ID_RULE_BASED_ALGORITHM',
+    'ID_FLUX_BALANCE_ALGORITHM',
+    'ID_LOGICAL_ALGORITHM',
+    'ID_HYBRID_ALGORITHM',
+    'TermType',
     'IdDialect',
     'AlgorithmSubstitutionPolicy',
     'ALGORITHM_SUBSTITUTION_POLICY_LEVELS',
     'ALGORITHM_SUBSTITUTION_POLICY_NAMES',
 ]
+
+ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
+
+ID_ODE_PROBLEM_CHARACTERISTIC = 'KISAO_0000374'  # ordinary differential equation problem
+ID_SDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000371'  # stochastic differential equation problem
+ID_PDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000372'  # partial differential equation problem
+ID_EXACT_SOLUTION_CHARACTERISTIC = 'KISAO_0000236'  # exact solution
+ID_APPROXIMATE_SOLUTION_CHARACTERISTIC = 'KISAO_0000237'  # approximate solution
+
+ID_ALGORITHM = 'KISAO_0000000'  # modelling and simulation algorithm
+ID_GILLESPIE_LIKE_ALGORITHM = 'KISAO_0000241'  # Gillespie-like method
+ID_TAU_LEAPING_ALGORITHM = 'KISAO_0000039'  # tau-leaping method
+ID_RULE_BASED_ALGORITHM = 'KISAO_0000363'  # rule-based simulation method
+ID_FLUX_BALANCE_ALGORITHM = 'KISAO_0000622'  # flux balance method
+ID_LOGICAL_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
+ID_HYBRID_ALGORITHM = 'KISAO_0000352'  # hybrid method
+
+
+class TermType(str, enum.Enum):
+    """ Type of a KiSAO term """
+    root = 'root'
+    algorithm = 'KISAO_0000000'
+    algorithm_characteristic = 'KISAO_0000097'
+    algorithm_parameter = 'KISAO_0000201'
+    algorithm_parameter_value = 'KISAO_0000628'
+    computational_function = 'KISAO_0000633'
+    simulation_property = 'KISA_0000831'
+    simulation_property_characteristic = 'KISAO_0000820'
 
 
 class IdDialect(str, enum.Enum):
