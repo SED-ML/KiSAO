@@ -10,6 +10,12 @@ jobs:
     outputs:
       release: ${{ steps.determine-if-release-needed.outputs.release }}
     steps:
+      # Check out the repository
+      - name: Checkout repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
       - id: determine-if-release-needed
         name: Determine if a release should be made
         run: |
