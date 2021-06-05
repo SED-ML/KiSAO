@@ -1,6 +1,6 @@
 from kisao import utils
 from kisao.core import Kisao
-from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
+from kisao.data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect, TermType
 from kisao.exceptions import AlgorithmCannotBeSubstitutedException
 from kisao.warnings import AlgorithmSubstitutedWarning
 import os
@@ -9,6 +9,30 @@ import unittest
 
 
 class UtilsTestCase(unittest.TestCase):
+    def test_get_term_type(self):
+        kisao = Kisao()
+
+        term_type = utils.get_term_type(kisao.get_term('KISAO_0000000'))
+        self.assertEqual(term_type, TermType.root)
+
+        term_type = utils.get_term_type(kisao.get_term('KISAO_0000019'))
+        self.assertEqual(term_type, TermType.algorithm)
+
+        term_type = utils.get_term_type(kisao.get_term('KISAO_0000575'))
+        self.assertEqual(term_type, TermType.algorithm)
+
+        term_type = utils.get_term_type(kisao.get_term('KISAO_0000211'))
+        self.assertEqual(term_type, TermType.algorithm_parameter)
+
+        term_type = utils.get_term_type(kisao.get_term('KISAO_0000322'))
+        self.assertEqual(term_type, TermType.algorithm_characteristic)
+
+        with self.assertRaises(AttributeError):
+            utils.get_term_type(None)
+
+        with self.assertRaises(AttributeError):
+            utils.get_term_type('KISAO_0000322')
+
     def test_get_url_for_term(self):
         term = Kisao().get_term('KISAO_0000029')
         self.assertEqual(
