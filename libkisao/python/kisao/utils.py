@@ -7,7 +7,22 @@
 """
 
 from .core import Kisao
-from .data_model import AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect
+from .data_model import (AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POLICY_LEVELS, IdDialect,
+                         ID_HAS_CHARACTERISTIC_RELATIONSHIP,
+                         ID_ODE_PROBLEM_CHARACTERISTIC,
+                         ID_SDE_PROBLEM_CHARACTERISTIC,
+                         ID_PDE_PROBLEM_CHARACTERISTIC,
+                         ID_EXACT_SOLUTION_CHARACTERISTIC,
+                         ID_APPROXIMATE_SOLUTION_CHARACTERISTIC,
+                         ID_ALGORITHM,
+                         ID_GILLESPIE_LIKE_ALGORITHM,
+                         ID_TAU_LEAPING_ALGORITHM,
+                         ID_RULE_BASED_ALGORITHM,
+                         ID_FLUX_BALANCE_ALGORITHM,
+                         ID_LOGICAL_ALGORITHM,
+                         ID_HYBRID_ALGORITHM,
+                         TermType,
+                         )
 from .exceptions import AlgorithmCannotBeSubstitutedException
 from .warnings import AlgorithmSubstitutedWarning
 import collections
@@ -18,20 +33,8 @@ import urllib.parse
 import warnings
 
 __all__ = [
+    'get_term_type',
     'get_ols_url_for_term',
-    'ID_HAS_CHARACTERISTIC_RELATIONSHIP',
-    'ID_ODE_PROBLEM_CHARACTERISTIC',
-    'ID_SDE_PROBLEM_CHARACTERISTIC',
-    'ID_PDE_PROBLEM_CHARACTERISTIC',
-    'ID_EXACT_SOLUTION_CHARACTERISTIC',
-    'ID_APPROXIMATE_SOLUTION_CHARACTERISTIC',
-    'ID_ALGORITHM',
-    'ID_GILLESPIE_LIKE_ALGORITHM',
-    'ID_TAU_LEAPING_ALGORITHM',
-    'ID_RULE_BASED_ALGORITHM',
-    'ID_FLUX_BALANCE_ALGORITHM',
-    'ID_LOGICAL_ALGORITHM',
-    'ID_HYBRID_ALGORITHM',
     'get_terms_with_characteristics',
     'get_ode_algorithms',
     'get_gillespie_like_algorithms',
@@ -50,21 +53,25 @@ __all__ = [
     'get_algorithm_substitution_matrix',
 ]
 
-ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
 
-ID_ODE_PROBLEM_CHARACTERISTIC = 'KISAO_0000374'  # ordinary differential equation problem
-ID_SDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000371'  # stochastic differential equation problem
-ID_PDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000372'  # partial differential equation problem
-ID_EXACT_SOLUTION_CHARACTERISTIC = 'KISAO_0000236'  # exact solution
-ID_APPROXIMATE_SOLUTION_CHARACTERISTIC = 'KISAO_0000237'  # approximate solution
+def get_term_type(term):
+    """ Get the type of a KiSAO term (e.g., algorithm, algorithm characteristic, algorithm parameter)
 
-ID_ALGORITHM = 'KISAO_0000000'  # modelling and simulation algorithm
-ID_GILLESPIE_LIKE_ALGORITHM = 'KISAO_0000241'  # Gillespie-like method
-ID_TAU_LEAPING_ALGORITHM = 'KISAO_0000039'  # tau-leaping method
-ID_RULE_BASED_ALGORITHM = 'KISAO_0000363'  # rule-based simulation method
-ID_FLUX_BALANCE_ALGORITHM = 'KISAO_0000622'  # flux balance method
-ID_LOGICAL_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
-ID_HYBRID_ALGORITHM = 'KISAO_0000352'  # hybrid method
+    Args:
+        term (:obj:`pronto.Term`): term
+
+    Returns:
+        :obj:`TermType`: type of the term
+    """
+    kisao = Kisao()
+    superclass_ids = [kisao.get_term_id(superclass) for superclass in term.superclasses()]
+
+    for term_type in TermType.__members__.values():
+        if term_type.value in superclass_ids:
+            if term_type.value == kisao.get_term_id(term):
+                return TermType.root
+            else:
+                return term_type
 
 
 def get_ols_url_for_term(term):
@@ -116,7 +123,7 @@ def get_terms_with_characteristics(parent_ids, characteristic_ids=None):
     return terms
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_ode_algorithms():
     """ Get the terms for ODE integration algorithms::
 
@@ -128,7 +135,7 @@ def get_ode_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_ODE_PROBLEM_CHARACTERISTIC])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_gillespie_like_algorithms(exact=True, approximate=False):
     """ Get the terms for algorithms that execute similar simulations to Gillespie's
     algorithm (KISAO_0000029).
@@ -163,7 +170,7 @@ def get_gillespie_like_algorithms(exact=True, approximate=False):
     return get_terms_with_characteristics([ID_GILLESPIE_LIKE_ALGORITHM], characteristics)
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_tau_leaping_algorithms():
     """ Get the terms for tau-leaping algorithms (KISAO_0000039).::
 
@@ -175,7 +182,7 @@ def get_tau_leaping_algorithms():
     return get_terms_with_characteristics([ID_TAU_LEAPING_ALGORITHM])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_rule_based_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -187,7 +194,7 @@ def get_rule_based_algorithms():
     return get_terms_with_characteristics([ID_RULE_BASED_ALGORITHM])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_sde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -199,7 +206,7 @@ def get_sde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_SDE_PROBLEM_CHARACTERISTIC])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_pde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -211,7 +218,7 @@ def get_pde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_PDE_PROBLEM_CHARACTERISTIC])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_flux_balance_algorithms():
     """ Get the terms for flux balance algorithms (KISAO_0000622).::
 
@@ -223,7 +230,7 @@ def get_flux_balance_algorithms():
     return get_terms_with_characteristics([ID_FLUX_BALANCE_ALGORITHM])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_logical_algorithms():
     """ Get the terms for logical simulation algorithms (KISAO_0000448).::
 
@@ -235,7 +242,7 @@ def get_logical_algorithms():
     return get_terms_with_characteristics([ID_LOGICAL_ALGORITHM])
 
 
-@functools.lru_cache(maxsize=None)
+@ functools.lru_cache(maxsize=None)
 def get_hybrid_algorithms():
     """ Get the terms for hybrid algorithms (KISAO_0000352).::
 
