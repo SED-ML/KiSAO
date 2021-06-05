@@ -101,6 +101,7 @@ jobs:
       - id: get-main-branch
         name: Determine main branch
         run: |
+          mainBranch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f 4)
           mainBranchHeadRevision=$(git rev-parse refs/remotes/origin/${mainBranch})
           echo "::set-output name=mainBranchHeadRevision::$mainBranchHeadRevision"
 
