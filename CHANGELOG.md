@@ -2,6 +2,7 @@
 
 ## 2.17 (OWL 2)
 - Added terms for simulation outputs (formerly `urn:sed:symbol`)
+- Added methods for getting types of terms
 
 ## 2.16 (OWL 2)
 - Added terms for sub-methods of CVODE
