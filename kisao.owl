@@ -14048,7 +14048,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">mean</rdfs:label>
-        <skos:definition xml:lang="en">The mean (average) of a set of values</skos:definition>
+        <skos:definition xml:lang="en">The mean (average) of a set of values, ignoring NaN entries.</skos:definition>
     </owl:Class>
     
 
@@ -14060,7 +14060,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">standard deviation</rdfs:label>
-        <skos:definition xml:lang="en">The standard deviation of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The standard deviation of a set of values, ignoring NaN entries.</skos:definition>
     </owl:Class>
     
 
@@ -14072,7 +14072,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">standard error</rdfs:label>
-        <skos:definition xml:lang="en">The standard error of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The standard error of a set of values, ignoring NaN entries.</skos:definition>
     </owl:Class>
     
 
@@ -14084,7 +14084,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">maximum</rdfs:label>
-        <skos:definition xml:lang="en">The maximum value of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The maximum value of a set of values, ignoring NaN entries.</skos:definition>
     </owl:Class>
     
 
@@ -14096,7 +14096,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
         <dc:creator xml:lang="en">LPS</dc:creator>
         <rdfs:label xml:lang="en">minimum</rdfs:label>
-        <skos:definition xml:lang="en">The minimum value of a set of values.</skos:definition>
+        <skos:definition xml:lang="en">The minimum value of a set of values, ignoring NaN entries.</skos:definition>
     </owl:Class>
     
 
