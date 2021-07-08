@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.19</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.20</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -2924,10 +2924,19 @@ It is an &apos;embedded Runge-Kutta method&apos; [http://identifiers.org/biomode
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">integrate reduced model</rdfs:label>
+        <rdfs:label xml:lang="en">use reduced model</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/14990466</rdfs:seeAlso>
-        <skos:definition xml:lang="en">This parameter is a boolean value to determine whether the integration shall be performed using the mass conservation laws (true), i.e., reducing the number of system variables or to use the complete model (false).</skos:definition>
+        <skos:altLabel xml:lang="en">integrate reduced model</skos:altLabel>
+        <skos:definition xml:lang="en">Boolean value which indicates whether the simulation/analysis should be performed using the complete model or an equivalent reduced model.
+
+Reduced models can be determined in many ways such as using mass conservation laws.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000216"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/14990466</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Jacek Puchałka, Andrzej M Kierzek. Bridging the gap between stochastic and deterministic regimes in the kinetic simulations of the biochemical reaction networks. Biophys J. 2004, 86(3):1357-1372.</rdfs:comment>
+    </owl:Axiom>
     
 
 

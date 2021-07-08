@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.20 (OWL 2)
+- Generalized label and description of KISAO_0000216
+- Added label for citation for KISAO_0000216
+
 ## 2.19 (OWL 2)
 - Added algorithms for logical modeling
   - Sequential simulation
