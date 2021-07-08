@@ -49,7 +49,9 @@ class UtilsTestCase(unittest.TestCase):
             utils.get_gillespie_like_algorithms(exact=False, approximate=True),
             utils.get_rule_based_algorithms(),
             utils.get_flux_balance_algorithms(),
-            utils.get_logical_algorithms(),
+            utils.get_logical_simulation_algorithms(),
+            utils.get_logical_stable_state_search_algorithms(),
+            utils.get_logical_trap_space_search_algorithms(),
             # utils.get_hybrid_algorithms(),
         ]
 
@@ -175,13 +177,26 @@ class UtilsTestCase(unittest.TestCase):
         self.assertIn(kisao.get_term('KISAO_0000608'), terms)  # Hierarchical flux balance analysis
         self.assertIn(kisao.get_term('KISAO_0000592'), terms)  # dynamic rFBA
 
-    def test_logical_algorithms(self):
+    def test_logical_simulation_algorithms(self):
         kisao = Kisao()
-        terms = utils.get_logical_algorithms()
+        terms = utils.get_logical_simulation_algorithms()
 
         self.assertIn(kisao.get_term('KISAO_0000450'), terms)  # asynchronous logical model simulation method
         self.assertIn(kisao.get_term('KISAO_0000581'), terms)  # BKMC
         self.assertIn(kisao.get_term('KISAO_0000449'), terms)  # synchronous logical model simulation method
+
+    def test_get_logical_stable_state_search_algorithms(self):
+        kisao = Kisao()
+        terms = utils.get_logical_stable_state_search_algorithms()
+
+        self.assertIn(kisao.get_term('KISAO_0000659'), terms)  # Naldi MDD logical model stable state search method
+
+    def test_get_logical_trap_space_search_algorithms(self):
+        kisao = Kisao()
+        terms = utils.get_logical_trap_space_search_algorithms()
+
+        self.assertIn(kisao.get_term('KISAO_0000663'), terms)  # BDD logical model trap space identificatio method
+        self.assertIn(kisao.get_term('KISAO_0000662'), terms)  # Klarner ASP logical model trap space identification method
 
     def test_get_substitutable_algorithms_for_policy(self):
         kisao = Kisao()
@@ -262,7 +277,9 @@ class UtilsTestCase(unittest.TestCase):
             ('SDE', utils.get_sde_algorithms()),
             ('PDE', utils.get_pde_algorithms()),
             ('flux', utils.get_flux_balance_algorithms()),
-            ('logical', utils.get_logical_algorithms()),
+            ('logical-simulation', utils.get_logical_simulation_algorithms()),
+            ('logical-steady-state-search', utils.get_logical_stable_state_search_algorithms()),
+            ('logical-trap-space-identification', utils.get_logical_trap_space_search_algorithms()),
         ]
         for id, alg_set in alg_sets:
             alg = list(alg_set)[0]

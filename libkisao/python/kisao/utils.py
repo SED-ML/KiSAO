@@ -19,7 +19,9 @@ from .data_model import (AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POL
                          ID_TAU_LEAPING_ALGORITHM,
                          ID_RULE_BASED_ALGORITHM,
                          ID_FLUX_BALANCE_ALGORITHM,
-                         ID_LOGICAL_ALGORITHM,
+                         ID_LOGICAL_SIMULATION_ALGORITHM,
+                         ID_LOGICAL_STABLE_STATE_SEARCH_ALGORITHM,
+                         ID_LOGICAL_TRAP_SPACE_SEARCH_ALGORITHM,
                          ID_HYBRID_ALGORITHM,
                          TermType,
                          )
@@ -43,7 +45,9 @@ __all__ = [
     'get_sde_algorithms',
     'get_pde_algorithms',
     'get_flux_balance_algorithms',
-    'get_logical_algorithms',
+    'get_logical_simulation_algorithms',
+    'get_logical_stable_state_search_algorithms',
+    'get_logical_trap_space_search_algorithms',
     'get_hybrid_algorithms',
     'get_substitutable_algorithms_for_policy',
     'get_substitutable_algorithms',
@@ -231,15 +235,39 @@ def get_flux_balance_algorithms():
 
 
 @ functools.lru_cache(maxsize=None)
-def get_logical_algorithms():
+def get_logical_simulation_algorithms():
     """ Get the terms for logical simulation algorithms (KISAO_0000448).::
 
-        'logical simulation method'
+        'logical model simulation method'
 
     Returns:
         :obj:`set` of :obj:`pronto.Term`: terms
     """
-    return get_terms_with_characteristics([ID_LOGICAL_ALGORITHM])
+    return get_terms_with_characteristics([ID_LOGICAL_SIMULATION_ALGORITHM])
+
+
+@ functools.lru_cache(maxsize=None)
+def get_logical_stable_state_search_algorithms():
+    """ Get the terms for algorithms for finding the stable states of logical models (KISAO_0000660).::
+
+        'logical model stable state search method'
+
+    Returns:
+        :obj:`set` of :obj:`pronto.Term`: terms
+    """
+    return get_terms_with_characteristics([ID_LOGICAL_STABLE_STATE_SEARCH_ALGORITHM])
+
+
+@ functools.lru_cache(maxsize=None)
+def get_logical_trap_space_search_algorithms():
+    """ Get the terms for algorithms for finding the trap spaces of logical models (KISAO_0000661).::
+
+        'logical model trap space identification method'
+
+    Returns:
+        :obj:`set` of :obj:`pronto.Term`: terms
+    """
+    return get_terms_with_characteristics([ID_LOGICAL_TRAP_SPACE_SEARCH_ALGORITHM])
 
 
 @ functools.lru_cache(maxsize=None)
@@ -280,7 +308,9 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (False, get_tau_leaping_algorithms),
             (False, get_sde_algorithms),
             (False, get_pde_algorithms),
-            (False, get_logical_algorithms),
+            (False, get_logical_simulation_algorithms),
+            (True, get_logical_stable_state_search_algorithms),
+            (True, get_logical_trap_space_search_algorithms),
             (False, get_flux_balance_algorithms),
         ]
         alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
@@ -292,7 +322,9 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, get_tau_leaping_algorithms),
             (True, get_sde_algorithms),
             (True, get_pde_algorithms),
-            (False, get_logical_algorithms),
+            (False, get_logical_simulation_algorithms),
+            (True, get_logical_stable_state_search_algorithms),
+            (True, get_logical_trap_space_search_algorithms),
             (False, get_flux_balance_algorithms),
         ]
         alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
@@ -307,7 +339,9 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
                 exact=True, approximate=False) | get_tau_leaping_algorithms()),
             (True, get_sde_algorithms),
             (True, get_pde_algorithms),
-            (True, get_logical_algorithms),
+            (True, get_logical_simulation_algorithms),
+            (True, get_logical_stable_state_search_algorithms),
+            (True, get_logical_trap_space_search_algorithms),
             # (False, get_flux_balance_algorithms),
         ]
         alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
@@ -320,7 +354,9 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, get_sde_algorithms),
             (True, get_pde_algorithms),
             (True, get_flux_balance_algorithms),
-            (True, get_logical_algorithms),
+            (True, get_logical_simulation_algorithms),
+            (True, get_logical_stable_state_search_algorithms),
+            (True, get_logical_trap_space_search_algorithms),
         ]
         alt_algs = _find_substitutable_algorithms(algorithm, alg_set_funcs)
 
@@ -475,7 +511,9 @@ def get_algorithm_substitution_matrix():
         + natsort.natsorted(get_tau_leaping_algorithms(), key=lambda alg: alg.name)
         + natsort.natsorted(get_sde_algorithms(), key=lambda alg: alg.name)
         + natsort.natsorted(get_pde_algorithms(), key=lambda alg: alg.name)
-        + natsort.natsorted(get_logical_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_logical_simulation_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_logical_stable_state_search_algorithms(), key=lambda alg: alg.name)
+        + natsort.natsorted(get_logical_trap_space_search_algorithms(), key=lambda alg: alg.name)
         + natsort.natsorted(get_flux_balance_algorithms(), key=lambda alg: alg.name)
     )
 
