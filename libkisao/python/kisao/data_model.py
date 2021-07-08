@@ -21,7 +21,9 @@ __all__ = [
     'ID_TAU_LEAPING_ALGORITHM',
     'ID_RULE_BASED_ALGORITHM',
     'ID_FLUX_BALANCE_ALGORITHM',
-    'ID_LOGICAL_ALGORITHM',
+    'ID_LOGICAL_SIMULATION_ALGORITHM',
+    'ID_LOGICAL_STABLE_STATE_SEARCH_ALGORITHM',
+    'ID_LOGICAL_TRAP_SPACE_SEARCH_ALGORITHM',
     'ID_HYBRID_ALGORITHM',
     'TermType',
     'IdDialect',
@@ -43,7 +45,9 @@ ID_GILLESPIE_LIKE_ALGORITHM = 'KISAO_0000241'  # Gillespie-like method
 ID_TAU_LEAPING_ALGORITHM = 'KISAO_0000039'  # tau-leaping method
 ID_RULE_BASED_ALGORITHM = 'KISAO_0000363'  # rule-based simulation method
 ID_FLUX_BALANCE_ALGORITHM = 'KISAO_0000622'  # flux balance method
-ID_LOGICAL_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
+ID_LOGICAL_SIMULATION_ALGORITHM = 'KISAO_0000448'  # logical model simulation method
+ID_LOGICAL_STABLE_STATE_SEARCH_ALGORITHM = 'KISAO_0000660'  # logical model stable state search method
+ID_LOGICAL_TRAP_SPACE_SEARCH_ALGORITHM = 'KISAO_0000661'  # logical model trap space identification method
 ID_HYBRID_ALGORITHM = 'KISAO_0000352'  # hybrid method
 
 

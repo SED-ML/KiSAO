@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.19 (OWL 2)
+- Added algorithms for logical modeling
+  - Sequential simulation
+  - Stable state search
+  - Trap space identification
+
 ## 2.18 (OWL 2)
 - Added parameter for adaptive time steps
 

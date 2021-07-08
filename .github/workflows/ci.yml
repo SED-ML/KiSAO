@@ -270,7 +270,7 @@ jobs:
     needs:
       - test
       - determineIfReleaseNeeded
-    if: false && startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
+    if: startsWith(github.ref, 'refs/tags/') && needs.determineIfReleaseNeeded.outputs.release == '1'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
