@@ -41,6 +41,14 @@ The ontology should be edited using the [Protégé](https://protege.stanford.edu
       - `rdfs:comment` (`language:en`): name of the simulation tool (e.g., `tellurium`)
 5. Save your changes to `kisao.owl`.
 
+## Conventions
+
+Contributions to KiSAO should adhere to the following conventions:
+
+- URIs of terms should follow the pattern `http://www.biomodels.net/kisao/KISAO#KISAO_\d{7,7}`
+- URIs should be assigned sequentially, starting from the greatest id
+- Labels should start with a lowercase letter, except for proper names such as the name of a person (e.g., `Gillespie's Algorithm`)
+
 ## Submitting changes
 
 Below are instructions for submitting changes:
