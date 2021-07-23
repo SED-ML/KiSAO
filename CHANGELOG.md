@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.21 (OWL 2)
+- Corrected ids for terms whose ids begin with `_`
+- Corrected names and synonyms of terms to start with lowercase letters
+- Started guidelines for conventions such as the rules above
+- Added tests
+  - URIs of terms follow the above pattern
+  - URIs of terms are unique
+  - Terms have names
+  - Names start with lower case letters (warning)
+
 ## 2.20 (OWL 2)
 - Generalized label and description of KISAO_0000216
 - Added label for citation for KISAO_0000216
