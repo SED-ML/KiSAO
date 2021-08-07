@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.21</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.22</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -10932,6 +10932,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <rdfs:label xml:lang="en">VODE</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">DVODE</skos:altLabel>
+        <skos:altLabel xml:lang="en">Real-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
         <skos:altLabel xml:lang="en">real-valued variable-coefficient ordinary differential equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
         <skos:definition xml:lang="en">VODE provides implicit Adams method (for non-stiff problems) and a method based on backward differentiation formulas (BDF) (for stiff problems).</skos:definition>
     </owl:Class>
@@ -10988,6 +10989,7 @@ Levenberg first suggested an improvement to the Newton method in order to make i
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/gillespy2</isImplementedIn>
         <rdfs:label xml:lang="en">ZVODE</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1137/0910062</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Complex-valued Variable-coefficient Ordinary Differential Equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
         <skos:altLabel xml:lang="en">complex-valued variable-coefficient ordinary differential equation solver, with fixed-leading-coefficient implementation</skos:altLabel>
         <skos:definition xml:lang="en">ZVODE provides implicit Adams method (for non-stiff problems) and a method based on backward differentiation formulas (BDF) (for stiff problems).</skos:definition>
     </owl:Class>
@@ -12222,6 +12224,7 @@ Global Newton method with error oriented convergence criterion; QR-decomposition
         <rdfs:label xml:lang="en">quadratic MOMA</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.232349399</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">MOMA</skos:altLabel>
+        <skos:altLabel xml:lang="en">Quadratic Minimization of Metabolic Adjustment</skos:altLabel>
         <skos:altLabel xml:lang="en">minimization of metabolic adjustment</skos:altLabel>
         <skos:altLabel xml:lang="en">quadratic minimization of metabolic adjustment</skos:altLabel>
         <skos:definition xml:lang="en">Minimization of metabolic adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. MOMA employs quadratic programming to identify the closest point (in terms of its Euclidean distance) in the permissible flux space of the knockout to the wild-type flux vector by solving the optimization problem
@@ -12311,6 +12314,7 @@ Min sum((fluxAi - fluxBi)^2) + sum(fluxAi)^(fluxMinimizationWeight) + sum(fluxBi
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/optflux</isImplementedIn>
         <rdfs:label xml:lang="en">linear MOMA</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/ng.846</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Linear Minimization of Metabolic Adjustment</skos:altLabel>
         <skos:altLabel xml:lang="en">linear minimization of metabolic adjustment</skos:altLabel>
         <skos:definition xml:lang="en">Linear minimization of metabolic adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. Linear MOMA employs linear programming to identify the closest point (in terms of its L1 norm) in the permissible flux space of the knockout to the wild-type flux vector by solving the optimization problem
 
@@ -12354,6 +12358,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/optflux</isImplementedIn>
         <rdfs:label xml:lang="en">ROOM</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1073/pnas.0406346102</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Regulatory on/off minimization of metabolic flux changes</skos:altLabel>
         <skos:altLabel xml:lang="en">regulatory on/off minimization of metabolic flux changes</skos:altLabel>
         <skos:definition xml:lang="en">Constraint-based algorithm for predicting the metabolic steady state after gene knockouts which aims to minimize the number of significant flux changes (hence on/off) with respect to the wild type.</skos:definition>
     </owl:Class>
@@ -12412,6 +12417,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/maboss</isImplementedIn>
         <rdfs:label xml:lang="en">BKMC</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1186/1752-0509-6-116</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Boolean Kinetic Monte-Carlo</skos:altLabel>
         <skos:altLabel xml:lang="en">Boolean kinetic Monte-Carlo</skos:altLabel>
         <skos:definition xml:lang="en">The Boolean kinetic Monte Carlo method (BKMC) is a natural generalization of the asynchronous Boolean simulation method, with a direct probabilistic interpretation. In the BKMC framework, the dynamics is parameterized by a biological time and the order of update is noisy, which is less strict than priority classes introduced in GINsin. A BKMC model is specified by logical rules as in regular Boolean models but with a more precise information: a numerical rate is added for each transition of each node.</skos:definition>
     </owl:Class>
@@ -12564,6 +12570,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/biouml</isImplementedIn>
         <rdfs:label xml:lang="en">IMEX</rdfs:label>
+        <skos:altLabel xml:lang="en">Implicit-Explicit Runge-Kutta method</skos:altLabel>
         <skos:altLabel xml:lang="en">implicit-explicit Runge-Kutta method</skos:altLabel>
         <skos:definition xml:lang="en">Method for solving stiff and imaginary ODE problems</skos:definition>
     </owl:Class>
@@ -12605,6 +12612,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
         <rdfs:label xml:lang="en">ACB flux sampling method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.1038/s41596-018-0098-2</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">Artificial centering boundary flux sampling method</skos:altLabel>
         <skos:altLabel xml:lang="en">artificial centering boundary flux sampling method</skos:altLabel>
     </owl:Class>
     <owl:Axiom>
@@ -12732,6 +12740,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">MOMA</rdfs:label>
+        <skos:altLabel xml:lang="en">Minimization of Metabolic Adjustment</skos:altLabel>
         <skos:altLabel xml:lang="en">minimization of metabolic adjustment</skos:altLabel>
         <skos:definition xml:lang="en">minimization of metabolic adjustment (MOMA) is an extension of FBA for the prediction of flux distributions in gene knockouts. MOMA identifies the closest point in the permissible flux space of the knockout to the wild-type flux vector by solving an optimization problem.</skos:definition>
     </owl:Class>
@@ -12959,6 +12968,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
         <rdfs:label xml:lang="en">minimum species threshold for continuous approximation</rdfs:label>
+        <skos:altLabel xml:lang="en">Epsilon</skos:altLabel>
         <skos:altLabel xml:lang="en">epsilon</skos:altLabel>
         <skos:definition xml:lang="en">Minimum number of molecules of both reactant and product species required for approximation as a continuous Markov process.</skos:definition>
     </owl:Class>
@@ -12979,6 +12989,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
         <rdfs:label xml:lang="en">minimum reaction rate for continuous approximation</rdfs:label>
+        <skos:altLabel xml:lang="en">Lambda</skos:altLabel>
         <skos:altLabel xml:lang="en">lambda</skos:altLabel>
         <skos:definition xml:lang="en">Minimum reaction rate required for approximation as a continuous Markov process.</skos:definition>
     </owl:Class>
@@ -12999,6 +13010,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
         <rdfs:label xml:lang="en">MSR tolerance</rdfs:label>
+        <skos:altLabel xml:lang="en">Multiple slow reactions tolerance</skos:altLabel>
         <skos:altLabel xml:lang="en">multiple slow reactions tolerance</skos:altLabel>
         <skos:definition xml:lang="en">Maximum allowed effect of executing multiple slow reactions per numerical integration of the SDEs.</skos:definition>
     </owl:Class>
@@ -13019,6 +13031,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">MLB</dc:creator>
         <rdfs:label xml:lang="en">SDE tolerance</rdfs:label>
+        <skos:altLabel xml:lang="en">Maximum allowed value of the drift and diffusion errors.</skos:altLabel>
         <skos:altLabel xml:lang="en">maximum allowed value of the drift and diffusion errors.</skos:altLabel>
         <skos:definition xml:lang="en">Stochastic differential equation tolerance</skos:definition>
     </owl:Class>
@@ -13095,9 +13108,9 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
         <rdfs:label xml:lang="en">hierarchical Fehlberg method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">hODE</skos:altLabel>
         <skos:altLabel xml:lang="en">hierarchical ODE integration method</skos:altLabel>
         <skos:altLabel xml:lang="en">hierarchical ordinary differential equation integration method</skos:altLabel>
-        <skos:altLabel xml:lang="en">hODE</skos:altLabel>
         <skos:definition xml:lang="en">Method for continuous simulation of hierarchically organized models, such as a model of a cellular population where each cell in the population is represented by the same species and reactions.</skos:definition>
     </owl:Class>
     <owl:Axiom>
@@ -13130,8 +13143,9 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/ibiosim</isImplementedIn>
         <rdfs:label xml:lang="en">hierarchical flux balance analysis</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/doi/10.3389/fbioe.2014.00055</rdfs:seeAlso>
-        <skos:altLabel xml:lang="en">hierarchical FBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">Hierarchical FBA</skos:altLabel>
         <skos:altLabel xml:lang="en">hFBA</skos:altLabel>
+        <skos:altLabel xml:lang="en">hierarchical FBA</skos:altLabel>
         <skos:definition xml:lang="en">Method for constraint-based simulation of hierarchically organized models, such as a model of a cellular population where each cell in the population is represented by the same species and reactions.</skos:definition>
     </owl:Class>
     <owl:Axiom>
@@ -13933,8 +13947,8 @@ This method only involves evaluations of f. This method is suitable for non-stif
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
-        <rdfs:label xml:lang="en">rate of a process in extensive/absolute units such as reactions per second.</rdfs:label>
         <rdfs:label xml:lang="en">amount rate</rdfs:label>
+        <rdfs:label xml:lang="en">rate of a process in extensive/absolute units such as reactions per second.</rdfs:label>
     </owl:Class>
     
 
@@ -14094,6 +14108,337 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <rdfs:label xml:lang="en">BDD logical model trap space identification method</rdfs:label>
         <skos:altLabel xml:lang="en">Binary Decision Diagram logical model trap space identification method</skos:altLabel>
         <skos:definition xml:lang="en">Method for determining the trap spaces of a regulatory graph using a Binary Decision Diagram (BDD).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000664 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000664">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-07</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</isImplementedIn>
+        <rdfs:label xml:lang="en">Second order backward implicit product Euler scheme</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1137/1.9781611970852</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Method for solving Volterra equations.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000664"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000664"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1137/1.9781611970852</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter Linz. Analytical and Numerical Methods for Volterra Equations. 1985.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000665 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000665">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-07</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</isImplementedIn>
+        <rdfs:label xml:lang="en">Maximum number of iterations for root finding</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000665"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000666 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000666">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-07</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</isImplementedIn>
+        <rdfs:label xml:lang="en">Jacobian epsilon</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000666"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000667 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000667">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000242"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-07</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</isImplementedIn>
+        <rdfs:label xml:lang="en">Memory size</rdfs:label>
+        <skos:definition xml:lang="en">Maximum number of points to store in memory, such as in the second order backward implicit product Euler scheme.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000667"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000800 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000800">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">systems property</rdfs:label>
+        <skos:definition xml:lang="en">A systems-level property of an entire model or simulation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000801 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000801">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">concentration control coefficient matrix (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled concentration control coefficient matrix. The dimensions are species by reactions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000802 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000802">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">control coefficient (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">A scaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000803 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000803">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">control coefficient (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">An unscaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000804 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000804">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">elasticity matrix (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000805 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000805">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">elasticity coefficient (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">An unscaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000806 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000806">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">elasticity matrix (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">The scaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000807 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000807">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">elasticity coefficient (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">A scaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000808 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000808">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">reduced stoichiometry matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000809 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000809">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">reduced Jacobian matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced Jacobian matrix. The dimensions are species by species.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000810 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000810">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">reduced eigenvalue matrix</rdfs:label>
+        <skos:definition xml:lang="en">The reduced eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000811 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000811">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">stoichiometry matrix</rdfs:label>
+        <skos:altLabel xml:lang="en">full stochiometry matrix</skos:altLabel>
+        <skos:definition xml:lang="en">The (full) stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000812 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000812">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Jacobian matrix</rdfs:label>
+        <skos:altLabel xml:lang="en">full Jacobian matrix</skos:altLabel>
+        <skos:definition xml:lang="en">The (full) Jacobian matrix. The dimensions are species by species.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000813 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000813">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">Eigenvalue matrix</rdfs:label>
+        <skos:altLabel xml:lang="en">full eigenvalue matrix</skos:altLabel>
+        <skos:definition xml:lang="en">The (full) eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000814 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000814">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">flux control coefficient matrix (unscaled)</rdfs:label>
+        <skos:definition xml:lang="en">The unscaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000815 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000815">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
+        <dc:creator xml:lang="en">LPS</dc:creator>
+        <rdfs:label xml:lang="en">flux control coefficient matrix (scaled)</rdfs:label>
+        <skos:definition xml:lang="en">The scaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
     </owl:Class>
     
 
@@ -14393,256 +14738,6 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:creator>LPS</dc:creator>
         <rdfs:label xml:lang="en">temperature</rdfs:label>
         <skos:definition>The intensive quantity temperature.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000800 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000800">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label xml:lang="en">systems property</rdfs:label>
-        <skos:definition xml:lang="en">A systems-level property of an entire model or simulation.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000801 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000801">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">concentration control coefficient matrix (unscaled)</rdfs:label>
-        <skos:definition xml:lang="en">The unscaled concentration control coefficient matrix. The dimensions are species by reactions.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000802 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000802">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">control coefficient (scaled)</rdfs:label>
-        <skos:definition xml:lang="en">A scaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000803 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000803">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">control coefficient (unscaled)</rdfs:label>
-        <skos:definition xml:lang="en">An unscaled control coefficient of any dependent element (such as a reaction or a floating species) with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000804 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000804">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">elasticity matrix (unscaled)</rdfs:label>
-        <skos:definition xml:lang="en">The unscaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000805 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000805">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">elasticity coefficient (unscaled)</rdfs:label>
-        <skos:definition xml:lang="en">An unscaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000806 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000806">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">elasticity matrix (scaled)</rdfs:label>
-        <skos:definition xml:lang="en">The scaled elasticity matrix. The dimensions are reactions by species.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000807 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000807">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">elasticity coefficient (scaled)</rdfs:label>
-        <skos:definition xml:lang="en">A scaled elasticity coefficient of any reaction with respect to an independent element (such as a global parameter or boundary species).</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000808 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000808">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">reduced stoichiometry matrix</rdfs:label>
-        <skos:definition xml:lang="en">The reduced stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000809 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000809">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">reduced Jacobian matrix</rdfs:label>
-        <skos:definition xml:lang="en">The reduced Jacobian matrix. The dimensions are species by species.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000810 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000810">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">reduced eigenvalue matrix</rdfs:label>
-        <skos:definition xml:lang="en">The reduced eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000811 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000811">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">stoichiometry matrix</rdfs:label>
-        <skos:altLabel xml:lang="en">full stochiometry matrix</skos:altLabel>
-        <skos:definition xml:lang="en">The (full) stoichiometry matrix. The dimensions are species by reactions.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000812 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000812">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">Jacobian matrix</rdfs:label>
-        <skos:altLabel xml:lang="en">full Jacobian matrix</skos:altLabel>
-        <skos:definition xml:lang="en">The (full) Jacobian matrix. The dimensions are species by species.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000813 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000813">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">Eigenvalue matrix</rdfs:label>
-        <skos:altLabel xml:lang="en">full eigenvalue matrix</skos:altLabel>
-        <skos:definition xml:lang="en">The (full) eigenvalue matrix of a model. The dimensions are species by two, where the first column is the real part of the eigenvalues, and the second column is the imaginary part of the eigenvalues.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000814 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000814">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000635"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">flux control coefficient matrix (unscaled)</rdfs:label>
-        <skos:definition xml:lang="en">The unscaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000815 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000815">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000634"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">06-03-2021</dc:created>
-        <dc:creator xml:lang="en">LPS</dc:creator>
-        <rdfs:label xml:lang="en">flux control coefficient matrix (scaled)</rdfs:label>
-        <skos:definition xml:lang="en">The scaled flux control coefficient matrix. The dimensions are reactions by reactions.</skos:definition>
     </owl:Class>
     <rdf:Description>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>

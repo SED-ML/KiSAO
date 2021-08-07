@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.22 (OWL 2)
+- Added algorithms and paramters for XPP
+  - Maximum number of iterations for root finding
+  - Jacobian epsilon
+  - Second order backward method for Volterra equations
+  - Second order backward method for Volterra equations memory size
+
 ## 2.21 (OWL 2)
 - Corrected ids for terms whose ids begin with `_`
 - Corrected names and synonyms of terms to start with lowercase letters
