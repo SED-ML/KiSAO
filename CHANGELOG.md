@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.23 (OWL 2)
+- Added algorithms and paramters for XPP
+  - Gear-like method for stiff ODE systems
+
 ## 2.22 (OWL 2)
 - Added algorithms and paramters for XPP
   - Maximum number of iterations for root finding
