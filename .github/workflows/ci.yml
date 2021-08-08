@@ -6,6 +6,7 @@ on:
 jobs:
   test:
     name: Run unit tests on the ontology
+    if: "!(github.event_name == 'pull_request') && github.event.pusher.email == 'bot@sed-ml.org')"
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
