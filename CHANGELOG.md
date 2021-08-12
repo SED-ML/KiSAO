@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.25 (OWL 2)
+- Added algorithm parameters for libRoadRunner/CVODE
+
 ## 2.24 (OWL 2)
 - Added algorithm for Resource Balance Analysis
 - Aligned Identifiers.org URIs to http:// rather than https://
