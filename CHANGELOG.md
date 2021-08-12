@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.24 (OWL 2)
+- Added algorithm for Resource Balance Analysis
+- Aligned Identifiers.org URIs to http:// rather than https://
+
 ## 2.23 (OWL 2)
 - Added algorithms and paramters for XPP
   - Gear-like method for stiff ODE systems
