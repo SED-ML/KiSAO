@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.25</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.26</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -14116,18 +14116,25 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000664">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <protege:defaultLanguage xml:lang="en">Method for solving Volterra equations. Uses the trapezoidal rule.</protege:defaultLanguage>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-07</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</isImplementedIn>
         <rdfs:label xml:lang="en">Second order backward implicit product Euler scheme</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1093/comjnl/12.4.393</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1137/1.9781611970852</rdfs:seeAlso>
-        <skos:definition xml:lang="en">Method for solving Volterra equations.</skos:definition>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000664"/>
         <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000664"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1093/comjnl/12.4.393</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Peter Linz. Numerical methods for Volterra integral equations of the first kind. Computer Journal 12 (4): 393–397 (1969).</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000664"/>
@@ -14196,13 +14203,15 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000668 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000668">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000281"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000033"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-08</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</isImplementedIn>
-        <rdfs:label xml:lang="en">Gear-like method</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">Gear-like method for solving stiff ODE systems.</rdfs:seeAlso>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.math.pitt.edu/~bard/xpp/help/xppnumerics.html</rdfs:seeAlso>
+        <rdfs:label xml:lang="en">Numerical Recipes in C &quot;stiff&quot; Rosenbrock method</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">Implementation of the Kaps and Rentrop using the parameters recommended by Shampine and Watts.</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">Shampine, L.F., and Watts, H.A. 1977, in Mathematical Software III, J.R. Rice, ed. (New York: Academic Press), pp. 257–275; 1979, Applied Mathematics and Computation, vol. 5, pp. 93–121.</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/10.5555/148286</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">stiff</skos:altLabel>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000668"/>
@@ -14213,8 +14222,8 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000668"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.math.pitt.edu/~bard/xpp/help/xppnumerics.html</owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">XPP Numerics</rdfs:comment>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/10.5555/148286</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">William H. Press, Saul A. Teukolsky, William T. Vetterling &amp; Brian P. Flannery. Numerical Recipes in C. The Art of Scientific Computing, 2nd Edition, 1992. Chapter 16. Pages 739-741.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -14279,6 +14288,33 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000672 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000672">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000321"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-18</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</isImplementedIn>
+        <rdfs:label xml:lang="en">Numerical Recipes in C &quot;quality-controlled Runge-Kutta&quot; method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/10.5555/148286</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">rkqs</skos:altLabel>
+        <skos:definition xml:lang="en">Cash-Karp method with step size adjustment.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000672"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/xpp</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">XPP</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000672"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/10.5555/148286</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">William H. Press, Saul A. Teukolsky, William T. Vetterling &amp; Brian P. Flannery. Numerical Recipes in C. The Art of Scientific Computing, 2nd Edition, 1992. Chapter 16. Pages 719.</rdfs:comment>
     </owl:Axiom>
     
 

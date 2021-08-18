@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.26 (OWL 2)
+- Added RKQS method in XPP
+- Added documentation for XPP methods
+
 ## 2.25 (OWL 2)
 - Added algorithm parameters for libRoadRunner/CVODE
 

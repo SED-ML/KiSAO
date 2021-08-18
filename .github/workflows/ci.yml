@@ -302,7 +302,7 @@ jobs:
       - name: Submit to BioPortal
         run: |
           curl -X POST \
-            -H "Authorization: apikey token=${API_KEY}" \
+            -H "Authorization: apikey token=${{ secrets.BIOPORTAL_API_KEY }}" \
             -H "Content-Type: application/json" \
             -H "Accept: application/json" \
             -d @.github/workflows/BioPortal-submission-version.json \
