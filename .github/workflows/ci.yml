@@ -6,7 +6,7 @@ on:
 jobs:
   test:
     name: Run unit tests on the ontology
-    if: "!(github.event_name == 'push' && github.event.pusher.email == 'bot@sed-ml.org')"
+    if: "!contains(github.event.head_commit.message, '[Skip CI]')"
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
@@ -212,7 +212,7 @@ jobs:
           set +e
           git stash pop
           git add docs
-          git commit -m "Updating compiled documentation"
+          git commit -m "Updated compiled documentation [Skip CI]"
           git checkout .
           git clean -f -d
           if [[ $? = 0 ]]; then

@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2.26 (OWL 2)
+- Added algorithm parameters for Gillespie and NLEQ2 in RoadRunner
+
+## 2.26 (OWL 2)
 - Added RKQS method in XPP
 - Added documentation for XPP methods
 
