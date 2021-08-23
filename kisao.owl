@@ -19,7 +19,7 @@
         <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.26</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.27</owl:versionInfo>
         <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
@@ -14315,6 +14315,208 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/10.5555/148286</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">William H. Press, Saul A. Teukolsky, William T. Vetterling &amp; Brian P. Flannery. Numerical Recipes in C. The Art of Scientific Computing, 2nd Edition, 1992. Chapter 16. Pages 719.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000673 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000673">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">skip reactions that produce negative species amounts</rdfs:label>
+        <skos:definition xml:lang="en">Parameter which instructs a simulation tool to skip reactions that would result in negative amounts of species.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000673"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000674 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000674">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">presimulate</rdfs:label>
+        <skos:definition xml:lang="en">Whether a model should be presimulated prior to analysis.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000674"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000675 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000675">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">Broyden method</rdfs:label>
+        <skos:definition xml:lang="en">Family of Quasi-Newton methods for finding roots in k variables originally described by C. G. Broyden in 1965.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000675"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000676 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000676">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">degree of linearity</rdfs:label>
+        <skos:definition xml:lang="en">The degree of linearity of a system.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000676"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000677 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000677">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000415"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">maximum number of steps for presimulation</rdfs:label>
+        <skos:definition xml:lang="en">Maximum number of steps to take in presimulating a model prior to analysis.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000677"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000678 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000678">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000415"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">maximum number of steps for approximation</rdfs:label>
+        <skos:definition xml:lang="en">Maximum number of steps to take in approximating an analysis.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000678"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000679 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000679">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000681"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">maximum time for approximation</rdfs:label>
+        <skos:definition xml:lang="en">Maximum amount of time to spend approximating an analysis.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000679"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000680 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000680">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000201"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">duration</rdfs:label>
+        <skos:definition xml:lang="en">Length of time to simulate.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000680"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000681 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000681">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000244"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">maximum time</rdfs:label>
+        <skos:definition xml:lang="en">Maximum amount of wall time for an operation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000682 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000682">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000243"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">allow approximation</rdfs:label>
+        <skos:definition xml:lang="en">Whether to find an approximate solution if an exact solution could not be found.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000682"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000683 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000683">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000209"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-23</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</isImplementedIn>
+        <rdfs:label xml:lang="en">relative tolerance for approximation</rdfs:label>
+        <skos:definition xml:lang="en">Relatative tolerance for an alternative approximate solution to an exact solution which could not be found.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000683"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/tellurium</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">tellurium</rdfs:comment>
     </owl:Axiom>
     
 
