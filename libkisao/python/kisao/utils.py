@@ -488,11 +488,20 @@ def get_preferred_substitute_algorithm_by_ids(algorithm, alt_algorithms,
     Returns:
         :obj:`str`: KiSAO id of the preferred algorithm to execute (e.g., ``KISAO_0000088``)
     """
-    kisao = Kisao()
-    algorithm_term = kisao.get_term(algorithm)
-    alt_algorithm_terms = [kisao.get_term(alt_algorithm) for alt_algorithm in alt_algorithms]
-    alt_algorithm = get_preferred_substitute_algorithm(algorithm_term, alt_algorithm_terms, substitution_policy=substitution_policy)
-    return kisao.get_term_id(alt_algorithm, dialect=id_dialect)
+    if (
+        ALGORITHM_SUBSTITUTION_POLICY_LEVELS[substitution_policy]
+        <= ALGORITHM_SUBSTITUTION_POLICY_LEVELS[AlgorithmSubstitutionPolicy.SAME_METHOD]
+    ):
+        if algorithm in alt_algorithms:
+            return algorithm
+        else:
+            raise AlgorithmCannotBeSubstitutedException("Algorithms cannot be substituted at policy '{}'.".format(substitution_policy.name))
+    else:
+        kisao = Kisao()
+        algorithm_term = kisao.get_term(algorithm)
+        alt_algorithm_terms = [kisao.get_term(alt_algorithm) for alt_algorithm in alt_algorithms]
+        alt_algorithm = get_preferred_substitute_algorithm(algorithm_term, alt_algorithm_terms, substitution_policy=substitution_policy)
+        return kisao.get_term_id(alt_algorithm, dialect=id_dialect)
 
 
 def get_algorithm_substitution_matrix():

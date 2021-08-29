@@ -1,6 +1,9 @@
 # Changelog
 
-## 2.26 (OWL 2)
+## 2.28 (OWL 2)
+- Improved performance of algorithm substitution in Python library
+
+## 2.27 (OWL 2)
 - Added algorithm parameters for Gillespie and NLEQ2 in RoadRunner
 
 ## 2.26 (OWL 2)

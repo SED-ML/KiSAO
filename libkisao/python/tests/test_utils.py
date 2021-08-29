@@ -370,6 +370,20 @@ class UtilsTestCase(unittest.TestCase):
                 id_dialect=IdDialect.integer),
             19)
 
+        self.assertEqual(
+            utils.get_preferred_substitute_algorithm_by_ids(
+                19,
+                [19, 560, 30],
+                id_dialect=IdDialect.integer,
+                substitution_policy=AlgorithmSubstitutionPolicy.NONE),
+            19)
+        with self.assertRaises(AlgorithmCannotBeSubstitutedException):
+            utils.get_preferred_substitute_algorithm_by_ids(
+                88,
+                [19, 560, 30],
+                id_dialect=IdDialect.integer,
+                substitution_policy=AlgorithmSubstitutionPolicy.NONE)
+
     def test_get_algorithm_substitution_matrix(self):
         fid, filename = tempfile.mkstemp()
         os.close(fid)
