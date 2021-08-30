@@ -344,6 +344,9 @@ class UtilsTestCase(unittest.TestCase):
             self.assertEqual(utils.get_preferred_substitute_algorithm(lsoda, [cvode, lsoda_lsodar_hybrid, euler_method]),
                              cvode)
         with self.assertRaises(AlgorithmCannotBeSubstitutedException):
+            self.assertEqual(utils.get_preferred_substitute_algorithm(lsoda, [cvode], substitution_policy=AlgorithmSubstitutionPolicy.SAME_METHOD),
+                             cvode)
+        with self.assertRaises(AlgorithmCannotBeSubstitutedException):
             utils.get_preferred_substitute_algorithm(lsoda, [])
 
         self.assertEqual(
