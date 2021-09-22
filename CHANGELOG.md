@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.29 (OWL 2)
+- Added term for number of simulation steps per simulation output needed by BioNetGen
+
 ## 2.28 (OWL 2)
 - Improved performance of algorithm substitution in Python library
 
