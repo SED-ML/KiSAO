@@ -48,6 +48,7 @@ Contributions to KiSAO should adhere to the following conventions:
 - URIs of terms should follow the pattern `http://www.biomodels.net/kisao/KISAO#KISAO_\d{7,7}`
 - URIs should be assigned sequentially, starting from the greatest id
 - Labels should start with a lowercase letter, except for proper names such as the name of a person (e.g., `Gillespie's Algorithm`)
+- Labels should not contain special characters or brackets
 
 ## Submitting changes
 
