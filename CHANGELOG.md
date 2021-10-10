@@ -1,32 +1,33 @@
 # Changelog
+
 ## 2.30 (OWL 2)
 - Added and unified aggregation functions for SED-ML L1V4
-  - `maximum ignoring NaN` (KISAO_0000828)
-  - `minimum ignoring NaN` (KISAO_0000829
-  - `mean ignoring NaN` (KISAO_0000825)
-  - `standard deviation ignoring NaN` (KISAO_0000826)
-  - `standard error ignoring NaN` (KISAO_0000827)
-  - `maximum` (KISAO_0000830)
-  - `minimum` (KISAO_0000840)
-  - `mean` (KISAO_0000841)
-  - `standard deviation` (KISAO_0000842)
-  - `standard error`  (KISAO_0000843)
-  - `sum ignoring NaN` (KISAO_0000844)
-  - `sum` (KISAO_0000845) 
-  - `product ignoring NaN` (KISAO_0000846)
-  - `product` (KISAO_0000847)
-  - `cumulative sum` (KISAO_0000848)
-  - `cumulative sum  ignoring NaN` (KISAO_0000849)
-  - `cumulative product ignoring NaN` (KISAO_0000850)
-  - `cumulative product` (KISAO_0000851)
-  - `count ignoring NaN` (KISAO_0000852): number of non-zero elements, ignoring NaN entries
-  - `count` (KISAO_0000853): number of non-zero elements, ignoring NaN entries
-  - `length ignoring NaN` (KISAO_0000854): number of elements, ignoring NaN entries
-  - `length` (KISAO_0000855): number of elements, ignoring NaN entries
-  - `median ignoring NaN` (KISAO_0000856)
-  - `median` (KISAO_0000857)
-  - `variance ignoring NaN` (KISAO_0000858)
-  - `variance` (KISAO_0000859)
+  - maximum ignoring NaN (`KISAO_0000828`)
+  - minimum ignoring NaN (`KISAO_0000829`)
+  - mean ignoring NaN (`KISAO_0000825`)
+  - standard deviation ignoring NaN (`KISAO_0000826`)
+  - standard error ignoring NaN (`KISAO_0000827`)
+  - maximum (`KISAO_0000830`)
+  - minimum (`KISAO_0000840`)
+  - mean (`KISAO_0000841`)
+  - standard deviation (`KISAO_0000842`)
+  - standard error  (`KISAO_0000843`)
+  - sum ignoring NaN (`KISAO_0000844`)
+  - sum (`KISAO_0000845`) 
+  - product ignoring NaN (`KISAO_0000846`)
+  - product (`KISAO_0000847`)
+  - cumulative sum (`KISAO_0000848`)
+  - cumulative sum  ignoring NaN (`KISAO_0000849`)
+  - cumulative product ignoring NaN (`KISAO_0000850`)
+  - cumulative product (`KISAO_0000851`)
+  - count ignoring NaN (`KISAO_0000852`): number of non-zero elements, ignoring NaN entries
+  - count (`KISAO_0000853`): number of non-zero elements, ignoring NaN entries
+  - length ignoring NaN (`KISAO_0000854`): number of elements, ignoring NaN entries
+  - length (`KISAO_0000855`): number of elements, ignoring NaN entries
+  - median ignoring NaN (`KISAO_0000856`)
+  - median (`KISAO_0000857`)
+  - variance ignoring NaN (`KISAO_0000858`)
+  - varianc (`KISAO_0000859`)
 
 ## 2.29 (OWL 2)
 - Added term for number of simulation steps per simulation output needed by BioNetGen
