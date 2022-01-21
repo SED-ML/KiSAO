@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.31 (OWL 2)
+- Added algorithms and characteristics for attractor methods in mpbn
+
 ## 2.30 (OWL 2)
 - Added and unified aggregation functions for SED-ML L1V4
   - maximum ignoring NaN (`KISAO_0000828`)
