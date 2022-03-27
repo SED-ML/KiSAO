@@ -1,8 +1,8 @@
 # Changelog
 
 ## 2.31 (OWL 2)
-- Added concepts for eQuilibrator
-- Added top-level algorithm concept for network optimization methods and nested the eQuilibrator methods, flux balance methods, and resource balance analysis under this
+- Added concepts for Metabolic Pathway Analysis
+- Added top-level algorithm concept for network optimization methods and nested the Metabolic Pathway Analysis methods, flux balance methods, and resource balance analysis under this
 
 ## 2.30 (OWL 2)
 - Added and unified aggregation functions for SED-ML L1V4

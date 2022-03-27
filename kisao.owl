@@ -14564,11 +14564,18 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:creator xml:lang="en">EN</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">WL</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</isImplementedIn>
         <rdfs:label xml:lang="en">Enzyme Cost Minimization</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1005167</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">ECM</skos:altLabel>
-        <skos:definition xml:lang="en">Enzyme Cost Minimization (ECM) is a scalable method for computing enzyme amounts that support a given metabolic flux at a minimal protein cost. ECM is a convex optimization problem that can be solved with local optimizers.</skos:definition>
+        <skos:definition xml:lang="en">For a given metabolic network model, the Enzyme Cost Minimization method determines plausible metabolite and enzyme concentrations (which determine thermodynamic forces and enzyme catalytic rates). Fluxes, enzyme kinetic constants, admissible metabolite concentration ranges, and enzyme cost weights (e.g. enzyme molecular masses) are given as input data. The method applies the principle that high enzyme (or enzyme plus metabolite) concentrations must be avoided, and maximizes a weighted sum of enzyme and  metabolite concentrations.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000686"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Metabolic Pathway Analysis</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000686"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
@@ -14586,13 +14593,18 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:creator xml:lang="en">EN</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">WL</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</isImplementedIn>
         <rdfs:label xml:lang="en">Max-min Driving Force method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1003483</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">MDF</skos:altLabel>
-        <skos:definition xml:lang="en">The Max-min Driving Force (MDF) is a single thermodynamically-derived metric which enables objective ranking of pathways by the degree to which their flux is constrained by low thermodynamic driving force.
-
-The MDF method chooses metabolic concentration profiles that ensure sufficient driving forces, thus keeping reactions distant from chemical equilibrium.</skos:definition>
+        <skos:definition xml:lang="en">For a given metabolic network model, the MDF method determines plausible metabolite concentrations and thermodynamic forces. Flux directions, equilibrium constants (or equivalently, standard Gibbs free energies of reactions) and admissible metabolite concentration ranges are given as input data. The method applies the principle that low thermodynamic forces must be avoided, and maximizes the minimum thermodynamic force across the entire network.</skos:definition>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000687"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Metabolic Pathway Analysis</rdfs:comment>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000687"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
