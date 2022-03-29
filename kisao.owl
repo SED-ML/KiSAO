@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.biomodels.net/kisao/KISAO#"
      xml:base="http://www.biomodels.net/kisao/KISAO"
-     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:kisao="http://www.biomodels.net/kisao/KISAO#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/terms/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:dc="http://purl.org/dc/terms/">
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:kisao="http://www.biomodels.net/kisao/KISAO#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://www.biomodels.net/kisao/KISAO#">
-        <dc:rights>Artistic License 2.0</dc:rights>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
-        <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.30</owl:versionInfo>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
         <protege:defaultLanguage>en</protege:defaultLanguage>
-        <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
+        <dc:rights>Artistic License 2.0</dc:rights>
         <rdfs:comment xml:lang="en">This is a core version which contains all but deprecated classes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kinetic Simulation Algorithm Ontology (KiSAO)</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://co.mbine.org/standards/kisao</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/22027554</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.31</owl:versionInfo>
+        <skos:definition xml:lang="en">The Kinetic Simulation Algorithm Ontology (KiSAO) classifies algorithms available for the simulation and analysis of models in biology, and their characteristics and the parameters required for their use.</skos:definition>
     </owl:Ontology>
     
 
@@ -8073,7 +8073,6 @@ DASPK is written in Fortran.</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000407">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
@@ -9306,6 +9305,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000689"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-23</dc:created>
@@ -12593,6 +12598,7 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000588">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -13457,7 +13463,13 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000622 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000622">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021--04-27</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -14232,6 +14244,13 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000669">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000692"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-12</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/rbapy</isImplementedIn>
@@ -14537,6 +14556,187 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/bionetgen</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">BioNetgen</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000685 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000685">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <rdfs:label xml:lang="en">biological state optimization method</rdfs:label>
+        <skos:definition xml:lang="en">A method for computing the optimal state of a biological system accordion to a particular objective.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000686 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000686">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</isImplementedIn>
+        <rdfs:label xml:lang="en">Enzyme Cost Minimization</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1005167</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">ECM</skos:altLabel>
+        <skos:definition xml:lang="en">For a given metabolic network model, the Enzyme Cost Minimization method determines plausible metabolite and enzyme concentrations (which determine thermodynamic forces and enzyme catalytic rates). Fluxes, enzyme kinetic constants, admissible metabolite concentration ranges, and enzyme cost weights (e.g. enzyme molecular masses) are given as input data. The method applies the principle that high enzyme (or enzyme plus metabolite) concentrations must be avoided, and maximizes a weighted sum of enzyme and  metabolite concentrations.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000686"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Metabolic Pathway Analysis</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000686"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1005167</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Elad Noor, Avi Flamholz, Arren Bar-Even, Dan Davidi, Ron Milo &amp; Wolfram Liebermeister. The Protein Cost of Metabolic Fluxes: Prediction from Enzymatic Rate Laws and Cost Minimization. PLoS Comput Biol 12 (11): e1005167 (2016).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000687 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000687">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</isImplementedIn>
+        <rdfs:label xml:lang="en">Max-min Driving Force method</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1003483</rdfs:seeAlso>
+        <skos:altLabel xml:lang="en">MDF</skos:altLabel>
+        <skos:definition xml:lang="en">For a given metabolic network model, the MDF method determines plausible metabolite concentrations and thermodynamic forces. Flux directions, equilibrium constants (or equivalently, standard Gibbs free energies of reactions) and admissible metabolite concentration ranges are given as input data. The method applies the principle that low thermodynamic forces must be avoided, and maximizes the minimum thermodynamic force across the entire network.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000687"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gitlab.com/equilibrator/metabolic-pathway-analysis</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Metabolic Pathway Analysis</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000687"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1003483</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Elad Noor, Arren Bar-Even, Avi Flamholz, Ed Reznik, Wolfram Liebermeister &amp; Ron Milo. Pathway thermodynamics highlights kinetic obstacles in central metabolism. PLOS Computational Biology 10(2): e1003483 (2014).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000688 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000688">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000097"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">type of system described</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000689 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000689">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000688"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">mathematical system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000690 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000690">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000688"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">biological system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000691 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000691">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">metabolic system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000692 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000692">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">cellular system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000693 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000693">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">biochemical system</rdfs:label>
+    </owl:Class>
     
 
 
@@ -14960,206 +15160,6 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <skos:definition xml:lang="en">The maximum of a set of values. If the values contain NaN the maximum is NaN.</skos:definition>
     </owl:Class>
     
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000840 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000840">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">minimum</rdfs:label>
-        <skos:definition xml:lang="en">The minimum of a set of values. If the values contain NaN the minimum is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000841 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000841">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">mean</rdfs:label>
-        <skos:definition xml:lang="en">The mean of a set of values. If the values contain NaN the mean is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000842 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000842">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">standard deviation</rdfs:label>
-        <skos:definition xml:lang="en">The standard deviation of a set of values. If the values contain NaN the standard deviation is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000843 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000843">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">standard error</rdfs:label>
-        <skos:definition xml:lang="en">The standard error of a set of values. If the values contain NaN the standard deviation is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000844 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000844">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">sum ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The sum of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000845 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000845">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">sum</rdfs:label>
-        <skos:definition xml:lang="en">The sum of a set of values. If the values contain NaN the sum is NaN.</skos:definition>
-    </owl:Class>
-
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000846 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000846">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">product ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The product of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000847 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000847">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">product</rdfs:label>
-        <skos:definition xml:lang="en">The product of a set of values. If the values contain NaN the product is NaN.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000848 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000848">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">cumulative sum ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The cumulative sum of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000849 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000849">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">cumulative sum</rdfs:label>
-        <skos:definition xml:lang="en">The cumulative sum of a set of values. If the values contain NaN the cumulative sum is NaN.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000850 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000850">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">cumulative product ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The cumulative product of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000851 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000851">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">cumulative product</rdfs:label>
-        <skos:definition xml:lang="en">The cumulative product of a set of values. If the values contain NaN the cumulative product is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000852 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000852">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">count ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The number of non-zero elements of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000853 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000853">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">count</rdfs:label>
-        <skos:definition xml:lang="en">The number of non-zero elements of a set of values. If the values contain NaN the count is NaN.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000854 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000854">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">length ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The number of elements of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000855 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000855">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">length</rdfs:label>
-        <skos:definition xml:lang="en">The number of elements of a set of values.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000856 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000856">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">median ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The median of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000857 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000857">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">median</rdfs:label>
-        <skos:definition xml:lang="en">The median of a set of values. If the values contain NaN the median is NaN.</skos:definition>
-    </owl:Class>
-    
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000858 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000858">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">variance ignoring NaN</rdfs:label>
-        <skos:definition xml:lang="en">The variance of a set of values, ignoring Nan entries.</skos:definition>
-    </owl:Class>
-
-    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000859 -->
-
-    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000859">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
-        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
-        <dc:creator xml:lang="en">MK</dc:creator>
-        <rdfs:label xml:lang="en">variance</rdfs:label>
-        <skos:definition xml:lang="en">The variance of a set of values. If the values contain NaN the variance is NaN.</skos:definition>
-    </owl:Class>
 
 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000831 -->
@@ -15172,6 +15172,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <skos:definition xml:lang="en">A variable of a model or simulation.</skos:definition>
     </owl:Class>
     
+
 
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000832 -->
 
@@ -15298,6 +15299,247 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <skos:definition>The intensive quantity temperature.</skos:definition>
     </owl:Class>
     
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000840 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000840">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">minimum</rdfs:label>
+        <skos:definition xml:lang="en">The minimum of a set of values. If the values contain NaN the minimum is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000841 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000841">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">mean</rdfs:label>
+        <skos:definition xml:lang="en">The mean of a set of values. If the values contain NaN the mean is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000842 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000842">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">standard deviation</rdfs:label>
+        <skos:definition xml:lang="en">The standard deviation of a set of values. If the values contain NaN the standard deviation is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000843 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000843">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">standard error</rdfs:label>
+        <skos:definition xml:lang="en">The standard error of a set of values. If the values contain NaN the standard deviation is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000844 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000844">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">sum ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The sum of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000845 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000845">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">sum</rdfs:label>
+        <skos:definition xml:lang="en">The sum of a set of values. If the values contain NaN the sum is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000846 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000846">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">product ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The product of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000847 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000847">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">product</rdfs:label>
+        <skos:definition xml:lang="en">The product of a set of values. If the values contain NaN the product is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000848 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000848">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">cumulative sum ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The cumulative sum of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000849 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000849">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">cumulative sum</rdfs:label>
+        <skos:definition xml:lang="en">The cumulative sum of a set of values. If the values contain NaN the cumulative sum is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000850 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000850">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">cumulative product ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The cumulative product of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000851 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000851">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">cumulative product</rdfs:label>
+        <skos:definition xml:lang="en">The cumulative product of a set of values. If the values contain NaN the cumulative product is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000852 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000852">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">count ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The number of non-zero elements of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000853 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000853">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">count</rdfs:label>
+        <skos:definition xml:lang="en">The number of non-zero elements of a set of values. If the values contain NaN the count is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000854 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000854">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">length ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The number of elements of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000855 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000855">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">length</rdfs:label>
+        <skos:definition xml:lang="en">The number of elements of a set of values.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000856 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000856">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">median ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The median of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000857 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000857">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">median</rdfs:label>
+        <skos:definition xml:lang="en">The median of a set of values. If the values contain NaN the median is NaN.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000858 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000858">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">variance ignoring NaN</rdfs:label>
+        <skos:definition xml:lang="en">The variance of a set of values, ignoring Nan entries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000859 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000859">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000824"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-10-09</dc:created>
+        <dc:creator xml:lang="en">MK</dc:creator>
+        <rdfs:label xml:lang="en">variance</rdfs:label>
+        <skos:definition xml:lang="en">The variance of a set of values. If the values contain NaN the variance is NaN.</skos:definition>
+    </owl:Class>
+    
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -16091,5 +16333,5 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
