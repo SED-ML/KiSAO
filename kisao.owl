@@ -9307,6 +9307,12 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000689"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-23</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -13458,6 +13464,12 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000622">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021--04-27</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -14233,6 +14245,12 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000669">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000692"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-12</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/rbapy</isImplementedIn>
@@ -14545,13 +14563,19 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000685">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
         <dc:creator xml:lang="en">EN</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <dc:creator xml:lang="en">WL</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label xml:lang="en">network optimization method</rdfs:label>
-        <skos:definition xml:lang="en">A method for computing the optimal configuration of a network accordion to a particular objective.</skos:definition>
+        <rdfs:label xml:lang="en">biological state optimization method</rdfs:label>
+        <skos:definition xml:lang="en">A method for computing the optimal state of a biological system accordion to a particular objective.</skos:definition>
     </owl:Class>
     
 
@@ -14560,6 +14584,18 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000686">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
         <dc:creator xml:lang="en">EN</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
@@ -14589,6 +14625,18 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000687">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000691"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-27</dc:created>
         <dc:creator xml:lang="en">EN</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
@@ -14611,6 +14659,84 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1371/journal.pcbi.1003483</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">Elad Noor, Arren Bar-Even, Avi Flamholz, Ed Reznik, Wolfram Liebermeister &amp; Ron Milo. Pathway thermodynamics highlights kinetic obstacles in central metabolism. PLOS Computational Biology 10(2): e1003483 (2014).</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000688 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000688">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000097"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">type of system described</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000689 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000689">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000688"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">mathematical system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000690 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000690">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000688"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">biological system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000691 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000691">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">metabolic system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000692 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000692">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">cellular system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000693 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000693">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000690"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-29</dc:created>
+        <dc:creator xml:lang="en">EN</dc:creator>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">WL</dc:creator>
+        <rdfs:label xml:lang="en">biochemical system</rdfs:label>
+    </owl:Class>
     
 
 
