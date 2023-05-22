@@ -7433,7 +7433,7 @@ DASPK is written in Fortran.</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000377 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000377">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000694"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
@@ -14838,7 +14838,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-05-19</dc:created>
         <dc:creator xml:lang="en">lps</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label>ODE Solver</rdfs:label>
+        <rdfs:label xml:lang="en">ODE solver</rdfs:label>
         <skos:altLabel xml:lang="en">ordinary differential equation solver</skos:altLabel>
         <skos:definition xml:lang="en">An ODE solver is the general category of packages such as CVODE-like methods [http://identifiers.org/biomodels.kisao/KISAO_0000433] or Livermore solvers [http://identifiers.org/biomodels.kisao/KISAO_0000094] that solve systems of ordinary differential equations.</skos:definition>
     </owl:Class>
