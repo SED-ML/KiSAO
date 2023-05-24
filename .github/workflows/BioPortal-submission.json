@@ -1,10 +1,10 @@
 {
   "ontology": "https://data.bioontology.org/ontologies/KISAO",
-  "pullLocation": "https://raw.githubusercontent.com/SED-ML/KiSAO/2.14/kisao.owl",
+  "pullLocation": "https://raw.githubusercontent.com/SED-ML/KiSAO/2.32/kisao.owl",
   "hasOntologyLanguage": "OWL",
   "description": "The Kinetic Simulation Algorithm Ontology (KiSAO) is an ontology of algorithms for simulating and analyzing biological models, as well as the characteristics of these algorithms, their input parameters, and their outputs. In addition, KiSAO captures relationships among algorithms, their parameters, and their outputs.",
-  "version": "2.14",
-  "released": "2021-04-29T02:54:00-00:00",
+  "version": "2.32",
+  "released": "2023-05-24T02:54:00-00:00",
   "status": "production",
   "homepage": "http://biomodels.net/kisao/",
   "documentation": "http://biomodels.net/kisao/",

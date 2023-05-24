@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.32 (OWL 2)
+- Added algorithm concepts for eQuilibrator.
+- Added organizational 'ODE solver' (`KISAO_0000694`) for noting in SED-ML that some solver should be used, but which is not important.
+- Added 'parameters for' (`KISAO_0000695`) to indicate that the children parameters of this term are applied when the parent general term is implented as the more-specific value of this term.
+
 ## 2.31 (OWL 2)
 - Added concepts for Metabolic Pathway Analysis
 - Added top-level algorithm concept for network optimization methods and nested the Metabolic Pathway Analysis methods, flux balance methods, and resource balance analysis under this
