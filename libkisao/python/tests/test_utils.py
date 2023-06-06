@@ -44,6 +44,7 @@ class UtilsTestCase(unittest.TestCase):
         alg_sets = [
             utils.get_ode_algorithms(),
             utils.get_sde_algorithms(),
+            utils.get_steadystate_algorithms(),
             utils.get_pde_algorithms(),
             utils.get_gillespie_like_algorithms(exact=True, approximate=False),
             utils.get_gillespie_like_algorithms(exact=False, approximate=True),
@@ -131,13 +132,6 @@ class UtilsTestCase(unittest.TestCase):
             (exact_terms | approx_terms).difference(all_terms),
             set())
 
-    def test_rule_based_algorithms(self):
-        kisao = Kisao()
-        terms = utils.get_rule_based_algorithms()
-
-        self.assertIn(kisao.get_term('KISAO_0000263'), terms)  # NFSim agent-based simulation method
-        self.assertIn(kisao.get_term('KISAO_0000362'), terms)  # implicit-state Doob-Gillespie algorithm
-
     def test_sde_algorithms(self):
         kisao = Kisao()
         odes = utils.get_ode_algorithms()
@@ -150,6 +144,23 @@ class UtilsTestCase(unittest.TestCase):
 
         self.assertEqual(sdes.intersection(odes), set())
         self.assertEqual(sdes.intersection(pdes), set())
+
+    def test_steadystate_algorithms(self):
+        kisao = Kisao()
+        terms = utils.get_steadystate_algorithms()
+
+        self.assertIn(kisao.get_term('KISAO_0000630'), terms)  # root-finding algorithm
+        self.assertIn(kisao.get_term('KISAO_0000568'), terms)  # NLEQ1
+        self.assertIn(kisao.get_term('KISAO_0000569'), terms)  # NLEQ2
+        self.assertIn(kisao.get_term('KISAO_0000355'), terms)  # DASPK
+        self.assertIn(kisao.get_term('KISAO_0000413'), terms)  # Exact Newton Method
+
+        self.assertNotIn(kisao.get_term('KISAO_0000499'), terms)  # DFBA
+
+        self.assertEqual(terms.intersection(utils.get_hybrid_algorithms()), set())  # disjoint from hybrid terms
+        self.assertEqual(terms.intersection(utils.get_gillespie_like_algorithms(
+            exact=True, approximate=False)), set())  # disjoint from Gillespie-like terms
+        self.assertEqual(terms.intersection(utils.get_ode_algorithms()), set())  # disjoint from ODE terms
 
     def test_pde_algorithms(self):
         kisao = Kisao()
@@ -398,3 +409,6 @@ class UtilsTestCase(unittest.TestCase):
                          'SAME_METHOD')
 
         os.remove(filename)
+
+if __name__ == "__main__":
+    unittest.main()

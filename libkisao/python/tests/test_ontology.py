@@ -76,3 +76,6 @@ class OntologyTestCase(unittest.TestCase):
                 'The following terms may have invalid names:\n  {}'
             ).format('\n  '.join(sorted(invalid_terms)))
             warnings.warn(msg)
+
+if __name__ == "__main__":
+    unittest.main()

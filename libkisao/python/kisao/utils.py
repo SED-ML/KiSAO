@@ -11,6 +11,7 @@ from .data_model import (AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POL
                          ID_HAS_CHARACTERISTIC_RELATIONSHIP,
                          ID_ODE_PROBLEM_CHARACTERISTIC,
                          ID_SDE_PROBLEM_CHARACTERISTIC,
+                         ID_STEADYSTATE_PROBLEM_CHARACTERISTIC,
                          ID_PDE_PROBLEM_CHARACTERISTIC,
                          ID_EXACT_SOLUTION_CHARACTERISTIC,
                          ID_APPROXIMATE_SOLUTION_CHARACTERISTIC,
@@ -211,6 +212,18 @@ def get_sde_algorithms():
 
 
 @ functools.lru_cache(maxsize=None)
+def get_steadystate_algorithms():
+    """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
+
+        'rule-based simulation method'
+
+    Returns:
+        :obj:`set` of :obj:`pronto.Term`: terms
+    """
+    return get_terms_with_characteristics([ID_ALGORITHM], [ID_STEADYSTATE_PROBLEM_CHARACTERISTIC])
+
+
+@ functools.lru_cache(maxsize=None)
 def get_pde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -282,6 +295,16 @@ def get_hybrid_algorithms():
     return get_terms_with_characteristics([ID_HYBRID_ALGORITHM])
 
 
+@ functools.lru_cache(maxsize=None)
+def get_parents_and_children_of(term):
+    """ Get the parents and children of the given term.::
+
+    Returns:
+        :obj:`set` of :obj:`pronto.Term`: terms
+    """
+    return get_terms_with_characteristics([ID_HYBRID_ALGORITHM])
+
+
 def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=AlgorithmSubstitutionPolicy.SIMILAR_VARIABLES):
     """ Get a set of algorithms that an algorithm can be substituted for a given substitution policy.
 
@@ -307,6 +330,7 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, functools.partial(get_gillespie_like_algorithms, exact=True, approximate=False)),
             (False, get_tau_leaping_algorithms),
             (False, get_sde_algorithms),
+            (False, get_steadystate_algorithms),
             (False, get_pde_algorithms),
             (False, get_logical_simulation_algorithms),
             (True, get_logical_stable_state_search_algorithms),
@@ -321,6 +345,7 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, functools.partial(get_gillespie_like_algorithms, exact=True, approximate=False)),
             (True, get_tau_leaping_algorithms),
             (True, get_sde_algorithms),
+            (True, get_steadystate_algorithms),
             (True, get_pde_algorithms),
             (False, get_logical_simulation_algorithms),
             (True, get_logical_stable_state_search_algorithms),
@@ -338,6 +363,7 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, lambda: get_gillespie_like_algorithms(
                 exact=True, approximate=False) | get_tau_leaping_algorithms()),
             (True, get_sde_algorithms),
+            (True, get_steadystate_algorithms),
             (True, get_pde_algorithms),
             (True, get_logical_simulation_algorithms),
             (True, get_logical_stable_state_search_algorithms),
@@ -352,6 +378,7 @@ def get_substitutable_algorithms_for_policy(algorithm, substitution_policy=Algor
             (True, lambda: get_gillespie_like_algorithms(
                 exact=True, approximate=False) | get_tau_leaping_algorithms()),
             (True, get_sde_algorithms),
+            (True, get_steadystate_algorithms),
             (True, get_pde_algorithms),
             (True, get_flux_balance_algorithms),
             (True, get_logical_simulation_algorithms),
