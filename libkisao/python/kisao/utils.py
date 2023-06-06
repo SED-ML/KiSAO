@@ -497,7 +497,7 @@ def get_preferred_substitute_algorithm(algorithm, alt_algorithms, substitution_p
             ))
 
     if alt_algorithm != algorithm:
-        msg = "'{}' ({}) will be substituted for '{}'' ({}) at substitution policy '{}'.".format(
+        msg = "'{}' ({}) will be substituted for '{}' ({}) at substitution policy '{}'.".format(
             alt_algorithm.name, alt_algorithm.id.partition('#')[2],
             algorithm.name, algorithm.id.partition('#')[2],
             substitution_policy.name)
