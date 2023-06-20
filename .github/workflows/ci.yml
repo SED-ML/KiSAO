@@ -32,7 +32,7 @@ jobs:
       - name: Install pip and setuptools
         run: |
           python -m pip install --upgrade pip==23.0.1
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.1
 
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
@@ -167,8 +167,8 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.1
+          python -m pip install --upgrade pip==23.0.1
 
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
@@ -338,10 +338,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install pip and setuptools
+      - name: Install pip
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.1
+          python -m pip install --upgrade pip==23.0.1
 
       # Create PyPI release
       - name: Create PyPI release
