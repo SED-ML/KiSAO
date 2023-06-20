@@ -148,8 +148,8 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
-          ref: dev
-          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+#          ref: dev
+#          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       # Install the requirements for the tests
       - name: Install Python
@@ -240,8 +240,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@master
         with:
-          ref: dev
-          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          fetch-depth: 1
+#          ref: dev
+#          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Merge dev branch into deploy branch
         uses: devmasx/merge-branch@v1.3.1
