@@ -31,8 +31,8 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python -m pip install --upgrade pip==23.0.1
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.0
+          python -m pip install --upgrade pip==23.0.0
 
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
@@ -104,7 +104,7 @@ jobs:
         run: |
           mainBranch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f 4)
           mainBranchHeadRevision=$(git rev-parse refs/remotes/origin/${mainBranch})
-          echo "::set-output name=mainBranchHeadRevision::$mainBranchHeadRevision"
+          echo "mainBranchHeadRevision=$mainBranchHeadRevision" >> $GITHUB_OUTPUT
 
   determineIfReleaseNeeded:
     name: Determine if the package should be released
@@ -127,13 +127,17 @@ jobs:
           release="0"
 
           if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then
+            echo "First check passed"
             tag_hash=$(git rev-parse "${{ github.ref }}")
+            echo "tag_hash: $tag_hash"
             if [ "$tag_hash" == "${{ needs.getMainBranchHeadRevision.outputs.mainBranchHeadRevision }}" ]; then
+              echo "Second check passed"
               release="1"
             fi
           fi
 
-          echo "::set-output name=release::$release"
+          echo "release=$release" >> $GITHUB_OUTPUT
+          echo "release=$release"
 
   commitCompiledDocumentation:
     name: Commit and push compiled documentation to GitHub
@@ -148,8 +152,8 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
-          ref: dev
-          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+#          ref: dev
+#          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       # Install the requirements for the tests
       - name: Install Python
@@ -167,8 +171,8 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.0
+          python -m pip install --upgrade pip==23.0.0
 
       - name: Install the Python KiSAO package
         working-directory: libkisao/python
@@ -220,7 +224,7 @@ jobs:
           else
             docsChanged=0
           fi
-          echo "::set-output name=docsChanged::$docsChanged"
+          echo "docsChanged=$docsChanged" >> $GITHUB_OUTPUT
 
       - name: Push the compiled documentation
         if: startsWith(github.ref, 'refs/tags/') && steps.commit-docs.outputs.docsChanged == '1'
@@ -240,8 +244,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@master
         with:
-          ref: dev
-          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          fetch-depth: 1
+#          ref: dev
+#          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Merge dev branch into deploy branch
         uses: devmasx/merge-branch@v1.3.1
@@ -256,7 +261,7 @@ jobs:
           TAG: ${{ github.ref }}
         run: |
           version="${TAG/refs\/tags\//}"
-          echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Create GitHub release
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -337,10 +342,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install pip and setuptools
+      - name: Install pip
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools
+          python -m pip install --upgrade pip==23.0.0
+          python -m pip install --upgrade pip==23.0.0
 
       # Create PyPI release
       - name: Create PyPI release
@@ -352,12 +357,8 @@ jobs:
           # Install pandoc
           sudo apt-get update -y
           sudo apt-get install -y --no-install-recommends wget
-
-          wget https://github.com/jgm/pandoc/releases -O /tmp/pandocVersions.html
-          urlPart=`grep "\.deb" /tmp/pandocVersions.html | head -n 1 | cut -d'/' -f2-7 | cut -d'"' -f1`
-          wget "https://github.com/$urlPart" -O /tmp/pandoc.deb
+          wget "https://github.com/jgm/pandoc/releases/download/3.1.3/pandoc-3.1.3-1-amd64.deb" -O /tmp/pandoc.deb         
           sudo dpkg -i /tmp/pandoc.deb
-          rm /tmp/pandocVersions.html
           rm /tmp/pandoc.deb
 
           # Copy OWL file and LICENSE so it can be bundled into the Python package

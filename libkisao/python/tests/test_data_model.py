@@ -16,3 +16,6 @@ class DataModelTestCase(unittest.TestCase):
             ALGORITHM_SUBSTITUTION_POLICY_LEVELS[AlgorithmSubstitutionPolicy.SAME_MATH],
             ALGORITHM_SUBSTITUTION_POLICY_LEVELS[AlgorithmSubstitutionPolicy.DISTINCT_APPROXIMATIONS],
         )
+
+if __name__ == "__main__":
+    unittest.main()
