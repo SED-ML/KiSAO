@@ -104,7 +104,7 @@ jobs:
         run: |
           mainBranch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f 4)
           mainBranchHeadRevision=$(git rev-parse refs/remotes/origin/${mainBranch})
-          echo "::set-output name=mainBranchHeadRevision::$mainBranchHeadRevision"
+          echo "mainBranchHeadRevision=$mainBranchHeadRevision" >> $GITHUB_OUTPUT
 
   determineIfReleaseNeeded:
     name: Determine if the package should be released
@@ -127,13 +127,16 @@ jobs:
           release="0"
 
           if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then
+            echo "First check passed"
             tag_hash=$(git rev-parse "${{ github.ref }}")
             if [ "$tag_hash" == "${{ needs.getMainBranchHeadRevision.outputs.mainBranchHeadRevision }}" ]; then
+              echo "Second check passed"
               release="1"
             fi
           fi
 
-          echo "::set-output name=release::$release"
+          echo "release=$release" >> $GITHUB_OUTPUT
+          echo "release=$release"
 
   commitCompiledDocumentation:
     name: Commit and push compiled documentation to GitHub
@@ -220,7 +223,7 @@ jobs:
           else
             docsChanged=0
           fi
-          echo "::set-output name=docsChanged::$docsChanged"
+          echo "docsChanged=$docsChanged" >> $GITHUB_OUTPUT
 
       - name: Push the compiled documentation
         if: startsWith(github.ref, 'refs/tags/') && steps.commit-docs.outputs.docsChanged == '1'
@@ -257,7 +260,7 @@ jobs:
           TAG: ${{ github.ref }}
         run: |
           version="${TAG/refs\/tags\//}"
-          echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Create GitHub release
         uses: "marvinpinto/action-automatic-releases@latest"
