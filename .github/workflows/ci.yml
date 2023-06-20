@@ -129,6 +129,7 @@ jobs:
           if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then
             echo "First check passed"
             tag_hash=$(git rev-parse "${{ github.ref }}")
+            echo "tag_hash: $tag_hash"
             if [ "$tag_hash" == "${{ needs.getMainBranchHeadRevision.outputs.mainBranchHeadRevision }}" ]; then
               echo "Second check passed"
               release="1"
