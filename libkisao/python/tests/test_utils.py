@@ -149,7 +149,7 @@ class UtilsTestCase(unittest.TestCase):
         kisao = Kisao()
         terms = utils.get_steadystate_algorithms()
 
-        self.assertIn(kisao.get_term('KISAO_0000630'), terms)  # root-finding algorithm
+        self.assertIn(kisao.get_term('KISAO_0000407'), terms)  # steady state root-finding algorithm
         self.assertIn(kisao.get_term('KISAO_0000568'), terms)  # NLEQ1
         self.assertIn(kisao.get_term('KISAO_0000569'), terms)  # NLEQ2
         self.assertIn(kisao.get_term('KISAO_0000355'), terms)  # DASPK

@@ -8060,19 +8060,25 @@ DASPK is written in Fortran.</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000407 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000407">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000696"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-01-17</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
+        <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganizational>
         <rdfs:comment xml:lang="en">Requested by Frank T. Bergmann on Sunday, November 27, 2011 4:45:30 PM.</rdfs:comment>
-        <rdfs:label xml:lang="en">steady state method</rdfs:label>
-        <skos:definition xml:lang="en">A method looking for a steady state of a dynamic system.</skos:definition>
+        <rdfs:label xml:lang="en">steady state root-finding method</rdfs:label>
+        <skos:definition xml:lang="en">Method for finding the root of a function (f(x) = 0).</skos:definition>
     </owl:Class>
     
 
@@ -8950,8 +8956,8 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000437 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000437">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-11-29</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:comment xml:lang="en">Requested by Frank T. Bergmann on Thursday, November 29, 2012 9:51:58 AM.</rdfs:comment>
@@ -10644,8 +10650,8 @@ Levenberg first suggested an improvement to the Newton method in order to make i
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000526 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000526">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000259"/>
@@ -12349,8 +12355,8 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000580 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000580">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/cobratoolbox</isImplementedIn>
@@ -12591,8 +12597,8 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000588 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000588">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -12734,8 +12740,8 @@ Min sum(|fluxAi - fluxBi|)</skos:definition>
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000593 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000593">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000622"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-29</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -13593,17 +13599,12 @@ Example system of equations:
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000106"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000696"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
-        <rdfs:label xml:lang="en">root-finding method</rdfs:label>
-        <skos:definition xml:lang="en">Method for finding the root of a function (f(x) = 0).</skos:definition>
+        <rdfs:label xml:lang="en">general steady state method</rdfs:label>
+        <skos:altLabel>root-finding method</skos:altLabel>
+        <skos:definition xml:lang="en">A method looking for a steady state of a dynamic system.</skos:definition>
     </owl:Class>
     
 
@@ -13611,7 +13612,7 @@ Example system of equations:
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000631 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000631">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dc:creator>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -14243,7 +14244,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000669 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000669">
-        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000407"/>
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000630"/>
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000685"/>
         <rdfs:subClassOf>
             <owl:Restriction>
