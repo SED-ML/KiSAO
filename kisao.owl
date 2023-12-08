@@ -14947,6 +14947,24 @@ This method only involves evaluations of f. This method is suitable for non-stif
     
 
 
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000698 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000698">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000822"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created>12-08-2023</dc:created>
+        <dc:creator>LPS</dc:creator>
+        <rdfs:label>particle coordinates</rdfs:label>
+        <skos:definition>The set of coordinates for all particles of these entities.</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000800 -->
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000800">
