@@ -35,10 +35,11 @@ __all__ = [
 
 ID_HAS_CHARACTERISTIC_RELATIONSHIP = 'KISAO_0000245'  # has characteristic
 
-ID_ODE_PROBLEM_CHARACTERISTIC = 'KISAO_0000374'  # ordinary differential equation problem
 ID_SDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000371'  # stochastic differential equation problem
-ID_STEADYSTATE_PROBLEM_CHARACTERISTIC = 'KISAO_0000696'  # steady state root-finding problem
 ID_PDE_PROBLEM_CHARACTERISTIC = 'KISAO_0000372'  # partial differential equation problem
+ID_DAE_PROBLEM_CHARACTERISTIC = 'KISAO_0000373'  # differential algebraic equation problem
+ID_ODE_PROBLEM_CHARACTERISTIC = 'KISAO_0000374'  # ordinary differential equation problem
+ID_STEADYSTATE_PROBLEM_CHARACTERISTIC = 'KISAO_0000696'  # steady state root-finding problem
 ID_EXACT_SOLUTION_CHARACTERISTIC = 'KISAO_0000236'  # exact solution
 ID_APPROXIMATE_SOLUTION_CHARACTERISTIC = 'KISAO_0000237'  # approximate solution
 

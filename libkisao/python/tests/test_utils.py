@@ -73,6 +73,8 @@ class UtilsTestCase(unittest.TestCase):
         self.assertIn(kisao.get_term('KISAO_0000086'), terms)  # Fehlberg method
         self.assertIn(kisao.get_term('KISAO_0000088'), terms)  # LSODA
         self.assertIn(kisao.get_term('KISAO_0000560'), terms)  # LSODA/LSODAR hybrid method
+        self.assertIn(kisao.get_term('KISAO_0000355'), terms)  # DASPK
+        self.assertIn(kisao.get_term('KISAO_0000283'), terms)  # IDA
 
         self.assertNotIn(kisao.get_term('KISAO_0000499'), terms)  # DFBA
 
@@ -145,6 +147,24 @@ class UtilsTestCase(unittest.TestCase):
         self.assertEqual(sdes.intersection(odes), set())
         self.assertEqual(sdes.intersection(pdes), set())
 
+    def test_dae_algorithms(self):
+        kisao = Kisao()
+        daes = utils.get_dae_algorithms()
+        odes = utils.get_ode_algorithms()
+
+        self.assertNotIn(kisao.get_term('KISAO_0000019'), daes)  # CVODE
+        self.assertNotIn(kisao.get_term('KISAO_0000030'), daes)  # Euler forward
+        self.assertIn(kisao.get_term('KISAO_0000355'), daes)     # DASPK
+        self.assertIn(kisao.get_term('KISAO_0000283'), daes)     # IDA
+
+        self.assertNotIn(kisao.get_term('KISAO_0000499'), daes)  # DFBA
+
+        self.assertEqual(daes.intersection(odes), daes)  # subset of ODE algorithms
+        self.assertEqual(daes.intersection(utils.get_gillespie_like_algorithms(
+            exact=True, approximate=False)), set())  # disjoint from Gillespie-like terms
+        self.assertEqual(daes.intersection(utils.get_gillespie_like_algorithms(
+            exact=False, approximate=True)), set())  # disjoint from Gillespie-like terms
+
     def test_steadystate_algorithms(self):
         kisao = Kisao()
         terms = utils.get_steadystate_algorithms()
@@ -152,7 +172,6 @@ class UtilsTestCase(unittest.TestCase):
         self.assertIn(kisao.get_term('KISAO_0000407'), terms)  # steady state root-finding algorithm
         self.assertIn(kisao.get_term('KISAO_0000568'), terms)  # NLEQ1
         self.assertIn(kisao.get_term('KISAO_0000569'), terms)  # NLEQ2
-        self.assertIn(kisao.get_term('KISAO_0000355'), terms)  # DASPK
         self.assertIn(kisao.get_term('KISAO_0000413'), terms)  # Exact Newton Method
 
         self.assertNotIn(kisao.get_term('KISAO_0000499'), terms)  # DFBA
