@@ -13,6 +13,7 @@ from .data_model import (AlgorithmSubstitutionPolicy, ALGORITHM_SUBSTITUTION_POL
                          ID_SDE_PROBLEM_CHARACTERISTIC,
                          ID_STEADYSTATE_PROBLEM_CHARACTERISTIC,
                          ID_PDE_PROBLEM_CHARACTERISTIC,
+                         ID_DAE_PROBLEM_CHARACTERISTIC,
                          ID_EXACT_SOLUTION_CHARACTERISTIC,
                          ID_APPROXIMATE_SOLUTION_CHARACTERISTIC,
                          ID_ALGORITHM,
@@ -45,6 +46,7 @@ __all__ = [
     'get_rule_based_algorithms',
     'get_sde_algorithms',
     'get_pde_algorithms',
+    'get_dae_algorithms',
     'get_flux_balance_algorithms',
     'get_logical_simulation_algorithms',
     'get_logical_stable_state_search_algorithms',
@@ -138,6 +140,18 @@ def get_ode_algorithms():
         :obj:`set` of :obj:`pronto.Term`: terms
     """
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_ODE_PROBLEM_CHARACTERISTIC])
+
+
+@ functools.lru_cache(maxsize=None)
+def get_dae_algorithms():
+    """ Get the terms for DAE integration algorithms::
+
+        'modelling simulation algorithm' and 'has characteristic' some 'differential algebraic equation problem'
+
+    Returns:
+        :obj:`set` of :obj:`pronto.Term`: terms
+    """
+    return get_terms_with_characteristics([ID_ALGORITHM], [ID_DAE_PROBLEM_CHARACTERISTIC])
 
 
 @ functools.lru_cache(maxsize=None)
