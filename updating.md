@@ -8,3 +8,7 @@ Put new version into:
 
 Summarize changes in:
 * CHANGELOG.md
+
+Then when everything is merged and passes the tests, tag the release
+git tag -a 2.34 -m "version 2.34"
+git push origin --tags
