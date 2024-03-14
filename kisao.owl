@@ -14570,7 +14570,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:creator xml:lang="en">WL</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
         <rdfs:label xml:lang="en">biological state optimization method</rdfs:label>
-        <skos:definition xml:lang="en">A method for computing the optimal state of a biological system accordion to a particular objective.</skos:definition>
+        <skos:definition xml:lang="en">A method for computing the optimal state of a biological system according to a particular objective.</skos:definition>
     </owl:Class>
     
 
