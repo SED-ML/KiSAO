@@ -4161,6 +4161,12 @@ Reduced models can be determined in many ways such as using mass conservation la
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000373"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000360"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000354"/>
             </owl:Restriction>
@@ -7359,6 +7365,12 @@ DASPK is written in Fortran.</skos:definition>
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000373">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000405"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:creator xml:lang="en">AZ</dc:creator>
         <rdfs:label xml:lang="en">differential-algebraic equation problem</rdfs:label>
         <skos:altLabel xml:lang="en">DAE</skos:altLabel>
@@ -13491,6 +13503,12 @@ CVODE is used for ordinary differential equation (ODE) systems. IDA is used for 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000373"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000374"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
