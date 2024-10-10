@@ -130,7 +130,7 @@ def get_terms_with_characteristics(parent_ids, characteristic_ids=None):
     return terms
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_ode_algorithms():
     """ Get the terms for ODE integration algorithms::
 
@@ -142,7 +142,7 @@ def get_ode_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_ODE_PROBLEM_CHARACTERISTIC])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_dae_algorithms():
     """ Get the terms for DAE integration algorithms::
 
@@ -154,7 +154,7 @@ def get_dae_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_DAE_PROBLEM_CHARACTERISTIC])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_gillespie_like_algorithms(exact=True, approximate=False):
     """ Get the terms for algorithms that execute similar simulations to Gillespie's
     algorithm (KISAO_0000029).
@@ -189,7 +189,7 @@ def get_gillespie_like_algorithms(exact=True, approximate=False):
     return get_terms_with_characteristics([ID_GILLESPIE_LIKE_ALGORITHM], characteristics)
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_tau_leaping_algorithms():
     """ Get the terms for tau-leaping algorithms (KISAO_0000039).::
 
@@ -201,7 +201,7 @@ def get_tau_leaping_algorithms():
     return get_terms_with_characteristics([ID_TAU_LEAPING_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_rule_based_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -213,7 +213,7 @@ def get_rule_based_algorithms():
     return get_terms_with_characteristics([ID_RULE_BASED_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_sde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -225,7 +225,7 @@ def get_sde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_SDE_PROBLEM_CHARACTERISTIC])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_steadystate_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -237,7 +237,7 @@ def get_steadystate_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_STEADYSTATE_PROBLEM_CHARACTERISTIC])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_pde_algorithms():
     """ Get the terms for rule-based simulation algorithms (KISAO_0000363).::
 
@@ -249,7 +249,7 @@ def get_pde_algorithms():
     return get_terms_with_characteristics([ID_ALGORITHM], [ID_PDE_PROBLEM_CHARACTERISTIC])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_flux_balance_algorithms():
     """ Get the terms for flux balance algorithms (KISAO_0000622).::
 
@@ -261,7 +261,7 @@ def get_flux_balance_algorithms():
     return get_terms_with_characteristics([ID_FLUX_BALANCE_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_logical_simulation_algorithms():
     """ Get the terms for logical simulation algorithms (KISAO_0000448).::
 
@@ -273,7 +273,7 @@ def get_logical_simulation_algorithms():
     return get_terms_with_characteristics([ID_LOGICAL_SIMULATION_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_logical_stable_state_search_algorithms():
     """ Get the terms for algorithms for finding the stable states of logical models (KISAO_0000660).::
 
@@ -285,7 +285,7 @@ def get_logical_stable_state_search_algorithms():
     return get_terms_with_characteristics([ID_LOGICAL_STABLE_STATE_SEARCH_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_logical_trap_space_search_algorithms():
     """ Get the terms for algorithms for finding the trap spaces of logical models (KISAO_0000661).::
 
@@ -297,7 +297,7 @@ def get_logical_trap_space_search_algorithms():
     return get_terms_with_characteristics([ID_LOGICAL_TRAP_SPACE_SEARCH_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_hybrid_algorithms():
     """ Get the terms for hybrid algorithms (KISAO_0000352).::
 
@@ -309,7 +309,7 @@ def get_hybrid_algorithms():
     return get_terms_with_characteristics([ID_HYBRID_ALGORITHM])
 
 
-@ functools.lru_cache(maxsize=None)
+@functools.lru_cache(maxsize=None)
 def get_parents_and_children_of(term):
     """ Get the parents and children of the given term.::
 
