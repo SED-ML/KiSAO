@@ -117,11 +117,9 @@
     <owl:ObjectProperty rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000245">
         <owl:inverseOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000268"/>
         <rdfs:domain rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000000"/>
-        <rdfs:domain rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000831"/>
         <rdfs:range rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000097"/>
-        <rdfs:range rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000820"/>
         <rdfs:label xml:lang="en">has characteristic</rdfs:label>
-        <skos:definition xml:lang="en">&apos;has characteristic&apos; links algorithms to the characteristics, they possess.</skos:definition>
+        <skos:definition xml:lang="en">&apos;has characteristic&apos; links algorithms to the characteristics they possess.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -9256,8 +9254,9 @@ Hierarchical cluster-based partial least squares regression method uses fuzzy C-
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-25</dc:created>
         <dc:creator xml:lang="en">AZ</dc:creator>
-        <rdfs:comment xml:lang="en">Requested by Andrzej Kierzek on Thursday, April 24, 2014 12:40:35 PM</rdfs:comment>
-        <rdfs:comment xml:lang="en">Used to simulate systems involving reactions with propensities varying by many orders of magnitude.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Requested by Andrzej Kierzek on Thursday, April 24, 2014 12:40:35 PM
+
+Used to simulate systems involving reactions with propensities varying by many orders of magnitude.</rdfs:comment>
         <rdfs:label xml:lang="en">maximal timestep method</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/pubmed/14990466</rdfs:seeAlso>
         <skos:definition xml:lang="en">Hybrid simulation algorithm [http://www.biomodels.net/kisao/KISAO#KISAO_0000352] combining Gibson and Bruck algorithm [http://www.biomodels.net/kisao/KISAO#KISAO_0000027] with the Gillespie tau-leap method [http://www.biomodels.net/kisao/KISAO#KISAO_0000039].</skos:definition>
@@ -13955,7 +13954,7 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-04</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <rdfs:label xml:lang="en">amount rate</rdfs:label>
-        <rdfs:label xml:lang="en">rate of a process in extensive/absolute units such as reactions per second.</rdfs:label>
+        <skos:definition xml:lang="en">rate of a process in extensive/absolute units such as reactions per second.</skos:definition>
     </owl:Class>
     
 
