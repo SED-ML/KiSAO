@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.34 (OWL 2)
+- Added organizational 'DAE solver' (`KISAO_0000699`) for collecting solvers that can solve DAE problems.
+- Removed 'has characteristic' some 'differential-algebraic equation problem' from KINSOL and from 'method for solving a system of linear equations'.
+- The characteristics 'differential-algebraic equation problem' and ''ordinary differential equation problem' are no longer disjoint (and in fact the former are a complete subset of the latter).
+
+## 2.33 (OWL 2)
+- Reorganized the steady state algorithms: moved flux balance and steady state to 'general steady state method' (`KISAO_0000630`), and others to the 'steady state root-finding method' (`KISAO_0000407`)
+
+## 2.32 (OWL 2)
+- Added algorithm concepts for eQuilibrator.
+- Added organizational 'ODE solver' (`KISAO_0000694`) for noting in SED-ML that some solver should be used, but which is not important.
+- Added 'parameters for' (`KISAO_0000695`) to indicate that the children parameters of this term are applied when the parent general term is implented as the more-specific value of this term.
+
+## 2.31 (OWL 2)
+- Added concepts for Metabolic Pathway Analysis
+- Added top-level algorithm concept for network optimization methods and nested the Metabolic Pathway Analysis methods, flux balance methods, and resource balance analysis under this
+
 ## 2.30 (OWL 2)
 - Added and unified aggregation functions for SED-ML L1V4
   - maximum ignoring NaN (`KISAO_0000828`)

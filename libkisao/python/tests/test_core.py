@@ -67,3 +67,6 @@ class CoreTestCase(unittest.TestCase):
         self.assertIn('KISAO_0000450', term_ids)
         self.assertIn('KISAO_0000581', term_ids)
         self.assertIn('KISAO_0000449', term_ids)
+
+if __name__ == "__main__":
+    unittest.main()
