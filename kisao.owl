@@ -14027,7 +14027,13 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000105"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000700"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000703"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-07-08</dc:created>
@@ -14063,6 +14069,12 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000660">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000658"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000711"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-07-08</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -14076,6 +14088,12 @@ This method only involves evaluations of f. This method is suitable for non-stif
 
     <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000661">
         <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000658"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000710"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-07-08</dc:created>
         <dc:creator xml:lang="en">JRK</dc:creator>
         <isOrganizational rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganizational>
@@ -15078,6 +15096,258 @@ This method only involves evaluations of f. This method is suitable for non-stif
         <owl:annotatedTarget xml:lang="en">differential algebraic equation solver</owl:annotatedTarget>
         <rdfs:comment xml:lang="en">EXACT</rdfs:comment>
     </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000700 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000700">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000370"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <rdfs:label xml:lang="en">logical network</rdfs:label>
+        <skos:definition xml:lang="en">A network of logical-valued (an enumeration, such as a set of integers) variables.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000701 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000701">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000700"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <rdfs:label xml:lang="en">boolean network</rdfs:label>
+        <skos:definition xml:lang="en">A network of Boolean-valued variables.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000702 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000702">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000701"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <rdfs:label xml:lang="en">locally-monotone Boolean network</rdfs:label>
+        <skos:definition xml:lang="en">Boolean network where each regulator is either an activator or an inhibitor, but cannot be both.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000703 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000703">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000105"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">logical variable</rdfs:label>
+        <skos:definition xml:lang="en">A variable whose value can be one of an enumerated set of possible values such as ON/OFF, HIGH/MEDIUM/LOW, or a set integers (e.g., 0, 1, 2).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000704 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000704">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000703"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">Boolean variable</rdfs:label>
+        <skos:definition xml:lang="en">A variable whose value can be TRUE/FALSE (e.g., ON/OFF, YES/NO, 1/0).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000705 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000705">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000451"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <rdfs:label xml:lang="en">most permissive updating policy</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1038/s41467-020-18112-5</rdfs:seeAlso>
+        <skos:definition xml:lang="en">The most permissive updating policy captures behaviors of any compatible quantitative model.</skos:definition>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000705"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/doi:10.1038/s41467-020-18112-5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Loïc Paulevé, Juraj Kolčák, Thomas Chatain, Stefan Haar. Reconciling qualitative, abstract, and scalable modeling of biological networks. Nat Commun 11(1):4256 (2020).</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000706 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000706">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000660"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000236"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000702"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</isImplementedIn>
+        <rdfs:label xml:lang="en">Paulevé ASP-based fixed point identification</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000706"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">mpbn</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000707 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000707">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000661"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000236"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000702"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</isImplementedIn>
+        <rdfs:label xml:lang="en">Paulevé ASP-based minimal trap space identification</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000707"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">mpbn</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000708 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000708">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000658"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000697"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</isImplementedIn>
+        <rdfs:label xml:lang="en">logical model attractor identification method</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000708"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">mpbn</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000709 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000709">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000708"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000236"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000702"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000705"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <dc:creator xml:lang="en">LP</dc:creator>
+        <isImplementedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</isImplementedIn>
+        <rdfs:label xml:lang="en">Paulevé ASP-based most permissive attractor identification</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000709"/>
+        <owl:annotatedProperty rdf:resource="http://www.biomodels.net/kisao/KISAO#isImplementedIn"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://identifiers.org/biosimulators/mpbn</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">mpbn</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000710 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000710">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000713"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">trap space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000711 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000711">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000713"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">stable state</rdfs:label>
+        <skos:altLabel xml:lang="en">steady state</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000712 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000712">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000710"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">minimal trap space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biomodels.net/kisao/KISAO#KISAO_0000713 -->
+
+    <owl:Class rdf:about="http://www.biomodels.net/kisao/KISAO#KISAO_0000713">
+        <rdfs:subClassOf rdf:resource="http://www.biomodels.net/kisao/KISAO#KISAO_0000235"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-20</dc:created>
+        <dc:creator xml:lang="en">JRK</dc:creator>
+        <rdfs:label xml:lang="en">attractor</rdfs:label>
+    </owl:Class>
     
 
 
@@ -16670,8 +16940,6 @@ This method only involves evaluations of f. This method is suitable for non-stif
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
-
-
 
 <!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 

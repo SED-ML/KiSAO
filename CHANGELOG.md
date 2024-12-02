@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.35 (OWL 2)
+- Added algorithms and characteristics for attractor methods in mpbn
+
 ## 2.34 (OWL 2)
 - Added organizational 'DAE solver' (`KISAO_0000699`) for collecting solvers that can solve DAE problems.
 - Removed 'has characteristic' some 'differential-algebraic equation problem' from KINSOL and from 'method for solving a system of linear equations'.
