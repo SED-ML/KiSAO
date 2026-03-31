@@ -46,8 +46,8 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
     # package_data=md.package_data,
     install_requires=open("requirements.txt").read().strip(),
-    extras_require=["natsort", "numpy", "pandas"],
-    tests_require=["natsort", "numpy", "pandas"],
+    extras_require={"all": ["natsort", "numpy", "pandas"]},
+    tests_require={"all": ["natsort", "numpy", "pandas"]},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
