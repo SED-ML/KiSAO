@@ -2,6 +2,8 @@
 
 ## 2.35 (OWL 2)
 - Added algorithms and characteristics for attractor methods in mpbn
+- Fixed errors preventing export to OBO
+- Fixed errors in date formatting
 
 ## 2.34 (OWL 2)
 - Added organizational 'DAE solver' (`KISAO_0000699`) for collecting solvers that can solve DAE problems.

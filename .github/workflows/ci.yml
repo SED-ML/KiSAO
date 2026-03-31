@@ -86,7 +86,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
-          file: ./libkisao/python/coverage.xml
+          files: ./libkisao/python/coverage.xml
 
   getMainBranchHeadRevision:
     name: Get the head revision of the main branch
