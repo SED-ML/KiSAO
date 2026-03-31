@@ -17,12 +17,12 @@ jobs:
 
       # Install the requirements for the tests
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@main
         with:
-          python-version: '3.9'
+          python-version: '3.13'
 
       - name: Setup pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@main
         with:
           path: /opt/hostedtoolcache/Python
           key: ${{ runner.os }}-pip-${{ hashFiles('libkisao/python/requirements.txt') }}-${{ hashFiles('libkisao/python/tests/requirements.txt') }}
@@ -82,7 +82,7 @@ jobs:
 
       - name: Upload the coverage report to Codecov
         if: false
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@main
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
@@ -117,7 +117,7 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
 
@@ -149,7 +149,7 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
 #          ref: dev
@@ -157,12 +157,12 @@ jobs:
 
       # Install the requirements for the tests
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@main
         with:
           python-version: '3.9'
 
       - name: Setup pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@main
         with:
           path: /opt/hostedtoolcache/Python
           key: ${{ runner.os }}-pip-${{ hashFiles('libkisao/python/requirements.txt') }}-${{ hashFiles('libkisao/python/tests/requirements.txt') }}
@@ -242,14 +242,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
 #          ref: dev
 #          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Merge dev branch into deploy branch
-        uses: devmasx/merge-branch@v1.3.1
+        uses: devmasx/merge-branch@master
         with:
           type: now
           target_branch: deploy
@@ -324,18 +324,18 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
 
       # Install the requirements for the tests
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@main
         with:
-          python-version: '3.9'
+          python-version: '3.13'
 
       - name: Setup pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@main
         with:
           path: /opt/hostedtoolcache/Python
           key: ${{ runner.os }}-pip-${{ hashFiles('libkisao/python/requirements.txt') }}-${{ hashFiles('libkisao/python/tests/requirements.txt') }}
