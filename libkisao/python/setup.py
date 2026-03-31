@@ -1,7 +1,4 @@
-import re
 import setuptools
-import subprocess
-import sys
 import os
 
 name = 'kisao'
