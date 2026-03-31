@@ -41,7 +41,7 @@ setuptools.setup(
         'SBML',
     ],
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
-    # package_data=md.package_data,
+    package_data={'kisao': ['kisao.owl']},
     install_requires=open("requirements.txt").read().strip(),
     extras_require={"all": ["natsort", "numpy", "pandas"]},
     tests_require={"all": ["natsort", "numpy", "pandas"]},
