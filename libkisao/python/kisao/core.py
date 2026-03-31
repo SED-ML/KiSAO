@@ -8,7 +8,7 @@
 
 from .data_model import IdDialect
 import pronto
-import pkg_resources
+from importlib.resources import files
 import re
 import warnings
 
@@ -19,7 +19,7 @@ class Kisao(object):
 
     def __init__(self):  # __new__ always a classmethod
         if self.__class__._ontology is None:
-            filename = pkg_resources.resource_filename('kisao', 'kisao.owl')
+            filename = str(files('kisao').joinpath('kisao.owl'))
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", pronto.utils.warnings.SyntaxWarning)
                 warnings.simplefilter("ignore", pronto.utils.warnings.NotImplementedWarning)

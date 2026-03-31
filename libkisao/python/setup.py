@@ -1,19 +1,5 @@
-import re
 import setuptools
-import subprocess
-import sys
-try:
-    result = subprocess.run(
-        [sys.executable, "-m", "pip", "show", "pkg_utils"],
-        check=True, capture_output=True)
-    match = re.search(r'\nVersion: (.*?)\n', result.stdout.decode(), re.DOTALL)
-    assert match and tuple(match.group(1).split('.')) >= ('0', '0', '5')
-except (subprocess.CalledProcessError, AssertionError):
-    subprocess.run(
-        [sys.executable, "-m", "pip", "install", "-U", "pkg_utils"],
-        check=True)
 import os
-import pkg_utils
 
 name = 'kisao'
 dirname = os.path.dirname(__file__)
@@ -23,15 +9,22 @@ package_data = {
     ],
 }
 
-# get package metadata
-md = pkg_utils.get_package_metadata(dirname, name, package_data_filename_patterns=package_data)
+_basedir = os.path.abspath(os.path.dirname(__file__))
+
+_version_fname = os.path.join(_basedir, 'kisao', '_version.py')
+
+_version = open(_version_fname).readline().strip().split("'")[1]
+
+_readme_fname = os.path.join(_basedir, '..', '..', 'README.md')
+
 
 # install package
 setuptools.setup(
     name=name,
-    version=md.version,
+    version=_version,
     description="Utilities for working with the Kinetic Simulation Algorithm Ontology (KiSAO)",
-    long_description=md.long_description,
+    long_description=open(_readme_fname).read().strip(),
+    long_description_content_type="text/markdown",
     url="https://github.com/SED-ML/kisao",
     download_url='https://github.com/SED-ML/kisao',
     author='SED-ML Editors',
@@ -48,11 +41,10 @@ setuptools.setup(
         'SBML',
     ],
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
-    package_data=md.package_data,
-    install_requires=md.install_requires,
-    extras_require=md.extras_require,
-    tests_require=md.tests_require,
-    dependency_links=md.dependency_links,
+    package_data={'kisao': ['kisao.owl']},
+    install_requires=open("requirements.txt").read().strip(),
+    extras_require={"all": ["natsort", "numpy", "pandas"]},
+    tests_require={"all": ["natsort", "numpy", "pandas"]},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
