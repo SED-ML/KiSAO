@@ -16,7 +16,7 @@ _basedir = os.path.abspath(os.path.dirname(__file__))
 
 _version_fname = os.path.join(_basedir, 'kisao', '_version.py')
 
-_version = open(_version_fname).readline().strip().split(' ')[2]
+_version = open(_version_fname).readline().strip().split("'")[1]
 
 _readme_fname = os.path.join(_basedir, '..', '..', 'README.md')
 
