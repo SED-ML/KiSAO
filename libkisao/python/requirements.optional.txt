@@ -1,3 +1,4 @@
+[substitutability-matrix]
 natsort
 numpy
 pandas
